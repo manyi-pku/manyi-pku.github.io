@@ -1,7 +1,7 @@
 ---
-title: "Man Lab - Publications"
+title: "Man Yi - Publications"
 layout: gridlay
-excerpt: "Man Lab -- Publications."
+excerpt: "Man Yi -- Publications."
 sitemap: false
 permalink: /publications/
 ---

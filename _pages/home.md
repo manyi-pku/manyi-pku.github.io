@@ -1,5 +1,5 @@
 ---
-title: "Man Yi - hometest"
+title: "Man Yi - home"
 layout: gridlay
 excerpt: “Man Yi 满怡"
 sitemap: false
@@ -11,7 +11,7 @@ permalink: /
 
 
 <div class="col-sm-6 clearfix">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/manyi.jpg"  width="50%" style="fvertical-align:middle;margin:10px 100px" />
+  <img src="{{ site.url }}{{ site.baseurl }}/images/manyi.jpeg"  width="50%" style="fvertical-align:middle;margin:10px 100px" />
   <p>&nbsp;</p>
   <p><b>Short bio:</b>
   I received my Ph.D. degree in applied mathematics from the University of Cambridge in 2017, and then continued my research in the Department of Mechanical Engineering at the University of Southern California as a postdoctoral fellow. I joined the School of Engineering, Peking University in late 2021.</p>
