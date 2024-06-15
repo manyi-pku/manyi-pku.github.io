@@ -30,7 +30,7 @@ Peking University</i></h4>
 <p>&nbsp;</p>
 <p><b>Email:</b> yiman@pku.edu.cn</p>
 <p><b>Address:</b>
-Room 2325, Ziyuan West Building, 46 Haidian Road, Haidian District, Beijing, 100871</p>
+Room 443, Enn Engineering Building, Haidian District, Beijing, 100871</p>
 <p>&nbsp;</p>
   <img src="{{ site.url }}{{ site.baseurl }}/images/pku.jpeg"  width="100%" style="float:left" />
 </div>
