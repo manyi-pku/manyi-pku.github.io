@@ -1,30 +1,30 @@
-  - title: "Self-diffusiophoretic propulsion of a spheroidal particle in a shear-thinning fluid"
-    image: ""
-    description: ""
-    authors: G Zhu, B vanGogh, L Zhu, OS Pak and Y Man
-    link:
-      url: https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/selfdiffusiophoretic-propulsion-of-a-spheroidal-particle-in-a-shearthinning-fluid/27AC0443994A1186CC5682BF016950B9
-      display: "J. Fluid Mech., vol. 986, A39 (2024)"
-      doc: JFM2024.pdf
-    highlight: 0
-  
-  - title: "Self-diffusiophoretic propulsion of a spheroidal particle in a shear-thinning fluid"
+- title: "Feeding rates in sessile versus motile ciliates are hydrodynamically equivalent"
   image: ""
-  description: ""
+  description: 
+  authors: J Liu, Y Man, JH Costello and E Kanso
+  link:
+    url: "https://elifesciences.org/reviewed-preprints/99003#"
+    display: eLIFE (2024)
+    doc: elife2024.pdf
+  highlight: 0
+
+- title: "Self-diffusiophoretic propulsion of a spheroidal particle in a shear-thinning fluid"
+  image: ""
+  description: 
   authors: G Zhu, B vanGogh, L Zhu, OS Pak and Y Man
   link:
-    url: https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/selfdiffusiophoretic-propulsion-of-a-spheroidal-particle-in-a-shearthinning-fluid/27AC0443994A1186CC5682BF016950B96t
+    url: "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/selfdiffusiophoretic-propulsion-of-a-spheroidal-particle-in-a-shearthinning-fluid/27AC0443994A1186CC5682BF016950B9"
     display: J. Fluid Mech., vol. 986, A39 (2024)
     doc: JFM2024.pdf
   highlight: 0
-  
+
 - title: "Hydrodynamic bound states of rotating microcylinders
 in a confining geometry"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors: H Guo, Y Man, and H Zhu
   link:
-    url: https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.9.014102
+    url: "https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.9.014102"
     display: Phys. Rev. Fluids 9, 014102 (2024)
     doc: PRF2024.pdf
   highlight: 0
@@ -34,7 +34,7 @@ in a confining geometry"
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors: Y Jiao, B Colvert, Y Man, M McHenry and E  Kanso
   link:
-    url: https://www.pnas.org/doi/10.1073/pnas.2218909120
+    url: "https://www.pnas.org/doi/10.1073/pnas.2218909120"
     display: PNAS 120 (7), e2218909120 (2023)
     doc: PNAS2023.pdf
   highlight: 0
