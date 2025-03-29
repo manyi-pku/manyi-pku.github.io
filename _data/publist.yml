@@ -1,14 +1,27 @@
-- title: "Feeding rates in sessile versus motile ciliates are hydrodynamically equivalent"
+- order: 13
+  title: "Optimal feeding in swimming and attached ciliates"
+  image: ""
+  description: 
+  authors: J Liu, Y Man, JH Costello and E Kanso
+  link:
+    url: "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/optimal-feeding-in-swimming-and-attached-ciliates/3F6A9303063139B00426BA193E3C513E"
+    display: J. Fluid Mech., vol. 1003, A26 (2025)
+    doc: JFM2025.pdf
+  highlight: 0
+
+- order: 12
+  title: "Feeding rates in sessile versus motile ciliates are hydrodynamically equivalent"
   image: ""
   description: 
   authors: J Liu, Y Man, JH Costello and E Kanso
   link:
     url: "https://elifesciences.org/reviewed-preprints/99003#"
-    display: eLIFE (2024)
+    display: eLife 13:RP99003 (2024)
     doc: elife2024.pdf
   highlight: 0
 
-- title: "Self-diffusiophoretic propulsion of a spheroidal particle in a shear-thinning fluid"
+- order: 11
+  title: "Self-diffusiophoretic propulsion of a spheroidal particle in a shear-thinning fluid"
   image: ""
   description: 
   authors: G Zhu, B vanGogh, L Zhu, OS Pak and Y Man
@@ -18,8 +31,8 @@
     doc: JFM2024.pdf
   highlight: 0
 
-- title: "Hydrodynamic bound states of rotating microcylinders
-in a confining geometry"
+- order: 10
+  title: "Hydrodynamic bound states of rotating microcylinders in a confining geometry"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors: H Guo, Y Man, and H Zhu
@@ -29,7 +42,8 @@ in a confining geometry"
     doc: PRF2024.pdf
   highlight: 0
   
-- title: "Evaluating evasion strategies in zebrafish Larvae"
+- order: 9
+  title: "Evaluating evasion strategies in zebrafish Larvae"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors: Y Jiao, B Colvert, Y Man, M McHenry and E  Kanso
@@ -39,7 +53,8 @@ in a confining geometry"
     doc: PNAS2023.pdf
   highlight: 0
 
-- title: "Intracellucar coupling modulates bifilagellar synchronization"
+- order: 8
+  title: "Intracellucar coupling modulates bifilagellar synchronization"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors: H Guo, Y Man, K-Y  Wan and E Kanso
@@ -50,7 +65,8 @@ in a confining geometry"
   highlight: 0
 
 
-- title: "Multisynchrony in active microfilaments"
+- order: 7
+  title: "Multisynchrony in active microfilaments"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors: Y Man and E Kanso
@@ -60,7 +76,8 @@ in a confining geometry"
     doc:  PRL2020.pdf
   highlight: 0
 
-- title: "Cilia oscillations"
+- order: 6
+  title: "Cilia oscillations"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors: Y Man, F Ling and E Kanso
@@ -70,7 +87,8 @@ in a confining geometry"
     doc:  PhilTransRSocB2019.pdf
   highlight: 0
 
-- title: "Morphological transitions of axially-driven microfilaments"
+- order: 5
+  title: "Morphological transitions of axially-driven microfilaments"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors: Y Man and E Kanso
@@ -81,7 +99,8 @@ in a confining geometry"
   highlight: 0
 
 
-- title: "Bundling of elastic filaments from hydrodynamic interactions"
+- order: 4
+  title: "Bundling of elastic filaments from hydrodynamic interactions"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors: Y Man, W Page, R Poole and E Lauga
@@ -91,7 +110,8 @@ in a confining geometry"
     doc:  PRF2017.pdf
   highlight: 0
 
-- title: "Hydrodynamic interactions between nearby slender filaments"
+- order: 3
+  title: "Hydrodynamic interactions between nearby slender filaments"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors: Y Man, L Koens and E Lauga
@@ -101,7 +121,8 @@ in a confining geometry"
     doc:  EPL2016.pdf
   highlight: 0
 
-- title: "Phase-separation models for swimming enhancement in complex fluids"
+- order: 2
+  title: "Phase-separation models for swimming enhancement in complex fluids"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors:  Y Man and  E Lauga
@@ -111,7 +132,8 @@ in a confining geometry"
     doc:  PRE2015.pdf
   highlight: 0
 
-- title: "The wobbling-to-swimming transition of rotated helices"
+- order: 1
+  title: "The wobbling-to-swimming transition of rotated helices"
   image: ""
   description: Shot noise has been suggested for a long time as a tell-tale probe for Majorana bound states. We are the first to carry out local tunneling shot noise measurements on the putative vortex Majorana states.
   authors:  Y Man and  E Lauga
