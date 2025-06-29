@@ -1,3 +1,14 @@
+- order: 15
+  title: "Navigation of a three-link microswimmer via deep reinforcement learning"
+  image: ""
+  description: 
+  authors: Y Lai, S Heydari, OS Pak and Y Man
+  link:
+    url: "https://journals.aps.org/prfluids/abstract/10.1103/9msg-hgqn"
+    display: Phys. Rev. Fluids 10, 064103 (2025)
+    doc: PRF2025.pdf
+  highlight: 0
+  
 - order: 14
   title: "Trapping microswimmers in acoustic streaming flow"
   image: ""
