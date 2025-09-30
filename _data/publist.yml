@@ -1,3 +1,14 @@
+- order: 16
+  title: "Nutrient transport in concentration gradients"
+  image: ""
+  description: 
+  authors: J Liu, Y Man and E Kanso
+  link:
+    url: "https://journals.aps.org/prfluids/abstract/10.1103/7znc-3wzp"
+    display: Phys. Rev. Fluids 10, 093104 (2025)
+    doc: PRF2025_2.pdf
+  highlight: 0
+  
 - order: 15
   title: "Navigation of a three-link microswimmer via deep reinforcement learning"
   image: ""
@@ -8,7 +19,7 @@
     display: Phys. Rev. Fluids 10, 064103 (2025)
     doc: PRF2025.pdf
   highlight: 0
-  
+    
 - order: 14
   title: "Trapping microswimmers in acoustic streaming flow"
   image: ""
