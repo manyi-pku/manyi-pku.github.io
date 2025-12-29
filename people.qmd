@@ -1,0 +1,42 @@
+---
+title: "People"
+page-layout: article
+---
+
+## Current Members
+
+### PhD Students
+
+* **Zhao, Qiang (赵强)** (2022 -- Present)
+    <!-- * Email: [placeholder]
+    * Research: [placeholder] -->
+
+* **Cui, Ziang (崔子昂)** (2023 -- Present)
+    <!-- * Email: ...
+    * Research: ... -->
+
+* **Bian, Zi (边子)** (2024 -- Present)
+    <!-- * Email: ...
+    * Research: ... -->
+
+* **Kuang, Le (匡乐)** (2025 -- Present)
+
+<!-- ### Master Students
+
+* **Lastname, Firstname (中文名)** (Year -- Present) -->
+
+---
+
+## Alumni
+
+### PhD Graduates
+
+* **Sun, Xuyang (孙旭阳)** (2021 -- 2025)
+    * *Now an Algorithm Engineer at Goertek Inc., Qingdao*
+
+
+
+<!-- ### Undergraduate Students / Interns
+
+* **Lastname, Firstname** (Year -- Year)
+    * *Next stop: PhD student at University Z* -->
