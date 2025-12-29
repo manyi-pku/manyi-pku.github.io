@@ -87,6 +87,6 @@ page-layout: article
 ## Ph.D. Thesis
 
 **Swimming at low Reynolds number: slip boundaries and interacting filaments**, 
-Y. Man
+Y. Man,
 *University of Cambridge*, 2017.
 [PDF](files/papers/thesis_Man.pdf){target="_blank"} | [Library Link](https://www.repository.cam.ac.uk/items/3e1ac6c8-38ad-4e6f-abc3-40f4ff0586cc){target="_blank"}
