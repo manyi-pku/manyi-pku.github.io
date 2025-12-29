@@ -1,0 +1,56 @@
+---
+title: "Biography"
+page-layout: article
+---
+
+## Employment
+
+**University of Southern California**, USA
+*Postdoctoral Scholar, Department of Aerospace and Mechanical Engineering*
+Sept. 2017 – Sept. 2021
+<br>Bio-Inspired Motion Lab led by [Prof. Eva Kanso](https://sites.usc.edu/kansolab/){target="_blank"}
+
+---
+
+## Education
+
+**University of Cambridge, Trinity College**, UK
+*Ph.D. in Applied Mathematics*
+Jul. 2017
+<br>Advisor: [Prof. Eric Lauga](http://www.damtp.cam.ac.uk/user/lauga/){target="_blank"}
+<br>*Award: Best Doctoral Dissertation Award, UK Fluids Network, 2018*
+
+**University of California, San Diego**, USA
+*M.S. in Mechanical Engineering*
+Jun. 2013
+
+**Peking University**, China
+*B.S. in Mechanics / Applied Mathematics*
+Jul. 2011
+
+
+---
+
+## Honors and Awards
+* **Teaching Excellence Award**, Peking University, 2025
+* **Outstanding Undergraduate Thesis Supervisor Award**, Peking University, 2025
+<!-- * **Outstanding Class Advisor**, College of Engineering, Peking University, 2024 -->
+* **Wang Minzhong Education and Teaching Award**, College of Engineering, Peking University, 2024
+* **P&G Teaching Award**, Peking University, 2023
+* **Best Doctoral Dissertation Award**, UK Fluids Network, 2018
+* **Smith-Knight and Rayleigh-Knight Essay Prize**, University of Cambridge, 2015
+* **Cambridge International Scholarship**, University of Cambridge, 2013
+* **The Powell Fellowship**, University of California, San Diego, 2011
+* **Boeing Scholarship**, Boeing China, 2010
+* **Founder Scholarship**, Founder Group, 2008
+<!-- * **Freshman Scholarship**, Peking University, 2007 -->
+* **Bronze medal**, 22nd Chinese Mathematical Olympiad, 2007
+* **First Prize**, 27th National Mathematics Contest for high school students (delegate of Gansu province), 2006
+* **First Prize**, 20th National Chemistry Contest for high school students, 2006
+* **Second Prize**, 23rd National Physics Contest for high school students, 2006
+
+---
+
+## Miscellaneous
+
+* **200-hour Yoga Alliance Certification**, CorePower Yoga (Aug. 2018)

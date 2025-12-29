@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Man,Yi"
+  sidebar:
+    style: "docked"
+    search: false
+    background: light
+    contents:
+      - text: "Home"
+        href: index.qmd
+      - text: "Publications"
+        href: publications.qmd
+      - text: "People"
+        href: people.qmd
+      - text: "Bio"
+        href: bio.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+    fontsize: 1.1em
+    
+    # =============== 字体调整区 ===============
+    # 接下来，请用下面的【方案 A/B/C】替换这里的代码
+
+    # 方案 A：全站 Georgia
+   # mainfont: "Georgia, 'Times New Roman', Times, serif"
+
+    # 方案 B：现代无衬线
+    # 这一长串的意思是：优先用苹果系统字体，没有就用 Helvetica Neue，再没有就用 Arial
+    # mainfont: "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+    # (选项) 如果希望标题也是衬线体，可以不加别的。
+    # Quarto 默认会把 mainfont 应用到全文。
+
+    # 方案 C：混搭风
+    mainfont: "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" # 正文用现代字体
+    
+    include-in-header:
+      - text: |
+          <style>
+            /* 强制让所有标题使用 Georgia */
+            h1, h2, h3, .title { 
+              font-family: Georgia, 'Times New Roman', serif !important; 
+            }
+          </style>
+    
+    # 目前是默认状态 (Cosmo 主题自带的字体)
+    
+    # ========================================
