@@ -354,7 +354,8 @@
       const lMag = Math.hypot(lPerp, lParallel);
       const bodyRate = (I1 - I3) * omega3 / I1;
       const spaceRate = lMag / I1;
-      const L0 = [lPerp, 0, lParallel];
+      const cosTheta = lMag === 0 ? 1 : lParallel / lMag;
+      const sinTheta = lMag === 0 ? 0 : lPerp / lMag;
 
       if (state.frame === "body") {
         const phase = bodyRate * time;
@@ -376,9 +377,13 @@
       }
 
       const phase = spaceRate * time;
-      const Lspace = L0;
-      const e3 = rotateAround([0, 0, 1], Lspace, phase);
-      const omegaSpace = scale(sub(Lspace, scale(e3, (I3 - I1) * omega3)), 1 / I1);
+      const Lspace = [0, 0, lMag];
+      const e3 = [
+        sinTheta * Math.cos(phase),
+        sinTheta * Math.sin(phase),
+        cosTheta
+      ];
+      const omegaSpace = add([0, 0, spaceRate], scale(e3, bodyRate));
       const spin = omega3 * time * 2.0;
       const spun = spinBasis(unit(e3), spin);
       return {
