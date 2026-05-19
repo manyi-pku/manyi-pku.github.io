@@ -486,14 +486,15 @@
       }
     }
 
-    function drawCone(axis, through, fill, edge, length, label) {
+    function drawCone(axis, through, fill, edge, displayLengthAlongOmega, label) {
       let axisUnit = unit(axis);
       const throughUnit = unit(through);
       if (dot(axisUnit, throughUnit) < 0) axisUnit = scale(axisUnit, -1);
       const b = basisFromAxis(axisUnit);
       const cosAngle = Math.max(0.06, Math.min(0.985, dot(axisUnit, throughUnit)));
-      const radius = Math.min(1.35, length * Math.sqrt(1 - cosAngle * cosAngle) / cosAngle);
-      const center = scale(axisUnit, length);
+      const axisLength = displayLengthAlongOmega * cosAngle;
+      const radius = displayLengthAlongOmega * Math.sqrt(1 - cosAngle * cosAngle);
+      const center = scale(axisUnit, axisLength);
       const pts = [];
       const segments = 64;
       for (let i = 0; i <= segments; i++) {
@@ -529,11 +530,11 @@
         line([0, 0, 0], pt, edge, 1.5);
       }
 
-      const contact = scale(throughUnit, length / cosAngle);
+      const contact = scale(throughUnit, displayLengthAlongOmega);
       line([0, 0, 0], contact, edge, 3.2);
-      line([0, 0, 0], scale(axisUnit, length + 0.18), edge, 1.8, [5, 5]);
+      line([0, 0, 0], scale(axisUnit, axisLength + 0.18), edge, 1.8, [5, 5]);
       if (label && controls.vectorLabels.checked) {
-        const p = project(scale(axisUnit, length + 0.34));
+        const p = project(scale(axisUnit, axisLength + 0.34));
         ctx.fillStyle = edge;
         ctx.font = "600 13px system-ui, sans-serif";
         ctx.fillText(label, p.x + 8, p.y + 4);
@@ -633,8 +634,12 @@
       drawBody(m);
 
       if (controls.cones.checked) {
-        drawCone(m.bodyConeAxis, m.omega, colors.coneA, colors.coneAEdge, 1.02, "body cone");
-        drawCone(m.spaceConeAxis, m.omega, colors.coneB, colors.coneBEdge, 1.18, "space cone");
+        // This is only the finite drawing cutoff along the shared omega generator.
+        // The cone angles themselves come from angle(axis, omega).
+        const displayLengthAlongOmega = 1.58;
+        drawCone(m.bodyConeAxis, m.omega, colors.coneA, colors.coneAEdge, displayLengthAlongOmega, "body cone");
+        drawCone(m.spaceConeAxis, m.omega, colors.coneB, colors.coneBEdge, displayLengthAlongOmega, "space cone");
+        line([0, 0, 0], scale(unit(m.omega), displayLengthAlongOmega), "rgba(199, 153, 44, 0.95)", 4.6);
       }
 
       if (state.frame === "space") {
