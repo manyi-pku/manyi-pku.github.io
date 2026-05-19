@@ -287,8 +287,8 @@
       h: 0.8,
       R: 0.35,
       u: 0.75,
-      yaw: -0.35,
-      pitch: 0.62,
+      yaw: -0.28,
+      pitch: 0.54,
       dragging: false,
       lastX: 0,
       lastY: 0
@@ -424,7 +424,7 @@
     function project(v) {
       const rect = canvas.getBoundingClientRect();
       const c = camera(v);
-      const zoom = Math.min(rect.width, rect.height) * 0.32;
+      const zoom = Math.min(rect.width, rect.height) * 0.27;
       const depth = 5.2;
       const f = depth / (depth - c[2]);
       return {
@@ -569,8 +569,8 @@
           polygons.push({
             vertices,
             depth: vertices.reduce((sum, v) => sum + project(v).z, 0) / vertices.length,
-            fill: `rgba(${Math.round(245 * light)}, ${Math.round(206 * light)}, ${Math.round(91 * light)}, 0.92)`,
-            stroke: "rgba(120, 90, 28, 0.18)",
+            fill: `rgba(${Math.round(245 * light)}, ${Math.round(206 * light)}, ${Math.round(91 * light)}, 0.74)`,
+            stroke: "rgba(120, 90, 28, 0.22)",
             width: 0.45
           });
         }
@@ -624,15 +624,17 @@
       ctx.clearRect(0, 0, rect.width, rect.height);
       const m = model();
 
-      if (controls.cones.checked) {
-        drawCone(m.bodyConeAxis, m.omega, colors.coneA, colors.coneAEdge, 1.02, "body cone");
-        drawCone(m.spaceConeAxis, m.omega, colors.coneB, colors.coneBEdge, 1.18, "space cone");
-      }
-
       if (controls.axisLabels.checked) {
         line([-2, 0, 0], [2, 0, 0], "rgba(80,88,84,0.16)", 1);
         line([0, -2, 0], [0, 2, 0], "rgba(80,88,84,0.16)", 1);
         line([0, 0, -2], [0, 0, 2], "rgba(80,88,84,0.16)", 1);
+      }
+
+      drawBody(m);
+
+      if (controls.cones.checked) {
+        drawCone(m.bodyConeAxis, m.omega, colors.coneA, colors.coneAEdge, 1.02, "body cone");
+        drawCone(m.spaceConeAxis, m.omega, colors.coneB, colors.coneBEdge, 1.18, "space cone");
       }
 
       if (state.frame === "space") {
@@ -642,7 +644,6 @@
       }
       drawTrail(v => v.omega, "rgba(199, 153, 44, 0.62)");
 
-      drawBody(m);
       if (controls.axisLabels.checked) {
         arrow(m.x, "rgba(217, 74, 61, 0.35)", "x", { width: 1.7, dot: 4, length: 1.45 });
         arrow(m.y, "rgba(63, 155, 98, 0.35)", "y", { width: 1.7, dot: 4, length: 1.45 });
@@ -685,7 +686,7 @@
       syncControls();
     });
     controls.reset.addEventListener("click", () => {
-      Object.assign(state, { t: 0, yaw: -0.35, pitch: 0.62 });
+      Object.assign(state, { t: 0, yaw: -0.28, pitch: 0.54 });
       syncControls();
     });
     controls.spaceBtn.addEventListener("click", () => {
