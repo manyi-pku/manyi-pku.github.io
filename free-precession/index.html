@@ -345,22 +345,22 @@
     }
 
     function model(time = state.t) {
-      const I1 = 1 + 0.25 * (state.h / state.R) ** 2;
-      const I3 = 2;
+      const J1 = 1 + 0.25 * (state.h / state.R) ** 2;
+      const J3 = 2;
       const omega0 = Math.sin(state.u);
       const omega3 = Math.cos(state.u);
-      const lPerp = I1 * omega0;
-      const lParallel = I3 * omega3;
-      const lMag = Math.hypot(lPerp, lParallel);
-      const bodyRate = (I1 - I3) * omega3 / I1;
-      const spaceRate = lMag / I1;
-      const cosTheta = lMag === 0 ? 1 : lParallel / lMag;
-      const sinTheta = lMag === 0 ? 0 : lPerp / lMag;
+      const Gperp = J1 * omega0;
+      const Gparallel = J3 * omega3;
+      const G = Math.hypot(Gperp, Gparallel);
+      const Omega = (J1 - J3) * omega3 / J1;
+      const phiDot = G / J1;
+      const cosTheta = G === 0 ? 1 : Gparallel / G;
+      const sinTheta = G === 0 ? 0 : Gperp / G;
 
       if (state.frame === "body") {
-        const phase = bodyRate * time;
+        const phase = Omega * time;
         const omegaBody = [omega0 * Math.cos(phase), -omega0 * Math.sin(phase), omega3];
-        const Lbody = [lPerp * Math.cos(phase), -lPerp * Math.sin(phase), lParallel];
+        const Lbody = [Gperp * Math.cos(phase), -Gperp * Math.sin(phase), Gparallel];
         return {
           x: [1, 0, 0],
           y: [0, 1, 0],
@@ -370,21 +370,22 @@
           e3: [0, 0, 1],
           omega: omegaBody,
           L: Lbody,
-          coneSpan: 9 / Math.max(0.18, Math.abs(bodyRate)),
+          coneSpan: 9 / Math.max(0.18, Math.abs(Omega)),
           bodyConeAxis: [0, 0, 1],
           spaceConeAxis: Lbody
         };
       }
 
-      const phase = spaceRate * time;
-      const Lspace = [0, 0, lMag];
+      const phase = phiDot * time;
+      const Lspace = [0, 0, G];
       const e3 = [
         sinTheta * Math.cos(phase),
         sinTheta * Math.sin(phase),
         cosTheta
       ];
-      const omegaSpace = add([0, 0, spaceRate], scale(e3, bodyRate));
-      const spin = omega3 * time * 2.0;
+      // Analytic space-frame solution: omega = phiDot k + Omega e3.
+      const omegaSpace = add([0, 0, phiDot], scale(e3, Omega));
+      const spin = Omega * time;
       const spun = spinBasis(unit(e3), spin);
       return {
         x: [1, 0, 0],
@@ -395,7 +396,7 @@
         e3,
         omega: omegaSpace,
         L: Lspace,
-        coneSpan: 9 / Math.max(0.18, Math.abs(spaceRate)),
+        coneSpan: 9 / Math.max(0.18, Math.abs(phiDot)),
         bodyConeAxis: e3,
         spaceConeAxis: Lspace
       };
