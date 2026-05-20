@@ -490,8 +490,11 @@
       let axisUnit = unit(axis);
       const throughUnit = unit(through);
       if (dot(axisUnit, throughUnit) < 0) axisUnit = scale(axisUnit, -1);
-      const b = basisFromAxis(axisUnit);
-      const cosAngle = Math.max(0.06, Math.min(0.985, dot(axisUnit, throughUnit)));
+      const cosAngle = Math.max(0, Math.min(1, dot(axisUnit, throughUnit)));
+      const radial = sub(throughUnit, scale(axisUnit, cosAngle));
+      const b = norm(radial) < 1e-6
+        ? basisFromAxis(axisUnit)
+        : { x: unit(radial), y: cross(axisUnit, unit(radial)), z: axisUnit };
       const axisLength = displayLengthAlongOmega * cosAngle;
       const radius = displayLengthAlongOmega * Math.sqrt(1 - cosAngle * cosAngle);
       const center = scale(axisUnit, axisLength);
@@ -639,7 +642,13 @@
         const displayLengthAlongOmega = 1.58;
         drawCone(m.bodyConeAxis, m.omega, colors.coneA, colors.coneAEdge, displayLengthAlongOmega, "body cone");
         drawCone(m.spaceConeAxis, m.omega, colors.coneB, colors.coneBEdge, displayLengthAlongOmega, "space cone");
-        line([0, 0, 0], scale(unit(m.omega), displayLengthAlongOmega), "rgba(199, 153, 44, 0.95)", 4.6);
+        const contactPoint = scale(unit(m.omega), displayLengthAlongOmega);
+        line([0, 0, 0], contactPoint, "rgba(199, 153, 44, 0.95)", 4.8);
+        const cp = project(contactPoint);
+        ctx.fillStyle = "rgba(199, 153, 44, 0.95)";
+        ctx.beginPath();
+        ctx.arc(cp.x, cp.y, 5.5, 0, Math.PI * 2);
+        ctx.fill();
       }
 
       if (state.frame === "space") {
