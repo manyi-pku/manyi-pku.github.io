@@ -304,7 +304,9 @@ const ui = {
     j2: document.querySelector("#j2Value"),
     j3: document.querySelector("#j3Value"),
     je: document.querySelector("#jeValue"),
-    omega: document.querySelector("#omegaValue")
+    omega: document.querySelector("#omegaValue"),
+    ratio: document.querySelector("#ratioValue"),
+    relation: document.querySelector("#relationValue")
   }
 };
 
@@ -535,7 +537,13 @@ function rebuildEllipsoids(constants) {
   const J3 = constants.J[2];
   const energyAxes = [Math.sqrt(1 / J1), Math.sqrt(1 / J2), Math.sqrt(1 / J3)];
   const momentumAxes = [Math.sqrt(constants.Je) / J1, Math.sqrt(constants.Je) / J2, Math.sqrt(constants.Je) / J3];
-  const scale = 1.85 / Math.max.apply(null, energyAxes.concat(momentumAxes));
+
+  // Use a scale that is independent of the current initial direction n.
+  // Otherwise choosing n=e1 and n=e3 rescales the whole scene differently,
+  // making the J3 case look artificially smaller even though Je is larger.
+  const maxJe = Math.max(J1, J2, J3);
+  const maxMomentumAxes = [Math.sqrt(maxJe) / J1, Math.sqrt(maxJe) / J2, Math.sqrt(maxJe) / J3];
+  const scale = 1.85 / Math.max.apply(null, energyAxes.concat(maxMomentumAxes));
 
   energyMesh = makeEllipsoidMesh(energyAxes, scale, colors.orange, 0.67);
   momentumMesh = makeEllipsoidMesh(momentumAxes, scale, colors.blue, 0.5);
@@ -808,6 +816,14 @@ function updateReadout() {
   ui.outputs.j3.textContent = c.J[2].toFixed(3);
   ui.outputs.je.textContent = c.Je.toFixed(3);
   ui.outputs.omega.textContent = "(" + state.omega.x.toFixed(2) + ", " + state.omega.y.toFixed(2) + ", " + state.omega.z.toFixed(2) + ")";
+  const ratios = c.J.map(function (Ji) { return Math.sqrt(c.Je / Ji); });
+  if (ui.outputs.ratio) ui.outputs.ratio.textContent = "(" + ratios.map(function (r) { return r.toFixed(3); }).join(", ") + ")";
+  if (ui.outputs.relation) {
+    const tol = 2e-3;
+    const allLe = ratios.every(function (r) { return r <= 1 + tol; });
+    const allGe = ratios.every(function (r) { return r >= 1 - tol; });
+    ui.outputs.relation.textContent = allLe ? "Binet 在 Poinsot 内/相切" : (allGe ? "Binet 在 Poinsot 外/相切" : "两者相交");
+  }
 }
 
 function resizeView(view) {
@@ -908,14 +924,30 @@ function startCanvasFallback() {
     arrow(ctxL, cx, cy, cx + base * 1.35, cy + base * 0.78, "#30964d");
     arrow(ctxL, cx, cy, cx - base * 1.22, cy + base * 0.72, "#9f2f2c");
     arrow(ctxL, cx, cy, cx, cy - base * 1.55, "#0e2f92");
+
+    // Fallback 2D view: draw the exact e1-e3 cross-section of the two ellipsoids.
+    // Poinsot:  omega1^2/(1/J1) + omega3^2/(1/J3) = 1
+    // Binet:    omega1^2/(Je/J1^2) + omega3^2/(Je/J3^2) = 1
     const eRx = base * Math.sqrt(1 / c.J[0]), eRy = base * Math.sqrt(1 / c.J[2]);
     const mRx = base * Math.sqrt(c.Je) / c.J[0], mRy = base * Math.sqrt(c.Je) / c.J[2];
     const norm = Math.max(eRx, eRy, mRx, mRy) / (base * 1.35);
+    const shapes = [
+      { rx: eRx / norm, ry: eRy / norm, fill: "rgba(239,141,36,.62)", stroke: "rgba(239,141,36,.95)", area: eRx * eRy },
+      { rx: mRx / norm, ry: mRy / norm, fill: "rgba(14,38,216,.42)", stroke: "rgba(14,38,216,.95)", area: mRx * mRy }
+    ].sort((u, v) => v.area - u.area); // draw the larger one first, so the inner one remains visible
+
     ctxL.save(); ctxL.translate(cx, cy); ctxL.rotate(-0.25);
-    ctxL.fillStyle = "rgba(239,141,36,.72)"; ctxL.beginPath(); ctxL.ellipse(0, 0, eRx / norm, eRy / norm, 0, 0, Math.PI * 2); ctxL.fill();
-    ctxL.fillStyle = "rgba(14,38,216,.55)"; ctxL.beginPath(); ctxL.ellipse(0, -base * 0.18, mRx / norm * 0.78, mRy / norm * 0.58, 0, 0, Math.PI * 2); ctxL.fill();
-    ctxL.strokeStyle = "white"; ctxL.lineWidth = 4; ctxL.beginPath(); ctxL.ellipse(0, -base * 0.04, base * 0.92, base * 0.34, 0.04, 0, Math.PI * 2); ctxL.stroke();
-    const px = Math.cos(t * 0.9) * base * 0.88, py = Math.sin(t * 0.9) * base * 0.33 - base * 0.04;
+    shapes.forEach((shape) => {
+      ctxL.fillStyle = shape.fill;
+      ctxL.strokeStyle = shape.stroke;
+      ctxL.lineWidth = 3;
+      ctxL.beginPath();
+      ctxL.ellipse(0, 0, shape.rx, shape.ry, 0, 0, Math.PI * 2);
+      ctxL.fill();
+      ctxL.stroke();
+    });
+
+    const px = Math.cos(t * 0.9) * base * 0.88, py = Math.sin(t * 0.9) * base * 0.33;
     ctxL.fillStyle = "#111827"; ctxL.beginPath(); ctxL.arc(px, py, 7 * r.dpr, 0, Math.PI * 2); ctxL.fill();
     ctxL.restore();
   }
@@ -945,6 +977,9 @@ function startCanvasFallback() {
     out.time.textContent = t.toFixed(2);
     out.j1.textContent = c.J[0].toFixed(3); out.j2.textContent = c.J[1].toFixed(3); out.j3.textContent = c.J[2].toFixed(3); out.je.textContent = c.Je.toFixed(3);
     out.omega.textContent = "(" + c.omega.map((v) => v.toFixed(2)).join(", ") + ")";
+    const ratios = c.J.map((Ji) => Math.sqrt(c.Je / Ji));
+    if (out.ratio) out.ratio.textContent = "(" + ratios.map((r) => r.toFixed(3)).join(", ") + ")";
+    if (out.relation) { const tol = 2e-3; const allLe = ratios.every((r) => r <= 1 + tol); const allGe = ratios.every((r) => r >= 1 - tol); out.relation.textContent = allLe ? "Binet 在 Poinsot 内/相切" : (allGe ? "Binet 在 Poinsot 外/相切" : "两者相交"); }
     drawEllipses(c); drawBody(c);
     requestAnimationFrame(tick);
   }
@@ -1004,12 +1039,12 @@ function startCanvasFallback() {
           </div>
           <div class="control-row">
             <label for="theta">\(\theta_n\)</label>
-            <input id="theta" type="range" min="4" max="176" step="1" value="28" />
+            <input id="theta" type="range" min="0" max="180" step="1" value="90" />
             <output id="thetaValue"></output>
           </div>
           <div class="control-row">
             <label for="phi">\(\phi_n\)</label>
-            <input id="phi" type="range" min="0" max="360" step="1" value="42" />
+            <input id="phi" type="range" min="0" max="360" step="1" value="0" />
             <output id="phiValue"></output>
           </div>
           <div class="control-row">
@@ -1051,6 +1086,8 @@ function startCanvasFallback() {
             <span>\(J_3\)=<b id="j3Value"></b></span>
             <span>\(J_e\)=<b id="jeValue"></b></span>
             <span>\(\boldsymbol{\omega}\)=<b id="omegaValue"></b></span>
+            <span>Binet/Poinsot 半轴比=<b id="ratioValue"></b></span>
+            <span>关系=<b id="relationValue"></b></span>
           </div>
         </section>
       </section>
