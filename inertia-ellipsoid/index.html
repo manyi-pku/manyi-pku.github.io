@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>惯量椭球与角动量椭球</title>
+    <style>
+:root {
+  color-scheme: light;
+  --ink: #1f2933;
+  --muted: #657386;
+  --line: #d7dde6;
+  --panel: #ffffff;
+  --wash: #f5f7fb;
+  --orange: #ef8d24;
+  --blue: #113fc9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+}
+
+.load-error {
+  margin: 12px auto 0;
+  width: min(1600px, calc(100vw - 32px));
+  border: 1px solid #f1b6a7;
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #7f1d1d;
+  background: #fff1ed;
+  font-size: 14px;
+}
+
+button, input { font: inherit; }
+
+button {
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0 13px;
+  color: var(--ink);
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
+}
+
+button:hover {
+  border-color: #a8b3c4;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+button:active { transform: translateY(1px); }
+
+button.primary {
+  border-color: #243b75;
+  color: #fff;
+  background: #243b75;
+}
+
+.app {
+  width: min(1600px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 22px 0 28px;
+}
+
+.topbar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: #8d3b1f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.04;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.top-actions, .preset-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  min-height: 520px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.viewport-wrap {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.viewport-wrap + .viewport-wrap { border-left: 1px solid var(--line); }
+
+.viewport-title {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.viewport-title span { font-weight: 760; }
+
+.viewport-title small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.workbench {
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.controls, .formula-panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.controls {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  align-content: start;
+}
+
+.control-row {
+  display: grid;
+  grid-template-columns: 82px 1fr 48px;
+  gap: 10px;
+  align-items: center;
+}
+
+.control-row label {
+  color: #344154;
+  font-size: 14px;
+  font-weight: 640;
+}
+
+.control-row output {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #244a9f;
+}
+
+.preset-row { margin-top: 2px; }
+
+.control-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.formula-panel { padding: 16px 18px; }
+
+.formula-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 12px 26px;
+}
+
+.formula-panel p {
+  margin: 0 0 8px;
+  color: #2b3442;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.readout span {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  border: 1px solid #e2e7ef;
+  border-radius: 6px;
+  padding: 4px 9px;
+  background: var(--wash);
+  font-size: 14px;
+}
+
+.readout b {
+  font-variant-numeric: tabular-nums;
+  font-weight: 720;
+}
+
+@media (max-width: 1020px) {
+  .stage, .workbench, .formula-grid { grid-template-columns: 1fr; }
+  .viewport-wrap + .viewport-wrap {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    width: min(100vw - 18px, 1600px);
+    padding-top: 12px;
+  }
+  .topbar {
+    align-items: start;
+    flex-direction: column;
+  }
+  .stage, .viewport-wrap { min-height: 420px; }
+  .control-row { grid-template-columns: 76px 1fr 44px; }
+  .viewport-title {
+    align-items: start;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+    </style>
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [["\\(", "\\)"], ["$", "$"]] },
+        svg: { fontCache: "global" }
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script>
+window.addEventListener("DOMContentLoaded", () => {
+if (typeof THREE === "undefined" || !THREE.OrbitControls) {
+  document.body.insertAdjacentHTML(
+    "afterbegin",
+    '<div class="load-error">Three.js 没有加载成功，已自动切换到 Canvas 简化预览。部署到 GitHub Pages 或浏览器可访问 CDN 时会显示完整 3D 版。</div>'
+  );
+  startCanvasFallback();
+} else {
+const clock = new THREE.Clock();
+
+const ui = {
+  dimX: document.querySelector("#dimX"),
+  dimY: document.querySelector("#dimY"),
+  dimZ: document.querySelector("#dimZ"),
+  theta: document.querySelector("#theta"),
+  phi: document.querySelector("#phi"),
+  speed: document.querySelector("#speed"),
+  time: document.querySelector("#time"),
+  playPause: document.querySelector("#playPause"),
+  resetMotion: document.querySelector("#resetMotion"),
+  resetCamera: document.querySelector("#resetCamera"),
+  outputs: {
+    dimX: document.querySelector("#dimXValue"),
+    dimY: document.querySelector("#dimYValue"),
+    dimZ: document.querySelector("#dimZValue"),
+    theta: document.querySelector("#thetaValue"),
+    phi: document.querySelector("#phiValue"),
+    speed: document.querySelector("#speedValue"),
+    time: document.querySelector("#timeValue"),
+    j1: document.querySelector("#j1Value"),
+    j2: document.querySelector("#j2Value"),
+    j3: document.querySelector("#j3Value"),
+    je: document.querySelector("#jeValue"),
+    omega: document.querySelector("#omegaValue")
+  }
+};
+
+const params = {
+  dimX: Number(ui.dimX.value),
+  dimY: Number(ui.dimY.value),
+  dimZ: Number(ui.dimZ.value),
+  theta: Number(ui.theta.value),
+  phi: Number(ui.phi.value),
+  speed: Number(ui.speed.value),
+  timeMax: 35
+};
+
+const state = {
+  playing: false,
+  time: 0,
+  omega: new THREE.Vector3(),
+  q: new THREE.Quaternion(),
+  trail: [],
+  constants: null
+};
+
+const colors = {
+  x: 0x9f2f2c,
+  y: 0x30964d,
+  z: 0x0e2f92,
+  orange: 0xef8d24,
+  blue: 0x0e26d8,
+  white: 0xffffff,
+  ink: 0x1f2933
+};
+
+const ellipsoid = makeViewport(document.querySelector("#ellipsoidView"), [5.3, 4.2, 4.8], [0, 0, 0]);
+const body = makeViewport(document.querySelector("#bodyView"), [4.8, 3.2, 6.0], [0, 0, 0]);
+
+const ellipsoidGroup = new THREE.Group();
+const bodyGroup = new THREE.Group();
+ellipsoid.scene.add(ellipsoidGroup);
+body.scene.add(bodyGroup);
+
+let energyMesh;
+let momentumMesh;
+let omegaPoint;
+let omegaArrowLeft;
+let curveLine;
+let trailLineLeft;
+let cuboid;
+let edges;
+let bodyOmegaArrow;
+let bodyGArrow;
+let bodyTrailLine;
+
+initLighting(ellipsoid.scene);
+initLighting(body.scene);
+addAxes(ellipsoid.scene, 2.65, true);
+addAxes(body.scene, 2.3, false);
+bindUI();
+resetMotion();
+animate();
+
+function makeViewport(canvas, cameraPosition, target) {
+  const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0xffffff, 1);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(38, 1, 0.01, 100);
+  camera.position.set(cameraPosition[0], cameraPosition[1], cameraPosition[2]);
+
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
+  controls.target.set(target[0], target[1], target[2]);
+  controls.update();
+
+  return { renderer: renderer, scene: scene, camera: camera, controls: controls, canvas: canvas, defaultPosition: cameraPosition, defaultTarget: target };
+}
+
+function initLighting(scene) {
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xd6dde8, 2.25));
+  const key = new THREE.DirectionalLight(0xffffff, 2.4);
+  key.position.set(3.8, 4.2, 5.6);
+  scene.add(key);
+  const rim = new THREE.DirectionalLight(0x90a8ff, 1.3);
+  rim.position.set(-4, 1.5, -3);
+  scene.add(rim);
+}
+
+function bindUI() {
+  ["dimX", "dimY", "dimZ", "theta", "phi", "speed"].forEach(function (key) {
+    ui[key].addEventListener("input", function () {
+      params[key] = Number(ui[key].value);
+      if (key === "dimX" || key === "dimY" || key === "dimZ") enforceDimensionOrder(key);
+      resetMotion();
+    });
+  });
+
+  ui.time.addEventListener("input", function () {
+    seekTime(Number(ui.time.value));
+  });
+
+  ui.playPause.addEventListener("click", function () {
+    state.playing = !state.playing;
+    ui.playPause.textContent = state.playing ? "暂停" : "播放";
+  });
+
+  ui.resetMotion.addEventListener("click", resetMotion);
+  ui.resetCamera.addEventListener("click", resetCameras);
+
+  document.querySelectorAll("[data-preset]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const preset = button.dataset.preset;
+      if (preset === "e1") setAngles(90, 0);
+      if (preset === "e2") setAngles(90, 90);
+      if (preset === "e3") setAngles(0, 0);
+      resetMotion();
+    });
+  });
+}
+
+function enforceDimensionOrder(changed) {
+  let a = Number(ui.dimX.value);
+  let b = Number(ui.dimY.value);
+  let c = Number(ui.dimZ.value);
+  const gap = 0.08;
+
+  if (changed === "dimX") {
+    b = Math.min(b, a - gap);
+    c = Math.min(c, b - gap);
+  } else if (changed === "dimY") {
+    b = Math.min(b, a - gap);
+    c = Math.min(c, b - gap);
+  } else {
+    c = Math.min(c, b - gap);
+  }
+
+  a = Math.max(a, b + gap);
+  b = Math.max(b, c + gap);
+  ui.dimX.value = a.toFixed(2);
+  ui.dimY.value = b.toFixed(2);
+  ui.dimZ.value = c.toFixed(2);
+  params.dimX = a;
+  params.dimY = b;
+  params.dimZ = c;
+}
+
+function setAngles(theta, phi) {
+  params.theta = theta;
+  params.phi = phi;
+  ui.theta.value = theta;
+  ui.phi.value = phi;
+}
+
+function resetCameras() {
+  [ellipsoid, body].forEach(function (view) {
+    view.camera.position.set(view.defaultPosition[0], view.defaultPosition[1], view.defaultPosition[2]);
+    view.controls.target.set(view.defaultTarget[0], view.defaultTarget[1], view.defaultTarget[2]);
+    view.controls.update();
+  });
+}
+
+function resetMotion() {
+  params.speed = Number(ui.speed.value);
+  const constants = computeConstants();
+  state.constants = constants;
+  state.time = 0;
+  ui.time.value = "0";
+  state.q.identity();
+  state.omega.copy(constants.omega0);
+  state.trail = [state.omega.clone()];
+  rebuildEllipsoids(constants);
+  buildBody();
+  updateReadout();
+  updateVisuals();
+}
+
+function seekTime(targetTime) {
+  const constants = computeConstants();
+  state.constants = constants;
+  state.time = 0;
+  state.q.identity();
+  state.omega.copy(constants.omega0);
+  state.trail = [state.omega.clone()];
+  const target = Math.max(0, Math.min(params.timeMax, targetTime));
+  const chunk = 0.01;
+  while (state.time + 1e-9 < target) {
+    stepMotion(Math.min(chunk, target - state.time), false);
+  }
+  ui.time.value = target.toFixed(2);
+  updateReadout();
+  updateVisuals();
+}
+
+function computeConstants() {
+  const a = params.dimX;
+  const b = params.dimY;
+  const c = params.dimZ;
+  const J1 = (b * b + c * c) / 12;
+  const J2 = (a * a + c * c) / 12;
+  const J3 = (a * a + b * b) / 12;
+  const theta = THREE.MathUtils.degToRad(params.theta);
+  const phi = THREE.MathUtils.degToRad(params.phi);
+  const n = new THREE.Vector3(
+    Math.sin(theta) * Math.cos(phi),
+    Math.sin(theta) * Math.sin(phi),
+    Math.cos(theta)
+  ).normalize();
+  const Jn = J1 * n.x * n.x + J2 * n.y * n.y + J3 * n.z * n.z;
+  const Kn = J1 * J1 * n.x * n.x + J2 * J2 * n.y * n.y + J3 * J3 * n.z * n.z;
+  const Je = Kn / Jn;
+  const omegaScale = 1 / Math.sqrt(Jn);
+  const omega0 = n.clone().multiplyScalar(omegaScale);
+  const G0 = new THREE.Vector3(J1 * omega0.x, J2 * omega0.y, J3 * omega0.z);
+  return { a: a, b: b, c: c, J: [J1, J2, J3], n: n, Jn: Jn, Kn: Kn, Je: Je, omega0: omega0, G0: G0 };
+}
+
+function rebuildEllipsoids(constants) {
+  disposeObject(energyMesh);
+  disposeObject(momentumMesh);
+  disposeObject(omegaPoint);
+  disposeObject(omegaArrowLeft);
+  disposeObject(curveLine);
+  disposeObject(trailLineLeft);
+  ellipsoidGroup.clear();
+
+  const J1 = constants.J[0];
+  const J2 = constants.J[1];
+  const J3 = constants.J[2];
+  const energyAxes = [Math.sqrt(1 / J1), Math.sqrt(1 / J2), Math.sqrt(1 / J3)];
+  const momentumAxes = [Math.sqrt(constants.Je) / J1, Math.sqrt(constants.Je) / J2, Math.sqrt(constants.Je) / J3];
+  const scale = 1.85 / Math.max.apply(null, energyAxes.concat(momentumAxes));
+
+  energyMesh = makeEllipsoidMesh(energyAxes, scale, colors.orange, 0.67);
+  momentumMesh = makeEllipsoidMesh(momentumAxes, scale, colors.blue, 0.5);
+  ellipsoidGroup.add(energyMesh, momentumMesh);
+
+  const curve = makePolhodeCurve(constants, scale);
+  curveLine = new THREE.Line(
+    new THREE.BufferGeometry().setFromPoints(curve),
+    new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 })
+  );
+  ellipsoidGroup.add(curveLine);
+
+  omegaPoint = new THREE.Mesh(
+    new THREE.SphereGeometry(0.055, 24, 16),
+    new THREE.MeshStandardMaterial({ color: 0x141414, roughness: 0.45 })
+  );
+  ellipsoidGroup.add(omegaPoint);
+
+  omegaArrowLeft = makeArrow(0x161616, 0.32, 0.085);
+  ellipsoidGroup.add(omegaArrowLeft);
+
+  trailLineLeft = new THREE.Line(
+    new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]),
+    new THREE.LineBasicMaterial({ color: 0x172554, transparent: true, opacity: 0.72 })
+  );
+  ellipsoidGroup.add(trailLineLeft);
+
+  ellipsoidGroup.userData.scale = scale;
+}
+
+function makeEllipsoidMesh(axes, scale, color, opacity) {
+  const geometry = new THREE.SphereGeometry(1, 96, 48);
+  geometry.scale(axes[0] * scale, axes[1] * scale, axes[2] * scale);
+  const material = new THREE.MeshPhysicalMaterial({
+    color: color,
+    transparent: true,
+    opacity: opacity,
+    roughness: 0.42,
+    metalness: 0.02,
+    side: THREE.DoubleSide,
+    depthWrite: false
+  });
+  const mesh = new THREE.Mesh(geometry, material);
+  const wire = new THREE.LineSegments(
+    new THREE.WireframeGeometry(geometry),
+    new THREE.LineBasicMaterial({ color: color, transparent: true, opacity: 0.16 })
+  );
+  mesh.add(wire);
+  return mesh;
+}
+
+function makePolhodeCurve(constants, scale) {
+  const omega = constants.omega0.clone();
+  const points = [];
+  const h = 0.018;
+  for (let i = 0; i < 2200; i += 1) {
+    omega.copy(rk4Omega(omega, h, constants.J));
+    if (i % 2 === 0) points.push(omega.clone().multiplyScalar(scale));
+  }
+  if (points.length < 2) points.push(constants.omega0.clone().multiplyScalar(scale));
+  return points;
+}
+
+function buildBody() {
+  disposeObject(cuboid);
+  disposeObject(bodyOmegaArrow);
+  disposeObject(bodyGArrow);
+  disposeObject(bodyTrailLine);
+  bodyGroup.clear();
+
+  const constants = state.constants || computeConstants();
+  const maxDim = Math.max(constants.a, constants.b, constants.c);
+  const sx = Math.max((constants.a / maxDim) * 2.55, 1.05);
+  const sy = Math.max((constants.b / maxDim) * 2.55, 0.88);
+  const sz = Math.max((constants.c / maxDim) * 2.55, 0.72);
+  const geometry = new THREE.BoxGeometry(sx, sy, sz);
+  const materials = [
+    faceMaterial(0xd4877e),
+    faceMaterial(0x8f2e38),
+    faceMaterial(0x88b97c),
+    faceMaterial(0x2a7845),
+    faceMaterial(0xa9c9ee),
+    faceMaterial(0x2457b4)
+  ];
+  cuboid = new THREE.Mesh(geometry, materials);
+  edges = new THREE.LineSegments(
+    new THREE.EdgesGeometry(geometry),
+    new THREE.LineBasicMaterial({ color: 0x273142, linewidth: 2 })
+  );
+  cuboid.add(edges);
+  cuboid.add(makeChildArrow(new THREE.Vector3(1, 0, 0), colors.x));
+  cuboid.add(makeChildArrow(new THREE.Vector3(0, 1, 0), colors.y));
+  cuboid.add(makeChildArrow(new THREE.Vector3(0, 0, 1), colors.z));
+  bodyGroup.add(cuboid);
+
+  bodyOmegaArrow = makeArrow(0x111827, 0.38, 0.1);
+  bodyGArrow = makeArrow(0x7c2d12, 0.36, 0.1);
+  bodyTrailLine = new THREE.Line(
+    new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]),
+    new THREE.LineBasicMaterial({ color: 0x243b75, transparent: true, opacity: 0.45 })
+  );
+  body.scene.add(bodyOmegaArrow, bodyGArrow, bodyTrailLine);
+}
+
+function faceMaterial(color) {
+  return new THREE.MeshStandardMaterial({
+    color: color,
+    roughness: 0.48,
+    metalness: 0.02,
+    transparent: true,
+    opacity: 0.96,
+    side: THREE.DoubleSide
+  });
+}
+
+function makeChildArrow(direction, color) {
+  const arrow = new THREE.ArrowHelper(direction, new THREE.Vector3(0, 0, 0), 1.18, color, 0.16, 0.07);
+  arrow.position.copy(direction.clone().multiplyScalar(0.55));
+  return arrow;
+}
+
+function addAxes(scene, length, withLabels) {
+  const origin = new THREE.Vector3();
+  scene.add(new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), origin, length, colors.x, 0.16, 0.07));
+  scene.add(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), origin, length, colors.y, 0.16, 0.07));
+  scene.add(new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), origin, length, colors.z, 0.16, 0.07));
+  if (!withLabels) return;
+  scene.add(makeLabel("e₁", new THREE.Vector3(length + 0.15, 0, 0), colors.x));
+  scene.add(makeLabel("e₂", new THREE.Vector3(0, length + 0.15, 0), colors.y));
+  scene.add(makeLabel("e₃", new THREE.Vector3(0, 0, length + 0.15), colors.z));
+}
+
+function makeLabel(text, position, color) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 128;
+  canvas.height = 64;
+  const ctx = canvas.getContext("2d");
+  ctx.font = "34px Georgia, serif";
+  ctx.fillStyle = "#" + color.toString(16).padStart(6, "0");
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, 64, 32);
+  const texture = new THREE.CanvasTexture(canvas);
+  const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, transparent: true }));
+  sprite.position.copy(position);
+  sprite.scale.set(0.42, 0.21, 1);
+  return sprite;
+}
+
+function makeArrow(color, headLength, headWidth) {
+  return new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), new THREE.Vector3(), 1, color, headLength, headWidth);
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  const dt = Math.min(clock.getDelta(), 0.04);
+  if (state.playing) {
+    stepMotion(dt * params.speed, true);
+    if (state.time >= params.timeMax) {
+      state.playing = false;
+      ui.playPause.textContent = "播放";
+    }
+  }
+  updateVisuals();
+  resizeView(ellipsoid);
+  resizeView(body);
+  ellipsoid.controls.update();
+  body.controls.update();
+  ellipsoid.renderer.render(ellipsoid.scene, ellipsoid.camera);
+  body.renderer.render(body.scene, body.camera);
+}
+
+function stepMotion(dt, syncSlider) {
+  const remaining = params.timeMax - state.time;
+  if (remaining <= 0) return;
+  dt = Math.min(dt, remaining);
+  const substeps = Math.max(1, Math.ceil(dt / 0.006));
+  const h = dt / substeps;
+  for (let i = 0; i < substeps; i += 1) {
+    state.omega.copy(rk4Omega(state.omega, h, state.constants.J));
+    integrateOrientation(h);
+  }
+  state.time += dt;
+  if (syncSlider) ui.time.value = state.time.toFixed(2);
+  state.trail.push(state.omega.clone());
+  if (state.trail.length > 420) state.trail.shift();
+  updateReadout();
+}
+
+function rk4Omega(w, h, J) {
+  const k1 = omegaDerivative(w, J);
+  const k2 = omegaDerivative(w.clone().addScaledVector(k1, h * 0.5), J);
+  const k3 = omegaDerivative(w.clone().addScaledVector(k2, h * 0.5), J);
+  const k4 = omegaDerivative(w.clone().addScaledVector(k3, h), J);
+  return w.clone()
+    .addScaledVector(k1, h / 6)
+    .addScaledVector(k2, h / 3)
+    .addScaledVector(k3, h / 3)
+    .addScaledVector(k4, h / 6);
+}
+
+function omegaDerivative(w, J) {
+  const J1 = J[0];
+  const J2 = J[1];
+  const J3 = J[2];
+  return new THREE.Vector3(
+    ((J2 - J3) / J1) * w.y * w.z,
+    ((J3 - J1) / J2) * w.z * w.x,
+    ((J1 - J2) / J3) * w.x * w.y
+  );
+}
+
+function integrateOrientation(h) {
+  const mag = state.omega.length();
+  if (mag < 1e-8) return;
+  const dq = new THREE.Quaternion().setFromAxisAngle(state.omega.clone().normalize(), mag * h);
+  state.q.multiply(dq).normalize();
+}
+
+function updateVisuals() {
+  const scale = ellipsoidGroup.userData.scale || 1;
+  const leftOmega = state.omega.clone().multiplyScalar(scale);
+  omegaPoint.position.copy(leftOmega);
+  setArrow(omegaArrowLeft, new THREE.Vector3(), leftOmega, 1);
+  if (trailLineLeft) {
+    trailLineLeft.geometry.dispose();
+    trailLineLeft.geometry = new THREE.BufferGeometry().setFromPoints(
+      state.trail.map(function (point) { return point.clone().multiplyScalar(scale); })
+    );
+  }
+
+  cuboid.quaternion.copy(state.q);
+
+  const omegaWorld = state.omega.clone().applyQuaternion(state.q);
+  setArrow(bodyOmegaArrow, new THREE.Vector3(0, 0, 0), omegaWorld, 1.1);
+  setArrow(bodyGArrow, new THREE.Vector3(0, 0, 0), state.constants.G0, 1.25);
+
+  if (bodyTrailLine) {
+    bodyTrailLine.geometry.dispose();
+    bodyTrailLine.geometry = new THREE.BufferGeometry().setFromPoints([
+      state.constants.G0.clone().normalize().multiplyScalar(1.48),
+      state.constants.G0.clone().normalize().multiplyScalar(1.82)
+    ]);
+  }
+}
+
+function setArrow(arrow, origin, direction, lengthScale) {
+  const len = direction.length();
+  if (len < 1e-8) {
+    arrow.visible = false;
+    return;
+  }
+  arrow.visible = true;
+  arrow.position.copy(origin);
+  arrow.setDirection(direction.clone().normalize());
+  arrow.setLength(Math.min(2.2, Math.max(0.45, len * lengthScale)), 0.2, 0.08);
+}
+
+function updateReadout() {
+  const c = state.constants;
+  ui.outputs.dimX.textContent = params.dimX.toFixed(2);
+  ui.outputs.dimY.textContent = params.dimY.toFixed(2);
+  ui.outputs.dimZ.textContent = params.dimZ.toFixed(2);
+  ui.outputs.theta.textContent = params.theta.toFixed(0) + "°";
+  ui.outputs.phi.textContent = params.phi.toFixed(0) + "°";
+  ui.outputs.speed.textContent = params.speed.toFixed(2) + "×";
+  ui.outputs.time.textContent = state.time.toFixed(2);
+  ui.outputs.j1.textContent = c.J[0].toFixed(3);
+  ui.outputs.j2.textContent = c.J[1].toFixed(3);
+  ui.outputs.j3.textContent = c.J[2].toFixed(3);
+  ui.outputs.je.textContent = c.Je.toFixed(3);
+  ui.outputs.omega.textContent = "(" + state.omega.x.toFixed(2) + ", " + state.omega.y.toFixed(2) + ", " + state.omega.z.toFixed(2) + ")";
+}
+
+function resizeView(view) {
+  const rect = view.canvas.getBoundingClientRect();
+  const width = Math.max(1, Math.floor(rect.width));
+  const height = Math.max(1, Math.floor(rect.height));
+  if (view.canvas.width !== width || view.canvas.height !== height) {
+    view.renderer.setSize(width, height, false);
+    view.camera.aspect = width / height;
+    view.camera.updateProjectionMatrix();
+  }
+}
+
+function disposeObject(object) {
+  if (!object) return;
+  if (object.traverse) {
+    object.traverse(function (child) {
+      if (child.geometry) child.geometry.dispose();
+      if (Array.isArray(child.material)) {
+        child.material.forEach(function (material) { if (material.dispose) material.dispose(); });
+      } else if (child.material && child.material.dispose) {
+        child.material.dispose();
+      }
+    });
+  }
+  if (object.parent) object.parent.remove(object);
+}
+
+}
+
+function startCanvasFallback() {
+  const left = document.querySelector("#ellipsoidView");
+  const right = document.querySelector("#bodyView");
+  const ctxL = left.getContext("2d");
+  const ctxR = right.getContext("2d");
+  const get = (id) => document.querySelector(id);
+  const controls = ["dimX", "dimY", "dimZ", "theta", "phi", "speed"].map((id) => get("#" + id));
+  const out = {
+    dimX: get("#dimXValue"), dimY: get("#dimYValue"), dimZ: get("#dimZValue"),
+    theta: get("#thetaValue"), phi: get("#phiValue"), speed: get("#speedValue"), time: get("#timeValue"),
+    j1: get("#j1Value"), j2: get("#j2Value"), j3: get("#j3Value"), je: get("#jeValue"), omega: get("#omegaValue")
+  };
+  let playing = false;
+  let t = 0;
+  get("#playPause").addEventListener("click", () => {
+    playing = !playing;
+    get("#playPause").textContent = playing ? "暂停" : "播放";
+  });
+  get("#resetMotion").addEventListener("click", () => { t = 0; get("#time").value = 0; });
+  get("#resetCamera").addEventListener("click", () => { t = 0; });
+  get("#time").addEventListener("input", () => { t = +get("#time").value; });
+  document.querySelectorAll("[data-preset]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.preset === "e1") { get("#theta").value = 90; get("#phi").value = 0; }
+      if (button.dataset.preset === "e2") { get("#theta").value = 90; get("#phi").value = 90; }
+      if (button.dataset.preset === "e3") { get("#theta").value = 0; get("#phi").value = 0; }
+      t = 0;
+      get("#time").value = 0;
+    });
+  });
+  controls.forEach((input) => input.addEventListener("input", () => { t = 0; }));
+
+  function constants() {
+    const a = +get("#dimX").value, b = +get("#dimY").value, c = +get("#dimZ").value;
+    const J1 = (b * b + c * c) / 12, J2 = (a * a + c * c) / 12, J3 = (a * a + b * b) / 12;
+    const th = +get("#theta").value * Math.PI / 180, ph = +get("#phi").value * Math.PI / 180;
+    const n = [Math.sin(th) * Math.cos(ph), Math.sin(th) * Math.sin(ph), Math.cos(th)];
+    const Jn = J1 * n[0] ** 2 + J2 * n[1] ** 2 + J3 * n[2] ** 2;
+    const Kn = J1 ** 2 * n[0] ** 2 + J2 ** 2 * n[1] ** 2 + J3 ** 2 * n[2] ** 2;
+    return { a, b, c, J: [J1, J2, J3], n, Jn, Je: Kn / Jn, omega: n.map((v) => v / Math.sqrt(Jn)) };
+  }
+
+  function resize(canvas) {
+    const r = canvas.getBoundingClientRect();
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    if (canvas.width !== Math.floor(r.width * dpr) || canvas.height !== Math.floor(r.height * dpr)) {
+      canvas.width = Math.floor(r.width * dpr);
+      canvas.height = Math.floor(r.height * dpr);
+    }
+    return { w: canvas.width, h: canvas.height, dpr };
+  }
+
+  function arrow(ctx, x1, y1, x2, y2, color) {
+    const a = Math.atan2(y2 - y1, x2 - x1);
+    ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - 16 * Math.cos(a - 0.45), y2 - 16 * Math.sin(a - 0.45));
+    ctx.lineTo(x2 - 16 * Math.cos(a + 0.45), y2 - 16 * Math.sin(a + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+
+  function drawEllipses(c) {
+    const r = resize(left);
+    ctxL.clearRect(0, 0, r.w, r.h);
+    const cx = r.w * 0.5, cy = r.h * 0.54, base = Math.min(r.w, r.h) * 0.28;
+    arrow(ctxL, cx, cy, cx + base * 1.35, cy + base * 0.78, "#30964d");
+    arrow(ctxL, cx, cy, cx - base * 1.22, cy + base * 0.72, "#9f2f2c");
+    arrow(ctxL, cx, cy, cx, cy - base * 1.55, "#0e2f92");
+    const eRx = base * Math.sqrt(1 / c.J[0]), eRy = base * Math.sqrt(1 / c.J[2]);
+    const mRx = base * Math.sqrt(c.Je) / c.J[0], mRy = base * Math.sqrt(c.Je) / c.J[2];
+    const norm = Math.max(eRx, eRy, mRx, mRy) / (base * 1.35);
+    ctxL.save(); ctxL.translate(cx, cy); ctxL.rotate(-0.25);
+    ctxL.fillStyle = "rgba(239,141,36,.72)"; ctxL.beginPath(); ctxL.ellipse(0, 0, eRx / norm, eRy / norm, 0, 0, Math.PI * 2); ctxL.fill();
+    ctxL.fillStyle = "rgba(14,38,216,.55)"; ctxL.beginPath(); ctxL.ellipse(0, -base * 0.18, mRx / norm * 0.78, mRy / norm * 0.58, 0, 0, Math.PI * 2); ctxL.fill();
+    ctxL.strokeStyle = "white"; ctxL.lineWidth = 4; ctxL.beginPath(); ctxL.ellipse(0, -base * 0.04, base * 0.92, base * 0.34, 0.04, 0, Math.PI * 2); ctxL.stroke();
+    const px = Math.cos(t * 0.9) * base * 0.88, py = Math.sin(t * 0.9) * base * 0.33 - base * 0.04;
+    ctxL.fillStyle = "#111827"; ctxL.beginPath(); ctxL.arc(px, py, 7 * r.dpr, 0, Math.PI * 2); ctxL.fill();
+    ctxL.restore();
+  }
+
+  function drawBody(c) {
+    const r = resize(right);
+    ctxR.clearRect(0, 0, r.w, r.h);
+    const cx = r.w * 0.5, cy = r.h * 0.53, s = Math.min(r.w, r.h) * 0.18;
+    const ang = t * 0.75;
+    const w = s * 1.3, h = s * 2.05, d = s * 0.42;
+    const pts = [[-w, -h], [w, -h], [w, h], [-w, h]].map(([x, y]) => [cx + x * Math.cos(ang) - y * 0.18 * Math.sin(ang), cy + y + x * 0.18 * Math.sin(ang)]);
+    const off = [d * Math.cos(ang + 0.85), -d * Math.sin(ang + 0.85)];
+    ctxR.fillStyle = "rgba(212,135,126,.78)"; ctxR.beginPath(); pts.forEach((p, i) => i ? ctxR.lineTo(p[0], p[1]) : ctxR.moveTo(p[0], p[1])); ctxR.closePath(); ctxR.fill();
+    ctxR.fillStyle = "rgba(36,87,180,.62)"; ctxR.beginPath(); ctxR.moveTo(pts[0][0], pts[0][1]); ctxR.lineTo(pts[1][0], pts[1][1]); ctxR.lineTo(pts[1][0] + off[0], pts[1][1] + off[1]); ctxR.lineTo(pts[0][0] + off[0], pts[0][1] + off[1]); ctxR.closePath(); ctxR.fill();
+    ctxR.fillStyle = "rgba(42,120,69,.58)"; ctxR.beginPath(); ctxR.moveTo(pts[1][0], pts[1][1]); ctxR.lineTo(pts[2][0], pts[2][1]); ctxR.lineTo(pts[2][0] + off[0], pts[2][1] + off[1]); ctxR.lineTo(pts[1][0] + off[0], pts[1][1] + off[1]); ctxR.closePath(); ctxR.fill();
+    ctxR.strokeStyle = "white"; ctxR.lineWidth = 3; ctxR.stroke();
+    arrow(ctxR, cx, cy, cx + Math.cos(ang) * s * 1.7, cy + Math.sin(ang) * s * 0.9, "#111827");
+    arrow(ctxR, cx, cy, cx + c.omega[0] * s * 0.85, cy - c.omega[2] * s * 0.85, "#7c2d12");
+  }
+
+  function tick() {
+    const c = constants();
+    if (playing) t = Math.min(35, t + 0.018 * +get("#speed").value);
+    get("#time").value = t.toFixed(2);
+    out.dimX.textContent = c.a.toFixed(2); out.dimY.textContent = c.b.toFixed(2); out.dimZ.textContent = c.c.toFixed(2);
+    out.theta.textContent = (+get("#theta").value).toFixed(0) + "°"; out.phi.textContent = (+get("#phi").value).toFixed(0) + "°"; out.speed.textContent = (+get("#speed").value).toFixed(2) + "×";
+    out.time.textContent = t.toFixed(2);
+    out.j1.textContent = c.J[0].toFixed(3); out.j2.textContent = c.J[1].toFixed(3); out.j3.textContent = c.J[2].toFixed(3); out.je.textContent = c.Je.toFixed(3);
+    out.omega.textContent = "(" + c.omega.map((v) => v.toFixed(2)).join(", ") + ")";
+    drawEllipses(c); drawBody(c);
+    requestAnimationFrame(tick);
+  }
+  tick();
+}
+
+});
+    </script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Euler-Poinsot motion</p>
+          <h1>惯量椭球与角动量椭球</h1>
+        </div>
+        <div class="top-actions">
+          <button id="playPause" class="primary">播放</button>
+          <button id="resetMotion">重置</button>
+          <button id="resetCamera">视角</button>
+        </div>
+      </header>
+
+      <section class="stage">
+        <div class="viewport-wrap">
+          <div class="viewport-title">
+            <span>椭球空间</span>
+            <small>橙色：Poinsot，蓝色：Binet</small>
+          </div>
+          <canvas id="ellipsoidView"></canvas>
+        </div>
+        <div class="viewport-wrap">
+          <div class="viewport-title">
+            <span>定点转动</span>
+            <small>无重力自由刚体</small>
+          </div>
+          <canvas id="bodyView"></canvas>
+        </div>
+      </section>
+
+      <section class="workbench">
+        <aside class="controls">
+          <div class="control-row">
+            <label for="dimX">长方体 \(a\)</label>
+            <input id="dimX" type="range" min="1.4" max="4.2" step="0.02" value="3.2" />
+            <output id="dimXValue"></output>
+          </div>
+          <div class="control-row">
+            <label for="dimY">长方体 \(b\)</label>
+            <input id="dimY" type="range" min="0.9" max="3.4" step="0.02" value="2.0" />
+            <output id="dimYValue"></output>
+          </div>
+          <div class="control-row">
+            <label for="dimZ">长方体 \(c\)</label>
+            <input id="dimZ" type="range" min="0.5" max="2.8" step="0.02" value="0.9" />
+            <output id="dimZValue"></output>
+          </div>
+          <div class="control-row">
+            <label for="theta">\(\theta_n\)</label>
+            <input id="theta" type="range" min="4" max="176" step="1" value="28" />
+            <output id="thetaValue"></output>
+          </div>
+          <div class="control-row">
+            <label for="phi">\(\phi_n\)</label>
+            <input id="phi" type="range" min="0" max="360" step="1" value="42" />
+            <output id="phiValue"></output>
+          </div>
+          <div class="control-row">
+            <label for="speed">速度</label>
+            <input id="speed" type="range" min="0.2" max="3.2" step="0.05" value="1.25" />
+            <output id="speedValue"></output>
+          </div>
+          <div class="control-row">
+            <label for="time">时间 \(t\)</label>
+            <input id="time" type="range" min="0" max="35" step="0.01" value="0" />
+            <output id="timeValue"></output>
+          </div>
+          <div class="preset-row">
+            <button data-preset="e1">\(n=e_1\)</button>
+            <button data-preset="e2">\(n=e_2\)</button>
+            <button data-preset="e3">\(n=e_3\)</button>
+          </div>
+          <p class="control-note">精确 \(n=e_2\) 是不稳定平衡，会一直保持；稍微调节 \(\theta_n,\phi_n\) 可加入扰动并演示翻滚。</p>
+        </aside>
+
+        <section class="formula-panel">
+          <div class="formula-grid">
+            <div>
+              <p>动能：\(J_1\omega_1^2+J_2\omega_2^2+J_3\omega_3^2=2T\)</p>
+              <p>角动量：\(J_1^2\omega_1^2+J_2^2\omega_2^2+J_3^2\omega_3^2=G^2\)</p>
+              <p>初始角速度：\(\boldsymbol{\omega}(t=0)=\omega_0\,\mathbf n\)</p>
+              <p>系统动能：\(T=\frac12J_n\omega_0^2\)，\(J_n=J_1n_1^2+J_2n_2^2+J_3n_3^2\)</p>
+            </div>
+            <div>
+              <p>角动量：\(\mathbf G=\omega_0\,\mathbf J\cdot\mathbf n\)，\(G^2=\omega_0^2K_n\)</p>
+              <p>\(2T=1,\quad J_e=\frac{K_n}{J_n}=\frac{J_1^2n_1^2+J_2^2n_2^2+J_3^2n_3^2}{J_1n_1^2+J_2n_2^2+J_3n_3^2}\)，\(G^2=J_e\)</p>
+              <p>惯量椭球（Poinsot）：\(\frac{\omega_1^2}{1/J_1}+\frac{\omega_2^2}{1/J_2}+\frac{\omega_3^2}{1/J_3}=1\)</p>
+              <p>角动量椭球（Binet）：\(\frac{\omega_1^2}{J_e/J_1^2}+\frac{\omega_2^2}{J_e/J_2^2}+\frac{\omega_3^2}{J_e/J_3^2}=1\)</p>
+            </div>
+          </div>
+          <div class="readout">
+            <span>\(J_1\)=<b id="j1Value"></b></span>
+            <span>\(J_2\)=<b id="j2Value"></b></span>
+            <span>\(J_3\)=<b id="j3Value"></b></span>
+            <span>\(J_e\)=<b id="jeValue"></b></span>
+            <span>\(\boldsymbol{\omega}\)=<b id="omegaValue"></b></span>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
