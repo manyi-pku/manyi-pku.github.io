@@ -237,10 +237,18 @@
         </div>
       </div>
 
-      <div class="group presets">
-        <button data-preset="axis1">spin J1</button>
-        <button data-preset="axis2" class="active">spin J2</button>
-        <button data-preset="axis3">spin J3</button>
+      <div class="group">
+        <div class="row"><span>preset</span><span class="value" id="modeValue">spin J2</span></div>
+        <div class="presets">
+          <button data-preset="axis1">spin J1</button>
+          <button data-preset="axis2" class="active">spin J2</button>
+          <button data-preset="axis3">spin J3</button>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="row"><span>preset perturbation ε</span><span class="value" id="epsValue">0.35</span></div>
+        <input id="eps" type="range" min="0" max="1.2" value="0.35" step="0.01">
       </div>
 
       <div class="group">
@@ -249,7 +257,7 @@
       </div>
 
       <div class="group">
-        <div class="row"><span>speed</span><span class="value" id="speedValue">0.65</span></div>
+        <div class="row"><span>playback speed</span><span class="value" id="speedValue">0.65×</span></div>
         <input id="speed" type="range" min="0.1" max="2.5" value="0.65" step="0.05">
       </div>
 
@@ -267,7 +275,7 @@
         <div class="grid3">
           <label class="field">ẋ0<input id="vx0" type="number" value="0.15" step="0.1"></label>
           <label class="field">ẏ0<input id="vy0" type="number" value="0" step="0.1"></label>
-          <label class="field">ż0<input id="vz0" type="number" value="4.6" step="0.1"></label>
+          <label class="field">ż0<input id="vz0" type="number" value="8.0" step="0.1"></label>
         </div>
       </div>
 
@@ -318,8 +326,11 @@
       reset: document.getElementById("reset"),
       time: document.getElementById("time"),
       speed: document.getElementById("speed"),
+      eps: document.getElementById("eps"),
       timeValue: document.getElementById("timeValue"),
       speedValue: document.getElementById("speedValue"),
+      epsValue: document.getElementById("epsValue"),
+      modeValue: document.getElementById("modeValue"),
       momentReadout: document.getElementById("momentReadout"),
       ell: document.getElementById("ell"),
       width: document.getElementById("width"),
@@ -338,11 +349,14 @@
     const state = {
       running: true,
       speed: 0.65,
+      preset: "axis2",
+      custom: false,
       time: 0,
       sim: null,
       history: [],
-      yaw: -0.62,
-      pitch: 0.42,
+      yaw: 0.15,
+      pitch: 0.78,
+      target: [0, 0, 0.72],
       dragging: false,
       lastX: 0,
       lastY: 0
@@ -472,13 +486,16 @@
       state.time = 0;
       state.sim = initialState();
       state.history = [{ t: 0, r: state.sim.r.slice() }];
+      state.target = state.sim.r.slice();
       controls.time.value = "0";
       syncReadout();
     }
 
     function setPreset(name) {
       const omega = 8.0;
-      const eps = 0.35;
+      const eps = Number(controls.eps.value);
+      state.preset = name;
+      state.custom = false;
       if (name === "axis1") {
         controls.w10.value = omega;
         controls.w20.value = eps;
@@ -496,6 +513,13 @@
       resetSimulation();
     }
 
+    function setCustomInitialCondition() {
+      state.custom = true;
+      state.preset = "custom";
+      document.querySelectorAll("[data-preset]").forEach(btn => btn.classList.remove("active"));
+      resetSimulation();
+    }
+
     function resize() {
       const dpr = window.devicePixelRatio || 1;
       const rect = canvas.getBoundingClientRect();
@@ -509,23 +533,25 @@
       const sy = Math.sin(state.yaw);
       const cp = Math.cos(state.pitch);
       const sp = Math.sin(state.pitch);
-      const x1 = cy * v[0] + sy * v[1];
-      const y1 = -sy * v[0] + cy * v[1];
-      const z1 = v[2];
-      const y2 = cp * y1 - sp * z1;
-      const z2 = sp * y1 + cp * z1;
-      return [x1, y2, z2];
+      const dx = v[0] - state.target[0];
+      const dy = v[1] - state.target[1];
+      const dz = v[2] - state.target[2];
+      const x1 = cy * dx + sy * dy;
+      const y1 = -sy * dx + cy * dy;
+      const screenY = dz * cp + y1 * sp;
+      const depthZ = dz * sp - y1 * cp;
+      return [x1, screenY, depthZ];
     }
 
     function project(v) {
       const rect = canvas.getBoundingClientRect();
       const c = camera(v);
-      const zoom = Math.min(rect.width, rect.height) * 0.13;
+      const zoom = Math.min(rect.width, rect.height) * 0.18;
       const depth = 7.2;
       const f = depth / (depth - c[2]);
       return {
         x: rect.width * 0.5 + c[0] * zoom * f,
-        y: rect.height * 0.48 - c[1] * zoom * f,
+        y: rect.height * 0.52 - c[1] * zoom * f,
         z: c[2],
         f
       };
@@ -612,12 +638,12 @@
     }
 
     function drawGround() {
-      drawPolygon([[-3.8, -2.6, 0], [3.8, -2.6, 0], [3.8, 2.6, 0], [-3.8, 2.6, 0]], "rgba(210,216,210,0.30)", "rgba(112,122,116,0.25)", 1);
+      drawPolygon([[-2.8, -1.9, 0], [2.8, -1.9, 0], [2.8, 1.9, 0], [-2.8, 1.9, 0]], "rgba(210,216,210,0.18)", "rgba(112,122,116,0.18)", 1);
       for (let i = -3; i <= 3; i++) {
-        line([i, -2.6, 0.002], [i, 2.6, 0.002], "rgba(112,122,116,0.14)", 1);
+        line([i, -1.9, 0.002], [i, 1.9, 0.002], "rgba(112,122,116,0.10)", 1);
       }
       for (let j = -2; j <= 2; j++) {
-        line([-3.8, j, 0.002], [3.8, j, 0.002], "rgba(112,122,116,0.14)", 1);
+        line([-2.8, j, 0.002], [2.8, j, 0.002], "rgba(112,122,116,0.10)", 1);
       }
     }
 
@@ -646,7 +672,14 @@
     function syncReadout() {
       const p = getParams();
       controls.timeValue.textContent = state.time.toFixed(2);
-      controls.speedValue.textContent = state.speed.toFixed(2);
+      controls.speedValue.textContent = `${state.speed.toFixed(2)}×`;
+      controls.epsValue.textContent = Number(controls.eps.value).toFixed(2);
+      controls.modeValue.textContent = state.custom ? "custom" : {
+        axis1: "spin J1",
+        axis2: "spin J2",
+        axis3: "spin J3"
+      }[state.preset];
+      controls.eps.disabled = state.custom;
       controls.momentReadout.textContent = `J1 = ${p.J1.toFixed(3)}, J2 = ${p.J2.toFixed(3)}, J3 = ${p.J3.toFixed(3)}`;
       controls.play.textContent = state.running ? "Pause" : "Play";
       controls.play.classList.toggle("active", state.running);
@@ -666,6 +699,7 @@
         state.history.push({ t: state.time, r: state.sim.r.slice() });
         if (state.history.length > 180) state.history.shift();
       }
+      state.target = add(scale(state.target, 0.90), scale(state.sim.r, 0.10));
       if (state.time > Number(controls.time.max) || state.sim.r[2] < -0.1) {
         resetSimulation();
       }
@@ -701,11 +735,18 @@
       state.speed = Number(controls.speed.value);
       syncReadout();
     });
+    controls.eps.addEventListener("input", () => {
+      if (!state.custom) setPreset(state.preset);
+      syncReadout();
+    });
     document.querySelectorAll("[data-preset]").forEach(btn => {
       btn.addEventListener("click", () => setPreset(btn.dataset.preset));
     });
-    ["ell", "width", "thick", "vx0", "vy0", "vz0", "w10", "w20", "w30", "phi0", "theta0", "psi0"].forEach(id => {
+    ["ell", "width", "thick", "vx0", "vy0", "vz0", "phi0", "theta0", "psi0"].forEach(id => {
       controls[id].addEventListener("change", resetSimulation);
+    });
+    ["w10", "w20", "w30"].forEach(id => {
+      controls[id].addEventListener("change", setCustomInitialCondition);
     });
 
     canvas.addEventListener("pointerdown", e => {
