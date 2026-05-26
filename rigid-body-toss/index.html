@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>General Rigid Body Toss</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f4;
+      --ink: #18201d;
+      --muted: #65706b;
+      --line: #d1d8d2;
+      --panel: #ffffff;
+      --red: #d94a3d;
+      --green: #3f9b62;
+      --blue: #3377c9;
+      --gold: #c7992c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      min-height: 100vh;
+    }
+
+    .stage {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.94), rgba(246,247,244,0.75)),
+        radial-gradient(circle at 48% 45%, rgba(214, 220, 214, 0.46), transparent 55%);
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      touch-action: none;
+    }
+
+    .hud {
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      width: min(620px, calc(100% - 40px));
+      pointer-events: none;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .hud p {
+      margin: 0;
+      max-width: 48em;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .controls {
+      border-left: 1px solid var(--line);
+      background: var(--panel);
+      padding: 18px;
+      overflow: auto;
+    }
+
+    .group {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .group:first-child {
+      padding-top: 0;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin: 0 0 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .value {
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: #2f6f86;
+    }
+
+    .actions,
+    .presets {
+      display: grid;
+      gap: 10px;
+    }
+
+    .actions {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .presets {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    button {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      min-height: 38px;
+      background: #f8faf8;
+      color: var(--ink);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button.active {
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    }
+
+    .grid2,
+    .grid3 {
+      display: grid;
+      gap: 12px;
+    }
+
+    .grid2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    label.field {
+      display: grid;
+      gap: 5px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    label.field input {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px 9px;
+      color: var(--ink);
+      font: inherit;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .readout {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .formula {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .formula code {
+      color: var(--ink);
+      background: #f1f3f0;
+      border-radius: 4px;
+      padding: 1px 4px;
+      white-space: nowrap;
+    }
+
+    .swatch {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 7px;
+    }
+
+    @media (max-width: 920px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      canvas {
+        min-height: 62vh;
+      }
+
+      .controls {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="stage">
+      <canvas id="scene" aria-label="general rigid body tossed in air"></canvas>
+      <div class="hud">
+        <h1>General Rigid Body Toss</h1>
+        <p>自由抛体平动、一般刚体 Euler 方程、主轴角速度和中间轴不稳定性的交互演示。</p>
+      </div>
+    </section>
+
+    <aside class="controls" aria-label="controls">
+      <div class="group">
+        <div class="actions">
+          <button id="play" class="active">Pause</button>
+          <button id="reset">Reset</button>
+        </div>
+      </div>
+
+      <div class="group presets">
+        <button data-preset="axis1">spin J1</button>
+        <button data-preset="axis2" class="active">spin J2</button>
+        <button data-preset="axis3">spin J3</button>
+      </div>
+
+      <div class="group">
+        <div class="row"><span>time</span><span class="value" id="timeValue">0.00</span></div>
+        <input id="time" type="range" min="0" max="5" value="0" step="0.01">
+      </div>
+
+      <div class="group">
+        <div class="row"><span>speed</span><span class="value" id="speedValue">0.65</span></div>
+        <input id="speed" type="range" min="0.1" max="2.5" value="0.65" step="0.05">
+      </div>
+
+      <div class="group">
+        <div class="row"><span>book dimensions</span><span class="value">ℓ, w, b</span></div>
+        <div class="grid3">
+          <label class="field">ℓ<input id="ell" type="number" value="2.2" step="0.1"></label>
+          <label class="field">w<input id="width" type="number" value="1.35" step="0.1"></label>
+          <label class="field">b<input id="thick" type="number" value="0.28" step="0.02"></label>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="row"><span>initial velocity</span><span class="value">ẋ0, ẏ0, ż0</span></div>
+        <div class="grid3">
+          <label class="field">ẋ0<input id="vx0" type="number" value="0.15" step="0.1"></label>
+          <label class="field">ẏ0<input id="vy0" type="number" value="0" step="0.1"></label>
+          <label class="field">ż0<input id="vz0" type="number" value="4.6" step="0.1"></label>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="row"><span>initial angular velocity</span><span class="value">ω1, ω2, ω3</span></div>
+        <div class="grid3">
+          <label class="field">ω1<input id="w10" type="number" value="0.35" step="0.1"></label>
+          <label class="field">ω2<input id="w20" type="number" value="8.0" step="0.1"></label>
+          <label class="field">ω3<input id="w30" type="number" value="0.35" step="0.1"></label>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="row"><span>initial Euler angles</span><span class="value">φ0, θ0, ψ0</span></div>
+        <div class="grid3">
+          <label class="field">φ0<input id="phi0" type="number" value="0" step="0.1"></label>
+          <label class="field">θ0<input id="theta0" type="number" value="0" step="0.1"></label>
+          <label class="field">ψ0<input id="psi0" type="number" value="0" step="0.1"></label>
+        </div>
+      </div>
+
+      <div class="group readout">
+        <div><span class="swatch" style="background: var(--red)"></span>red: e1</div>
+        <div><span class="swatch" style="background: var(--green)"></span>green: e2</div>
+        <div><span class="swatch" style="background: var(--blue)"></span>blue: e3</div>
+        <div><span class="swatch" style="background: var(--gold)"></span>gold: angular momentum</div>
+        <div id="momentReadout">J1 = --, J2 = --, J3 = --</div>
+      </div>
+
+      <div class="group formula">
+        <div><code>M(t,Y)Ẏ = f(t,Y)</code></div>
+        <div><code>J1 ω̇1 = (J2-J3)ω2ω3</code></div>
+        <div><code>J2 ω̇2 = (J3-J1)ω3ω1</code></div>
+        <div><code>J3 ω̇3 = (J1-J2)ω1ω2</code></div>
+        <div><code>ω1 = φ̇ - ψ̇ sinθ</code></div>
+        <div><code>ω2 = ψ̇ cosθ sinφ + θ̇ cosφ</code></div>
+        <div><code>ω3 = ψ̇ cosθ cosφ - θ̇ sinφ</code></div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    const canvas = document.getElementById("scene");
+    const ctx = canvas.getContext("2d");
+
+    const controls = {
+      play: document.getElementById("play"),
+      reset: document.getElementById("reset"),
+      time: document.getElementById("time"),
+      speed: document.getElementById("speed"),
+      timeValue: document.getElementById("timeValue"),
+      speedValue: document.getElementById("speedValue"),
+      momentReadout: document.getElementById("momentReadout"),
+      ell: document.getElementById("ell"),
+      width: document.getElementById("width"),
+      thick: document.getElementById("thick"),
+      vx0: document.getElementById("vx0"),
+      vy0: document.getElementById("vy0"),
+      vz0: document.getElementById("vz0"),
+      w10: document.getElementById("w10"),
+      w20: document.getElementById("w20"),
+      w30: document.getElementById("w30"),
+      phi0: document.getElementById("phi0"),
+      theta0: document.getElementById("theta0"),
+      psi0: document.getElementById("psi0")
+    };
+
+    const state = {
+      running: true,
+      speed: 0.65,
+      time: 0,
+      sim: null,
+      history: [],
+      yaw: -0.62,
+      pitch: 0.42,
+      dragging: false,
+      lastX: 0,
+      lastY: 0
+    };
+
+    const colors = {
+      red: "#d94a3d",
+      green: "#3f9b62",
+      blue: "#3377c9",
+      gold: "#c7992c",
+      ink: "#18201d"
+    };
+
+    const add = (a, b) => a.map((x, i) => x + b[i]);
+    const sub = (a, b) => a.map((x, i) => x - b[i]);
+    const scale = (v, s) => v.map(x => x * s);
+    const dot = (a, b) => a.reduce((sum, x, i) => sum + x * b[i], 0);
+    const cross = (a, b) => [
+      a[1] * b[2] - a[2] * b[1],
+      a[2] * b[0] - a[0] * b[2],
+      a[0] * b[1] - a[1] * b[0]
+    ];
+    const norm = v => Math.hypot(...v) || 1;
+    const unit = v => scale(v, 1 / norm(v));
+
+    function qMul(a, b) {
+      return [
+        a[0] * b[0] - a[1] * b[1] - a[2] * b[2] - a[3] * b[3],
+        a[0] * b[1] + a[1] * b[0] + a[2] * b[3] - a[3] * b[2],
+        a[0] * b[2] - a[1] * b[3] + a[2] * b[0] + a[3] * b[1],
+        a[0] * b[3] + a[1] * b[2] - a[2] * b[1] + a[3] * b[0]
+      ];
+    }
+
+    function qNormalize(q) {
+      const n = Math.hypot(...q) || 1;
+      return q.map(x => x / n);
+    }
+
+    function qRotate(q, v) {
+      const p = [0, ...v];
+      const qc = [q[0], -q[1], -q[2], -q[3]];
+      const r = qMul(qMul(q, p), qc);
+      return [r[1], r[2], r[3]];
+    }
+
+    function qFromAxisAngle(axis, angle) {
+      const u = unit(axis);
+      const h = angle * 0.5;
+      return [Math.cos(h), u[0] * Math.sin(h), u[1] * Math.sin(h), u[2] * Math.sin(h)];
+    }
+
+    function qFromEuler(phi, theta, psi) {
+      const qx = qFromAxisAngle([1, 0, 0], phi);
+      const qy = qFromAxisAngle([0, 1, 0], theta);
+      const qz = qFromAxisAngle([0, 0, 1], psi);
+      return qNormalize(qMul(qMul(qz, qy), qx));
+    }
+
+    function getParams() {
+      const ell = Number(controls.ell.value) || 2.2;
+      const width = Number(controls.width.value) || 1.35;
+      const thick = Number(controls.thick.value) || 0.28;
+      const m = 1;
+      return {
+        ell,
+        width,
+        thick,
+        m,
+        g: 9.81,
+        J1: m * (width * width + thick * thick) / 12,
+        J2: m * (ell * ell + thick * thick) / 12,
+        J3: m * (ell * ell + width * width) / 12
+      };
+    }
+
+    function initialState() {
+      const phi = Number(controls.phi0.value) || 0;
+      const theta = Number(controls.theta0.value) || 0;
+      const psi = Number(controls.psi0.value) || 0;
+      return {
+        r: [0, 0, 0.72],
+        v: [Number(controls.vx0.value) || 0, Number(controls.vy0.value) || 0, Number(controls.vz0.value) || 0],
+        w: [Number(controls.w10.value) || 0, Number(controls.w20.value) || 0, Number(controls.w30.value) || 0],
+        q: qFromEuler(phi, theta, psi)
+      };
+    }
+
+    function deriv(s, p) {
+      const [w1, w2, w3] = s.w;
+      const qdot = scale(qMul(s.q, [0, w1, w2, w3]), 0.5);
+      return {
+        r: s.v,
+        v: [0, 0, -p.g],
+        w: [
+          (p.J2 - p.J3) * w2 * w3 / p.J1,
+          (p.J3 - p.J1) * w3 * w1 / p.J2,
+          (p.J1 - p.J2) * w1 * w2 / p.J3
+        ],
+        q: qdot
+      };
+    }
+
+    function combine(s, k, h) {
+      return {
+        r: add(s.r, scale(k.r, h)),
+        v: add(s.v, scale(k.v, h)),
+        w: add(s.w, scale(k.w, h)),
+        q: qNormalize(add(s.q, scale(k.q, h)))
+      };
+    }
+
+    function rk4(s, p, dt) {
+      const k1 = deriv(s, p);
+      const k2 = deriv(combine(s, k1, dt * 0.5), p);
+      const k3 = deriv(combine(s, k2, dt * 0.5), p);
+      const k4 = deriv(combine(s, k3, dt), p);
+      return {
+        r: add(s.r, scale(add(add(k1.r, scale(add(k2.r, k3.r), 2)), k4.r), dt / 6)),
+        v: add(s.v, scale(add(add(k1.v, scale(add(k2.v, k3.v), 2)), k4.v), dt / 6)),
+        w: add(s.w, scale(add(add(k1.w, scale(add(k2.w, k3.w), 2)), k4.w), dt / 6)),
+        q: qNormalize(add(s.q, scale(add(add(k1.q, scale(add(k2.q, k3.q), 2)), k4.q), dt / 6)))
+      };
+    }
+
+    function resetSimulation() {
+      state.time = 0;
+      state.sim = initialState();
+      state.history = [{ t: 0, r: state.sim.r.slice() }];
+      controls.time.value = "0";
+      syncReadout();
+    }
+
+    function setPreset(name) {
+      const omega = 8.0;
+      const eps = 0.35;
+      if (name === "axis1") {
+        controls.w10.value = omega;
+        controls.w20.value = eps;
+        controls.w30.value = eps;
+      } else if (name === "axis2") {
+        controls.w10.value = eps;
+        controls.w20.value = omega;
+        controls.w30.value = eps;
+      } else {
+        controls.w10.value = eps;
+        controls.w20.value = eps;
+        controls.w30.value = omega;
+      }
+      document.querySelectorAll("[data-preset]").forEach(btn => btn.classList.toggle("active", btn.dataset.preset === name));
+      resetSimulation();
+    }
+
+    function resize() {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = Math.max(1, Math.round(rect.width * dpr));
+      canvas.height = Math.max(1, Math.round(rect.height * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function camera(v) {
+      const cy = Math.cos(state.yaw);
+      const sy = Math.sin(state.yaw);
+      const cp = Math.cos(state.pitch);
+      const sp = Math.sin(state.pitch);
+      const x1 = cy * v[0] + sy * v[1];
+      const y1 = -sy * v[0] + cy * v[1];
+      const z1 = v[2];
+      const y2 = cp * y1 - sp * z1;
+      const z2 = sp * y1 + cp * z1;
+      return [x1, y2, z2];
+    }
+
+    function project(v) {
+      const rect = canvas.getBoundingClientRect();
+      const c = camera(v);
+      const zoom = Math.min(rect.width, rect.height) * 0.13;
+      const depth = 7.2;
+      const f = depth / (depth - c[2]);
+      return {
+        x: rect.width * 0.5 + c[0] * zoom * f,
+        y: rect.height * 0.48 - c[1] * zoom * f,
+        z: c[2],
+        f
+      };
+    }
+
+    function line(a, b, color, width = 2) {
+      const pa = project(a);
+      const pb = project(b);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = width;
+      ctx.lineCap = "round";
+      ctx.beginPath();
+      ctx.moveTo(pa.x, pa.y);
+      ctx.lineTo(pb.x, pb.y);
+      ctx.stroke();
+    }
+
+    function drawArrow(origin, v, color, label, length = 1) {
+      const end = add(origin, scale(unit(v), length));
+      line(origin, end, color, 3.2);
+      const p = project(end);
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 5, 0, Math.PI * 2);
+      ctx.fill();
+      if (label) {
+        ctx.font = "600 13px system-ui, sans-serif";
+        ctx.fillText(label, p.x + 8, p.y - 7);
+      }
+    }
+
+    function drawPolygon(vertices, fill, stroke = "rgba(0,0,0,0.2)", width = 1) {
+      const pts = vertices.map(project);
+      ctx.fillStyle = fill;
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = width;
+      ctx.beginPath();
+      pts.forEach((p, i) => {
+        if (i === 0) ctx.moveTo(p.x, p.y);
+        else ctx.lineTo(p.x, p.y);
+      });
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+    }
+
+    function drawBook(s, p) {
+      const x = p.ell * 0.5;
+      const y = p.width * 0.5;
+      const z = p.thick * 0.5;
+      const local = [
+        [-x, -y, -z], [x, -y, -z], [x, y, -z], [-x, y, -z],
+        [-x, -y, z], [x, -y, z], [x, y, z], [-x, y, z]
+      ];
+      const world = local.map(v => add(s.r, qRotate(s.q, v)));
+      const faces = [
+        [0, 1, 2, 3, "rgba(204, 166, 67, 0.80)"],
+        [4, 7, 6, 5, "rgba(231, 194, 85, 0.86)"],
+        [0, 4, 5, 1, "rgba(184, 139, 47, 0.78)"],
+        [1, 5, 6, 2, "rgba(218, 177, 69, 0.78)"],
+        [2, 6, 7, 3, "rgba(188, 150, 57, 0.76)"],
+        [3, 7, 4, 0, "rgba(230, 190, 82, 0.74)"]
+      ].map(face => {
+        const vertices = face.slice(0, 4).map(i => world[i]);
+        return {
+          vertices,
+          fill: face[4],
+          depth: vertices.reduce((sum, v) => sum + project(v).z, 0) / vertices.length
+        };
+      });
+      faces.sort((a, b) => a.depth - b.depth).forEach(face => drawPolygon(face.vertices, face.fill, "rgba(92,70,25,0.55)", 1.1));
+
+      const marker = project(world[6]);
+      ctx.fillStyle = colors.blue;
+      ctx.beginPath();
+      ctx.arc(marker.x, marker.y, 7, 0, Math.PI * 2);
+      ctx.fill();
+
+      drawArrow(s.r, qRotate(s.q, [1, 0, 0]), colors.red, "e1", 1.1);
+      drawArrow(s.r, qRotate(s.q, [0, 1, 0]), colors.green, "e2", 1.1);
+      drawArrow(s.r, qRotate(s.q, [0, 0, 1]), colors.blue, "e3", 1.1);
+      const bodyL = [p.J1 * s.w[0], p.J2 * s.w[1], p.J3 * s.w[2]];
+      drawArrow(s.r, qRotate(s.q, bodyL), colors.gold, "G", 1.35);
+    }
+
+    function drawGround() {
+      drawPolygon([[-3.8, -2.6, 0], [3.8, -2.6, 0], [3.8, 2.6, 0], [-3.8, 2.6, 0]], "rgba(210,216,210,0.30)", "rgba(112,122,116,0.25)", 1);
+      for (let i = -3; i <= 3; i++) {
+        line([i, -2.6, 0.002], [i, 2.6, 0.002], "rgba(112,122,116,0.14)", 1);
+      }
+      for (let j = -2; j <= 2; j++) {
+        line([-3.8, j, 0.002], [3.8, j, 0.002], "rgba(112,122,116,0.14)", 1);
+      }
+    }
+
+    function drawTrail() {
+      if (state.history.length < 2) return;
+      ctx.strokeStyle = "rgba(47,111,134,0.55)";
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      state.history.forEach((item, i) => {
+        const p = project(item.r);
+        if (i === 0) ctx.moveTo(p.x, p.y);
+        else ctx.lineTo(p.x, p.y);
+      });
+      ctx.stroke();
+    }
+
+    function draw() {
+      const rect = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, rect.width, rect.height);
+      const p = getParams();
+      drawGround();
+      drawTrail();
+      drawBook(state.sim, p);
+    }
+
+    function syncReadout() {
+      const p = getParams();
+      controls.timeValue.textContent = state.time.toFixed(2);
+      controls.speedValue.textContent = state.speed.toFixed(2);
+      controls.momentReadout.textContent = `J1 = ${p.J1.toFixed(3)}, J2 = ${p.J2.toFixed(3)}, J3 = ${p.J3.toFixed(3)}`;
+      controls.play.textContent = state.running ? "Pause" : "Play";
+      controls.play.classList.toggle("active", state.running);
+    }
+
+    function advance(dt) {
+      const p = getParams();
+      const h = 0.004;
+      let remaining = dt;
+      while (remaining > 1e-9) {
+        const step = Math.min(h, remaining);
+        state.sim = rk4(state.sim, p, step);
+        state.time += step;
+        remaining -= step;
+      }
+      if (state.history.length === 0 || state.time - state.history[state.history.length - 1].t > 0.025) {
+        state.history.push({ t: state.time, r: state.sim.r.slice() });
+        if (state.history.length > 180) state.history.shift();
+      }
+      if (state.time > Number(controls.time.max) || state.sim.r[2] < -0.1) {
+        resetSimulation();
+      }
+    }
+
+    let lastStamp = performance.now();
+    function animate(stamp) {
+      const elapsed = Math.min(0.04, (stamp - lastStamp) / 1000);
+      lastStamp = stamp;
+      if (state.running) {
+        advance(elapsed * state.speed);
+        controls.time.value = state.time.toFixed(2);
+      }
+      syncReadout();
+      draw();
+      requestAnimationFrame(animate);
+    }
+
+    controls.play.addEventListener("click", () => {
+      state.running = !state.running;
+      syncReadout();
+    });
+    controls.reset.addEventListener("click", resetSimulation);
+    controls.time.addEventListener("input", () => {
+      const target = Number(controls.time.value);
+      resetSimulation();
+      advance(target);
+      state.running = false;
+      syncReadout();
+      draw();
+    });
+    controls.speed.addEventListener("input", () => {
+      state.speed = Number(controls.speed.value);
+      syncReadout();
+    });
+    document.querySelectorAll("[data-preset]").forEach(btn => {
+      btn.addEventListener("click", () => setPreset(btn.dataset.preset));
+    });
+    ["ell", "width", "thick", "vx0", "vy0", "vz0", "w10", "w20", "w30", "phi0", "theta0", "psi0"].forEach(id => {
+      controls[id].addEventListener("change", resetSimulation);
+    });
+
+    canvas.addEventListener("pointerdown", e => {
+      state.dragging = true;
+      state.lastX = e.clientX;
+      state.lastY = e.clientY;
+      canvas.setPointerCapture(e.pointerId);
+    });
+    canvas.addEventListener("pointermove", e => {
+      if (!state.dragging) return;
+      const dx = e.clientX - state.lastX;
+      const dy = e.clientY - state.lastY;
+      state.lastX = e.clientX;
+      state.lastY = e.clientY;
+      state.yaw += dx * 0.008;
+      state.pitch = Math.max(-1.15, Math.min(1.15, state.pitch + dy * 0.008));
+    });
+    canvas.addEventListener("pointerup", () => { state.dragging = false; });
+    canvas.addEventListener("pointercancel", () => { state.dragging = false; });
+    window.addEventListener("resize", () => { resize(); draw(); });
+
+    resize();
+    resetSimulation();
+    requestAnimationFrame(animate);
+  </script>
+</body>
+</html>
