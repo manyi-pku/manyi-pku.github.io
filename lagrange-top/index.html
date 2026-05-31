@@ -36,7 +36,7 @@ J3 ωdot3 = L3</pre><p>k = sinθ sinψ e1 + sinθ cosψ e2 + cosθ e3</p><p>L1 =
 ω3 = φdot cosθ + ψdot</pre><p>左上图的 f(u) 由守恒量得到，用来标出 nutation 的允许区间。</p></div></div><div class="readout"><span>θ=<b id="thetaNow"></b></span><span>φdot=<b id="phiNow"></b></span><span>ω3=<b id="w3Now"></b></span><span>u=<b id="uNow"></b></span></div></section>
 </section>
 </main>
-<script src="https://cdnjs.cloudflare.com/ajax.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const $=id=>document.getElementById(id);const ids=['theta0','thetaDot0','phiDot0','psiDot0','j1','j3','mgl','speed','time'];const I=Object.fromEntries(ids.map(id=>[id,$(id)]));const O=Object.fromEntries(ids.map(id=>[id,$(id+'o')]));const TMAX=2,DT=.0007;let data=[],t=0,playing=false,last=performance.now();let scene,camera,renderer,group,axis,line,ready=false,yaw=-.75,pitch=.55;
 const presets={c1:{theta0:30,thetaDot0:0,phiDot0:10*Math.PI,psiDot0:0},c2:{theta0:30,thetaDot0:0,phiDot0:0,psiDot0:17*Math.PI},c3:{theta0:30,thetaDot0:0,phiDot0:4*Math.PI,psiDot0:72}};
