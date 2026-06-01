@@ -1,6 +1,13 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - files/
+    - images/
+    - free-precession/
+    - inertia-ellipsoid/
+    - lagrange-top/
+    - rigid-body-toss/
 
 website:
   title: "Man,Yi"
