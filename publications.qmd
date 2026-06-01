@@ -3,15 +3,21 @@ title: "Publications"
 page-layout: article
 ---
 
+## 2026
+
+**19.** **Effect of shear-thinning on sphere's rotation-translation coupling inside a cylinder**, X. Liu, C. Zhu, Y. Man, J. Gao and Y. Chen.
+*Acta Mech. Sin.*, 42(11), 325847, 2026.
+[DOI](https://doi.org/10.1007/s10409-025-25847-x){target="_blank"}
+
+**18.** **Directed swimming of Chlamydomonas reinhardtii near complex microstructures**, C. Li, H. Bian, Z. Lin, Y. Man and Z. Qu.
+*Phys. Rev. E*, 113(4), 044410, 2026.
+[DOI](https://doi.org/10.1103/gq4t-hpgz){target="_blank"}
+
 ## 2025
 
-**18.** **Slip slender-body theory**, Y. Man, L. Koens and E. Lauga.
+**17.** **Slip slender-body theory**, Y. Man, L. Koens and E. Lauga.
 *J. Fluid Mech.*, vol. 1025, A34, 2025.
-[PDF](files/papers/18.pdf){target="_blank"} | [DOI](https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/slip-slenderbody-theory/D373B1B62C0A25CB417F92D60ED11CCB){target="_blank"}
-
-**17.** **Effect of shear-thinning on sphere's rotation-translation coupling inside a cylinder**, X. Liu, C. Zhu, Y. Man, J. Gao and Y. Chen.
-*Acta Mech. Sin.* (published online), 2025.
-[PDF](files/papers/17.pdf){target="_blank"} | [DOI](https://www.sciengine.com/AMS/doi/10.1007/s10409-025-25847-x){target="_blank"}
+[PDF](files/papers/17.pdf){target="_blank"} | [DOI](https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/slip-slenderbody-theory/D373B1B62C0A25CB417F92D60ED11CCB){target="_blank"}
 
 **16.** **Nutrient transport in concentration gradients**, J. Liu, Y. Man and E. Kanso.
 *Phys. Rev. Fluids*, 10, 093104, 2025.
