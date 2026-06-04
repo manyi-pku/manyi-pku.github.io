@@ -3,6 +3,14 @@ title: "Publications"
 page-layout: article
 ---
 
+## Submitted
+
+**20.** **Viscoelastic propulsion of self-diffusiophoretic particles**, Q. Zhao, G. Zhu and Y. Man.
+*(submitted).*
+
+<br>
+<hr>
+
 ## 2026
 
 **19.** **Effect of shear-thinning on sphere's rotation-translation coupling inside a cylinder**, X. Liu, C. Zhu, Y. Man, J. Gao and Y. Chen.
