@@ -129,6 +129,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Bio</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -157,6 +163,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="submitted" class="level2">
+<h2 class="anchored" data-anchor-id="submitted">Submitted</h2>
+<p><strong>20.</strong> <strong>Viscoelastic propulsion of self-diffusiophoretic particles</strong>, Q. Zhao, G. Zhu and Y. Man. <em>(submitted).</em></p>
+<br>
+<hr>
+</section>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section">2026</h2>
 <p><strong>19.</strong> <strong>Effect of shear-thinning on sphere’s rotation-translation coupling inside a cylinder</strong>, X. Liu, C. Zhu, Y. Man, J. Gao and Y. Chen. <em>Acta Mech. Sin.</em>, 42(11), 325847, 2026. <a href="https://doi.org/10.1007/s10409-025-25847-x" target="_blank">DOI</a></p>
@@ -271,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/manyi-pku\.github\.io\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

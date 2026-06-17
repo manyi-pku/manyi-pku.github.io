@@ -287,8 +287,8 @@
       h: 0.8,
       R: 0.35,
       u: 0.75,
-      yaw: -0.35,
-      pitch: 0.62,
+      yaw: -0.28,
+      pitch: 0.54,
       dragging: false,
       lastX: 0,
       lastY: 0
@@ -345,21 +345,22 @@
     }
 
     function model(time = state.t) {
-      const I1 = 1 + 0.25 * (state.h / state.R) ** 2;
-      const I3 = 2;
+      const J1 = 1 + 0.25 * (state.h / state.R) ** 2;
+      const J3 = 2;
       const omega0 = Math.sin(state.u);
       const omega3 = Math.cos(state.u);
-      const lPerp = I1 * omega0;
-      const lParallel = I3 * omega3;
-      const lMag = Math.hypot(lPerp, lParallel);
-      const bodyRate = (I1 - I3) * omega3 / I1;
-      const spaceRate = lMag / I1;
-      const L0 = [lPerp, 0, lParallel];
+      const Gperp = J1 * omega0;
+      const Gparallel = J3 * omega3;
+      const G = Math.hypot(Gperp, Gparallel);
+      const Omega = (J1 - J3) * omega3 / J1;
+      const phiDot = G / J1;
+      const cosTheta = G === 0 ? 1 : Gparallel / G;
+      const sinTheta = G === 0 ? 0 : Gperp / G;
 
       if (state.frame === "body") {
-        const phase = bodyRate * time;
+        const phase = Omega * time;
         const omegaBody = [omega0 * Math.cos(phase), -omega0 * Math.sin(phase), omega3];
-        const Lbody = [lPerp * Math.cos(phase), -lPerp * Math.sin(phase), lParallel];
+        const Lbody = [Gperp * Math.cos(phase), -Gperp * Math.sin(phase), Gparallel];
         return {
           x: [1, 0, 0],
           y: [0, 1, 0],
@@ -369,17 +370,22 @@
           e3: [0, 0, 1],
           omega: omegaBody,
           L: Lbody,
-          coneSpan: 9 / Math.max(0.18, Math.abs(bodyRate)),
+          coneSpan: 9 / Math.max(0.18, Math.abs(Omega)),
           bodyConeAxis: [0, 0, 1],
           spaceConeAxis: Lbody
         };
       }
 
-      const phase = spaceRate * time;
-      const Lspace = L0;
-      const e3 = rotateAround([0, 0, 1], Lspace, phase);
-      const omegaSpace = scale(sub(Lspace, scale(e3, (I3 - I1) * omega3)), 1 / I1);
-      const spin = omega3 * time * 2.0;
+      const phase = phiDot * time;
+      const Lspace = [0, 0, G];
+      const e3 = [
+        sinTheta * Math.cos(phase),
+        sinTheta * Math.sin(phase),
+        cosTheta
+      ];
+      // Analytic space-frame solution: omega = phiDot k + Omega e3.
+      const omegaSpace = add([0, 0, phiDot], scale(e3, Omega));
+      const spin = Omega * time;
       const spun = spinBasis(unit(e3), spin);
       return {
         x: [1, 0, 0],
@@ -390,7 +396,7 @@
         e3,
         omega: omegaSpace,
         L: Lspace,
-        coneSpan: 9 / Math.max(0.18, Math.abs(spaceRate)),
+        coneSpan: 9 / Math.max(0.18, Math.abs(phiDot)),
         bodyConeAxis: e3,
         spaceConeAxis: Lspace
       };
@@ -419,7 +425,7 @@
     function project(v) {
       const rect = canvas.getBoundingClientRect();
       const c = camera(v);
-      const zoom = Math.min(rect.width, rect.height) * 0.32;
+      const zoom = Math.min(rect.width, rect.height) * 0.27;
       const depth = 5.2;
       const f = depth / (depth - c[2]);
       return {
@@ -481,14 +487,18 @@
       }
     }
 
-    function drawCone(axis, through, fill, edge, length, label) {
+    function drawCone(axis, through, fill, edge, displayLengthAlongOmega, label) {
       let axisUnit = unit(axis);
       const throughUnit = unit(through);
       if (dot(axisUnit, throughUnit) < 0) axisUnit = scale(axisUnit, -1);
-      const b = basisFromAxis(axisUnit);
-      const cosAngle = Math.max(0.06, Math.min(0.985, dot(axisUnit, throughUnit)));
-      const radius = Math.min(1.35, length * Math.sqrt(1 - cosAngle * cosAngle) / cosAngle);
-      const center = scale(axisUnit, length);
+      const cosAngle = Math.max(0, Math.min(1, dot(axisUnit, throughUnit)));
+      const radial = sub(throughUnit, scale(axisUnit, cosAngle));
+      const b = norm(radial) < 1e-6
+        ? basisFromAxis(axisUnit)
+        : { x: unit(radial), y: cross(axisUnit, unit(radial)), z: axisUnit };
+      const axisLength = displayLengthAlongOmega * cosAngle;
+      const radius = displayLengthAlongOmega * Math.sqrt(1 - cosAngle * cosAngle);
+      const center = scale(axisUnit, axisLength);
       const pts = [];
       const segments = 64;
       for (let i = 0; i <= segments; i++) {
@@ -524,11 +534,11 @@
         line([0, 0, 0], pt, edge, 1.5);
       }
 
-      const contact = scale(throughUnit, length / cosAngle);
+      const contact = scale(throughUnit, displayLengthAlongOmega);
       line([0, 0, 0], contact, edge, 3.2);
-      line([0, 0, 0], scale(axisUnit, length + 0.18), edge, 1.8, [5, 5]);
+      line([0, 0, 0], scale(axisUnit, axisLength + 0.18), edge, 1.8, [5, 5]);
       if (label && controls.vectorLabels.checked) {
-        const p = project(scale(axisUnit, length + 0.34));
+        const p = project(scale(axisUnit, axisLength + 0.34));
         ctx.fillStyle = edge;
         ctx.font = "600 13px system-ui, sans-serif";
         ctx.fillText(label, p.x + 8, p.y + 4);
@@ -564,8 +574,8 @@
           polygons.push({
             vertices,
             depth: vertices.reduce((sum, v) => sum + project(v).z, 0) / vertices.length,
-            fill: `rgba(${Math.round(245 * light)}, ${Math.round(206 * light)}, ${Math.round(91 * light)}, 0.92)`,
-            stroke: "rgba(120, 90, 28, 0.18)",
+            fill: `rgba(${Math.round(245 * light)}, ${Math.round(206 * light)}, ${Math.round(91 * light)}, 0.74)`,
+            stroke: "rgba(120, 90, 28, 0.22)",
             width: 0.45
           });
         }
@@ -619,15 +629,27 @@
       ctx.clearRect(0, 0, rect.width, rect.height);
       const m = model();
 
-      if (controls.cones.checked) {
-        drawCone(m.bodyConeAxis, m.omega, colors.coneA, colors.coneAEdge, 1.02, "body cone");
-        drawCone(m.spaceConeAxis, m.omega, colors.coneB, colors.coneBEdge, 1.18, "space cone");
-      }
-
       if (controls.axisLabels.checked) {
         line([-2, 0, 0], [2, 0, 0], "rgba(80,88,84,0.16)", 1);
         line([0, -2, 0], [0, 2, 0], "rgba(80,88,84,0.16)", 1);
         line([0, 0, -2], [0, 0, 2], "rgba(80,88,84,0.16)", 1);
+      }
+
+      drawBody(m);
+
+      if (controls.cones.checked) {
+        // This is only the finite drawing cutoff along the shared omega generator.
+        // The cone angles themselves come from angle(axis, omega).
+        const displayLengthAlongOmega = 1.58;
+        drawCone(m.bodyConeAxis, m.omega, colors.coneA, colors.coneAEdge, displayLengthAlongOmega, "body cone");
+        drawCone(m.spaceConeAxis, m.omega, colors.coneB, colors.coneBEdge, displayLengthAlongOmega, "space cone");
+        const contactPoint = scale(unit(m.omega), displayLengthAlongOmega);
+        line([0, 0, 0], contactPoint, "rgba(199, 153, 44, 0.95)", 4.8);
+        const cp = project(contactPoint);
+        ctx.fillStyle = "rgba(199, 153, 44, 0.95)";
+        ctx.beginPath();
+        ctx.arc(cp.x, cp.y, 5.5, 0, Math.PI * 2);
+        ctx.fill();
       }
 
       if (state.frame === "space") {
@@ -637,7 +659,6 @@
       }
       drawTrail(v => v.omega, "rgba(199, 153, 44, 0.62)");
 
-      drawBody(m);
       if (controls.axisLabels.checked) {
         arrow(m.x, "rgba(217, 74, 61, 0.35)", "x", { width: 1.7, dot: 4, length: 1.45 });
         arrow(m.y, "rgba(63, 155, 98, 0.35)", "y", { width: 1.7, dot: 4, length: 1.45 });
@@ -680,7 +701,7 @@
       syncControls();
     });
     controls.reset.addEventListener("click", () => {
-      Object.assign(state, { t: 0, yaw: -0.35, pitch: 0.62 });
+      Object.assign(state, { t: 0, yaw: -0.28, pitch: 0.54 });
       syncControls();
     });
     controls.spaceBtn.addEventListener("click", () => {
