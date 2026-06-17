@@ -487,10 +487,11 @@
 /* 8. Motivation slide: Non-Newtonian Biofluids */
 .reveal .nnfluids-layout {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5em;
+  grid-template-columns: 50% 50%;
   align-items: start;
-  margin-top: 0.85em;
+  column-gap: 0;
+  min-height: 390px;
+  margin-top: 0.25em;
 }
 
 .reveal .nnfluids-column-layout {
@@ -498,20 +499,20 @@
 }
 
 .reveal .nnfluids-column-layout img {
-  width: 100%;
-  height: 240px;
+  width: 88%;
+  max-height: 240px;
   object-fit: contain;
 }
 
 .reveal .nnfluids-notes {
-  width: 100%;
+  width: 88%;
   margin: 0.25em auto 0;
 }
 
 .reveal .nnfluids-notes p {
-  font-size: 0.7em;
+  font-size: 0.58em;
   line-height: 1.35;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .reveal .nnfluids-citation p {
@@ -521,13 +522,63 @@
   text-align: center;
 }
 
+.reveal .nnfluids-key p {
+  margin: 0;
+  font-size: 0.7em;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.reveal .mucus-summary-row {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.65em;
+  width: 88%;
+  margin: 0.35em auto 0;
+  padding: 0.28em 0.45em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.045);
+}
+
+.reveal .mucus-summary-figure-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.reveal .mucus-summary-figure-wrap > p {
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .mucus-microstructure-figure {
+  display: block;
+  width: 165px;
+  max-height: 105px;
+  margin: 0;
+  object-fit: contain;
+}
+
+.reveal .mucus-summary-text {
+  text-align: left;
+}
+
+.reveal .mucus-summary-text > p:first-child {
+  margin: 0 0 0.22em;
+  font-size: 0.58em;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 /* 9. Motivation slide: Rheology Alters Biological Swimming */
 .reveal .rheology-effect-layout {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5em;
+  grid-template-columns: 50% 50%;
   align-items: start;
-  margin-top: 0.85em;
+  column-gap: 0;
+  min-height: 390px;
+  margin-top: 0.25em;
 }
 
 .reveal .rheology-effect-column-layout {
@@ -535,20 +586,20 @@
 }
 
 .reveal .rheology-effect-column-layout img {
-  width: 100%;
-  height: 280px;
+  width: 88%;
+  max-height: 300px;
   object-fit: contain;
 }
 
 .reveal .rheology-effect-notes {
-  width: 100%;
+  width: 88%;
   margin: 0.25em auto 0;
 }
 
 .reveal .rheology-effect-notes p {
-  font-size: 0.7em;
+  font-size: 0.58em;
   line-height: 1.35;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .reveal .rheology-effect-citation p {
@@ -558,121 +609,363 @@
   text-align: center;
 }
 
-/* 10. Motivation slide: Speed in shear-thinning fluids */
-.reveal .st-speed-layout {
+/* 10. Motivation slide: Self-Diffusiophoretic Janus Particles */
+.reveal .Janus-layout {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.0em;
+  grid-template-columns: 42% 58%;
   align-items: start;
-  margin-top: 0.75em;
+  column-gap: 0;
+  min-height: 390px;
+  margin-top: 0.25em;
 }
 
-.reveal .st-speed-column-layout {
+.reveal .Janus-column-layout {
   text-align: center;
 }
 
-.reveal .st-speed-column-layout img {
-  width: 100%;
-  height: 300px;
+.reveal .Janus-column-layout img {
+  width: 88%;
+  max-height: 300px;
   object-fit: contain;
 }
 
-.reveal .st-speed-notes {
+.reveal .Janus-notes {
+  width: 88%;
+  margin: 0.25em auto 0;
+}
+
+.reveal .Janus-notes p {
+  font-size: 0.58em;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.reveal .Janus-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+/* 11. Motivation slide: Viscoelasticity Reshapes Janus-Particle Diffusion */
+.reveal .ve-layout {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: start;
+  column-gap: 0;
+  min-height: 390px;
+  margin-top: 0.25em;
+}
+
+.reveal .ve-column-layout {
+  text-align: center;
+}
+
+.reveal .ve-column-layout img {
+  width: 88%;
+  max-height: 240px;
+  object-fit: contain;
+}
+
+.reveal .ve-notes {
+  width: 88%;
+  margin: 0.25em auto 0;
+}
+
+.reveal .ve-notes p {
+  font-size: 0.58em;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.reveal .ve-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+.reveal .janus-diffusion-transition {
+  width: 92%;
+  margin: 0.35em auto 0;
+  padding: 0.3em 0.55em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.055);
+  text-align: left;
+}
+
+.reveal .janus-diffusion-transition p {
+  margin: 0;
+  font-size: 0.58em;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* 12. Motivation slide: Viscoelastic Propulsion of a Spherical Janus Particle */
+.reveal .datt-layout {
+  display: grid;
+  grid-template-columns: 50% 40%;
+  align-items: start;
+  column-gap: 0;
+  max-height: 390px;
+  margin-top: 0.25em;
+}
+
+.reveal .datt-column-layout {
+  text-align: center;
+}
+
+.reveal .datt-column-layout img {
+  width: 88%;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.reveal .datt-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+.reveal .datt-findings {
+  width: 91%;
+  margin: 0.15em auto 0;
+  text-align: left;
+}
+
+.reveal .datt-findings ul {
+  margin: 0;
+  padding-left: 1.15em;
+  font-size: 0.52em;
+  line-height: 1.38;
+}
+
+.reveal .datt-findings li {
+  margin-bottom: 0.28em;
+}
+
+.reveal .datt-tension-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  align-items: center;
+  column-gap: 0.7em;
+  width: 91%;
+  margin: -0.3em auto 0;
+}
+
+.reveal .datt-tension-text {
+  padding: 0.38em 0.55em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.055);
+  text-align: left;
+}
+
+.reveal .datt-tension-text > p:first-child {
+  margin: 0 0 0.18em;
+  font-size: 0.5em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.reveal .datt-tension-text p {
+  margin: 0;
+  font-size: 0.42em;
+  line-height: 1.35;
+}
+
+.reveal .datt-experiment-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reveal .datt-experiment-wrap > p {
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .datt-experiment-figure {
+  display: block;
+  width: 250px;
+  max-height: 150px;
+  margin: 0;
+  object-fit: contain;
+}
+
+.reveal .datt-experiment-citation p {
+  margin: 0.1em 0 0;
+  font-size: 0.24em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+/* 13. Motivation slide: Research question */
+.reveal .geometry-question-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 90px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.35em;
+  width: 92%;
+  margin: 0.35em auto 0;
+}
+
+.reveal .geometry-question-column {
+  text-align: center;
+}
+
+.reveal .geometry-question-figure {
+  display: block;
+  width: 100%;
+  height: 235px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.reveal .geometry-question-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal .geometry-question-center p {
+  margin: 0;
+  color: var(--pku-red);
+  font-size: 1.35em;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.reveal .geometry-question-key p {
+  margin: 0.2em 0 0;
+  font-size: 0.66em;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.reveal .geometry-question-note {
   width: 90%;
-  margin: 0.35em auto 0;
+  margin: 0.2em auto 0;
 }
 
-.reveal .st-speed-notes p {
-  font-size: 0.7em;
-  line-height: 1.35;
-  text-align: center;
+.reveal .geometry-question-note p {
+  margin: 0;
+  font-size: 0.48em;
+  line-height: 1.3;
 }
 
-.reveal .st-speed-citation p {
-  margin: 0.12em 0 0;
-  font-size: 0.26em;
-  line-height: 1.08;
-  text-align: center;
-}
-
-/* 11. Motivation slide: Speed in viscoelastic fluids */
-.reveal .ve-speed-layout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.0em;
-  align-items: start;
-  margin-top: 0.75em;
-}
-
-.reveal .ve-speed-column-layout {
-  text-align: center;
-}
-
-.reveal .ve-speed-column-layout img {
-  width: 100%;
-  height: 300px;
-  object-fit: contain;
-}
-
-.reveal .ve-speed-notes {
-  width: 100%;
-  margin: 0.35em auto 0;
-}
-
-.reveal .ve-speed-notes p {
-  font-size: 0.7em;
-  line-height: 1.35;
-  text-align: center;
-}
-
-.reveal .ve-speed-citation p {
-  margin: 0.12em 0 0;
-  font-size: 0.26em;
-  line-height: 1.08;
-  text-align: center;
-}
-
-/* 12. Motivation slide: Geometry in Non-Newtonian Propulsion */
-.reveal .geometry-layout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.0em;
-  align-items: start;
-  margin-top: 0.75em;
-}
-
-.reveal .geometry-column-layout {
-  text-align: center;
-}
-
-.reveal .geometry-column-layout img {
-  width: 100%;
-  height: 300px;
-  object-fit: contain;
-}
-
-.reveal .geometry-notes {
+.reveal .geometry-question-box {
   width: 90%;
-  margin: 0.35em auto 0;
+  margin: 0.45em auto 0;
+  padding: 0.32em 0.55em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.055);
+  text-align: left;
 }
 
-.reveal .geometry-notes p {
-  font-size: 0.7em;
+.reveal .geometry-question-box ul {
+  margin: 0;
+  padding-left: 1.15em;
+  font-size: 0.58em;
   line-height: 1.35;
+}
+
+.reveal .geometry-question-box li {
+  margin: 0;
+}
+
+.reveal .geometry-question-box li + li {
+  margin-top: 0.35em;
+}
+
+/* 14. Model slide: Weak-viscoelasticity story */
+.reveal .asymptotic-story {
+  width: 91%;
+  margin: 0.1em auto 0;
+  --block-equation-size: 23px;
+}
+
+.reveal .asymptotic-step-key p {
+  margin: 0 0 0.16em;
+  font-size: 0.58em;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.reveal .asymptotic-step-text p {
+  margin: 0 0 0.16em;
+  font-size: 0.5em;
+  line-height: 1.45;
+}
+
+.reveal .known-state-row {
+  display: grid;
+  grid-template-columns: 1fr 45px 1fr 45px 1.45fr;
+  align-items: center;
+  column-gap: 0.2em;
+  margin-top: 0.18em;
+}
+
+.reveal .known-state-item {
+  padding: 0.22em 0.32em;
+  border-radius: 5px;
+  background: rgba(140, 0, 0, 0.045);
   text-align: center;
 }
 
-.reveal .geometry-citation p {
-  margin: 0.12em 0 0;
-  font-size: 0.26em;
-  line-height: 1.08;
+.reveal .known-state-item p {
+  margin: 0;
+  font-size: 0.58em;
+  line-height: 1.45;
+}
+
+.reveal .known-state-arrow {
   text-align: center;
 }
 
-/* 13. Results slide: Sphere Results */
+.reveal .known-state-arrow p {
+  margin: 0;
+  color: var(--pku-red);
+  font-size: 0.5em;
+  line-height: 1;
+}
+
+.reveal .asymptotic-focus {
+  background: rgba(140, 0, 0, 0.055);
+}
+
+/* 15. Model slide: Reciprocal-theorem story */
+.reveal .reciprocal-story {
+  width: 91%;
+  margin: 0.1em auto 0;
+  --block-equation-size: 23px;
+}
+
+.reveal .reciprocal-step-key p {
+  margin: 0 0 0.16em;
+  font-size: 0.58em;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.reveal .reciprocal-step-text p {
+  margin: 0 0 0.16em;
+  font-size: 0.5em;
+  line-height: 1.45;
+}
+
+.reveal .reciprocal-focus {
+  background: rgba(140, 0, 0, 0.055);
+}
+
+.reveal .reciprocal-story .mechanism-block {
+  margin-bottom: 0.62em;
+}
+
+/* 16. Results slide: Sphere Results */
 .reveal .sphere-result-layout {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 40% 65%;
   align-items: center;
   column-gap: 0;
   min-height: 400px;
@@ -698,22 +991,29 @@
   margin: 0 auto;
 }
 
-.reveal .sphere-result-notes {
-  width: 88%;
-  margin: 0;
-  padding-left: 0;
-}
-
-.reveal .sphere-result-notes ul {
-  font-size: 0.7em;
+.reveal .sphere-result-text p {
+  margin: 0 0 0.16em;
+  font-size: 0.5em;
   line-height: 1.45;
 }
 
-.reveal .sphere-result-notes li {
-  margin-bottom: 0.95em;
+.reveal .sphere-result-notes {
+  width: 92%;
+  margin: 0.4em auto 0;
+  padding: 0.32em 0.55em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.075);
+  text-align: left;
 }
 
-/* 14. Results slide: Half-coated spheroids */
+.reveal .sphere-result-notes p {
+  margin: 0;
+  font-size: 0.58em;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* 17. Results slide: Half-coated spheroids */
 .reveal .halfcase-layout {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -757,6 +1057,11 @@
   margin-bottom: 0.95em;
 }
 
+.reveal .halfcase-notes li:nth-child(3) {
+  color: var(--pku-red);
+  font-weight: 500;
+}
+
 .reveal .halfcase-key p {
   margin: 0 0 0.55em;
   font-size: 0.74em;
@@ -764,7 +1069,7 @@
   line-height: 1.25;
 }
 
-/* 15. Results slide: Eccentricity-induced symmetry breaking */
+/* 18. Results slide: Eccentricity-induced symmetry breaking */
 .reveal .symmetry-breaking-layout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -794,7 +1099,7 @@
   text-align: center;
 }
 
-/* 16. Results slide: Mechanism */
+/* 19. Results slide: Mechanism */
 .reveal .mechanism-layout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -828,34 +1133,162 @@
   margin-bottom: 0.95em;
 }
 
-/* 17. Summary slide: Summary */
+/* 20. Summary slide: Summary */
 .reveal .summary-layout {
-  width: 100%;
-  margin: 0 0 0 0.5em;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  column-gap: 0.7em;
+  width: 94%;
+  margin: 0.15em auto 0;
 }
 
-.reveal .summary-block {
-  margin-bottom: 0.5em;
+.reveal .summary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 390px;
+  padding: 0.28em 0.35em 0.35em;
+  border-radius: 7px;
+  background: rgba(17, 17, 17, 0.025);
+  text-align: center;
 }
 
-.reveal .summary-notes {
+.reveal .summary-figure-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 235px;
+}
+
+.reveal .summary-figure-wrap > p {
   margin: 0;
+  line-height: 1;
 }
 
-.reveal .summary-notes ul {
-  margin: 0 0 0 1em;
-  font-size: 0.7em;
-  line-height: 1.45;
+.reveal .summary-figure {
+  display: block;
+  width: 100%;
+  max-height: 225px;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
-.reveal .summary-notes li {
-  margin-bottom: 0.95em;
+.reveal .summary-key {
+  width: 92%;
+  margin: 0.18em auto 0;
 }
 
 .reveal .summary-key p {
   margin: 0;
-  font-size: 0.74em;
+  color: var(--pku-red);
+  font-size: 0.58em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.reveal .summary-text {
+  width: 92%;
+  margin: 0.2em auto 0;
+}
+
+.reveal .summary-text p {
+  margin: 0;
+  font-size: 0.5em;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.reveal .summary-takehome {
+  width: 90%;
+  margin: 0.45em auto 0;
+  padding: 0.34em 0.55em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.085);
+  text-align: center;
+}
+
+.reveal .summary-takehome p {
+  margin: 0;
+  font-size: 0.58em;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* 21. Acknowledgment slide */
+.reveal .acknowledgment-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  column-gap: 1.1em;
+  width: 88%;
+  margin: 0.2em auto 0;
+}
+
+.reveal .acknowledgment-person {
+  text-align: center;
+}
+
+.reveal .acknowledgment-person > p {
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .acknowledgment-photo {
+  display: block;
+  width: 200px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.reveal .acknowledgment-name {
+  margin-top: 0.28em;
+}
+
+.reveal .acknowledgment-name p {
+  margin: 0;
+  color: var(--pku-red);
+  font-size: 0.68em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.reveal .acknowledgment-role p {
+  margin: 0.12em 0 0;
+  font-size: 0.48em;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.3;
+}
+
+.reveal .acknowledgment-affiliation p {
+  margin: 0.12em 0 0;
+  color: var(--muted-text);
+  font-size: 0.4em;
+  line-height: 1.3;
+}
+
+.reveal .acknowledgment-footer {
+  width: 90%;
+  margin: 0.45em auto 0;
+  padding: 0.3em 0.55em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.055);
+  text-align: left;
+}
+
+.reveal .acknowledgment-item {
+  margin: 0;
+}
+
+.reveal .acknowledgment-item + .acknowledgment-item {
+  margin-top: 0.18em;
+}
+
+.reveal .acknowledgment-item p {
+  margin: 0;
+  font-size: 0.5em;
+  line-height: 1.45;
 }
