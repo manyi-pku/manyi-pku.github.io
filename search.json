@@ -110,6 +110,13 @@
     ]
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
     "objectID": "teaching/index.html",
     "href": "teaching/index.html",
     "title": "Teaching Resources",
@@ -117,11 +124,11 @@
     "text": "Teaching Resources\n\nFree Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "presentations.html",
+    "href": "presentations.html",
+    "title": "Presentations",
     "section": "",
-    "text": "About this site"
+    "text": "Presentations\nThis page is an index for presentation materials that are intended to be shared by direct link.\nNo presentation decks have been added yet. Future slides should use the structure:\npresentations/\n  topic-name/\n    yyyy-mm-event-name/\n      index.html\nExample direct links will look like:\n\n/presentations/acoustic-streaming/2025-07-wuwangyi/\n/presentations/three-link-rl/2025-prfluids/"
   },
   {
     "objectID": "bio.html",
