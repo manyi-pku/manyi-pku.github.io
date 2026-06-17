@@ -1,0 +1,861 @@
+:root {
+  --pku-red: #8c0000;
+  --text-color: #111;
+  --muted-text: #555;
+  --slide-font: "Avenir Next", "Charter", -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+    "Helvetica Neue", Arial, sans-serif;
+  --title-font: "Charter", "Avenir Next", "Iowan Old Style", Georgia,
+    "Times New Roman", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", serif;
+  --equation-size: 24px;
+}
+
+/* 1. Global slide defaults */
+.reveal {
+  color: var(--text-color);
+  font-family: var(--slide-font);
+  font-weight: 400;
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal p,
+.reveal li {
+  font-family: var(--slide-font);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.reveal p {
+  font-size: 0.75em;
+}
+
+.reveal ul {
+  font-size: 0.85em;
+  line-height: 1.45;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: 600;
+}
+
+.reveal img {
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.reveal .progress {
+  display: none !important;
+}
+
+/* 2. Regular slide title and PKU logo */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: var(--title-font);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.reveal h2 {
+  display: inline-block;
+  max-width: calc(100% - 185px);
+  margin: 22px 0 1.25em;
+  font-size: 0.82em;
+  white-space: nowrap;
+}
+
+.reveal .slides section:not(.cover-slide):not(:has(> section)) > h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: 0.18em;
+  background: var(--pku-red);
+}
+
+.reveal .slides section:not(:has(> section))::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: 0;
+  width: 135px;
+  height: 55px;
+  background: url("assets/pekingu.png") right top / contain no-repeat;
+  pointer-events: none;
+}
+
+/* 3. Bottom section progress bar */
+.reveal .section-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  pointer-events: none;
+}
+
+.reveal .section-progress p {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 0;
+  color: rgba(17, 17, 17, 0.34);
+  font-size: 0.22em;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.reveal .section-progress span {
+  border-top: 2px solid rgba(140, 0, 0, 0.18);
+  padding-top: 0.45em;
+}
+
+.reveal .section-progress .active {
+  color: rgba(17, 17, 17, 0.68);
+  border-top-color: rgba(140, 0, 0, 0.68);
+}
+
+/* 4. Cover slide */
+.reveal .cover-slide > h2 {
+  display: none;
+}
+
+.reveal .cover-rule {
+  position: absolute;
+  top: 112px;
+  left: 58px;
+  width: 700px;
+  height: 4px;
+  background: var(--pku-red);
+}
+
+.reveal .cover-slide::after {
+  top: 32px;
+  width: 170px;
+  height: 70px;
+}
+
+.reveal .cover-title {
+  position: absolute;
+  top: 158px;
+  left: 58px;
+  width: 700px;
+  font-family: var(--title-font);
+  font-size: 1.18em;
+  font-weight: 500;
+  line-height: 1.18;
+}
+
+.reveal .cover-meta {
+  position: absolute;
+  right: 58px;
+  bottom: 116px;
+  width: 650px;
+  color: #222;
+  font-family: var(--slide-font);
+  line-height: 1.35;
+  text-align: right;
+}
+
+.reveal .cover-title p,
+.reveal .cover-meta p {
+  margin: 0;
+  font: inherit;
+  line-height: inherit;
+}
+
+.reveal .cover-authors {
+  margin-bottom: 0.45em;
+  font-size: 0.46em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.reveal .cover-event,
+.reveal .cover-date {
+  color: #333;
+  font-size: 0.34em;
+  line-height: 1.35;
+}
+
+.reveal .cover-date {
+  margin-top: 0.15em;
+}
+
+/* 5. Model overview slide */
+.reveal .model-layout,
+.reveal .slip-layout {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  column-gap: 0;
+  min-height: 390px;
+  margin-top: 0.25em;
+}
+
+.reveal .slip-layout {
+  min-height: 400px;
+}
+
+.reveal .model-figure-wrap,
+.reveal .slip-figure-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal .model-figure,
+.reveal .slip-figure {
+  display: block;
+  width: 84%;
+  max-height: 440px;
+  margin: 0 auto;
+}
+
+.reveal .model-notes {
+  width: 88%;
+  margin: 0;
+  padding-left: 0;
+}
+
+.reveal .model-notes ul {
+  font-size: 0.7em;
+  line-height: 1.45;
+}
+
+.reveal .model-notes li {
+  margin-bottom: 0.95em;
+}
+
+.reveal .key-term {
+  color: var(--pku-red);
+  font-weight: 600;
+}
+
+.reveal .no-break {
+  white-space: nowrap;
+}
+
+/* 6. Reusable equation blocks */
+.reveal .slip-content,
+.reveal .rheology-content,
+.reveal .diffusion-content,
+.reveal .asymptotic-content,
+.reveal .reciprocal-content {
+  width: 91%;
+  margin: 0;
+  --block-equation-size: var(--equation-size);
+}
+
+.reveal .rheology-content,
+.reveal .diffusion-content,
+.reveal .asymptotic-content,
+.reveal .reciprocal-content {
+  width: 91%;
+  margin: 0.1em auto 0;
+  --block-equation-size: 23px;
+}
+
+.reveal .diffusion-content {
+  margin-top: 0.45em;
+}
+
+.reveal .asymptotic-content,
+.reveal .reciprocal-content {
+  margin-top: -0.6em;
+}
+
+.reveal .mechanism-block {
+  margin-bottom: 0.9em;
+  padding-left: 0.52em;
+  border-left: 3px solid rgba(140, 0, 0, 0.5);
+}
+
+.reveal .rheology-content .mechanism-block,
+.reveal .diffusion-content .mechanism-block,
+.reveal .asymptotic-content .mechanism-block,
+.reveal .reciprocal-content .mechanism-block {
+  margin-bottom: 0.6em;
+}
+
+.reveal .diffusion-content .mechanism-block {
+  margin-bottom: 0.78em;
+}
+
+.reveal .mechanism-block > p:first-child {
+  margin: 0 0 0.28em;
+  color: #222;
+  font-size: 0.58em;
+  font-weight: 500;
+  line-height: 1.18;
+}
+
+.reveal .rheology-content .mechanism-block > p:first-child,
+.reveal .diffusion-content .mechanism-block > p:first-child,
+.reveal .asymptotic-content .mechanism-block > p:first-child,
+.reveal .reciprocal-content .mechanism-block > p:first-child {
+  margin-bottom: 0.22em;
+}
+
+.reveal .mechanism-block > p:has(.math.display) {
+  margin: 0.12em 0 0.22em;
+  line-height: 1;
+  text-align: left;
+}
+
+.reveal .mechanism-block .math.display,
+.reveal .mechanism-block .MathJax_Display,
+.reveal .mechanism-block mjx-container[display="true"] {
+  font-size: var(--block-equation-size) !important;
+  text-align: left !important;
+}
+
+.reveal .mechanism-block .MathJax_Display {
+  margin: 0.12em 0 0.2em !important;
+}
+
+.reveal .symbol-note p {
+  margin: 0.2em 0 0;
+  color: var(--muted-text);
+  font-size: 0.38em;
+  line-height: 1.25;
+}
+
+.reveal .caveat-row {
+  display: grid;
+  grid-template-columns: minmax(0, 3.7fr) minmax(0, 1.15fr);
+  align-items: center;
+  column-gap: 0.72em;
+}
+
+.reveal .caveat-block {
+  margin: 0;
+  padding: 0.28em 0.5em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.055);
+}
+
+.reveal .caveat-text > p:first-child {
+  margin: 0 0 0.16em;
+  color: #222;
+  font-size: 0.46em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.reveal .caveat-text p {
+  margin: 0;
+  color: #444;
+  font-size: 0.36em;
+  font-style: italic;
+  line-height: 1.28;
+}
+
+.reveal .caveat-block .symbol-note p {
+  margin-top: 0.22em;
+  font-size: 0.3em;
+  font-style: normal;
+}
+
+.reveal .caveat-figure-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+}
+
+.reveal .caveat-figure-wrap > p {
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .caveat-figure {
+  display: block;
+  width: 155px;
+  max-height: 145px;
+  margin: 0 auto;
+}
+
+.reveal .caveat-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+.reveal .rheology-content .symbol-note p,
+.reveal .diffusion-content .symbol-note p,
+.reveal .asymptotic-content .symbol-note p,
+.reveal .reciprocal-content .symbol-note p {
+  margin-top: 0.18em;
+}
+
+/* 7. Special rows inside equation blocks */
+.reveal .propulsion-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  align-items: center;
+  column-gap: 0.5em;
+}
+
+.reveal .propulsion-equation-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 0.25em;
+}
+
+.reveal .propulsion-formula p,
+.reveal .rheology-main-equation p,
+.reveal .scale-row p,
+.reveal .dimensionless-row p {
+  margin: 0;
+}
+
+.reveal .propulsion-formula p {
+  white-space: nowrap;
+}
+
+.reveal .bio-analogy {
+  width: 160px;
+  text-align: center;
+}
+
+.reveal .paramecium-figure {
+  display: block;
+  width: 150px;
+  max-height: 120px;
+  margin: 0 auto 0.12em;
+  object-fit: contain;
+}
+
+.reveal .bio-analogy p {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.reveal .rheology-equation-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
+  align-items: center;
+  column-gap: 0.55em;
+}
+
+.reveal .solute-equation-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.35fr);
+  align-items: center;
+  column-gap: 0.55em;
+}
+
+.reveal .scale-row,
+.reveal .dimensionless-row {
+  display: flex;
+  align-items: center;
+  gap: 1.6em;
+  margin: 0.12em 0 0.22em;
+  font-family: var(--slide-font);
+  font-size: var(--block-equation-size);
+  line-height: 1.05;
+}
+
+.reveal .dimensionless-row {
+  flex-wrap: wrap;
+  row-gap: 0.32em;
+}
+
+.reveal .scale-row p,
+.reveal .dimensionless-row p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.reveal .scale-label {
+  margin-right: 0.32em;
+  font-family: var(--slide-font);
+  font-weight: 500;
+}
+
+/* 8. Motivation slide: Non-Newtonian Biofluids */
+.reveal .nnfluids-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+  align-items: start;
+  margin-top: 0.85em;
+}
+
+.reveal .nnfluids-column-layout {
+  text-align: center;
+}
+
+.reveal .nnfluids-column-layout img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+}
+
+.reveal .nnfluids-notes {
+  width: 100%;
+  margin: 0.25em auto 0;
+}
+
+.reveal .nnfluids-notes p {
+  font-size: 0.7em;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.reveal .nnfluids-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+/* 9. Motivation slide: Rheology Alters Biological Swimming */
+.reveal .rheology-effect-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+  align-items: start;
+  margin-top: 0.85em;
+}
+
+.reveal .rheology-effect-column-layout {
+  text-align: center;
+}
+
+.reveal .rheology-effect-column-layout img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+}
+
+.reveal .rheology-effect-notes {
+  width: 100%;
+  margin: 0.25em auto 0;
+}
+
+.reveal .rheology-effect-notes p {
+  font-size: 0.7em;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.reveal .rheology-effect-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+/* 10. Motivation slide: Speed in shear-thinning fluids */
+.reveal .st-speed-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.0em;
+  align-items: start;
+  margin-top: 0.75em;
+}
+
+.reveal .st-speed-column-layout {
+  text-align: center;
+}
+
+.reveal .st-speed-column-layout img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+
+.reveal .st-speed-notes {
+  width: 90%;
+  margin: 0.35em auto 0;
+}
+
+.reveal .st-speed-notes p {
+  font-size: 0.7em;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.reveal .st-speed-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+/* 11. Motivation slide: Speed in viscoelastic fluids */
+.reveal .ve-speed-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.0em;
+  align-items: start;
+  margin-top: 0.75em;
+}
+
+.reveal .ve-speed-column-layout {
+  text-align: center;
+}
+
+.reveal .ve-speed-column-layout img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+
+.reveal .ve-speed-notes {
+  width: 100%;
+  margin: 0.35em auto 0;
+}
+
+.reveal .ve-speed-notes p {
+  font-size: 0.7em;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.reveal .ve-speed-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+/* 12. Motivation slide: Geometry in Non-Newtonian Propulsion */
+.reveal .geometry-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.0em;
+  align-items: start;
+  margin-top: 0.75em;
+}
+
+.reveal .geometry-column-layout {
+  text-align: center;
+}
+
+.reveal .geometry-column-layout img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+
+.reveal .geometry-notes {
+  width: 90%;
+  margin: 0.35em auto 0;
+}
+
+.reveal .geometry-notes p {
+  font-size: 0.7em;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.reveal .geometry-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+/* 13. Results slide: Sphere Results */
+.reveal .sphere-result-layout {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  column-gap: 0;
+  min-height: 400px;
+  margin-top: 0.25em;
+}
+
+.reveal .sphere-result-content {
+  width: 100%;
+  margin: 0;
+  --block-equation-size: 23px;
+}
+
+.reveal .sphere-result-figure-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal .sphere-result-figure {
+  display: block;
+  width: 84%;
+  max-height: 440px;
+  margin: 0 auto;
+}
+
+.reveal .sphere-result-notes {
+  width: 88%;
+  margin: 0;
+  padding-left: 0;
+}
+
+.reveal .sphere-result-notes ul {
+  font-size: 0.7em;
+  line-height: 1.45;
+}
+
+.reveal .sphere-result-notes li {
+  margin-bottom: 0.95em;
+}
+
+/* 14. Results slide: Half-coated spheroids */
+.reveal .halfcase-layout {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  column-gap: 0;
+  min-height: 400px;
+  margin-top: 0.25em;
+}
+
+.reveal .halfcase-content {
+  width: 100%;
+  margin: 0;
+  --block-equation-size: 23px;
+}
+
+.reveal .halfcase-figure-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal .halfcase-figure {
+  display: block;
+  width: 84%;
+  max-height: 440px;
+  margin: 0 auto;
+}
+
+.reveal .halfcase-notes {
+  width: 88%;
+  margin: 0;
+  padding-left: 0;
+}
+
+.reveal .halfcase-notes ul {
+  font-size: 0.7em;
+  line-height: 1.45;
+}
+
+.reveal .halfcase-notes li {
+  margin-bottom: 0.95em;
+}
+
+.reveal .halfcase-key p {
+  margin: 0 0 0.55em;
+  font-size: 0.74em;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* 15. Results slide: Eccentricity-induced symmetry breaking */
+.reveal .symmetry-breaking-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.0em;
+  align-items: start;
+  margin-top: 0.75em;
+}
+
+.reveal .symmetry-breaking-column-layout {
+  text-align: center;
+}
+
+.reveal .symmetry-breaking-column-layout img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+}
+
+.reveal .symmetry-breaking-notes {
+  width: 90%;
+  margin: 0.35em auto 0;
+}
+
+.reveal .symmetry-breaking-notes p {
+  font-size: 0.7em;
+  line-height: 1.35;
+  text-align: center;
+}
+
+/* 16. Results slide: Mechanism */
+.reveal .mechanism-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.0em;
+  align-items: start;
+  margin-top: 0.75em;
+}
+
+.reveal .mechanism-column-layout {
+  text-align: center;
+}
+
+.reveal .mechanism-column-layout img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+}
+
+.reveal .mechanism-notes {
+  width: 88%;
+  margin: 0 0 0 1.2em;
+  padding-left: 0;
+}
+
+.reveal .mechanism-notes ul {
+  font-size: 0.7em;
+  line-height: 1.45;
+}
+
+.reveal .mechanism-notes li {
+  margin-bottom: 0.95em;
+}
+
+/* 17. Summary slide: Summary */
+.reveal .summary-layout {
+  width: 100%;
+  margin: 0 0 0 0.5em;
+}
+
+.reveal .summary-block {
+  margin-bottom: 0.5em;
+}
+
+.reveal .summary-notes {
+  width: 100%;
+  margin: 0;
+}
+
+.reveal .summary-notes ul {
+  margin: 0 0 0 1em;
+  font-size: 0.7em;
+  line-height: 1.45;
+}
+
+.reveal .summary-notes li {
+  margin-bottom: 0.95em;
+}
+
+.reveal .summary-key p {
+  margin: 0;
+  font-size: 0.74em;
+  font-weight: 500;
+  line-height: 1.25;
+}

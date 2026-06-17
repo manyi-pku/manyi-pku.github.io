@@ -2,11 +2,13 @@
 title: "Presentations"
 ---
 
-# Presentations
+This page collects presentation materials that are intended to be shared by direct link.
 
-This page is an index for presentation materials that are intended to be shared by direct link.
+## Talks
 
-No presentation decks have been added yet. Future slides should use the structure:
+- [Viscoelastic propulsion of self-diffusiophoretic particles (USNCTAM26, June 22, 2026)](presentations/viscoelastic-propulsion/2026-06-usnctam26/)
+
+Future slides can follow this structure:
 
 ```text
 presentations/
@@ -14,8 +16,3 @@ presentations/
     yyyy-mm-event-name/
       index.html
 ```
-
-Example direct links will look like:
-
-- `/presentations/acoustic-streaming/2025-07-wuwangyi/`
-- `/presentations/three-link-rl/2025-prfluids/`

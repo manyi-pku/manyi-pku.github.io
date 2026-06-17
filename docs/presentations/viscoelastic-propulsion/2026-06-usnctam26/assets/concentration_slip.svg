@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 520" role="img" aria-label="Nonuniform solute concentration and tangential slip around a spheroidal Janus particle">
+  <defs>
+    <linearGradient id="inert-fill" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.45" stop-color="#ececea"/>
+      <stop offset="1" stop-color="#c9c9c5"/>
+    </linearGradient>
+    <linearGradient id="active-fill" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#c5c5c0"/>
+      <stop offset="0.58" stop-color="#9d9d98"/>
+      <stop offset="1" stop-color="#777772"/>
+    </linearGradient>
+    <radialGradient id="surface-highlight" cx="0.33" cy="0.22" r="0.72">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="solute-active" cx="0.5" cy="0.74" r="0.47">
+      <stop offset="0" stop-color="#8c0000" stop-opacity="0.42"/>
+      <stop offset="0.5" stop-color="#8c0000" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#8c0000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="solute-inert" cx="0.5" cy="0.31" r="0.66">
+      <stop offset="0" stop-color="#8c0000" stop-opacity="0.10"/>
+      <stop offset="0.56" stop-color="#8c0000" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#8c0000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-shadow" x="-30%" y="-20%" width="160%" height="150%">
+      <feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#000" flood-opacity="0.16"/>
+    </filter>
+    <clipPath id="body-clip">
+      <ellipse cx="210" cy="260" rx="92" ry="190"/>
+    </clipPath>
+    <marker id="arrow-slip" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9b0000"/>
+    </marker>
+    <marker id="arrow-dark" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <rect width="420" height="520" fill="none"/>
+  <ellipse cx="210" cy="334" rx="178" ry="205" fill="url(#solute-active)"/>
+  <ellipse cx="210" cy="196" rx="172" ry="190" fill="url(#solute-inert)"/>
+
+  <g font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="148" y1="96" x2="148" y2="48" stroke="#444" stroke-width="2.2" marker-end="url(#arrow-dark)"/>
+    <text x="163" y="58" fill="#444" font-size="26" font-style="italic">U</text>
+
+    <g filter="url(#soft-shadow)">
+      <ellipse cx="210" cy="260" rx="92" ry="190" fill="url(#inert-fill)" stroke="#2f2f2f" stroke-width="3"/>
+      <path d="M120 300 C148 318 272 318 300 300 L300 470 L120 470 Z" fill="url(#active-fill)" clip-path="url(#body-clip)"/>
+      <ellipse cx="210" cy="260" rx="92" ry="190" fill="url(#surface-highlight)" clip-path="url(#body-clip)"/>
+      <path d="M120 300 C148 318 272 318 300 300" fill="none" stroke="#222" stroke-width="2.6"/>
+      <ellipse cx="210" cy="260" rx="92" ry="190" fill="none" stroke="#2f2f2f" stroke-width="3"/>
+    </g>
+
+    <text x="137" y="184" fill="#555" font-size="22">inert</text>
+    <text x="153" y="391" fill="#f7f7f5" font-size="22">active</text>
+
+    <path d="M337 252 C339 282 334 312 329 338" fill="none" stroke="#111" stroke-width="1.7" stroke-dasharray="4 6"/>
+
+    <g fill="none" stroke="#9b0000" stroke-width="2.9">
+      <path d="M308 329 C309 324 309 320 310 316" marker-end="url(#arrow-slip)"/>
+      <path d="M318 329 C321 313 322 298 321 283" marker-end="url(#arrow-slip)"/>
+      <path d="M330 329 C335 307 338 281 337 255" marker-end="url(#arrow-slip)"/>
+    </g>
+
+    <text x="8" y="150" fill="#9b0000" font-size="20">nonuniform</text>
+    <text x="8" y="174" fill="#9b0000" font-size="20">solute field</text>
+
+    <text x="346" y="322" fill="#9b0000" font-size="25" font-style="italic">u<tspan dy="7" font-size="16">s</tspan></text>
+    <line x1="342" y1="326" x2="332" y2="315" stroke="#9b0000" stroke-width="1.6"/>
+    <text x="344" y="250" fill="#444" font-size="15">thin layer</text>
+    <line x1="342" y1="254" x2="337" y2="272" stroke="#444" stroke-width="1"/>
+
+    <line x1="280" y1="402" x2="334" y2="438" stroke="#444" stroke-width="1.3"/>
+    <text x="232" y="462" fill="#444" font-size="19">Janus surface</text>
+    <text x="232" y="484" fill="#444" font-size="18" font-style="italic">τ = τ<tspan dy="5" font-size="12">0</tspan></text>
+  </g>
+</svg>

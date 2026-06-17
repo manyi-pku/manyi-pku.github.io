@@ -22,8 +22,6 @@ website:
         href: people.qmd
       - text: "Bio"
         href: bio.qmd
-      - text: "Teaching"
-        href: teaching.qmd
 
 format:
   html:
