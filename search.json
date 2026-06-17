@@ -1,22 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Man,Yi",
-    "section": "",
-    "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "people.html",
     "href": "people.html",
     "title": "People",
@@ -44,56 +27,6 @@
     "text": "Alumni\n\nPhD Graduates\n\nSun, Xuyang (孙旭阳) (2021 – 2025)\n\nNow an Algorithm Engineer at Goertek Inc., Qingdao",
     "crumbs": [
       "People"
-    ]
-  },
-  {
-    "objectID": "bio.html",
-    "href": "bio.html",
-    "title": "Biography",
-    "section": "",
-    "text": "University of Southern California, USA Postdoctoral Scholar, Department of Aerospace and Mechanical Engineering Sept. 2017 – Sept. 2021 Bio-Inspired Motion Lab led by Prof. Eva Kanso",
-    "crumbs": [
-      "Bio"
-    ]
-  },
-  {
-    "objectID": "bio.html#employment",
-    "href": "bio.html#employment",
-    "title": "Biography",
-    "section": "",
-    "text": "University of Southern California, USA Postdoctoral Scholar, Department of Aerospace and Mechanical Engineering Sept. 2017 – Sept. 2021 Bio-Inspired Motion Lab led by Prof. Eva Kanso",
-    "crumbs": [
-      "Bio"
-    ]
-  },
-  {
-    "objectID": "bio.html#education",
-    "href": "bio.html#education",
-    "title": "Biography",
-    "section": "Education",
-    "text": "Education\nUniversity of Cambridge, Trinity College, UK Ph.D. in Applied Mathematics Jul. 2017 Advisor: Prof. Eric Lauga Award: Best Doctoral Dissertation Award, UK Fluids Network, 2018\nUniversity of California, San Diego, USA M.S. in Mechanical Engineering Jun. 2013\nPeking University, China B.S. in Mechanics / Applied Mathematics Jul. 2011",
-    "crumbs": [
-      "Bio"
-    ]
-  },
-  {
-    "objectID": "bio.html#honors-and-awards",
-    "href": "bio.html#honors-and-awards",
-    "title": "Biography",
-    "section": "Honors and Awards",
-    "text": "Honors and Awards\n\nTeaching Excellence Award, Peking University, 2025\nOutstanding Undergraduate Thesis Supervisor Award, Peking University, 2025 \nWang Minzhong Education and Teaching Award, College of Engineering, Peking University, 2024\nP&G Teaching Award, Peking University, 2023\nBest Doctoral Dissertation Award, UK Fluids Network, 2018\nSmith-Knight and Rayleigh-Knight Essay Prize, University of Cambridge, 2015\nCambridge International Scholarship, University of Cambridge, 2013\nThe Powell Fellowship, University of California, San Diego, 2011\nBoeing Scholarship, Boeing China, 2010\nFounder Scholarship, Founder Group, 2008 \nBronze medal, 22nd Chinese Mathematical Olympiad, 2007\nFirst Prize, 27th National Mathematics Contest for high school students (delegate of Gansu province), 2006\nFirst Prize, 20th National Chemistry Contest for high school students, 2006\nSecond Prize, 23rd National Physics Contest for high school students, 2006",
-    "crumbs": [
-      "Bio"
-    ]
-  },
-  {
-    "objectID": "bio.html#miscellaneous",
-    "href": "bio.html#miscellaneous",
-    "title": "Biography",
-    "section": "Miscellaneous",
-    "text": "Miscellaneous\n\n200-hour Yoga Alliance Certification, CorePower Yoga (Aug. 2018)",
-    "crumbs": [
-      "Bio"
     ]
   },
   {
@@ -164,6 +97,90 @@
     "text": "Ph.D. Thesis\nSwimming at low Reynolds number: slip boundaries and interacting filaments, Y. Man, University of Cambridge, 2017. PDF | Library Link",
     "crumbs": [
       "Publications"
+    ]
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching Resources",
+    "section": "",
+    "text": "Teaching Resources\n\nFree Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss",
+    "crumbs": [
+      "Teaching"
+    ]
+  },
+  {
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
+    "title": "Teaching Resources",
+    "section": "",
+    "text": "Teaching Resources\n\nFree Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "bio.html",
+    "href": "bio.html",
+    "title": "Biography",
+    "section": "",
+    "text": "University of Southern California, USA Postdoctoral Scholar, Department of Aerospace and Mechanical Engineering Sept. 2017 – Sept. 2021 Bio-Inspired Motion Lab led by Prof. Eva Kanso",
+    "crumbs": [
+      "Bio"
+    ]
+  },
+  {
+    "objectID": "bio.html#employment",
+    "href": "bio.html#employment",
+    "title": "Biography",
+    "section": "",
+    "text": "University of Southern California, USA Postdoctoral Scholar, Department of Aerospace and Mechanical Engineering Sept. 2017 – Sept. 2021 Bio-Inspired Motion Lab led by Prof. Eva Kanso",
+    "crumbs": [
+      "Bio"
+    ]
+  },
+  {
+    "objectID": "bio.html#education",
+    "href": "bio.html#education",
+    "title": "Biography",
+    "section": "Education",
+    "text": "Education\nUniversity of Cambridge, Trinity College, UK Ph.D. in Applied Mathematics Jul. 2017 Advisor: Prof. Eric Lauga Award: Best Doctoral Dissertation Award, UK Fluids Network, 2018\nUniversity of California, San Diego, USA M.S. in Mechanical Engineering Jun. 2013\nPeking University, China B.S. in Mechanics / Applied Mathematics Jul. 2011",
+    "crumbs": [
+      "Bio"
+    ]
+  },
+  {
+    "objectID": "bio.html#honors-and-awards",
+    "href": "bio.html#honors-and-awards",
+    "title": "Biography",
+    "section": "Honors and Awards",
+    "text": "Honors and Awards\n\nTeaching Excellence Award, Peking University, 2025\nOutstanding Undergraduate Thesis Supervisor Award, Peking University, 2025 \nWang Minzhong Education and Teaching Award, College of Engineering, Peking University, 2024\nP&G Teaching Award, Peking University, 2023\nBest Doctoral Dissertation Award, UK Fluids Network, 2018\nSmith-Knight and Rayleigh-Knight Essay Prize, University of Cambridge, 2015\nCambridge International Scholarship, University of Cambridge, 2013\nThe Powell Fellowship, University of California, San Diego, 2011\nBoeing Scholarship, Boeing China, 2010\nFounder Scholarship, Founder Group, 2008 \nBronze medal, 22nd Chinese Mathematical Olympiad, 2007\nFirst Prize, 27th National Mathematics Contest for high school students (delegate of Gansu province), 2006\nFirst Prize, 20th National Chemistry Contest for high school students, 2006\nSecond Prize, 23rd National Physics Contest for high school students, 2006",
+    "crumbs": [
+      "Bio"
+    ]
+  },
+  {
+    "objectID": "bio.html#miscellaneous",
+    "href": "bio.html#miscellaneous",
+    "title": "Biography",
+    "section": "Miscellaneous",
+    "text": "Miscellaneous\n\n200-hour Yoga Alliance Certification, CorePower Yoga (Aug. 2018)",
+    "crumbs": [
+      "Bio"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Man,Yi",
+    "section": "",
+    "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
+    "crumbs": [
+      "Home"
     ]
   }
 ]
