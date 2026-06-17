@@ -132,35 +132,42 @@
     "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#non-newtonian-biofluids",
     "title": "Man,Yi",
     "section": "Non-Newtonian Biofluids",
-    "text": "Non-Newtonian Biofluids\n\n\n\nReproductive processes\n\n\n\nSuarez and Pacey, Hum. Reprod. Update, 2006\n\n\n\n\nBiofilm formation\n\n\n\nDonlan, Emerg. Infect. Dis., 2002\n\n\n\n\nTargeted drug delivery\n\n\n\nGao et al., Small, 2012"
+    "text": "Non-Newtonian Biofluids\n\n\n\n\nBansil et al., Front. Immunol., 2013\n\n\nPolymeric microstructure of human mucus\n\n\n\n\n\n \n\n\nViscous and elastic responses coexist across timescales\n\n\n\n\n\n\n\n\nPolymer-containing biofluids, such as mucus, exhibit heterogeneous microstructures and viscoelastic rheology"
   },
   {
     "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#rheology-alters-biological-swimming",
     "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#rheology-alters-biological-swimming",
     "title": "Man,Yi",
     "section": "Rheology Alters Biological Swimming",
-    "text": "Rheology Alters Biological Swimming\n\n\n\nSwimming performance\n\n\n\nPatteson et al., Sci. Rep., 2015\n\n\n\n\nRheotactic responses\n\n\n\nTorres et al., Proc. Natl. Acad. Sci. U.S.A., 2024\n\n\n\n\nCollective behavior\n\n\n\nTung et al., Sci. Rep., 2017"
+    "text": "Rheology Alters Biological Swimming\n\n\n\n\nPatteson et al., Sci. Rep., 2015\n\n\nElastic stresses suppress inefficient body wobbling, allowing E. coli to swim faster\n\n\n\n\n\nTung et al., Sci. Rep., 2017\n\n\nFluid viscoelasticity strengthens sperm–sperm interactions and promotes collective swimming"
   },
   {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#speed-in-shear-thinning-fluids",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#speed-in-shear-thinning-fluids",
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#self-diffusiophoretic-janus-particles",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#self-diffusiophoretic-janus-particles",
     "title": "Man,Yi",
-    "section": "Speed in Shear-Thinning Fluids",
-    "text": "Speed in Shear-Thinning Fluids\n\n\n\n\n \n\n\nSelf-diffusiophoretic spherical particle\n\n\n\n\n\nDatt et al., J. Fluid Mech., 2017\n\n\nShear-thinning slows down propulsion"
+    "section": "Self-Diffusiophoretic Janus Particles",
+    "text": "Self-Diffusiophoretic Janus Particles\n\n\n\n\nSaad and Natale, Soft Matter, 2019\n\n\nA catalytic Janus particle with asymmetric surface coating\n\n\n\n\n\nMoran and Posner, Annu. Rev. Fluid Mech., 2017\n\n\nAsymmetric surface reactions create a self-generated solute gradient that drives diffusiophoretic motion"
   },
   {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#speed-in-viscoelastic-fluids",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#speed-in-viscoelastic-fluids",
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#viscoelasticity-reshapes-janus-particle-diffusion",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#viscoelasticity-reshapes-janus-particle-diffusion",
     "title": "Man,Yi",
-    "section": "Speed in Viscoelastic Fluids",
-    "text": "Speed in Viscoelastic Fluids\n\n\n\n\nDatt et al., J. Fluid Mech., 2017\n\n\nFirst-order correction is antisymmetric with respect to coverage\n\n\n\n\n\nSaad and Natale, Soft Matter, 2019\n\n\nExperiments show slower propulsion for the half-coated particle"
+    "section": "Viscoelasticity Reshapes Janus-Particle Diffusion",
+    "text": "Viscoelasticity Reshapes Janus-Particle Diffusion\n\n\n\n\nGomez-Solano et al., Phys. Rev. Lett., 2016\n\n\nRotational diffusion increases dramatically with increasing viscoelasticity and eventually saturates\n\n\n\n\n\nRaman et al., ACS Phys. Chem. Au, 2023\n\n\nTranslational diffusion falls far below the Stokes–Einstein prediction as polymer concentration increases\n\n\n\n\nThese pronounced changes have motivated theoretical studies of active-particle dynamics in viscoelastic fluids."
   },
   {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#geometry-in-non-newtonian-propulsion",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#geometry-in-non-newtonian-propulsion",
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#viscoelastic-propulsion-of-a-spherical-janus-particle",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#viscoelastic-propulsion-of-a-spherical-janus-particle",
     "title": "Man,Yi",
-    "section": "Geometry in Non-Newtonian Propulsion",
-    "text": "Geometry in Non-Newtonian Propulsion\n\n\n\n\n \n\n\nSelf-diffusiophoretic spheroidal particle in shear-thinning fluids\n\n\n\n\n\nZhu et al., J. Fluid Mech., 2024\n\n\nEccentricity turns degradation into enhancement"
+    "section": "Viscoelastic Propulsion of a Spherical Janus Particle",
+    "text": "Viscoelastic Propulsion of a Spherical Janus Particle\n\n\n\n\nDatt et al., J. Fluid Mech., 2017\n\n\n\n\n\n \n\n\n\n\n\nThe first-order viscoelastic correction is antisymmetric with respect to the surface coverage\nFor the commonly studied half-coated particle, the first-order speed correction vanishes\n\n\n\n\nAn apparent theory–experiment tension\nWeakly viscoelastic theory predicts no speed change for a half-coated sphere, whereas experiments report reduced propulsion in viscoelastic fluids.\n\n\n\n\nSaad and Natale, Soft Matter, 2019"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#what-changes-for-a-non-spherical-janus-particle",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#what-changes-for-a-non-spherical-janus-particle",
+    "title": "Man,Yi",
+    "section": "What Changes for a Non-Spherical Janus Particle?",
+    "text": "What Changes for a Non-Spherical Janus Particle?\n\n\n\n\nSpherical Janus particle\n\n\nFirst-order correction is antisymmetric with respect to surface coverage\n\n\n\n?\n\n\n\n\nSpheroidal Janus particle\n\n\nHow geometric anisotropy modifies viscoelastic propulsion remains unclear\n\n\n\n\n\nDoes the spherical cancellation persist for a non-spherical Janus particle?\nHow do eccentricity and surface coverage control viscoelastic propulsion?"
   },
   {
     "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#model-a-spheroidal-self-diffusiophoretic-particle",
@@ -195,21 +202,21 @@
     "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#weakly-non-newtonian-expansion",
     "title": "Man,Yi",
     "section": "Weakly non-Newtonian expansion",
-    "text": "Weakly non-Newtonian expansion\n\n\nAsymptotic expansion in Deborah number\n\\[\n\\{\\boldsymbol{u}, \\dot{\\boldsymbol{\\gamma}}, \\boldsymbol{\\sigma}, p, \\boldsymbol{T}, \\boldsymbol{U}\\} = \\{\\boldsymbol{u}_0, \\dot{\\boldsymbol{\\gamma}}_0, \\boldsymbol{\\sigma}_0, p_0, \\boldsymbol{T}_0, \\boldsymbol{U}_0\\} + De \\{\\boldsymbol{u}_1, \\dot{\\boldsymbol{\\gamma}}_1, \\boldsymbol{\\sigma}_1, p_1, \\boldsymbol{T}_1, \\boldsymbol{U}_1\\} + \\mathcal{O}(De^2)\n\\]\n\nSubscript 0 denotes the Newtonian solution, while subscript 1 denotes the first-order viscoelastic correction.\n\n\n\nZeroth-order Newtonian problem\n\nflow equations:\n\n\\[\n\\nabla \\cdot \\boldsymbol{u}_0 = 0, \\qquad \\nabla \\cdot \\boldsymbol{\\sigma}_0 = \\boldsymbol{0}, \\qquad \\boldsymbol{\\sigma}_0 = -p_0 \\boldsymbol{I} + \\dot{\\boldsymbol{\\gamma}}_0\n\\]\n\nboundary conditions:\n\n\\[\n\\boldsymbol{u}_0(\\tau = \\tau_0) = U_0 \\boldsymbol{e}_z + u_s \\boldsymbol{e}_\\zeta, \\qquad \\boldsymbol{u}_0(\\tau \\rightarrow \\infty) = \\mathbf{0}\n\\]\n\n\\(U_0\\): Newtonian propulsion speed obtained from the general solution reported in previous studies.\n\n\n\nFirst-order viscoelastic correction\n\nflow equations:\n\n\\[\n\\nabla \\cdot \\boldsymbol{u}_1 = 0, \\qquad \\nabla \\cdot \\boldsymbol{\\sigma}_1 = \\boldsymbol{0}, \\qquad \\boldsymbol{\\sigma}_1 = -p_1 \\boldsymbol{I} + \\dot{\\boldsymbol{\\gamma}}_1 + \\boldsymbol{A}\n\\]\n\\[\n\\boldsymbol{A} = - \\left(\\boldsymbol{G}_0 + b \\dot{\\boldsymbol{\\gamma}}_0 \\cdot \\dot{\\boldsymbol{\\gamma}}_0\\right)\n\\]\n\nboundary conditions:\n\n\\[\n\\boldsymbol{u}_1(\\tau = \\tau_0) = U_1 \\boldsymbol{e}_z, \\qquad \\boldsymbol{u}_1(\\tau \\rightarrow \\infty) = \\mathbf{0}\n\\]\n\n\\(b=-2\\Psi_2/\\Psi_1\\): viscoelastic parameter; \\(U_1\\): first-order correction obtained via the reciprocal theorem."
+    "text": "Weakly non-Newtonian expansion\n\n\n\nWeak elasticity permits a perturbation expansion\n\n\nFor \\(\\mathrm{De}\\ll1\\), the propulsion problem is expanded about its Newtonian limit:\n\n\\[\n\\{\\boldsymbol{u}, p, \\boldsymbol{U}\\} = \\{\\boldsymbol{u}_0, p_0, \\boldsymbol{U}_0\\} + \\mathrm{De} \\{\\boldsymbol{u}_1, p_1, \\boldsymbol{U}_1\\} + \\mathcal{O}(\\mathrm{De}^2)\n\\]\n\nSubscript \\(0\\) denotes the Newtonian base state, while subscript \\(1\\) denotes the leading viscoelastic correction.\n\n\n\n\nThe Newtonian base state is already known\n\n\nThe concentration field determines the surface slip, and previous solutions provide the corresponding Newtonian flow \\(\\boldsymbol{u}_0\\) and propulsion speed \\(U_0\\) for a spheroidal particle.\n\n\n\nConcentration field\n\n\n\\(\\longrightarrow\\)\n\n\nSurface slip\n\n\n\\(\\longrightarrow\\)\n\n\nKnown Newtonian flow \\(\\boldsymbol{u}_0\\)\n\n\n\n\n\nViscoelasticity enters through an additional first-order stress\n\n\nThe first-order nonlinear contribution is determined by the Newtonian flow:\n\n\\[\n\\boldsymbol{\\sigma}_1 = -p_1 \\boldsymbol{I} + \\dot{\\boldsymbol{\\gamma}}_1 + \\boldsymbol{A}, \\qquad \\boldsymbol{A} = -(\\boldsymbol{G}_0 + b \\dot{\\boldsymbol{\\gamma}}_0\\cdot\\dot{\\boldsymbol{\\gamma}}_0)\n\\]\n\n\\(b=-2\\Psi_2/\\Psi_1\\): viscoelastic parameter; \\(\\boldsymbol{A}\\): known forcing term that drives the first-order correction."
   },
   {
     "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#reciprocal-theorem-gives-the-speed-correction",
     "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#reciprocal-theorem-gives-the-speed-correction",
     "title": "Man,Yi",
     "section": "Reciprocal theorem gives the speed correction",
-    "text": "Reciprocal theorem gives the speed correction\n\n\nAuxiliary Stokes problem \\(\\to\\) reciprocity identity\n\\[\n\\nabla \\cdot \\hat{\\boldsymbol{u}} = 0, \\qquad \\nabla \\cdot \\hat{\\boldsymbol{\\sigma}} = \\boldsymbol{0}, \\qquad \\hat{\\boldsymbol{\\sigma}} = -\\hat{p} \\boldsymbol{I} + \\hat{\\dot{\\boldsymbol{\\gamma}}}, \\qquad \\hat{\\boldsymbol{u}}(\\tau=\\tau_0) = \\hat{U}\\boldsymbol{e}_z\n\\]\n\\[\n\\hat{\\boldsymbol{u}} \\cdot (\\nabla \\cdot \\boldsymbol{\\sigma}_1) = \\boldsymbol{u}_1 \\cdot (\\nabla \\cdot \\hat{\\boldsymbol{\\sigma}}) = 0\n\\]\n\n\\((\\hat{\\boldsymbol{u}},\\hat{p})\\): velocity and pressure fields of a rigid spheroid translating with arbitrary speed \\(\\hat{U}\\).\n\n\n\nVolume integration \\(\\to\\) reciprocal theorem\n\\[\n\\int_S \\boldsymbol{n} \\cdot \\hat{\\boldsymbol{\\sigma}} \\cdot \\boldsymbol{u}_1 \\, \\mathrm{d} S - \\int_S \\boldsymbol{n} \\cdot \\boldsymbol{\\sigma}_1 \\cdot \\hat{\\boldsymbol{u}} \\, \\mathrm{d} S = \\int_V \\boldsymbol{\\sigma}_1 : \\nabla \\hat{\\boldsymbol{u}} \\, \\mathrm{d} V - \\int_V \\hat{\\boldsymbol{\\sigma}} : \\nabla \\boldsymbol{u}_1 \\, \\mathrm{d} V\n\\]\n\\[\n\\hat{\\boldsymbol{F}} \\cdot \\boldsymbol{U}_1 = \\int_V \\boldsymbol{A} : \\nabla \\hat{\\boldsymbol{u}} \\, \\mathrm{d} V\n\\]\n\n\\(\\hat{\\boldsymbol{F}}\\): hydrodynamic force acting on the translating auxiliary spheroid.\n\n\n\nHydrodynamic drag \\(\\to\\) speed correction\n\\[\n\\hat{\\boldsymbol{F}} = - 8 \\pi \\tau_0^{-1} [(\\tau_0^2+1) \\coth^{-1} \\tau_0 - \\tau_0]^{-1} \\boldsymbol{e}_z\n\\]\n\\[\nU_1 = - \\frac{(\\tau_0^2+1) \\coth^{-1} \\tau_0 - \\tau_0}{4 \\tau_0^2} \\int_{\\tau_0}^{\\infty} \\int_{-1}^{1} (\\boldsymbol{A} : \\nabla \\hat{\\boldsymbol{u}}) (\\tau^2 - \\zeta^2) \\, \\mathrm{d} \\zeta \\, \\mathrm{d} \\tau\n\\]"
+    "text": "Reciprocal theorem gives the speed correction\n\n\n\nA virtual towing problem provides the resistance needed to determine \\(U_1\\)\n\n\nWe consider a rigid spheroid of the same geometry translating in a Newtonian fluid:\n\n\\[\n\\hat{\\boldsymbol{u}}(\\tau=\\tau_0) = \\hat{U}\\boldsymbol{e}_z, \\qquad \\hat{\\boldsymbol{F}} = \\int_S \\boldsymbol{n}\\cdot\\hat{\\boldsymbol{\\sigma}}\\,\\mathrm{d}S\n\\]\n\n\\((\\hat{\\boldsymbol{u}},\\hat{\\boldsymbol{\\sigma}})\\) denote the known auxiliary velocity and stress fields.\n\n\n\n\nThe reciprocal theorem avoids solving the first-order flow\n\n\nThe reciprocal theorem eliminates \\(\\boldsymbol{u}_1\\) by linking the \\(\\mathcal{O}(\\mathrm{De})\\) problem to the auxiliary flow:\n\n\\[\n\\hat{\\boldsymbol{F}}\\cdot\\boldsymbol{U}_1 = \\int_V \\boldsymbol{A} : \\nabla\\hat{\\boldsymbol{u}}\\,\\mathrm{d}V\n\\]\n\nThe kernel characterizes the local power-density contribution associated with the viscoelastic stress.\n\n\n\n\nThe first-order propulsion correction follows directly\n\n\nUsing the known force on the auxiliary spheroid, we obtain:\n\n\\[\nU_1 = - \\frac{(\\tau_0^2+1) \\coth^{-1} \\tau_0 - \\tau_0}{4 \\tau_0^2} \\int_{\\tau_0}^{\\infty} \\int_{-1}^{1} (\\boldsymbol{A} : \\nabla \\hat{\\boldsymbol{u}}) (\\tau^2 - \\zeta^2) \\, \\mathrm{d} \\zeta \\, \\mathrm{d} \\tau\n\\]"
   },
   {
     "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#geometric-isotropy-leads-to-antisymmetry",
     "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#geometric-isotropy-leads-to-antisymmetry",
     "title": "Man,Yi",
     "section": "Geometric isotropy leads to antisymmetry",
-    "text": "Geometric isotropy leads to antisymmetry\n\n\n\n\n\n\nSpherical slip profile \\(\\to U_1\\)\n\\[\nu_s(\\zeta)=\\sum_{n=1}^{\\infty} B_n P_n^1(\\zeta), \\quad U_1 =  (b - 1) \\sum_{n=1}^{\\infty} K_n B_n B_{n+1}\n\\]\n\n\\(K_n\\): analytically determined mode coefficients.\n\n\n\nGeometric isotropy \\(\\to\\) symmetry relations\n\\[\nu_s(-\\zeta;-\\zeta_0)=u_s(\\zeta;\\zeta_0), \\quad U(\\zeta_0,De)=U(-\\zeta_0,-De)\n\\]\n\\[\nU_{2n+1}(-\\zeta_0)=-U_{2n+1}(\\zeta_0), \\quad U_{2n}(-\\zeta_0)=U_{2n}(\\zeta_0)\n\\]\n\n\n\nAntisymmetric in the coverage \\(\\zeta_0\\)\nZero correction for half coverage\nConsistent with previous theory"
+    "text": "Geometric isotropy leads to antisymmetry\n\n\n\n\n\n\nThe spherical-limit slip determines \\(U_1\\)\n\\[\nu_s(\\zeta)=\\sum_{n=1}^{\\infty} B_n P_n^1(\\zeta), \\quad U_1 =  (b - 1) \\sum_{n=1}^{\\infty} K_n B_n B_{n+1}\n\\]\n\n\\(B_n\\) denotes the phoretic modes, while \\(K_n\\) is determined analytically.\n\n\n\nSpherical isotropy relates complementary coverages\n\nReflecting the coating distribution about the equator gives\n\n\\[\nu_s(-\\zeta;-\\zeta_0)=u_s(\\zeta;\\zeta_0), \\quad U(\\zeta_0,De)=U(-\\zeta_0,-De)\n\\]\n\nand therefore\n\n\\[\nU_{2n+1}(-\\zeta_0)=-U_{2n+1}(\\zeta_0), \\quad U_{2n}(-\\zeta_0)=U_{2n}(\\zeta_0)\n\\]\n\n\nFor a sphere, the first-order viscoelastic correction is antisymmetric in surface coverage and therefore vanishes at half coverage."
   },
   {
     "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#eccentricity-induced-enhancement-for-half-coated-particles",
@@ -226,18 +233,25 @@
     "text": "Eccentricity-induced symmetry breaking\n\n\n\n\nShape anisotropy breaks the antisymmetry of \\(U_1\\)\n\n\n\n\n\nLarger eccentricity broadens the enhancement regime"
   },
   {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#mechanism-breaking-local-cancellation",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#mechanism-breaking-local-cancellation",
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#broken-kernel-cancellation-enhances-propulsion",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#broken-kernel-cancellation-enhances-propulsion",
     "title": "Man,Yi",
-    "section": "Mechanism: breaking local cancellation",
-    "text": "Mechanism: breaking local cancellation\n\n\n\n\n\n\n\n\n\n\nSpherical geometry yields antisymmetric local contributions\nProlate geometry localizes gradients and breaks the cancellation"
+    "section": "Broken kernel cancellation enhances propulsion",
+    "text": "Broken kernel cancellation enhances propulsion\n\n\n\n\n\n\n\n\n\n\nSpherical geometry yields antisymmetric local contributions\nProlate geometry localizes gradients and breaks the cancellation"
   },
   {
     "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#summary",
     "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#summary",
     "title": "Man,Yi",
     "section": "Summary",
-    "text": "Summary\n\n\n\nModel\n\n\n\nSpheroidal Janus particle in a weakly viscoelastic fluid\nAsymptotic expansion combined with the reciprocal theorem\n\n\n\n\n\nFindings\n\n\n\nPossible enhancement for half-coated spheroids\nEccentricity broadens enhancement regimes\n\n\n\n\n\nSignificance\n\n\n\nExtends viscoelastic propulsion theory from spheres to anisotropic particles\nProvides design principles for active-particle transport in complex biological fluids"
+    "text": "Summary\n\n\n\n\n\n\nSpherical symmetry\n\n\nFor spheres, the first-order correction is antisymmetric and vanishes at half coverage.\n\n\n\n\n\n\n\nShape-induced enhancement\n\n\nSlender spheroids can exhibit pronounced speed enhancement.\n\n\n\n\n\n\n\nTunable propulsion\n\n\nShape and surface coverage jointly determine whether viscoelasticity enhances or suppresses propulsion.\n\n\n\n\nParticle shape provides a direct control parameter for active propulsion in viscoelastic fluids."
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#acknowledgments",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#acknowledgments",
+    "title": "Man,Yi",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\n\n\n\n\nQiang Zhao\n\n\nPh.D. Student\n\n\nCollege of Engineering, Peking University\n\n\n\n\n\nHelpful discussions: On Shun Pak and Brandon Van Gogh\n\n\nFunding: National Natural Science Foundation of China (12372258, 12588201, and 12502294); Jiangsu Specially-Appointed Professor Program; start-up funding (1001-YQR25024)"
   },
   {
     "objectID": "presentations.html",
