@@ -2,8 +2,6 @@
 title: "Teaching Resources"
 ---
 
-# Teaching Resources
-
 - [Free Precession](free-precession/)
 - [Inertia Ellipsoid](inertia-ellipsoid/)
 - [Lagrange Top](lagrange-top/)

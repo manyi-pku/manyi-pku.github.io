@@ -104,10 +104,7 @@
     "href": "teaching.html",
     "title": "Teaching Resources",
     "section": "",
-    "text": "Teaching Resources\n\nFree Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss",
-    "crumbs": [
-      "Teaching"
-    ]
+    "text": "Free Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
   },
   {
     "objectID": "about.html",
@@ -121,14 +118,140 @@
     "href": "teaching/index.html",
     "title": "Teaching Resources",
     "section": "",
-    "text": "Teaching Resources\n\nFree Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
+    "text": "Free Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#cover",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#cover",
+    "title": "Man,Yi",
+    "section": "Cover",
+    "text": "Cover\n\n\n\n\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids\n\n\n\nQiang Zhao, Guangpu Zhu, Lailai Zhu, On Shun Pak and Yi Man\n\n\n20th U.S. National Congress on Theoretical and Applied Mechanics\n\n\nJune 22, 2026, Pasadena"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#non-newtonian-biofluids",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#non-newtonian-biofluids",
+    "title": "Man,Yi",
+    "section": "Non-Newtonian Biofluids",
+    "text": "Non-Newtonian Biofluids\n\n\n\nReproductive processes\n\n\n\nSuarez and Pacey, Hum. Reprod. Update, 2006\n\n\n\n\nBiofilm formation\n\n\n\nDonlan, Emerg. Infect. Dis., 2002\n\n\n\n\nTargeted drug delivery\n\n\n\nGao et al., Small, 2012"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#rheology-alters-biological-swimming",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#rheology-alters-biological-swimming",
+    "title": "Man,Yi",
+    "section": "Rheology Alters Biological Swimming",
+    "text": "Rheology Alters Biological Swimming\n\n\n\nSwimming performance\n\n\n\nPatteson et al., Sci. Rep., 2015\n\n\n\n\nRheotactic responses\n\n\n\nTorres et al., Proc. Natl. Acad. Sci. U.S.A., 2024\n\n\n\n\nCollective behavior\n\n\n\nTung et al., Sci. Rep., 2017"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#speed-in-shear-thinning-fluids",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#speed-in-shear-thinning-fluids",
+    "title": "Man,Yi",
+    "section": "Speed in Shear-Thinning Fluids",
+    "text": "Speed in Shear-Thinning Fluids\n\n\n\n\n \n\n\nSelf-diffusiophoretic spherical particle\n\n\n\n\n\nDatt et al., J. Fluid Mech., 2017\n\n\nShear-thinning slows down propulsion"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#speed-in-viscoelastic-fluids",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#speed-in-viscoelastic-fluids",
+    "title": "Man,Yi",
+    "section": "Speed in Viscoelastic Fluids",
+    "text": "Speed in Viscoelastic Fluids\n\n\n\n\nDatt et al., J. Fluid Mech., 2017\n\n\nFirst-order correction is antisymmetric with respect to coverage\n\n\n\n\n\nSaad and Natale, Soft Matter, 2019\n\n\nExperiments show slower propulsion for the half-coated particle"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#geometry-in-non-newtonian-propulsion",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#geometry-in-non-newtonian-propulsion",
+    "title": "Man,Yi",
+    "section": "Geometry in Non-Newtonian Propulsion",
+    "text": "Geometry in Non-Newtonian Propulsion\n\n\n\n\n \n\n\nSelf-diffusiophoretic spheroidal particle in shear-thinning fluids\n\n\n\n\n\nZhu et al., J. Fluid Mech., 2024\n\n\nEccentricity turns degradation into enhancement"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#model-a-spheroidal-self-diffusiophoretic-particle",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#model-a-spheroidal-self-diffusiophoretic-particle",
+    "title": "Man,Yi",
+    "section": "Model: a spheroidal self-diffusiophoretic particle",
+    "text": "Model: a spheroidal self-diffusiophoretic particle\n\n\n\n\n\n\nSolve the concentration and flow fields in prolate spheroidal coordinates \\((\\tau,\\zeta)\\)\nShape parameter: eccentricity \\(e=\\sqrt{a^2-b^2}/a\\)\nActivity parameter: catalytic coverage \\(\\zeta_0\\)"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#concentration-gradients-drive-surface-slip",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#concentration-gradients-drive-surface-slip",
+    "title": "Man,Yi",
+    "section": "Concentration gradients drive surface slip",
+    "text": "Concentration gradients drive surface slip\n\n\n\n\n\n\nSurface flux \\(\\to\\) Concentration field\n\\[\n\\frac{\\partial C}{\\partial t}\n+ \\boldsymbol{u}\\cdot\\nabla C\n= D\\nabla^2 C,\n\\quad\n\\left. D\\boldsymbol{n}\\cdot\\nabla C \\right|_{\\tau=\\tau_0,\\zeta&lt;\\zeta_0} = -A\n\\]\n\n\\(C\\): solute concentration; \\(\\boldsymbol{u}\\): fluid velocity; \\(D\\): diffusivity; \\(A\\): surface activity / fixed solute flux on the active cap.\n\n\n\nTangential gradient \\(\\to\\) Phoretic slip\n\\[\n\\boldsymbol{u}_s\n=\nM(\\boldsymbol{I}-\\boldsymbol{n}\\boldsymbol{n})\\cdot \\nabla C\n\\]\n\n\\(M\\): phoretic mobility; the projection extracts the tangential concentration gradient.\n\n\n\nSlip velocity \\(\\to\\) Force-free propulsion\n\n\n\n\n\\[\n\\boldsymbol{u}(\\tau=\\tau_0)\n= \\boldsymbol{u}_s(\\zeta)+\\boldsymbol{U},\n\\]\n\n\n\\[\n\\int_S \\boldsymbol{n}\\cdot\\boldsymbol{\\sigma}\\,\\mathrm{d}S\n= \\boldsymbol{0}\n\\]\n\n\n\n\n\nbiological propulsion analogy\n\n\n\n\n\n\nThis is analogous to a squirmer: once there is a tangential slip on the surface, it drives the surrounding fluid, and the force-free condition determines the swimming velocity. The difference is that squirmer models often prescribe slip modes, whereas here the slip comes from the concentration field generated by surface chemistry."
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#fluid-rheology-second-order-fluid-model",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#fluid-rheology-second-order-fluid-model",
+    "title": "Man,Yi",
+    "section": "Fluid rheology: second-order fluid model",
+    "text": "Fluid rheology: second-order fluid model\n\n\nFlow equations\n\\[\n\\nabla\\cdot\\boldsymbol{\\sigma}=\\boldsymbol{0},\n\\qquad\n\\nabla\\cdot\\boldsymbol{u}=0,\n\\qquad\n\\boldsymbol{\\sigma}=-p\\boldsymbol{I}+\\boldsymbol{T}\n\\]\n\n\\(\\boldsymbol{u}\\): fluid velocity; \\(\\boldsymbol{\\sigma}\\): total stress; \\(p\\): pressure; \\(\\boldsymbol{T}\\): deviatoric stress.\n\n\n\nSecond-order fluid model\n\n\n\\[\n\\boldsymbol{T}\n=\n\\mu\\dot{\\boldsymbol{\\gamma}}\n-\\frac{\\Psi_1}{2}\\boldsymbol{G}\n+\\Psi_2\\dot{\\boldsymbol{\\gamma}}\\cdot\\dot{\\boldsymbol{\\gamma}},\n\\]\n\n\n\\[\n\\begin{aligned}\n\\boldsymbol{G}\n=&\n\\boldsymbol{u}\\cdot\\nabla\\dot{\\boldsymbol{\\gamma}}\n-(\\nabla\\boldsymbol{u})^{\\mathrm{T}}\\cdot\\dot{\\boldsymbol{\\gamma}}\n-\\dot{\\boldsymbol{\\gamma}}\\cdot\\nabla\\boldsymbol{u}\n\\end{aligned}\n\\]\n\n\n\n\\(\\mu\\): viscosity; \\(\\dot{\\boldsymbol{\\gamma}}\\): Newtonian shear-rate tensor; \\(\\Psi_1,\\Psi_2\\): first and second normal-stress coefficients; \\(\\boldsymbol{G}\\): steady upper-convected derivative.\n\n\n\nNon-dimensionalization\n\nlength scale: semi-major axis of the particle \\(a\\),\nvelocity scale: \\(MA/D\\)\n\n\nPeclet number (advection/diffusion): \\(\\mathrm{Pe}=\\dfrac{MAa}{D^2}\\)\nDeborah number (fluid elasticity): \\(\\mathrm{De}=\\dfrac{MA\\Psi_1}{2\\mu D a}\\)\n\n\n\\(M\\): phoretic mobility; \\(A\\): surface activity."
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#diffusion-dominated-solute-transport",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#diffusion-dominated-solute-transport",
+    "title": "Man,Yi",
+    "section": "Diffusion-dominated solute transport",
+    "text": "Diffusion-dominated solute transport\n\n\nDiffusion-dominated solute field\n\\[\n\\nabla^2 c=0,\n\\qquad\n\\left.\\boldsymbol{n}\\cdot\\nabla c\\right|_{\\tau=\\tau_0}\n=\n\\begin{cases}\n-1, & \\zeta\\le \\zeta_0 \\quad \\text{active},\\\\\n0, & \\zeta&gt;\\zeta_0 \\quad \\text{inert},\n\\end{cases}\n\\qquad\nc|_{\\tau\\to\\infty}=0\n\\]\n\n\\(c\\): dimensionless relative solute concentration; \\(\\tau=\\tau_0\\) denotes the particle surface.\n\n\n\nSeries solution and induced slip\n\n\n\\[\nc(\\tau,\\zeta)\n=\n\\sum_{n=0}^{\\infty}\n\\rho_n Q_n(\\tau)P_n(\\zeta)\n\\]\n\n\n\\[\n\\implies u_s(\\zeta)\n=\n\\tau_0\\sum_{n=1}^{\\infty}\nB_n\\frac{P_n^1(\\zeta)}{\\sqrt{\\tau_0^2-\\zeta^2}}\n\\]\n\n\n\n\\(P_n\\) and \\(Q_n\\): Legendre functions; \\(\\rho_n\\) is determined from the flux boundary condition; \\(B_n=-\\rho_n Q_n(\\tau_0)\\).\n\n\n\n\n\nNote: finite-\\(\\mathrm{Pe}\\) coupling\nAt finite \\(\\mathrm{Pe}\\), advection couples the solute field back to the flow. Then the rheology can also affect the concentration and the slip generated inside the interaction layer.\n\n\n\n\n\nChoudhary et al., J. Fluid Mech., 2020"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#weakly-non-newtonian-expansion",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#weakly-non-newtonian-expansion",
+    "title": "Man,Yi",
+    "section": "Weakly non-Newtonian expansion",
+    "text": "Weakly non-Newtonian expansion\n\n\nAsymptotic expansion in Deborah number\n\\[\n\\{\\boldsymbol{u}, \\dot{\\boldsymbol{\\gamma}}, \\boldsymbol{\\sigma}, p, \\boldsymbol{T}, \\boldsymbol{U}\\} = \\{\\boldsymbol{u}_0, \\dot{\\boldsymbol{\\gamma}}_0, \\boldsymbol{\\sigma}_0, p_0, \\boldsymbol{T}_0, \\boldsymbol{U}_0\\} + De \\{\\boldsymbol{u}_1, \\dot{\\boldsymbol{\\gamma}}_1, \\boldsymbol{\\sigma}_1, p_1, \\boldsymbol{T}_1, \\boldsymbol{U}_1\\} + \\mathcal{O}(De^2)\n\\]\n\nSubscript 0 denotes the Newtonian solution, while subscript 1 denotes the first-order viscoelastic correction.\n\n\n\nZeroth-order Newtonian problem\n\nflow equations:\n\n\\[\n\\nabla \\cdot \\boldsymbol{u}_0 = 0, \\qquad \\nabla \\cdot \\boldsymbol{\\sigma}_0 = \\boldsymbol{0}, \\qquad \\boldsymbol{\\sigma}_0 = -p_0 \\boldsymbol{I} + \\dot{\\boldsymbol{\\gamma}}_0\n\\]\n\nboundary conditions:\n\n\\[\n\\boldsymbol{u}_0(\\tau = \\tau_0) = U_0 \\boldsymbol{e}_z + u_s \\boldsymbol{e}_\\zeta, \\qquad \\boldsymbol{u}_0(\\tau \\rightarrow \\infty) = \\mathbf{0}\n\\]\n\n\\(U_0\\): Newtonian propulsion speed obtained from the general solution reported in previous studies.\n\n\n\nFirst-order viscoelastic correction\n\nflow equations:\n\n\\[\n\\nabla \\cdot \\boldsymbol{u}_1 = 0, \\qquad \\nabla \\cdot \\boldsymbol{\\sigma}_1 = \\boldsymbol{0}, \\qquad \\boldsymbol{\\sigma}_1 = -p_1 \\boldsymbol{I} + \\dot{\\boldsymbol{\\gamma}}_1 + \\boldsymbol{A}\n\\]\n\\[\n\\boldsymbol{A} = - \\left(\\boldsymbol{G}_0 + b \\dot{\\boldsymbol{\\gamma}}_0 \\cdot \\dot{\\boldsymbol{\\gamma}}_0\\right)\n\\]\n\nboundary conditions:\n\n\\[\n\\boldsymbol{u}_1(\\tau = \\tau_0) = U_1 \\boldsymbol{e}_z, \\qquad \\boldsymbol{u}_1(\\tau \\rightarrow \\infty) = \\mathbf{0}\n\\]\n\n\\(b=-2\\Psi_2/\\Psi_1\\): viscoelastic parameter; \\(U_1\\): first-order correction obtained via the reciprocal theorem."
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#reciprocal-theorem-gives-the-speed-correction",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#reciprocal-theorem-gives-the-speed-correction",
+    "title": "Man,Yi",
+    "section": "Reciprocal theorem gives the speed correction",
+    "text": "Reciprocal theorem gives the speed correction\n\n\nAuxiliary Stokes problem \\(\\to\\) reciprocity identity\n\\[\n\\nabla \\cdot \\hat{\\boldsymbol{u}} = 0, \\qquad \\nabla \\cdot \\hat{\\boldsymbol{\\sigma}} = \\boldsymbol{0}, \\qquad \\hat{\\boldsymbol{\\sigma}} = -\\hat{p} \\boldsymbol{I} + \\hat{\\dot{\\boldsymbol{\\gamma}}}, \\qquad \\hat{\\boldsymbol{u}}(\\tau=\\tau_0) = \\hat{U}\\boldsymbol{e}_z\n\\]\n\\[\n\\hat{\\boldsymbol{u}} \\cdot (\\nabla \\cdot \\boldsymbol{\\sigma}_1) = \\boldsymbol{u}_1 \\cdot (\\nabla \\cdot \\hat{\\boldsymbol{\\sigma}}) = 0\n\\]\n\n\\((\\hat{\\boldsymbol{u}},\\hat{p})\\): velocity and pressure fields of a rigid spheroid translating with arbitrary speed \\(\\hat{U}\\).\n\n\n\nVolume integration \\(\\to\\) reciprocal theorem\n\\[\n\\int_S \\boldsymbol{n} \\cdot \\hat{\\boldsymbol{\\sigma}} \\cdot \\boldsymbol{u}_1 \\, \\mathrm{d} S - \\int_S \\boldsymbol{n} \\cdot \\boldsymbol{\\sigma}_1 \\cdot \\hat{\\boldsymbol{u}} \\, \\mathrm{d} S = \\int_V \\boldsymbol{\\sigma}_1 : \\nabla \\hat{\\boldsymbol{u}} \\, \\mathrm{d} V - \\int_V \\hat{\\boldsymbol{\\sigma}} : \\nabla \\boldsymbol{u}_1 \\, \\mathrm{d} V\n\\]\n\\[\n\\hat{\\boldsymbol{F}} \\cdot \\boldsymbol{U}_1 = \\int_V \\boldsymbol{A} : \\nabla \\hat{\\boldsymbol{u}} \\, \\mathrm{d} V\n\\]\n\n\\(\\hat{\\boldsymbol{F}}\\): hydrodynamic force acting on the translating auxiliary spheroid.\n\n\n\nHydrodynamic drag \\(\\to\\) speed correction\n\\[\n\\hat{\\boldsymbol{F}} = - 8 \\pi \\tau_0^{-1} [(\\tau_0^2+1) \\coth^{-1} \\tau_0 - \\tau_0]^{-1} \\boldsymbol{e}_z\n\\]\n\\[\nU_1 = - \\frac{(\\tau_0^2+1) \\coth^{-1} \\tau_0 - \\tau_0}{4 \\tau_0^2} \\int_{\\tau_0}^{\\infty} \\int_{-1}^{1} (\\boldsymbol{A} : \\nabla \\hat{\\boldsymbol{u}}) (\\tau^2 - \\zeta^2) \\, \\mathrm{d} \\zeta \\, \\mathrm{d} \\tau\n\\]"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#geometric-isotropy-leads-to-antisymmetry",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#geometric-isotropy-leads-to-antisymmetry",
+    "title": "Man,Yi",
+    "section": "Geometric isotropy leads to antisymmetry",
+    "text": "Geometric isotropy leads to antisymmetry\n\n\n\n\n\n\nSpherical slip profile \\(\\to U_1\\)\n\\[\nu_s(\\zeta)=\\sum_{n=1}^{\\infty} B_n P_n^1(\\zeta), \\quad U_1 =  (b - 1) \\sum_{n=1}^{\\infty} K_n B_n B_{n+1}\n\\]\n\n\\(K_n\\): analytically determined mode coefficients.\n\n\n\nGeometric isotropy \\(\\to\\) symmetry relations\n\\[\nu_s(-\\zeta;-\\zeta_0)=u_s(\\zeta;\\zeta_0), \\quad U(\\zeta_0,De)=U(-\\zeta_0,-De)\n\\]\n\\[\nU_{2n+1}(-\\zeta_0)=-U_{2n+1}(\\zeta_0), \\quad U_{2n}(-\\zeta_0)=U_{2n}(\\zeta_0)\n\\]\n\n\n\nAntisymmetric in the coverage \\(\\zeta_0\\)\nZero correction for half coverage\nConsistent with previous theory"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#eccentricity-induced-enhancement-for-half-coated-particles",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#eccentricity-induced-enhancement-for-half-coated-particles",
+    "title": "Man,Yi",
+    "section": "Eccentricity-induced enhancement for half-coated particles",
+    "text": "Eccentricity-induced enhancement for half-coated particles\n\n\n\n\n\n\nHalf-coated particle: \\(\\zeta_0=0\\)\n\n\n\nSphere: \\(U_1=0\\) by symmetry\nSpheroid: eccentricity breaks the cancellation\nSlender shapes show pronounced enhancement"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#eccentricity-induced-symmetry-breaking",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#eccentricity-induced-symmetry-breaking",
+    "title": "Man,Yi",
+    "section": "Eccentricity-induced symmetry breaking",
+    "text": "Eccentricity-induced symmetry breaking\n\n\n\n\nShape anisotropy breaks the antisymmetry of \\(U_1\\)\n\n\n\n\n\nLarger eccentricity broadens the enhancement regime"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#mechanism-breaking-local-cancellation",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#mechanism-breaking-local-cancellation",
+    "title": "Man,Yi",
+    "section": "Mechanism: breaking local cancellation",
+    "text": "Mechanism: breaking local cancellation\n\n\n\n\n\n\n\n\n\n\nSpherical geometry yields antisymmetric local contributions\nProlate geometry localizes gradients and breaks the cancellation"
+  },
+  {
+    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#summary",
+    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#summary",
+    "title": "Man,Yi",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nModel\n\n\n\nSpheroidal Janus particle in a weakly viscoelastic fluid\nAsymptotic expansion combined with the reciprocal theorem\n\n\n\n\n\nFindings\n\n\n\nPossible enhancement for half-coated spheroids\nEccentricity broadens enhancement regimes\n\n\n\n\n\nSignificance\n\n\n\nExtends viscoelastic propulsion theory from spheres to anisotropic particles\nProvides design principles for active-particle transport in complex biological fluids"
   },
   {
     "objectID": "presentations.html",
     "href": "presentations.html",
     "title": "Presentations",
     "section": "",
-    "text": "Presentations\nThis page is an index for presentation materials that are intended to be shared by direct link.\nNo presentation decks have been added yet. Future slides should use the structure:\npresentations/\n  topic-name/\n    yyyy-mm-event-name/\n      index.html\nExample direct links will look like:\n\n/presentations/acoustic-streaming/2025-07-wuwangyi/\n/presentations/three-link-rl/2025-prfluids/"
+    "text": "This page collects presentation materials that are intended to be shared by direct link."
+  },
+  {
+    "objectID": "presentations.html#talks",
+    "href": "presentations.html#talks",
+    "title": "Presentations",
+    "section": "Talks",
+    "text": "Talks\n\nViscoelastic propulsion of self-diffusiophoretic particles (USNCTAM26, June 22, 2026)\n\nFuture slides can follow this structure:\npresentations/\n  topic-name/\n    yyyy-mm-event-name/\n      index.html"
   },
   {
     "objectID": "bio.html",
