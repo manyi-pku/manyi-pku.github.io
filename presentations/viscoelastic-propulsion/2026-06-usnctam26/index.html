@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="codex-qmd-reveal-loader">
+  <title>Propulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/plugin/reveal-menu/menu.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/plugin/quarto-support/footer.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .reveal .slide:not(.center) { height: 100%; }
+    .reveal .slides { text-align: left; }
+    .loading { font-family: system-ui, sans-serif; padding: 2rem; }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides"><section class="loading">Loading slides...</section></div>
+  </div>
+
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="progress.js"></script>
+  <script>
+    const attrText = (attrs = "") => {
+      const classNames = [...attrs.matchAll(/\.([A-Za-z0-9_-]+)/g)].map((m) => m[1]);
+      const style = attrs.match(/style="([^"]+)"/);
+      const parts = [];
+      if (classNames.length) parts.push(`class="${classNames.join(" ")}"`);
+      if (style) parts.push(`style="${style[1]}"`);
+      return parts.length ? " " + parts.join(" ") : "";
+    };
+
+    const escapeHtml = (text) => text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+
+    function inlineMarkdown(text) {
+      let s = escapeHtml(text);
+      s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+      s = s.replace(/\[([^\]]+)\]\{([^}]+)\}/g, (_, body, attrs) => `<span${attrText(attrs)}>${body}</span>`);
+      s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      s = s.replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>');
+      return s;
+    }
+
+    function imageHtml(line) {
+      const match = line.match(/^!\[[^\]]*\]\(([^)]+)\)(?:\{([^}]+)\})?$/);
+      if (!match) return null;
+      return `<p><img data-src="${match[1]}"${attrText(match[2] || "")}></p>`;
+    }
+
+    function renderBlocks(markdown) {
+      const lines = markdown.split(/\r?\n/);
+      const out = [];
+      const stack = [];
+      let paragraph = [];
+      let inList = false;
+
+      const flushParagraph = () => {
+        if (!paragraph.length) return;
+        out.push(`<p>${inlineMarkdown(paragraph.join(" "))}</p>`);
+        paragraph = [];
+      };
+      const closeList = () => {
+        if (!inList) return;
+        out.push("</ul>");
+        inList = false;
+      };
+      const flush = () => { flushParagraph(); closeList(); };
+
+      for (let i = 0; i < lines.length; i++) {
+        const raw = lines[i];
+        const line = raw.trim();
+
+        if (!line || line === "---") {
+          flush();
+          continue;
+        }
+
+        if (line === "$$") {
+          flush();
+          const math = [];
+          i++;
+          while (i < lines.length && lines[i].trim() !== "$$") {
+            math.push(lines[i]);
+            i++;
+          }
+          out.push(`<p><span class="math display">\\[\n${escapeHtml(math.join("\n"))}\n\\]</span></p>`);
+          continue;
+        }
+
+        const divOpen = line.match(/^:::\s*\{([^}]+)\}$/);
+        if (divOpen) {
+          flush();
+          const classes = [...divOpen[1].matchAll(/\.([A-Za-z0-9_-]+)/g)].map((m) => m[1]);
+          const isNotes = classes.includes("notes");
+          out.push(isNotes ? '<aside class="notes">' : `<div class="${classes.join(" ")}">`);
+          stack.push(isNotes ? "aside" : "div");
+          continue;
+        }
+
+        if (line === ":::") {
+          flush();
+          const tag = stack.pop() || "div";
+          out.push(`</${tag}>`);
+          continue;
+        }
+
+        const img = imageHtml(line);
+        if (img) {
+          flush();
+          out.push(img);
+          continue;
+        }
+
+        if (line.startsWith("- ")) {
+          flushParagraph();
+          if (!inList) {
+            out.push("<ul>");
+            inList = true;
+          }
+          out.push(`<li>${inlineMarkdown(line.slice(2))}</li>`);
+          continue;
+        }
+
+        paragraph.push(line === "&nbsp;" ? "&nbsp;" : raw.trim());
+      }
+
+      flush();
+      while (stack.length) out.push(`</${stack.pop()}>`);
+      return out.join("\n");
+    }
+
+    function stripYaml(markdown) {
+      const lines = markdown.split(/\r?\n/);
+      if (lines[0] !== "---") return markdown;
+      const end = lines.slice(1).findIndex((line) => line === "---");
+      return end >= 0 ? lines.slice(end + 2).join("\n") : markdown;
+    }
+
+    function parseSlides(markdown) {
+      const body = stripYaml(markdown).split(/\r?\n/);
+      const slides = [];
+      let current = null;
+      for (const line of body) {
+        const heading = line.match(/^##\s+(.+?)(?:\s+\{([^}]+)\})?\s*$/);
+        if (heading) {
+          if (current) slides.push(current);
+          current = { title: heading[1], attrs: heading[2] || "", lines: [] };
+        } else if (current) {
+          current.lines.push(line);
+        }
+      }
+      if (current) slides.push(current);
+      return slides;
+    }
+
+    async function main() {
+      const response = await fetch("index.qmd", { cache: "no-cache" });
+      if (!response.ok) throw new Error(`Could not load index.qmd (${response.status})`);
+      const markdown = await response.text();
+      const slides = parseSlides(markdown);
+      document.querySelector(".slides").innerHTML = slides.map((slide) => {
+        const classes = ["slide", "level2", ...[...slide.attrs.matchAll(/\.([A-Za-z0-9_-]+)/g)].map((m) => m[1])];
+        const id = slide.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        return `<section id="${id}" class="${classes.join(" ")}"><h2>${inlineMarkdown(slide.title)}</h2>${renderBlocks(slide.lines.join("\n"))}</section>`;
+      }).join("\n");
+
+      Reveal.initialize({
+        controls: true,
+        controlsLayout: "edges",
+        controlsBackArrows: "faded",
+        progress: false,
+        slideNumber: "c/t",
+        hash: true,
+        history: false,
+        center: false,
+        transition: "none",
+        backgroundTransition: "none",
+        width: 1050,
+        height: 700,
+        margin: 0.1,
+        math: {
+          mathjax: "https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js",
+          config: "TeX-AMS_HTML-full",
+          tex2jax: {
+            inlineMath: [["\\(", "\\)"], ["$", "$"]],
+            displayMath: [["\\[", "\\]"]],
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            skipTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+          }
+        },
+        plugins: [RevealMath, RevealNotes, RevealSearch, RevealZoom]
+      });
+
+      if (typeof initProgress === "function") initProgress();
+    }
+
+    main().catch((error) => {
+      document.querySelector(".slides").innerHTML = `<section><h2>Could not load slides</h2><p>${escapeHtml(error.message)}</p></section>`;
+      Reveal.initialize({ controls: true, progress: false });
+    });
+  </script>
+</body>
+</html>
