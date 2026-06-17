@@ -50,33 +50,37 @@
     ]
   },
   {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "People",
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
+    "title": "Teaching Resources",
     "section": "",
-    "text": "Zhao, Qiang (赵强) (2022 – Present) \nCui, Ziang (崔子昂) (2023 – Present) \nBian, Zi (边子) (2024 – Present) \nKuang, Le (匡乐) (2025 – Present)",
+    "text": "Teaching Resources\n\nFree Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Man,Yi",
+    "section": "",
+    "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
     "crumbs": [
-      "People"
+      "Home"
     ]
   },
   {
-    "objectID": "people.html#current-members",
-    "href": "people.html#current-members",
-    "title": "People",
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching Resources",
     "section": "",
-    "text": "Zhao, Qiang (赵强) (2022 – Present) \nCui, Ziang (崔子昂) (2023 – Present) \nBian, Zi (边子) (2024 – Present) \nKuang, Le (匡乐) (2025 – Present)",
+    "text": "Teaching Resources\n\nFree Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss",
     "crumbs": [
-      "People"
-    ]
-  },
-  {
-    "objectID": "people.html#alumni",
-    "href": "people.html#alumni",
-    "title": "People",
-    "section": "Alumni",
-    "text": "Alumni\n\nPhD Graduates\n\nSun, Xuyang (孙旭阳) (2021 – 2025)\n\nNow an Algorithm Engineer at Goertek Inc., Qingdao",
-    "crumbs": [
-      "People"
+      "Teaching"
     ]
   },
   {
@@ -150,37 +154,40 @@
     ]
   },
   {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching Resources",
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "People",
     "section": "",
-    "text": "Teaching Resources\n\nFree Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss",
+    "text": "Zhao, Qiang (赵强) (2022 – Present) \nCui, Ziang (崔子昂) (2023 – Present) \nBian, Zi (边子) (2024 – Present) \nKuang, Le (匡乐) (2025 – Present)",
     "crumbs": [
-      "Teaching"
+      "People"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Man,Yi",
+    "objectID": "people.html#current-members",
+    "href": "people.html#current-members",
+    "title": "People",
     "section": "",
-    "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
+    "text": "Zhao, Qiang (赵强) (2022 – Present) \nCui, Ziang (崔子昂) (2023 – Present) \nBian, Zi (边子) (2024 – Present) \nKuang, Le (匡乐) (2025 – Present)",
     "crumbs": [
-      "Home"
+      "People"
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
+    "objectID": "people.html#alumni",
+    "href": "people.html#alumni",
+    "title": "People",
+    "section": "Alumni",
+    "text": "Alumni\n\nPhD Graduates\n\nSun, Xuyang (孙旭阳) (2021 – 2025)\n\nNow an Algorithm Engineer at Goertek Inc., Qingdao",
+    "crumbs": [
+      "People"
+    ]
   },
   {
-    "objectID": "teaching/index.html",
-    "href": "teaching/index.html",
-    "title": "Teaching Resources",
+    "objectID": "presentations.html",
+    "href": "presentations.html",
+    "title": "Presentations",
     "section": "",
-    "text": "Teaching Resources\n\nFree Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
+    "text": "Presentations\nThis page is an index for presentation materials that are intended to be shared by direct link.\nNo presentation decks have been added yet. Future slides should use the structure:\npresentations/\n  topic-name/\n    yyyy-mm-event-name/\n      index.html\nExample direct links will look like:\n\n/presentations/acoustic-streaming/2025-07-wuwangyi/\n/presentations/three-link-rl/2025-prfluids/"
   }
 ]
