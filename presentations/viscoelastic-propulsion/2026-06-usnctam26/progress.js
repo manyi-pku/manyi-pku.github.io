@@ -41,6 +41,8 @@
     document.querySelectorAll(".reveal .slides section").forEach(addProgress);
   }
 
+  window.initProgress = initProgress;
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initProgress);
   } else {
