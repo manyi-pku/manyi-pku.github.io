@@ -4,10 +4,8 @@ project:
   resources:
     - files/
     - images/
-    - free-precession/
-    - inertia-ellipsoid/
-    - lagrange-top/
-    - rigid-body-toss/
+    - teaching/
+    - presentations/
 
 website:
   title: "Man,Yi"
@@ -24,6 +22,8 @@ website:
         href: people.qmd
       - text: "Bio"
         href: bio.qmd
+      - text: "Teaching"
+        href: teaching.qmd
 
 format:
   html:
