@@ -1,3 +1,4 @@
+/* 1. Variables */
 :root {
   --pku-red: #8c0000;
   --text-color: #111;
@@ -10,7 +11,7 @@
   --equation-size: 24px;
 }
 
-/* 1. Global slide defaults */
+/* 2. Global reveal defaults */
 .reveal {
   color: var(--text-color);
   font-family: var(--slide-font);
@@ -51,7 +52,7 @@
   display: none !important;
 }
 
-/* 2. Regular slide title and PKU logo */
+/* 3. Header, logo, progress */
 .reveal h1,
 .reveal h2,
 .reveal h3 {
@@ -88,7 +89,7 @@
   pointer-events: none;
 }
 
-/* 3. Bottom section progress bar */
+/* Bottom section progress bar */
 .reveal .section-progress {
   position: absolute;
   left: 0;
@@ -102,8 +103,8 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   margin: 0;
-  color: rgba(17, 17, 17, 0.34);
-  font-size: 0.22em;
+  color: #bbb;
+  font-size: 0.18em;
   line-height: 1;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -112,14 +113,78 @@
 .reveal .section-progress span {
   border-top: 2px solid rgba(140, 0, 0, 0.18);
   padding-top: 0.45em;
+  color: #bbb;
+  font-weight: 400;
 }
 
 .reveal .section-progress .active {
-  color: rgba(17, 17, 17, 0.68);
-  border-top-color: rgba(140, 0, 0, 0.68);
+  color: #9b0000;
+  border-top-color: #9b0000;
+  font-size: 1.12em;
+  font-weight: 700;
 }
 
-/* 4. Cover slide */
+/* 4. Reusable components */
+.reveal .fig-caption {
+  display: block;
+  margin-top: 0.3em;
+  color: #333;
+  font-size: 0.56em;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.reveal .fig-caption strong {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.reveal .ref {
+  display: block;
+  margin-top: 0.25em;
+  color: #1f4e79;
+  font-size: 0.46em;
+  text-align: center;
+}
+
+.reveal .takeaway {
+  margin-top: 0.6em;
+  padding: 0.5em 0.9em;
+  border-radius: 8px;
+  background: #f6efef;
+  font-size: 0.62em;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.reveal .takeaway p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.reveal .subhead {
+  display: block;
+  margin: 0.2em 0 0.6em;
+  color: #9b0000;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.reveal .key-term {
+  color: #8c0000;
+  font-weight: 600;
+}
+
+.reveal .no-break {
+  white-space: nowrap;
+}
+
+/* 5. Reusable layouts */
+
+/* 6. Slide-specific sections */
+
+/* Cover slide */
 .reveal .cover-slide > h2 {
   display: none;
 }
@@ -169,8 +234,8 @@
 }
 
 .reveal .cover-authors {
-  margin-bottom: 0.45em;
-  font-size: 0.46em;
+  margin-bottom: 0.38em;
+  font-size: 0.56em;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -186,7 +251,7 @@
   margin-top: 0.15em;
 }
 
-/* 5. Model overview slide */
+/* Model and slip two-column layouts */
 .reveal .model-layout,
 .reveal .slip-layout {
   display: grid;
@@ -231,42 +296,32 @@
   margin-bottom: 0.95em;
 }
 
-.reveal .key-term {
-  color: var(--pku-red);
-  font-weight: 600;
-}
-
-.reveal .no-break {
-  white-space: nowrap;
-}
-
-/* 6. Reusable equation blocks */
+/* Reusable equation and mechanism blocks */
 .reveal .slip-content,
 .reveal .rheology-content,
-.reveal .diffusion-content,
-.reveal .asymptotic-content,
-.reveal .reciprocal-content {
+.reveal .diffusion-content {
   width: 91%;
   margin: 0;
   --block-equation-size: var(--equation-size);
 }
 
+.reveal .slip-content {
+  transform: translateY(-0.45em);
+}
+
 .reveal .rheology-content,
-.reveal .diffusion-content,
-.reveal .asymptotic-content,
-.reveal .reciprocal-content {
+.reveal .diffusion-content {
   width: 91%;
   margin: 0.1em auto 0;
   --block-equation-size: 23px;
 }
 
-.reveal .diffusion-content {
-  margin-top: 0.45em;
+.reveal .rheology-content {
+  --block-equation-size: 21px;
 }
 
-.reveal .asymptotic-content,
-.reveal .reciprocal-content {
-  margin-top: -0.6em;
+.reveal .diffusion-content {
+  margin-top: 0.45em;
 }
 
 .reveal .mechanism-block {
@@ -275,10 +330,12 @@
   border-left: 3px solid rgba(140, 0, 0, 0.5);
 }
 
+.reveal .slip-content .mechanism-block {
+  margin-bottom: 0.62em;
+}
+
 .reveal .rheology-content .mechanism-block,
-.reveal .diffusion-content .mechanism-block,
-.reveal .asymptotic-content .mechanism-block,
-.reveal .reciprocal-content .mechanism-block {
+.reveal .diffusion-content .mechanism-block {
   margin-bottom: 0.6em;
 }
 
@@ -295,9 +352,7 @@
 }
 
 .reveal .rheology-content .mechanism-block > p:first-child,
-.reveal .diffusion-content .mechanism-block > p:first-child,
-.reveal .asymptotic-content .mechanism-block > p:first-child,
-.reveal .reciprocal-content .mechanism-block > p:first-child {
+.reveal .diffusion-content .mechanism-block > p:first-child {
   margin-bottom: 0.22em;
 }
 
@@ -318,11 +373,123 @@
   margin: 0.12em 0 0.2em !important;
 }
 
+.reveal .model-clean-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.55em;
+  width: 91%;
+  min-height: 420px;
+  margin: 0.15em auto 0;
+  text-align: left;
+}
+
+.reveal .newtonian-baseline-layout {
+  justify-content: flex-start;
+  gap: 0.38em;
+  min-height: 0;
+  height: calc(100% - 1.35em);
+  padding-bottom: 0.55em;
+}
+
+.reveal .model-clean-layout p {
+  margin: 0;
+}
+
+.reveal .model-lead p {
+  color: #222;
+  font-size: 0.72em;
+  font-weight: 600;
+  line-height: 1.28;
+  text-align: left;
+}
+
+.reveal .model-equation {
+  text-align: left;
+}
+
+.reveal .model-equation .math.display,
+.reveal .model-equation .MathJax_Display,
+.reveal .model-equation mjx-container[display="true"] {
+  font-size: 25px !important;
+  text-align: left !important;
+}
+
+.reveal .wide-equation .math.display,
+.reveal .wide-equation .MathJax_Display,
+.reveal .wide-equation mjx-container[display="true"] {
+  font-size: 22px !important;
+}
+
+.reveal .model-block {
+  padding: 0.58em 0.75em;
+  border-left: 3px solid rgba(140, 0, 0, 0.45);
+}
+
+.reveal .model-block > p:first-child {
+  color: #222;
+  font-size: 0.6em;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.reveal .baseline-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+  align-items: center;
+  gap: 0.72em;
+  margin-top: 0.08em;
+}
+
+.reveal .baseline-figure-panel,
+.reveal .baseline-text-panel {
+  min-width: 0;
+}
+
+.reveal .baseline-figure {
+  display: block;
+  width: 100%;
+  height: 230px;
+  max-height: 230px;
+  object-fit: contain;
+  margin: 0;
+}
+
+.reveal .baseline-text-panel > p:first-child {
+  margin-bottom: 0.28em;
+  color: #222;
+  font-size: 0.58em;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.reveal .newtonian-baseline-layout .takeaway {
+  margin: 0.32em 0 0;
+  padding: 0.42em 0.62em;
+  font-size: 0.56em;
+  text-align: left;
+}
+
+.reveal .newtonian-baseline-layout .ref {
+  margin-top: 0.35em;
+  max-width: 100%;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.reveal .equation-highlight {
+  padding: 0.42em 0.58em;
+  border-radius: 7px;
+  background: rgba(140, 0, 0, 0.055);
+}
+
 .reveal .symbol-note p {
-  margin: 0.2em 0 0;
+  margin: 0.22em 0 0;
   color: var(--muted-text);
-  font-size: 0.38em;
-  line-height: 1.25;
+  font-size: 0.43em;
+  line-height: 1.22;
 }
 
 .reveal .caveat-row {
@@ -342,7 +509,7 @@
 .reveal .caveat-text > p:first-child {
   margin: 0 0 0.16em;
   color: #222;
-  font-size: 0.46em;
+  font-size: 0.5em;
   font-style: normal;
   font-weight: 500;
   line-height: 1.15;
@@ -351,9 +518,14 @@
 .reveal .caveat-text p {
   margin: 0;
   color: #444;
-  font-size: 0.36em;
+  font-size: 0.44em;
   font-style: italic;
-  line-height: 1.28;
+  line-height: 1.25;
+}
+
+.reveal .diffusion-content .caveat-text p {
+  font-size: 0.36em;
+  line-height: 1.16;
 }
 
 .reveal .caveat-block .symbol-note p {
@@ -390,9 +562,7 @@
 }
 
 .reveal .rheology-content .symbol-note p,
-.reveal .diffusion-content .symbol-note p,
-.reveal .asymptotic-content .symbol-note p,
-.reveal .reciprocal-content .symbol-note p {
+.reveal .diffusion-content .symbol-note p {
   margin-top: 0.18em;
 }
 
@@ -522,13 +692,6 @@
   text-align: center;
 }
 
-.reveal .nnfluids-key p {
-  margin: 0;
-  font-size: 0.7em;
-  font-weight: 500;
-  line-height: 1.25;
-}
-
 .reveal .mucus-summary-row {
   display: grid;
   grid-template-columns: 180px minmax(0, 1fr);
@@ -571,7 +734,117 @@
   line-height: 1.2;
 }
 
-/* 9. Motivation slide: Rheology Alters Biological Swimming */
+/* 9. Motivation slide: Janus intro */
+.reveal .janus-intro-slide .columns {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 0.55em;
+  width: 94%;
+  min-height: 355px;
+  margin: 1.55em auto 0;
+}
+
+.reveal .janus-intro-slide .column {
+  width: auto !important;
+}
+
+.reveal .janus-intro-slide .column:first-child > p {
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.reveal .sphere-polymer-figure {
+  display: block;
+  width: min(100%, 330px);
+  max-height: 335px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.reveal .janus-intro-slide .column:nth-child(2) {
+  padding-bottom: 0;
+}
+
+.reveal .janus-intro-slide .column:nth-child(2) p {
+  margin: 0;
+  font-size: 0.66em;
+  line-height: 1.34;
+}
+
+.reveal .janus-intro-slide .column:nth-child(2) p + p {
+  margin-top: 0.55em;
+}
+
+.reveal .janus-intro-slide .takeaway {
+  width: 92%;
+  margin: 0.72em auto 0;
+  padding: 0.3em 0.65em;
+  border-radius: 6px;
+  border-left: 4px solid rgba(140, 0, 0, 0.52);
+  background: rgba(140, 0, 0, 0.06);
+  font-size: 0.62em;
+}
+
+.reveal .janus-intro-slide .takeaway p {
+  margin: 0;
+  color: #2a1515;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Motivation slide: Janus dynamics */
+.reveal .janus-dynamics-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  min-height: 500px;
+  padding-top: 0.7em;
+  padding-bottom: 0.55em;
+}
+
+.reveal .janus-dynamics-slide .columns {
+  align-items: start;
+  margin: 0;
+}
+
+.reveal .janus-dynamics-slide .column {
+  width: 33% !important;
+}
+
+.reveal .janus-dynamics-slide .column > p:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .janus-dynamics-slide img {
+  width: auto;
+  max-width: 100%;
+  height: 300px;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.reveal .janus-dynamics-slide .fig-caption,
+.reveal .janus-dynamics-slide .ref {
+  min-height: 0;
+}
+
+.reveal .janus-dynamics-slide .takeaway {
+  width: 92%;
+  margin: 0 auto;
+  padding: 0.34em 0.75em;
+  font-size: 0.58em;
+}
+
+/* Motivation slide: Rheology Alters Biological Swimming */
 .reveal .rheology-effect-layout {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -647,160 +920,159 @@
   text-align: center;
 }
 
-/* 11. Motivation slide: Viscoelasticity Reshapes Janus-Particle Diffusion */
-.reveal .ve-layout {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  align-items: start;
-  column-gap: 0;
-  min-height: 390px;
-  margin-top: 0.25em;
+/* Motivation slide: Viscoelastic Propulsion of a Spherical Janus Particle */
+.reveal .spherical-janus-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.55em;
+  box-sizing: border-box;
+  width: 94%;
+  min-height: 500px;
+  margin: 0 auto;
 }
 
-.reveal .ve-column-layout {
+.reveal .spherical-janus-slide .columns {
+  display: flex !important;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.reveal .spherical-janus-slide .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal .spherical-janus-slide .column:first-child {
+  align-items: center;
+}
+
+.reveal .spherical-janus-slide .column:first-child > p {
+  margin: 0;
+  line-height: 1;
   text-align: center;
 }
 
-.reveal .ve-column-layout img {
-  width: 88%;
-  max-height: 240px;
+.reveal .spherical-janus-slide img {
+  max-height: 345px;
   object-fit: contain;
 }
 
-.reveal .ve-notes {
-  width: 88%;
-  margin: 0.25em auto 0;
+.reveal .spherical-janus-slide .ref {
+  margin-top: 0.5em;
+  line-height: 1.15;
 }
 
-.reveal .ve-notes p {
-  font-size: 0.58em;
-  line-height: 1.35;
-  font-weight: 400;
-}
-
-.reveal .ve-citation p {
-  margin: 0.12em 0 0;
-  font-size: 0.26em;
-  line-height: 1.08;
+.reveal .spherical-janus-slide .subhead {
+  display: block;
+  margin: 0 0 0.65em;
+  color: var(--pku-red);
+  font-size: 0.68em;
+  line-height: 1.25;
   text-align: center;
 }
 
-.reveal .janus-diffusion-transition {
-  width: 92%;
-  margin: 0.35em auto 0;
-  padding: 0.3em 0.55em;
-  border-radius: 6px;
-  background: rgba(140, 0, 0, 0.055);
+.reveal .spherical-janus-slide .datt-findings {
+  width: 88%;
+  margin: 0 auto;
   text-align: left;
 }
 
-.reveal .janus-diffusion-transition p {
+.reveal .spherical-janus-slide .datt-findings p {
   margin: 0;
-  font-size: 0.58em;
-  font-weight: 500;
-  line-height: 1.3;
-}
-
-/* 12. Motivation slide: Viscoelastic Propulsion of a Spherical Janus Particle */
-.reveal .datt-layout {
-  display: grid;
-  grid-template-columns: 50% 40%;
-  align-items: start;
-  column-gap: 0;
-  max-height: 390px;
-  margin-top: 0.25em;
-}
-
-.reveal .datt-column-layout {
-  text-align: center;
-}
-
-.reveal .datt-column-layout img {
-  width: 88%;
-  max-height: 220px;
-  object-fit: contain;
-}
-
-.reveal .datt-citation p {
-  margin: 0.12em 0 0;
-  font-size: 0.26em;
-  line-height: 1.08;
-  text-align: center;
-}
-
-.reveal .datt-findings {
-  width: 91%;
-  margin: 0.15em auto 0;
-  text-align: left;
-}
-
-.reveal .datt-findings ul {
-  margin: 0;
-  padding-left: 1.15em;
-  font-size: 0.52em;
+  font-size: 0.62em;
   line-height: 1.38;
 }
 
-.reveal .datt-findings li {
-  margin-bottom: 0.28em;
+.reveal .spherical-janus-slide .datt-findings p + p {
+  margin-top: 0.55em;
 }
 
-.reveal .datt-tension-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  align-items: center;
-  column-gap: 0.7em;
-  width: 91%;
-  margin: -0.3em auto 0;
+.reveal .spherical-janus-slide .takeaway {
+  width: 92%;
+  margin: 0.45em auto 0;
+  padding: 0.34em 0.4em 0;
+  border-top: 3px solid rgba(140, 0, 0, 0.22);
+  border-radius: 0;
+  background: transparent;
+  color: #241313;
+  font-size: 0.68em;
+  line-height: 1.25;
+  text-align: center;
 }
 
-.reveal .datt-tension-text {
-  padding: 0.38em 0.55em;
-  border-radius: 6px;
-  background: rgba(140, 0, 0, 0.055);
-  text-align: left;
-}
-
-.reveal .datt-tension-text > p:first-child {
-  margin: 0 0 0.18em;
-  font-size: 0.5em;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.reveal .datt-tension-text p {
+.reveal .spherical-janus-slide .takeaway p {
   margin: 0;
-  font-size: 0.42em;
-  line-height: 1.35;
+  font-size: inherit;
+  line-height: inherit;
 }
 
-.reveal .datt-experiment-wrap {
+/* Motivation slide: From Spheres to Spheroids */
+.reveal .from-spheres-slide .columns {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 94%;
+  min-height: 390px;
+  margin: 0.55em auto 0;
+}
+
+.reveal .from-spheres-slide .column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.reveal .datt-experiment-wrap > p {
+.reveal .from-spheres-slide .column > p:first-child {
   margin: 0;
   line-height: 1;
 }
 
-.reveal .datt-experiment-figure {
-  display: block;
-  width: 250px;
-  max-height: 150px;
+.reveal .from-spheres-slide .quarto-figure,
+.reveal .from-spheres-slide figure,
+.reveal .from-spheres-slide figure > p {
   margin: 0;
+  line-height: 1;
+}
+
+.reveal .from-spheres-slide img {
+  display: block;
+  height: 300px;
+  max-height: 300px;
+  width: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
-.reveal .datt-experiment-citation p {
-  margin: 0.1em 0 0;
-  font-size: 0.24em;
-  line-height: 1.08;
-  text-align: center;
+.reveal .bigq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 300px;
+  color: #9b0000;
+  font-size: 3em;
+  line-height: 1;
 }
 
-/* 13. Motivation slide: Research question */
+.reveal .bigq p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.reveal .from-spheres-slide .takeaway {
+  width: 92%;
+  margin: 0.8em auto 0.55em;
+}
+
+/* Motivation slide: Research question */
 .reveal .geometry-question-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 90px minmax(0, 1fr);
@@ -878,88 +1150,50 @@
   margin-top: 0.35em;
 }
 
-/* 14. Model slide: Weak-viscoelasticity story */
-.reveal .asymptotic-story {
-  width: 91%;
-  margin: 0.1em auto 0;
-  --block-equation-size: 23px;
+/* 16. Results slide: Spherical cancellation symmetry */
+.reveal .spherical-cancellation-slide > p:first-of-type {
+  margin: 0.15em auto 0.25em;
+  text-align: center;
 }
 
-.reveal .asymptotic-step-key p {
-  margin: 0 0 0.16em;
-  font-size: 0.58em;
-  font-weight: 500;
-  line-height: 1.45;
+.reveal .spherical-cancellation-slide > p:first-of-type img {
+  max-height: 220px;
+  width: auto;
+  max-width: 88%;
+  object-fit: contain;
 }
 
-.reveal .asymptotic-step-text p {
-  margin: 0 0 0.16em;
-  font-size: 0.5em;
-  line-height: 1.45;
-}
-
-.reveal .known-state-row {
-  display: grid;
-  grid-template-columns: 1fr 45px 1fr 45px 1.45fr;
+.reveal .spherical-cancellation-flow {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  column-gap: 0.2em;
-  margin-top: 0.18em;
-}
-
-.reveal .known-state-item {
-  padding: 0.22em 0.32em;
-  border-radius: 5px;
-  background: rgba(140, 0, 0, 0.045);
+  width: 92%;
+  margin: 0.05em auto 0;
+  padding-bottom: 0.45em;
   text-align: center;
 }
 
-.reveal .known-state-item p {
-  margin: 0;
-  font-size: 0.58em;
-  line-height: 1.45;
-}
-
-.reveal .known-state-arrow {
-  text-align: center;
-}
-
-.reveal .known-state-arrow p {
-  margin: 0;
-  color: var(--pku-red);
-  font-size: 0.5em;
-  line-height: 1;
-}
-
-.reveal .asymptotic-focus {
-  background: rgba(140, 0, 0, 0.055);
-}
-
-/* 15. Model slide: Reciprocal-theorem story */
-.reveal .reciprocal-story {
-  width: 91%;
-  margin: 0.1em auto 0;
-  --block-equation-size: 23px;
-}
-
-.reveal .reciprocal-step-key p {
-  margin: 0 0 0.16em;
-  font-size: 0.58em;
+.reveal .spherical-cancellation-flow > p:first-child {
+  margin: 0 0 0.28em;
+  color: #222;
+  font-size: 0.6em;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.35;
+  text-align: center;
 }
 
-.reveal .reciprocal-step-text p {
-  margin: 0 0 0.16em;
-  font-size: 0.5em;
-  line-height: 1.45;
+.reveal .spherical-cancellation-slide .math.display,
+.reveal .spherical-cancellation-slide .MathJax_Display,
+.reveal .spherical-cancellation-slide mjx-container[display="true"] {
+  font-size: 23px !important;
+  margin: 0.08em 0 0.08em !important;
+  text-align: center !important;
 }
 
-.reveal .reciprocal-focus {
-  background: rgba(140, 0, 0, 0.055);
-}
-
-.reveal .reciprocal-story .mechanism-block {
-  margin-bottom: 0.62em;
+.reveal .spherical-cancellation-slide .takeaway {
+  max-width: 70%;
+  margin: 0.08em auto 0;
+  text-align: center;
 }
 
 /* 16. Results slide: Sphere Results */
@@ -1014,92 +1248,211 @@
 }
 
 /* 17. Results slide: Half-coated spheroids */
-.reveal .halfcase-layout {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  align-items: center;
-  column-gap: 0;
-  min-height: 400px;
-  margin-top: 0.25em;
-}
-
-.reveal .halfcase-content {
-  width: 100%;
-  margin: 0;
-  --block-equation-size: 23px;
-}
-
-.reveal .halfcase-figure-wrap {
+.reveal .eccentricity-revival-content {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  height: calc(100% - 2.2em);
+  transform: translateY(-0.35em);
 }
 
-.reveal .halfcase-figure {
-  display: block;
-  width: 84%;
-  max-height: 440px;
+.reveal .eccentricity-revival-slide .columns {
+  width: 94%;
   margin: 0 auto;
+  align-items: center;
 }
 
-.reveal .halfcase-notes {
-  width: 88%;
+.reveal .eccentricity-revival-slide .column {
+  min-width: 0;
+}
+
+.reveal .eccentricity-revival-slide .column:first-child p {
   margin: 0;
-  padding-left: 0;
-}
-
-.reveal .halfcase-notes ul {
-  font-size: 0.7em;
-  line-height: 1.45;
-}
-
-.reveal .halfcase-notes li {
-  margin-bottom: 0.95em;
-}
-
-.reveal .halfcase-notes li:nth-child(3) {
-  color: var(--pku-red);
-  font-weight: 500;
-}
-
-.reveal .halfcase-key p {
-  margin: 0 0 0.55em;
-  font-size: 0.74em;
-  font-weight: 500;
-  line-height: 1.25;
-}
-
-/* 18. Results slide: Eccentricity-induced symmetry breaking */
-.reveal .symmetry-breaking-layout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.0em;
-  align-items: start;
-  margin-top: 0.75em;
-}
-
-.reveal .symmetry-breaking-column-layout {
   text-align: center;
 }
 
-.reveal .symmetry-breaking-column-layout img {
-  width: 100%;
-  height: 320px;
+.reveal .eccentricity-revival-slide .column:first-child img {
+  max-height: 340px;
+  width: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
-.reveal .symmetry-breaking-notes {
-  width: 90%;
-  margin: 0.35em auto 0;
+.reveal .eccentricity-revival-slide ul {
+  margin-top: 0.4em;
+  padding-left: 1.05em;
+  font-size: 0.68em;
+  line-height: 1.45;
 }
 
-.reveal .symmetry-breaking-notes p {
-  font-size: 0.7em;
-  line-height: 1.35;
+.reveal .eccentricity-revival-slide .subhead {
+  margin-bottom: 0.5em;
+  font-size: 0.8em;
+}
+
+.reveal .eccentricity-revival-slide li {
+  margin-bottom: 0.65em;
+}
+
+/* 18. Results slide: Coverage symmetry breaking */
+.reveal .coverage-symmetry-slide {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.reveal .coverage-symmetry-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-height: 0;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0 0 1.15em;
+  transform: translateY(-0.35em);
+}
+
+.reveal .coverage-symmetry-slide .columns {
+  width: 82%;
+  margin: 0 auto;
+  gap: 0.25em;
+  align-items: flex-start;
+}
+
+.reveal .coverage-symmetry-slide .column {
+  min-width: 0;
   text-align: center;
 }
 
-/* 19. Results slide: Mechanism */
+.reveal .coverage-symmetry-slide .quarto-figure,
+.reveal .coverage-symmetry-slide figure,
+.reveal .coverage-symmetry-slide figure > p,
+.reveal .coverage-symmetry-slide .column > p {
+  margin: 0;
+}
+
+.reveal .coverage-symmetry-slide figure {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 300px;
+}
+
+.reveal .coverage-symmetry-slide img {
+  height: 300px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.reveal .coverage-symmetry-slide .fig-caption {
+  display: block;
+  margin: 0 0 0.18em;
+  font-size: 0.62em;
+  text-align: center;
+}
+
+.reveal .coverage-symmetry-slide .takeaway {
+  width: 82%;
+  margin: 0.68em auto 0.65em;
+  text-align: center;
+}
+
+/* 19. Results slide: Kernel cancellation */
+.reveal .why-cancellation-slide {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.reveal .why-cancellation-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 0;
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0.05em 0 0.75em;
+  transform: translateY(-0.2em);
+}
+
+.reveal .why-cancellation-content > ul {
+  align-self: stretch;
+  margin: 0 0 0.24em;
+  padding-left: 1.05em;
+  color: #222;
+  font-size: 0.62em;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.reveal .why-cancellation-content > ul li {
+  margin: 0;
+}
+
+.reveal .why-cancellation-slide .columns {
+  width: 90%;
+  margin: 0 auto;
+  gap: 1.0em;
+  align-items: flex-start;
+}
+
+.reveal .why-cancellation-slide .column {
+  min-width: 0;
+  text-align: center;
+}
+
+.reveal .why-cancellation-slide .quarto-figure,
+.reveal .why-cancellation-slide figure,
+.reveal .why-cancellation-slide figure > p,
+.reveal .why-cancellation-slide .column > p {
+  margin: 0;
+}
+
+.reveal .why-cancellation-slide figure {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 300px;
+}
+
+.reveal .why-cancellation-slide img {
+  display: block;
+  height: 300px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.reveal .kernel-sentence {
+  width: 90%;
+  margin: 0.22em auto 0;
+  padding: 0.38em 0.5em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.085);
+  text-align: center;
+}
+
+.reveal .kernel-sentence p {
+  margin: 0;
+  color: #222;
+  font-size: 0.54em;
+  line-height: 1.28;
+}
+
+.reveal .kernel-sentence strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.reveal .script-k {
+  font-family: "STIX Two Math", "Cambria Math", "Apple Symbols", "Times New Roman", serif;
+  font-style: normal;
+}
+
+/* 20. Results slide: Mechanism */
 .reveal .mechanism-layout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1133,162 +1486,123 @@
   margin-bottom: 0.95em;
 }
 
-/* 20. Summary slide: Summary */
-.reveal .summary-layout {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
-  column-gap: 0.7em;
-  width: 94%;
-  margin: 0.15em auto 0;
+/* 20. Summary slide: Take-home messages */
+.reveal .summary-slide {
+  position: relative;
 }
 
-.reveal .summary-card {
-  display: flex;
-  flex-direction: column;
+.reveal .summary-main {
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 0.38fr);
   align-items: center;
-  min-height: 390px;
-  padding: 0.28em 0.35em 0.35em;
-  border-radius: 7px;
-  background: rgba(17, 17, 17, 0.025);
+  column-gap: 0.7em;
+  width: 86%;
+  margin: 0.55em auto 0;
+}
+
+.reveal .summary-points ul {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: 0.66em;
+  line-height: 1.5;
+}
+
+.reveal .summary-points li {
+  margin: 0.45em 0;
+}
+
+.reveal .summary-points strong {
+  color: var(--pku-red);
+  font-weight: 700;
+}
+
+.reveal .summary-visual {
   text-align: center;
 }
 
-.reveal .summary-figure-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 235px;
-}
-
-.reveal .summary-figure-wrap > p {
+.reveal .summary-visual > p,
+.reveal .summary-visual figure,
+.reveal .summary-visual figure > p {
   margin: 0;
   line-height: 1;
 }
 
-.reveal .summary-figure {
+.reveal .summary-visual img {
   display: block;
-  width: 100%;
-  max-height: 225px;
+  height: 280px;
+  width: auto;
+  max-width: 100%;
   margin: 0 auto;
   object-fit: contain;
 }
 
-.reveal .summary-key {
-  width: 92%;
-  margin: 0.18em auto 0;
+.reveal .summary-credit,
+.reveal .summary-logo {
+  position: absolute;
+  bottom: 1.45em;
 }
 
-.reveal .summary-key p {
-  margin: 0;
-  color: var(--pku-red);
-  font-size: 0.58em;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.reveal .summary-text {
-  width: 92%;
-  margin: 0.2em auto 0;
-}
-
-.reveal .summary-text p {
-  margin: 0;
-  font-size: 0.5em;
-  line-height: 1.35;
+.reveal .summary-credit {
+  left: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.48em;
   text-align: left;
 }
 
-.reveal .summary-takehome {
-  width: 90%;
-  margin: 0.45em auto 0;
-  padding: 0.34em 0.55em;
-  border-radius: 6px;
-  background: rgba(140, 0, 0, 0.085);
-  text-align: center;
-}
-
-.reveal .summary-takehome p {
-  margin: 0;
-  font-size: 0.58em;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-/* 21. Acknowledgment slide */
-.reveal .acknowledgment-layout {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-  column-gap: 1.1em;
-  width: 88%;
-  margin: 0.2em auto 0;
-}
-
-.reveal .acknowledgment-person {
-  text-align: center;
-}
-
-.reveal .acknowledgment-person > p {
+.reveal .summary-credit > p {
   margin: 0;
   line-height: 1;
 }
 
-.reveal .acknowledgment-photo {
+.reveal .summary-credit img {
   display: block;
-  width: 200px;
-  height: 250px;
-  margin: 0 auto;
-  border-radius: 8px;
+  height: 130px;
+  width: auto;
+  border-radius: 5px;
   object-fit: cover;
 }
 
-.reveal .acknowledgment-name {
-  margin-top: 0.28em;
-}
-
-.reveal .acknowledgment-name p {
+.reveal .summary-credit-text p {
   margin: 0;
-  color: var(--pku-red);
-  font-size: 0.68em;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.reveal .acknowledgment-role p {
-  margin: 0.12em 0 0;
-  font-size: 0.48em;
-  font-weight: 500;
-  line-height: 1.3;
-}
-
-.reveal .acknowledgment-affiliation p {
-  margin: 0.12em 0 0;
-  color: var(--muted-text);
-  font-size: 0.4em;
-  line-height: 1.3;
-}
-
-.reveal .acknowledgment-footer {
-  width: 90%;
-  margin: 0.45em auto 0;
-  padding: 0.3em 0.55em;
-  border-radius: 6px;
-  background: rgba(140, 0, 0, 0.055);
-  text-align: left;
-}
-
-.reveal .acknowledgment-item {
-  margin: 0;
-}
-
-.reveal .acknowledgment-item + .acknowledgment-item {
-  margin-top: 0.18em;
-}
-
-.reveal .acknowledgment-item p {
-  margin: 0;
+  color: #333;
   font-size: 0.5em;
-  line-height: 1.45;
+  line-height: 1.28;
+}
+
+.reveal .summary-credit-text p:first-child {
+  color: #1a1a1a;
+  font-size: 0.68em;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.reveal .summary-logo {
+  right: 0.65em;
+}
+
+.reveal .summary-logo > p {
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .summary-logo img {
+  display: block;
+  width: 190px;
+  height: auto;
+  max-height: 95px;
+  object-fit: contain;
+}
+.reveal .cover-affiliations {
+  margin: 0.28em 0 0.68em;
+  color: #333;
+  font-size: 0.45em;
+  line-height: 1.32;
+}
+
+.reveal .cover-affiliations sup,
+.reveal .cover-authors sup {
+  font-size: 0.68em;
+  vertical-align: super;
+  line-height: 0;
 }
