@@ -140,7 +140,10 @@
 </div>
 <div class="cover-meta">
 <div class="cover-authors">
-<p>Qiang Zhao, Guangpu Zhu, Lailai Zhu, On Shun Pak and Yi Man</p>
+<p>Qiang Zhao<sup>1</sup>, Guangpu Zhu<sup>2</sup>, Lailai Zhu<sup>2</sup>, On Shun Pak<sup>3</sup> and Yi Man<sup>1</sup></p>
+</div>
+<div class="cover-affiliations">
+<p><sup>1</sup> Peking University<br> <sup>2</sup> National University of Singapore<br> <sup>3</sup> Santa Clara University</p>
 </div>
 <div class="cover-event">
 <p>20th U.S. National Congress on Theoretical and Applied Mechanics</p>
@@ -150,174 +153,86 @@
 </div>
 </div>
 </section>
-<section id="non-newtonian-biofluids" class="slide level2 motivation-slide">
-<h2>Non-Newtonian Biofluids</h2>
-<div class="nnfluids-layout">
-<div class="nnfluids-column-layout">
-<p><img data-src="figures/AFM_mucus.png"></p>
-<div class="nnfluids-citation">
-<p><a href="https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2013.00310/full">Bansil et al., Front. Immunol., 2013</a></p>
+
+
+
+<section id="active-janus-particles-in-viscoelastic-fluids" class="slide level2 motivation-slide janus-intro-slide">
+<h2>Active Janus Particles in Viscoelastic Fluids</h2>
+<!-- ===== P2 : Janus Intro ===== -->
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="assets/sphere_polymer.svg" class="sphere-polymer-figure"></p>
+</div><div class="column" style="width:55%;">
+<p><strong>Viscoelastic biofluids</strong> — the natural habitat of many swimmers</p>
+<p><strong>Self-diffusiophoretic propulsion</strong> — an asymmetric coating sets up a self-generated solute gradient that drives motion</p>
+</div></div>
+<div class="takeaway">
+<p>How does fluid elasticity change the <strong>propulsion speed</strong> itself?</p>
 </div>
-<div class="nnfluids-notes">
-<p>Polymeric microstructure of human mucus</p>
-</div>
-</div>
-<div class="nnfluids-column-layout">
-<p><img data-src="figures/moduli_rheology.png"></p>
-<div class="nnfluids-citation">
-<p>&nbsp;</p>
-</div>
-<div class="nnfluids-notes">
-<p>Viscous and elastic responses coexist across timescales</p>
-</div>
-</div>
-</div>
-<div class="mucus-summary-row">
-<div class="mucus-summary-figure-wrap">
-<p><img data-src="figures/mucus_microstructure.png" class="mucus-microstructure-figure"></p>
-</div>
-<div class="mucus-summary-text">
-<p>Polymer-containing biofluids, such as mucus, exhibit heterogeneous microstructures and viscoelastic rheology</p>
+</section>
+<section id="viscoelasticity-reshapes-janus-particle-dynamics" class="slide level2 motivation-slide janus-dynamics-slide">
+<h2>Viscoelasticity Reshapes Janus-Particle Dynamics</h2>
+<div class="janus-dynamics-content">
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="figures/gomez-solano-2016.png"></p>
+<p><span class="fig-caption"><strong>Stronger rotational diffusion</strong> with faster motion</span></p>
+<p><span class="ref">Gomez-Solano et al., <em>PRL</em>, 2016</span></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="figures/saad-natale-2019.png"></p>
+<p><span class="fig-caption">Propulsion <strong>reduced</strong> in polymer solutions</span></p>
+<p><span class="ref">Saad &amp; Natale, <em>Soft Matter</em>, 2019</span></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="figures/raman-2023.png"></p>
+<p><span class="fig-caption">Active motion <strong>suppressed</strong> in polymer solutions</span></p>
+<p><span class="ref">Raman et al., <em>ACS Phys. Chem. Au</em>, 2023</span></p>
+</div></div>
+<div class="takeaway">
+<p>Experiments reveal rich but noise-dominated dynamics — the <em>intrinsic</em> propulsion speed is hard to isolate. To probe it cleanly, we turn to theory.</p>
 </div>
 </div>
 </section>
-<section id="rheology-alters-biological-swimming" class="slide level2 motivation-slide">
-<h2>Rheology Alters Biological Swimming</h2>
-<div class="rheology-effect-layout">
-<div class="rheology-effect-column-layout">
-<p><img data-src="figures/swimming_performance.png"></p>
-<div class="rheology-effect-citation">
-<p><a href="https://www.nature.com/articles/srep15761.pdf">Patteson et al., Sci. Rep., 2015</a></p>
-</div>
-<div class="rheology-effect-notes">
-<p>Elastic stresses suppress inefficient body wobbling, allowing <em>E. coli</em> to swim faster</p>
-</div>
-</div>
-<div class="rheology-effect-column-layout">
-<p><img data-src="figures/collective_behavior.png"></p>
-<div class="rheology-effect-citation">
-<p><a href="https://www.nature.com/articles/s41598-017-03341-4">Tung et al., Sci. Rep., 2017</a></p>
-</div>
-<div class="rheology-effect-notes">
-<p>Fluid viscoelasticity strengthens sperm–sperm interactions and promotes collective swimming</p>
-</div>
-</div>
-</div>
-</section>
-<section id="self-diffusiophoretic-janus-particles" class="slide level2 motivation-slide">
-<h2>Self-Diffusiophoretic Janus Particles</h2>
-<div class="Janus-layout">
-<div class="Janus-column-layout">
-<p><img data-src="figures/scanning_Janus.png"></p>
-<div class="Janus-citation">
-<p><a href="https://pubs.rsc.org/en/content/articlelanding/2019/sm/c9sm01801h/unauth">Saad and Natale, Soft Matter, 2019</a></p>
-</div>
-<div class="Janus-notes">
-<p>A catalytic Janus particle with asymmetric surface coating</p>
-</div>
-</div>
-<div class="Janus-column-layout">
-<p><img data-src="figures/phoretic_illustration.png"></p>
-<div class="Janus-citation">
-<p><a href="https://www.annualreviews.org/content/journals/10.1146/annurev-fluid-122414-034456">Moran and Posner, Annu. Rev.&nbsp;Fluid Mech., 2017</a></p>
-</div>
-<div class="Janus-notes">
-<p>Asymmetric surface reactions create a self-generated solute gradient that drives diffusiophoretic motion</p>
-</div>
-</div>
-</div>
-</section>
-<section id="viscoelasticity-reshapes-janus-particle-diffusion" class="slide level2 motivation-slide">
-<h2>Viscoelasticity Reshapes Janus-Particle Diffusion</h2>
-<div class="ve-layout">
-<div class="ve-column-layout">
-<p><img data-src="figures/rotational_diffusion.png"></p>
-<div class="ve-citation">
-<p><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.138301">Gomez-Solano et al., Phys. Rev.&nbsp;Lett., 2016</a></p>
-</div>
-<div class="ve-notes">
-<p>Rotational diffusion increases dramatically with increasing viscoelasticity and eventually saturates</p>
-</div>
-</div>
-<div class="ve-column-layout">
-<p><img data-src="figures/translational_diffusion.png"></p>
-<div class="ve-citation">
-<p><a href="https://pubs.acs.org/doi/full/10.1021/acsphyschemau.2c00056">Raman et al., ACS Phys. Chem. Au, 2023</a></p>
-</div>
-<div class="ve-notes">
-<p>Translational diffusion falls far below the Stokes–Einstein prediction as polymer concentration increases</p>
-</div>
-</div>
-</div>
-<div class="janus-diffusion-transition">
-<p>These pronounced changes have motivated theoretical studies of active-particle dynamics in viscoelastic fluids.</p>
-</div>
-</section>
-<section id="viscoelastic-propulsion-of-a-spherical-janus-particle" class="slide level2 motivation-slide">
+<section id="viscoelastic-propulsion-of-a-spherical-janus-particle" class="slide level2 motivation-slide spherical-janus-slide">
 <h2>Viscoelastic Propulsion of a Spherical Janus Particle</h2>
-<div class="datt-layout">
-<div class="datt-column-layout">
-<p><img data-src="figures/datt_model.png"></p>
-<div class="datt-citation">
-<p><a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/an-active-particle-in-a-complex-fluid/CAAE79EB75E9CDEE9FAAB9281E6674B5">Datt et al., J. Fluid Mech., 2017</a></p>
-</div>
-</div>
-<div class="datt-column-layout">
-<p><img data-src="figures/datt_results.png"></p>
-<div class="datt-citation">
-<p>&nbsp;</p>
-</div>
-</div>
-</div>
+<div class="spherical-janus-content">
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><img data-src="figures/datt_combined.png"></p>
+<p><span class="ref">Datt et al., <em>J. Fluid Mech.</em>, 2017</span></p>
+</div><div class="column" style="width:48%;">
+<p><span class="subhead">Weakly viscoelastic limit → second-order fluid model</span></p>
 <div class="datt-findings">
-<ul>
-<li>The first-order viscoelastic correction is antisymmetric with respect to the surface coverage</li>
-<li>For the commonly studied half-coated particle, the first-order speed correction vanishes</li>
-</ul>
+<p>The first-order viscoelastic correction is <strong>antisymmetric</strong> in surface coverage.</p>
+<p>For a half-coated sphere, the leading-order speed correction <strong>vanishes</strong>.</p>
 </div>
-<div class="datt-tension-row">
-<div class="datt-tension-text">
-<p>An apparent theory–experiment tension</p>
-<p>Weakly viscoelastic theory predicts no speed change for a half-coated sphere, whereas experiments report reduced propulsion in viscoelastic fluids.</p>
-</div>
-<div class="datt-experiment-wrap">
-<p><img data-src="figures/datt_experiment.png" class="datt-experiment-figure"></p>
-<div class="datt-experiment-citation">
-<p><a href="https://pubs.rsc.org/en/content/articlelanding/2019/sm/c9sm01801h">Saad and Natale, Soft Matter, 2019</a></p>
-</div>
+</div></div>
+<div class="takeaway">
+<p>But what if the Janus particle is <strong>not spherical</strong>?</p>
 </div>
 </div>
 </section>
-<section id="what-changes-for-a-non-spherical-janus-particle" class="slide level2 motivation-slide">
-<h2>What Changes for a Non-Spherical Janus Particle?</h2>
-<div class="geometry-question-layout">
-<div class="geometry-question-column">
-<p><img data-src="figures/sphere_illustration.png" class="geometry-question-figure"></p>
-<div class="geometry-question-key">
-<p>Spherical Janus particle</p>
+<section id="from-spheres-to-spheroids" class="slide level2 motivation-slide from-spheres-slide">
+<h2>From Spheres to Spheroids</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/sphere_polymer.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
 </div>
-<div class="geometry-question-note">
-<p>First-order correction is antisymmetric with respect to surface coverage</p>
+<p><span class="fig-caption">Sphere — correction <strong>vanishes</strong> at half-coating</span></p>
+</div><div class="column" style="width:16%;">
+<p><span class="bigq">?</span></p>
+</div><div class="column" style="width:42%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/spheroid_polymer.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
 </div>
-</div>
-<div class="geometry-question-center">
-<p>?</p>
-</div>
-<div class="geometry-question-column">
-<p><img data-src="figures/spheroid_illustration.png" class="geometry-question-figure"></p>
-<div class="geometry-question-key">
-<p>Spheroidal Janus particle</p>
-</div>
-<div class="geometry-question-note">
-<p>How geometric anisotropy modifies viscoelastic propulsion remains unclear</p>
-</div>
-</div>
-</div>
-<div class="geometry-question-box">
-<ul>
-<li>Does the spherical cancellation persist for a non-spherical Janus particle?</li>
-<li>How do eccentricity and surface coverage control viscoelastic propulsion?</li>
-</ul>
+<p><span class="fig-caption">Spheroid — geometric anisotropy</span></p>
+</div></div>
+<div class="takeaway">
+<p>We vary two control parameters: <strong>eccentricity</strong> <span class="math inline">\(e\)</span> (shape) and <strong>coverage</strong> <span class="math inline">\(\zeta_0\)</span> (activity).</p>
 </div>
 </section>
 <section id="model-a-spheroidal-self-diffusiophoretic-particle" class="slide level2 model-slide">
@@ -352,7 +267,7 @@
 \left. D\boldsymbol{n}\cdot\nabla C \right|_{\tau=\tau_0,\zeta&lt;\zeta_0} = -A
 \]</span></p>
 <div class="symbol-note">
-<p><span class="math inline">\(C\)</span>: solute concentration; <span class="math inline">\(\boldsymbol{u}\)</span>: fluid velocity; <span class="math inline">\(D\)</span>: diffusivity; <span class="math inline">\(A\)</span>: surface activity / fixed solute flux on the active cap.</p>
+<p><span class="math inline">\(C\)</span>: solute concentration; <span class="math inline">\(\boldsymbol{u}\)</span>: fluid velocity; <span class="math inline">\(D\)</span>: solute diffusivity; <span class="math inline">\(A\)</span>: surface activity / fixed solute flux on the active cap; <span class="math inline">\(\boldsymbol{n}\)</span>: unit normal.</p>
 </div>
 </div>
 <div class="mechanism-block">
@@ -363,7 +278,7 @@
 M(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\cdot \nabla C
 \]</span></p>
 <div class="symbol-note">
-<p><span class="math inline">\(M\)</span>: phoretic mobility; the projection extracts the tangential concentration gradient.</p>
+<p><span class="math inline">\(M\)</span>: phoretic mobility; <span class="math inline">\((\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\)</span>: tangential projection operator.</p>
 </div>
 </div>
 <div class="mechanism-block">
@@ -420,7 +335,7 @@ M(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\cdot \nabla C
 \boldsymbol{\sigma}=-p\boldsymbol{I}+\boldsymbol{T}
 \]</span></p>
 <div class="symbol-note">
-<p><span class="math inline">\(\boldsymbol{u}\)</span>: fluid velocity; <span class="math inline">\(\boldsymbol{\sigma}\)</span>: total stress; <span class="math inline">\(p\)</span>: pressure; <span class="math inline">\(\boldsymbol{T}\)</span>: deviatoric stress.</p>
+<p><span class="math inline">\(\boldsymbol{\sigma}\)</span>: total stress; <span class="math inline">\(p\)</span>: pressure; <span class="math inline">\(\boldsymbol{T}\)</span>: deviatoric stress.</p>
 </div>
 </div>
 <div class="mechanism-block">
@@ -448,7 +363,7 @@ M(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\cdot \nabla C
 </div>
 </div>
 <div class="symbol-note">
-<p><span class="math inline">\(\mu\)</span>: viscosity; <span class="math inline">\(\dot{\boldsymbol{\gamma}}\)</span>: Newtonian shear-rate tensor; <span class="math inline">\(\Psi_1,\Psi_2\)</span>: first and second normal-stress coefficients; <span class="math inline">\(\boldsymbol{G}\)</span>: steady upper-convected derivative.</p>
+<p><span class="math inline">\(\mu\)</span>: viscosity; <span class="math inline">\(\dot{\boldsymbol{\gamma}}\)</span>: shear-rate tensor; <span class="math inline">\(\Psi_1,\Psi_2\)</span>: first and second normal-stress coefficients; <span class="math inline">\(\boldsymbol{G}\)</span>: steady upper-convected derivative.</p>
 </div>
 </div>
 <div class="mechanism-block">
@@ -460,9 +375,6 @@ M(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\cdot \nabla C
 <div class="dimensionless-row">
 <p><span class="scale-label">Peclet number (advection/diffusion):</span> <span style="color:#155a9c;"><span class="math inline">\(\mathrm{Pe}=\dfrac{MAa}{D^2}\)</span></span></p>
 <p><span class="scale-label">Deborah number (fluid elasticity):</span> <span style="color:#8c0000;"><span class="math inline">\(\mathrm{De}=\dfrac{MA\Psi_1}{2\mu D a}\)</span></span></p>
-</div>
-<div class="symbol-note">
-<p><span class="math inline">\(M\)</span>: phoretic mobility; <span class="math inline">\(A\)</span>: surface activity.</p>
 </div>
 </div>
 </div>
@@ -485,7 +397,7 @@ M(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\cdot \nabla C
 c|_{\tau\to\infty}=0
 \]</span></p>
 <div class="symbol-note">
-<p><span class="math inline">\(c\)</span>: dimensionless relative solute concentration; <span class="math inline">\(\tau=\tau_0\)</span> denotes the particle surface.</p>
+<p><span class="math inline">\(c\)</span>: dimensionless relative solute concentration; <span class="math inline">\(\tau=\tau_0\)</span>: particle surface.</p>
 </div>
 </div>
 <div class="mechanism-block">
@@ -509,7 +421,7 @@ B_n\frac{P_n^1(\zeta)}{\sqrt{\tau_0^2-\zeta^2}}
 </div>
 </div>
 <div class="symbol-note">
-<p><span class="math inline">\(P_n\)</span> and <span class="math inline">\(Q_n\)</span>: Legendre functions; <span class="math inline">\(\rho_n\)</span> is determined from the flux boundary condition; <span class="math inline">\(B_n=-\rho_n Q_n(\tau_0)\)</span>.</p>
+<p><span class="math inline">\(P_n,Q_n\)</span>: Legendre functions; <span class="math inline">\(\rho_n\)</span>: coefficients set by the flux boundary condition; <span class="math inline">\(B_n=-\rho_n Q_n(\tau_0)\)</span>.</p>
 </div>
 </div>
 <div class="caveat-row">
@@ -528,263 +440,188 @@ B_n\frac{P_n^1(\zeta)}{\sqrt{\tau_0^2-\zeta^2}}
 </div>
 </div>
 </section>
-<section id="weakly-non-newtonian-expansion" class="slide level2 model-slide slip-slide">
-<h2>Weakly non-Newtonian expansion</h2>
-<div class="asymptotic-story">
-<div class="mechanism-block">
-<div class="asymptotic-step-key">
-<p><strong>Weak elasticity permits a perturbation expansion</strong></p>
+<section id="newtonian-baseline" class="slide level2 model-slide slip-slide">
+<h2>Newtonian baseline</h2>
+<div class="model-clean-layout newtonian-baseline-layout">
+<div class="model-lead">
+<p>Weakly viscoelastic: expand in <span class="math inline">\(\mathrm{De}\ll 1\)</span></p>
 </div>
-<div class="asymptotic-step-text">
-<p>For <span class="math inline">\(\mathrm{De}\ll1\)</span>, the propulsion problem is expanded about its Newtonian limit:</p>
-</div>
+<div class="model-equation">
 <p><span class="math display">\[
-\{\boldsymbol{u}, p, \boldsymbol{U}\} = \{\boldsymbol{u}_0, p_0, \boldsymbol{U}_0\} + \mathrm{De} \{\boldsymbol{u}_1, p_1, \boldsymbol{U}_1\} + \mathcal{O}(\mathrm{De}^2)
+\{\boldsymbol{u}, p, \boldsymbol{U}\} = \{\boldsymbol{u}_0, p_0, \boldsymbol{U}_0\} + \mathrm{De}\{\boldsymbol{u}_1, p_1, \boldsymbol{U}_1\} + \mathcal{O}(\mathrm{De}^2)
 \]</span></p>
-<div class="symbol-note">
-<p>Subscript <span class="math inline">\(0\)</span> denotes the Newtonian base state, while subscript <span class="math inline">\(1\)</span> denotes the leading viscoelastic correction.</p>
 </div>
-</div>
-<div class="mechanism-block">
-<div class="asymptotic-step-key">
-<p><strong>The Newtonian base state is already known</strong></p>
-</div>
-<div class="asymptotic-step-text">
-<p>The concentration field determines the surface slip, and previous solutions provide the corresponding Newtonian flow <span class="math inline">\(\boldsymbol{u}_0\)</span> and propulsion speed <span class="math inline">\(U_0\)</span> for a spheroidal particle.</p>
-</div>
-<div class="known-state-row">
-<div class="known-state-item">
-<p>Concentration field</p>
-</div>
-<div class="known-state-arrow">
-<p><span class="math inline">\(\longrightarrow\)</span></p>
-</div>
-<div class="known-state-item">
-<p>Surface slip</p>
-</div>
-<div class="known-state-arrow">
-<p><span class="math inline">\(\longrightarrow\)</span></p>
-</div>
-<div class="known-state-item">
-<p>Known Newtonian flow <span class="math inline">\(\boldsymbol{u}_0\)</span></p>
-</div>
-</div>
-</div>
-<div class="mechanism-block asymptotic-focus">
-<div class="asymptotic-step-key">
-<p><strong>Viscoelasticity enters through an additional first-order stress</strong></p>
-</div>
-<div class="asymptotic-step-text">
-<p>The first-order nonlinear contribution is determined by the Newtonian flow:</p>
-</div>
+<div class="baseline-row">
+<div class="baseline-text-panel">
+<p>The zeroth order is the Newtonian problem, valid for any eccentricity, with a known speed:</p>
+<div class="model-equation">
 <p><span class="math display">\[
-\boldsymbol{\sigma}_1 = -p_1 \boldsymbol{I} + \dot{\boldsymbol{\gamma}}_1 + \boldsymbol{A}, \qquad \boldsymbol{A} = -(\boldsymbol{G}_0 + b \dot{\boldsymbol{\gamma}}_0\cdot\dot{\boldsymbol{\gamma}}_0)
+U_0 =
+-\frac{\tau_0}{2}
+\int_{-1}^{1}
+u_s
+\frac{\sqrt{1-\zeta^2}}{\sqrt{\tau_0^2-\zeta^2}}
+\,\mathrm{d}\zeta
 \]</span></p>
-<div class="symbol-note">
-<p><span class="math inline">\(b=-2\Psi_2/\Psi_1\)</span>: viscoelastic parameter; <span class="math inline">\(\boldsymbol{A}\)</span>: known forcing term that drives the first-order correction.</p>
+</div>
+<div class="ref">
+<p>Poehnl et al., J. Phys.: Condens. Matter, 2020; Popescu et al., Eur. Phys. J. E, 2010</p>
+</div>
+</div>
+<div class="baseline-figure-panel">
+<p><img data-src="figures/newtonian_symmetry.png" class="baseline-figure"></p>
+<div class="takeaway">
+<p>Linearity makes the Newtonian speed symmetric about half-coating: <span class="math inline">\(U_0(\zeta_0)=U_0(-\zeta_0)\)</span>.</p>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="reciprocal-theorem-gives-the-speed-correction" class="slide level2 model-slide slip-slide">
-<h2>Reciprocal theorem gives the speed correction</h2>
-<div class="reciprocal-story">
-<div class="mechanism-block">
-<div class="reciprocal-step-key">
-<p><strong>A virtual towing problem provides the resistance needed to determine <span class="math inline">\(U_1\)</span></strong></p>
-</div>
-<div class="reciprocal-step-text">
-<p>We consider a rigid spheroid of the same geometry translating in a Newtonian fluid:</p>
-</div>
+<section id="first-order-viscoelastic-correction" class="slide level2 model-slide slip-slide">
+<h2>First-order viscoelastic correction</h2>
+<div class="model-clean-layout reciprocal-correction-layout">
+<div class="model-block">
+<p>Viscoelasticity enters as a forcing term, set by the Newtonian flow:</p>
+<div class="model-equation">
 <p><span class="math display">\[
-\hat{\boldsymbol{u}}(\tau=\tau_0) = \hat{U}\boldsymbol{e}_z, \qquad \hat{\boldsymbol{F}} = \int_S \boldsymbol{n}\cdot\hat{\boldsymbol{\sigma}}\,\mathrm{d}S
+\boldsymbol{\sigma}_1 = -p_1\boldsymbol{I} + \dot{\boldsymbol{\gamma}}_1 + \boldsymbol{A},
+\qquad
+\boldsymbol{A} = -(\boldsymbol{G}_0 + b\,\dot{\boldsymbol{\gamma}}_0\cdot\dot{\boldsymbol{\gamma}}_0)
 \]</span></p>
+</div>
+</div>
+<div class="model-block">
+<p>An auxiliary towing problem + the reciprocal theorem give <span class="math inline">\(U_1\)</span> directly, without solving the first-order flow:</p>
+<div class="model-equation wide-equation equation-highlight">
+<p><span class="math display">\[
+U_1 =
+-\frac{(\tau_0^2+1)\operatorname{coth}^{-1}\tau_0-\tau_0}{4\tau_0^2}
+\int_{\tau_0}^{\infty}\int_{-1}^{1}
+(\boldsymbol{A}:\nabla\hat{\boldsymbol{u}})(\tau^2-\zeta^2)\,\mathrm{d}\zeta\,\mathrm{d}\tau
+\]</span></p>
+</div>
 <div class="symbol-note">
-<p><span class="math inline">\((\hat{\boldsymbol{u}},\hat{\boldsymbol{\sigma}})\)</span> denote the known auxiliary velocity and stress fields.</p>
-</div>
-</div>
-<div class="mechanism-block">
-<div class="reciprocal-step-key">
-<p><strong>The reciprocal theorem avoids solving the first-order flow</strong></p>
-</div>
-<div class="reciprocal-step-text">
-<p>The reciprocal theorem eliminates <span class="math inline">\(\boldsymbol{u}_1\)</span> by linking the <span class="math inline">\(\mathcal{O}(\mathrm{De})\)</span> problem to the auxiliary flow:</p>
-</div>
-<p><span class="math display">\[
-\hat{\boldsymbol{F}}\cdot\boldsymbol{U}_1 = \int_V \boldsymbol{A} : \nabla\hat{\boldsymbol{u}}\,\mathrm{d}V
-\]</span></p>
-<div class="symbol-note">
-<p>The kernel characterizes the local power-density contribution associated with the viscoelastic stress.</p>
-</div>
-</div>
-<div class="mechanism-block reciprocal-focus">
-<div class="reciprocal-step-key">
-<p><strong>The first-order propulsion correction follows directly</strong></p>
-</div>
-<div class="reciprocal-step-text">
-<p>Using the known force on the auxiliary spheroid, we obtain:</p>
-</div>
-<p><span class="math display">\[
-U_1 = - \frac{(\tau_0^2+1) \coth^{-1} \tau_0 - \tau_0}{4 \tau_0^2} \int_{\tau_0}^{\infty} \int_{-1}^{1} (\boldsymbol{A} : \nabla \hat{\boldsymbol{u}}) (\tau^2 - \zeta^2) \, \mathrm{d} \zeta \, \mathrm{d} \tau
-\]</span></p>
-</div>
-</div>
-</section>
-<section id="geometric-isotropy-leads-to-antisymmetry" class="slide level2 results-slide">
-<h2>Geometric isotropy leads to antisymmetry</h2>
-<div class="sphere-result-layout">
-<div class="sphere-result-figure-wrap">
-<p><img data-src="figures/fig2_spherical.png" class="sphere-result-figure"></p>
-</div>
-<div class="sphere-result-content">
-<div class="mechanism-block">
-<p><strong>The spherical-limit slip determines <span class="math inline">\(U_1\)</span></strong></p>
-<p><span class="math display">\[
-u_s(\zeta)=\sum_{n=1}^{\infty} B_n P_n^1(\zeta), \quad U_1 =  (b - 1) \sum_{n=1}^{\infty} K_n B_n B_{n+1}
-\]</span></p>
-<div class="symbol-note">
-<p><span class="math inline">\(B_n\)</span> denotes the phoretic modes, while <span class="math inline">\(K_n\)</span> is determined analytically.</p>
-</div>
-</div>
-<div class="mechanism-block">
-<p><strong>Spherical isotropy relates complementary coverages</strong></p>
-<div class="sphere-result-text">
-<p>Reflecting the coating distribution about the equator gives</p>
-</div>
-<p><span class="math display">\[
-u_s(-\zeta;-\zeta_0)=u_s(\zeta;\zeta_0), \quad U(\zeta_0,De)=U(-\zeta_0,-De)
-\]</span></p>
-<div class="sphere-result-text">
-<p>and therefore</p>
-</div>
-<p><span class="math display">\[
-U_{2n+1}(-\zeta_0)=-U_{2n+1}(\zeta_0), \quad U_{2n}(-\zeta_0)=U_{2n}(\zeta_0)
-\]</span></p>
-</div>
-<div class="sphere-result-notes">
-<p>For a sphere, the first-order viscoelastic correction is antisymmetric in surface coverage and therefore vanishes at half coverage.</p>
+<p><span class="math inline">\(\nabla\hat{\boldsymbol{u}}\)</span>: velocity gradient of the auxiliary (towing) flow.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="eccentricity-induced-enhancement-for-half-coated-particles" class="slide level2 results-slide">
-<h2>Eccentricity-induced enhancement for half-coated particles</h2>
-<div class="halfcase-layout">
-<div class="halfcase-figure-wrap">
-<p><img data-src="figures/fig3_eccentricity.png" class="halfcase-figure"></p>
+<section id="the-spherical-cancellation-is-a-symmetry" class="slide level2 results-slide spherical-cancellation-slide">
+<h2>The spherical cancellation is a symmetry</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/slip_symmetry.png" class="quarto-figure quarto-figure-center" height="220"></p>
+</figure>
 </div>
-<div class="halfcase-content">
-<div class="halfcase-key">
+<div class="spherical-cancellation-flow">
+<p>In a second-order fluid, a mirror reflection must be paired with <strong>De → −De</strong>:</p>
+<p><span class="math display">\[U(\zeta_0, \mathrm{De}) = U(-\zeta_0, -\mathrm{De})\]</span></p>
+<div class="takeaway">
+<p>Half-coating is its own mirror ⟹ <strong>U even in De</strong>: the O(De) correction <strong>vanishes</strong>, leading correction is <strong>O(De²)</strong>.</p>
+</div>
+</div>
+</section>
+<section id="eccentricity-revives-the-correction" class="slide level2 results-slide eccentricity-revival-slide">
+<h2>Eccentricity revives the correction</h2>
+<div class="eccentricity-revival-content">
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/fig3_eccentricity.png" class="quarto-figure quarto-figure-center" height="340"></p>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="subhead">
 <p>Half-coated particle: <span class="math inline">\(\zeta_0=0\)</span></p>
 </div>
-<div class="halfcase-notes">
 <ul>
-<li>Sphere: <span class="math inline">\(U_1=0\)</span> by symmetry</li>
+<li>Sphere: <span class="math inline">\(U_1=0\)</span>, protected by symmetry</li>
 <li>Spheroid: eccentricity breaks the cancellation</li>
-<li>Slender shapes show pronounced enhancement</li>
+<li>Slender particles: <strong>pronounced speed enhancement</strong></li>
 </ul>
+</div></div>
 </div>
+</section>
+<section id="breaking-the-coverage-symmetry" class="slide level2 results-slide coverage-symmetry-slide">
+<h2>Breaking the coverage symmetry</h2>
+<div class="coverage-symmetry-content">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="fig-caption">Antisymmetry lost as <span class="math inline">\(e\)</span> grows</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/fig4.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="fig-caption">Phase diagram: enhancement vs reduction</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/fig5.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+</div></div>
+<div class="takeaway">
+<p>Eccentricity breaks the coverage <strong>antisymmetry</strong>, and the <strong>enhancement regime broadens</strong> with elongation.</p>
 </div>
 </div>
 </section>
-<section id="eccentricity-induced-symmetry-breaking" class="slide level2 results-slide">
-<h2>Eccentricity-induced symmetry breaking</h2>
-<div class="symmetry-breaking-layout">
-<div class="symmetry-breaking-column-layout">
-<p><img data-src="figures/fig4_scaled_speed.png"></p>
-<div class="symmetry-breaking-notes">
-<p>Shape anisotropy breaks the antisymmetry of <span class="math inline">\(U_1\)</span></p>
-</div>
-</div>
-<div class="symmetry-breaking-column-layout">
-<p><img data-src="figures/fig5_phase.png"></p>
-<div class="symmetry-breaking-notes">
-<p>Larger eccentricity broadens the enhancement regime</p>
-</div>
-</div>
-</div>
-</section>
-<section id="broken-kernel-cancellation-enhances-propulsion" class="slide level2 results-slide">
-<h2>Broken kernel cancellation enhances propulsion</h2>
-<div class="mechanism-layout">
-<div class="mechanism-column-layout">
-<p><img data-src="figures/fig6a_mechanism.png"></p>
-</div>
-<div class="mechanism-column-layout">
-<p><img data-src="figures/fig6b_mechanism.png"></p>
-</div>
-</div>
-<div class="mechanism-notes">
+<section id="why-the-cancellation-breaks" class="slide level2 results-slide why-cancellation-slide">
+<h2>Why the cancellation breaks</h2>
+<div class="why-cancellation-content">
 <ul>
-<li>Spherical geometry yields antisymmetric local contributions</li>
-<li>Prolate geometry localizes gradients and breaks the cancellation</li>
+<li>The first-order speed is set by a local kernel: <span class="math inline">\(U_1 \propto \int_V\)</span> <span class="script-k">𝒦</span> <span class="math inline">\(\mathrm{d}V\)</span>, where <span class="script-k">𝒦</span> <span class="math inline">\(= \boldsymbol{A}:\nabla\hat{\boldsymbol{u}}\)</span> (blue enhances, red reduces)</li>
 </ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/fig6a_kernel.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+<div class="kernel-sentence">
+<p>Sphere — <span class="script-k">𝒦</span> <strong>antisymmetric</strong>, cancels exactly ⟹ <span class="math inline">\(U_1=0\)</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/fig6b_kernel.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+<div class="kernel-sentence">
+<p>Spheroid — curvature localizes <span class="script-k">𝒦</span>, <strong>antisymmetry broken</strong> ⟹ <span class="math inline">\(U_1\neq0\)</span></p>
+</div>
+</div></div>
 </div>
 </section>
 <section id="summary" class="slide level2 summary-slide">
 <h2>Summary</h2>
-<div class="summary-layout">
-<div class="summary-card">
-<div class="summary-figure-wrap">
-<p><img data-src="figures/fig2_spherical.png" class="summary-figure"></p>
+<div class="summary-main">
+<div class="summary-points">
+<ul>
+<li><strong>Spheres</strong> — the half-coated correction vanishes, protected by reflection symmetry</li>
+<li><strong>Spheroids</strong> — eccentricity breaks it; slender particles are strongly enhanced</li>
+<li><strong>General principle</strong> — symmetry breaks only when both shape anisotropy and fluid nonlinearity are present</li>
+</ul>
 </div>
-<div class="summary-key">
-<p>Spherical symmetry</p>
-</div>
-<div class="summary-text">
-<p>For spheres, the first-order correction is antisymmetric and vanishes at half coverage.</p>
-</div>
-</div>
-<div class="summary-card">
-<div class="summary-figure-wrap">
-<p><img data-src="figures/fig3_eccentricity.png" class="summary-figure"></p>
-</div>
-<div class="summary-key">
-<p>Shape-induced enhancement</p>
-</div>
-<div class="summary-text">
-<p>Slender spheroids can exhibit pronounced speed enhancement.</p>
-</div>
-</div>
-<div class="summary-card">
-<div class="summary-figure-wrap">
-<p><img data-src="figures/fig5_phase.png" class="summary-figure"></p>
-</div>
-<div class="summary-key">
-<p>Tunable propulsion</p>
-</div>
-<div class="summary-text">
-<p>Shape and surface coverage jointly determine whether viscoelasticity enhances or suppresses propulsion.</p>
+<div class="summary-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/spheroid_polymer.svg" class="quarto-figure quarto-figure-center" height="280"></p>
+</figure>
 </div>
 </div>
 </div>
-<div class="summary-takehome">
-<p>Particle shape provides a direct control parameter for active propulsion in viscoelastic fluids.</p>
-</div>
-</section>
-<section id="acknowledgments" class="slide level2 acknowledgment-slide">
-<h2>Acknowledgments</h2>
-<div class="acknowledgment-layout">
-<div class="acknowledgment-person">
-<p><img data-src="figures/qiang_zhao.jpg" class="acknowledgment-photo"></p>
-<div class="acknowledgment-name">
-<p>Qiang Zhao</p>
-</div>
-<div class="acknowledgment-role">
-<p>Ph.D.&nbsp;Student</p>
-</div>
-<div class="acknowledgment-affiliation">
-<p>College of Engineering, Peking University</p>
+<div class="summary-credit">
+<p><img data-src="figures/qiang_zhao.jpg" height="130"></p>
+<div class="summary-credit-text">
+<p><strong>Qiang Zhao</strong></p>
+<p>First author · PhD student, Peking University</p>
 </div>
 </div>
-</div>
-<div class="acknowledgment-footer">
-<div class="acknowledgment-item">
-<p>Helpful discussions: On Shun Pak and Brandon Van Gogh</p>
-</div>
-<div class="acknowledgment-item">
-<p>Funding: National Natural Science Foundation of China (12372258, 12588201, and 12502294); Jiangsu Specially-Appointed Professor Program; start-up funding (1001-YQR25024)</p>
-</div>
+<div class="summary-logo">
+<p><img data-src="figures/nsfc_logo.jpeg" width="190"></p>
 </div>
 
 
@@ -861,7 +698,7 @@ U_{2n+1}(-\zeta_0)=-U_{2n+1}(\zeta_0), \quad U_{2n}(-\zeta_0)=U_{2n}(\zeta_0)
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

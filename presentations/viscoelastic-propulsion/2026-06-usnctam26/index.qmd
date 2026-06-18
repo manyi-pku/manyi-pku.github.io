@@ -3,11 +3,12 @@ pagetitle: "Propulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex
 format:
   revealjs:
     theme: simple
+    center: false
     slide-number: true
     controls: true
     progress: false
     hash: true
-    history: false
+    history: true
     transition: none
     css: styles.css
     include-after-body: progress.html
@@ -24,8 +25,15 @@ Propulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids
 
 ::: {.cover-meta}
 ::: {.cover-authors}
-Qiang Zhao, Guangpu Zhu, Lailai Zhu, On Shun Pak and Yi Man
+Qiang Zhao<sup>1</sup>, Guangpu Zhu<sup>2</sup>, Lailai Zhu<sup>2</sup>, On Shun Pak<sup>3</sup> and Yi Man<sup>1</sup>
 :::
+
+::: {.cover-affiliations}
+<sup>1</sup> Peking University<br>
+<sup>2</sup> National University of Singapore<br>
+<sup>3</sup> Santa Clara University
+:::
+
 ::: {.cover-event}
 20th U.S. National Congress on Theoretical and Applied Mechanics
 :::
@@ -36,7 +44,7 @@ June 22, 2026, Pasadena
 
 ---
 
-## Non-Newtonian Biofluids {.motivation-slide}
+## Non-Newtonian Biofluids {.motivation-slide data-visibility="hidden"}
 
 ::: {.nnfluids-layout}
 
@@ -84,7 +92,10 @@ Polymer-containing biofluids, such as mucus, exhibit heterogeneous microstructur
 
 ---
 
-## Rheology Alters Biological Swimming {.motivation-slide}
+
+
+
+## Rheology Alters Biological Swimming {.motivation-slide data-visibility="hidden"}
 
 ::: {.rheology-effect-layout}
 
@@ -120,7 +131,7 @@ Fluid viscoelasticity strengthens sperm–sperm interactions and promotes collec
 
 ---
 
-## Self-Diffusiophoretic Janus Particles {.motivation-slide}
+## Self-Diffusiophoretic Janus Particles {.motivation-slide data-visibility="hidden"}
 
 ::: {.Janus-layout}
 
@@ -156,143 +167,129 @@ Asymmetric surface reactions create a self-generated solute gradient that drives
 
 ---
 
-## Viscoelasticity Reshapes Janus-Particle Diffusion {.motivation-slide}
+## Active Janus Particles in Viscoelastic Fluids {.motivation-slide .janus-intro-slide}
+<!-- ===== P2 : Janus Intro ===== -->
 
-::: {.ve-layout}
+:::: {.columns}
 
-::: {.ve-column-layout}
-
-![](figures/rotational_diffusion.png)
-
-::: {.ve-citation}
-[Gomez-Solano et al., Phys. Rev. Lett., 2016](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.138301)
-:::
-
-::: {.ve-notes}
-Rotational diffusion increases dramatically with increasing viscoelasticity and eventually saturates
-:::
+::: {.column width="45%"}
+![](assets/sphere_polymer.svg){.sphere-polymer-figure}
 
 :::
 
-::: {.ve-column-layout}
+::: {.column width="55%"}
+**Viscoelastic biofluids** — the natural habitat of many swimmers
 
-![](figures/translational_diffusion.png)
-
-::: {.ve-citation}
-[Raman et al., ACS Phys. Chem. Au, 2023](https://pubs.acs.org/doi/full/10.1021/acsphyschemau.2c00056)
-:::
-
-::: {.ve-notes}
-Translational diffusion falls far below the Stokes–Einstein prediction as polymer concentration increases
-:::
+**Self-diffusiophoretic propulsion** — an asymmetric coating sets up a self-generated solute gradient that drives motion
 
 :::
 
+::::
+
+::: {.takeaway}
+How does fluid elasticity change the **propulsion speed** itself?
 :::
 
-::: {.janus-diffusion-transition}
-These pronounced changes have motivated theoretical studies of active-particle dynamics in viscoelastic fluids.
+## Viscoelasticity Reshapes Janus-Particle Dynamics {.motivation-slide .janus-dynamics-slide}
+
+::: {.janus-dynamics-content}
+
+:::: {.columns}
+
+::: {.column width="33%"}
+![](figures/gomez-solano-2016.png)
+
+[<strong>Stronger rotational diffusion</strong> with faster motion]{.fig-caption}
+
+[Gomez-Solano et al., *PRL*, 2016]{.ref}
 :::
 
----
+::: {.column width="33%"}
+![](figures/saad-natale-2019.png)
 
-## Viscoelastic Propulsion of a Spherical Janus Particle {.motivation-slide}
+[Propulsion <strong>reduced</strong> in polymer solutions]{.fig-caption}
 
-::: {.datt-layout}
-
-::: {.datt-column-layout}
-
-![](figures/datt_model.png)
-
-::: {.datt-citation}
-[Datt et al., J. Fluid Mech., 2017](https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/an-active-particle-in-a-complex-fluid/CAAE79EB75E9CDEE9FAAB9281E6674B5)
+[Saad & Natale, *Soft Matter*, 2019]{.ref}
 :::
 
+::: {.column width="33%"}
+![](figures/raman-2023.png)
+
+[Active motion <strong>suppressed</strong> in polymer solutions]{.fig-caption}
+
+[Raman et al., *ACS Phys. Chem. Au*, 2023]{.ref}
 :::
 
-::: {.datt-column-layout}
+::::
 
-![](figures/datt_results.png)
-
-::: {.datt-citation}
-&nbsp;
+::: {.takeaway}
+Experiments reveal rich but noise-dominated dynamics — the *intrinsic* propulsion speed is hard to isolate. To probe it cleanly, we turn to theory.
 :::
 
 :::
 
+
+
+
+## Viscoelastic Propulsion of a Spherical Janus Particle {.motivation-slide .spherical-janus-slide}
+
+::: {.spherical-janus-content}
+
+:::: {.columns}
+
+::: {.column width="52%"}
+![](figures/datt_combined.png)
+
+[Datt et al., *J. Fluid Mech.*, 2017]{.ref}
 :::
+
+::: {.column width="48%"}
+
+[Weakly viscoelastic limit → second-order fluid model]{.subhead}
 
 ::: {.datt-findings}
-- The first-order viscoelastic correction is antisymmetric with respect to the surface coverage
-- For the commonly studied half-coated particle, the first-order speed correction vanishes
-:::
+The first-order viscoelastic correction is **antisymmetric** in surface coverage.
 
-::: {.datt-tension-row}
-
-::: {.datt-tension-text}
-An apparent theory–experiment tension
-
-Weakly viscoelastic theory predicts no speed change for a half-coated sphere, whereas experiments report reduced propulsion in viscoelastic fluids.
-:::
-
-::: {.datt-experiment-wrap}
-
-![](figures/datt_experiment.png){.datt-experiment-figure}
-
-::: {.datt-experiment-citation}
-[Saad and Natale, Soft Matter, 2019](https://pubs.rsc.org/en/content/articlelanding/2019/sm/c9sm01801h)
+For a half-coated sphere, the leading-order speed correction **vanishes**.
 :::
 
 :::
 
-:::
+::::
 
----
-
-## What Changes for a Non-Spherical Janus Particle? {.motivation-slide}
-
-::: {.geometry-question-layout}
-
-::: {.geometry-question-column}
-
-![](figures/sphere_illustration.png){.geometry-question-figure}
-
-::: {.geometry-question-key}
-Spherical Janus particle
-:::
-
-::: {.geometry-question-note}
-First-order correction is antisymmetric with respect to surface coverage
+::: {.takeaway}
+But what if the Janus particle is **not spherical**?
 :::
 
 :::
 
-::: {.geometry-question-center}
-?
+## From Spheres to Spheroids {.motivation-slide .from-spheres-slide}
+
+:::: {.columns}
+
+::: {.column width="42%"}
+![](assets/sphere_polymer.svg){height="300px" fig-align="center"}
+
+[Sphere — correction **vanishes** at half-coating]{.fig-caption}
 :::
 
-::: {.geometry-question-column}
-
-![](figures/spheroid_illustration.png){.geometry-question-figure}
-
-::: {.geometry-question-key}
-Spheroidal Janus particle
+::: {.column width="16%"}
+[?]{.bigq}
 :::
 
-::: {.geometry-question-note}
-How geometric anisotropy modifies viscoelastic propulsion remains unclear
+::: {.column width="42%"}
+![](assets/spheroid_polymer.svg){height="300px" fig-align="center"}
+
+[Spheroid — geometric anisotropy]{.fig-caption}
 :::
 
+::::
+
+::: {.takeaway}
+We vary two control parameters: **eccentricity** $e$ (shape) and **coverage** $\zeta_0$ (activity).
 :::
 
-:::
 
-::: {.geometry-question-box}
-- Does the spherical cancellation persist for a non-spherical Janus particle?
-- How do eccentricity and surface coverage control viscoelastic propulsion?
-:::
-
----
 
 ## Model: a spheroidal self-diffusiophoretic particle {.model-slide}
 
@@ -334,7 +331,7 @@ $$
 $$
 
 ::: {.symbol-note}
-$C$: solute concentration; $\boldsymbol{u}$: fluid velocity; $D$: diffusivity; $A$: surface activity / fixed solute flux on the active cap.
+$C$: solute concentration; $\boldsymbol{u}$: fluid velocity; $D$: solute diffusivity; $A$: surface activity / fixed solute flux on the active cap; $\boldsymbol{n}$: unit normal.
 :::
 :::
 
@@ -348,7 +345,7 @@ M(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\cdot \nabla C
 $$
 
 ::: {.symbol-note}
-$M$: phoretic mobility; the projection extracts the tangential concentration gradient.
+$M$: phoretic mobility; $(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})$: tangential projection operator.
 :::
 :::
 
@@ -415,7 +412,7 @@ $$
 $$
 
 ::: {.symbol-note}
-$\boldsymbol{u}$: fluid velocity; $\boldsymbol{\sigma}$: total stress; $p$: pressure; $\boldsymbol{T}$: deviatoric stress.
+$\boldsymbol{\sigma}$: total stress; $p$: pressure; $\boldsymbol{T}$: deviatoric stress.
 :::
 :::
 
@@ -449,7 +446,7 @@ $$
 :::
 
 ::: {.symbol-note}
-$\mu$: viscosity; $\dot{\boldsymbol{\gamma}}$: Newtonian shear-rate tensor; $\Psi_1,\Psi_2$: first and second normal-stress coefficients; $\boldsymbol{G}$: steady upper-convected derivative.
+$\mu$: viscosity; $\dot{\boldsymbol{\gamma}}$: shear-rate tensor; $\Psi_1,\Psi_2$: first and second normal-stress coefficients; $\boldsymbol{G}$: steady upper-convected derivative.
 :::
 :::
 
@@ -468,9 +465,6 @@ $\mu$: viscosity; $\dot{\boldsymbol{\gamma}}$: Newtonian shear-rate tensor; $\Ps
 [Deborah number (fluid elasticity):]{.scale-label} [$\mathrm{De}=\dfrac{MA\Psi_1}{2\mu D a}$]{style="color:#8c0000;"}
 :::
 
-::: {.symbol-note}
-$M$: phoretic mobility; $A$: surface activity.
-:::
 :::
 
 :::
@@ -496,7 +490,7 @@ c|_{\tau\to\infty}=0
 $$
 
 ::: {.symbol-note}
-$c$: dimensionless relative solute concentration; $\tau=\tau_0$ denotes the particle surface.
+$c$: dimensionless relative solute concentration; $\tau=\tau_0$: particle surface.
 :::
 :::
 
@@ -526,7 +520,7 @@ $$
 :::
 
 ::: {.symbol-note}
-$P_n$ and $Q_n$: Legendre functions; $\rho_n$ is determined from the flux boundary condition; $B_n=-\rho_n Q_n(\tau_0)$.
+$P_n,Q_n$: Legendre functions; $\rho_n$: coefficients set by the flux boundary condition; $B_n=-\rho_n Q_n(\tau_0)$.
 :::
 :::
 
@@ -554,380 +548,221 @@ At finite $\mathrm{Pe}$, advection couples the solute field back to the flow. Th
 
 :::
 
-## Weakly non-Newtonian expansion {.model-slide .slip-slide}
+## Newtonian baseline {.model-slide .slip-slide}
 
-::: {.asymptotic-story}
+::: {.model-clean-layout .newtonian-baseline-layout}
 
-::: {.mechanism-block}
-
-::: {.asymptotic-step-key}
-**Weak elasticity permits a perturbation expansion**
+::: {.model-lead}
+Weakly viscoelastic: expand in $\mathrm{De}\ll 1$
 :::
 
-::: {.asymptotic-step-text}
-For $\mathrm{De}\ll1$, the propulsion problem is expanded about its Newtonian limit:
-:::
-
+::: {.model-equation}
 $$
-\{\boldsymbol{u}, p, \boldsymbol{U}\} = \{\boldsymbol{u}_0, p_0, \boldsymbol{U}_0\} + \mathrm{De} \{\boldsymbol{u}_1, p_1, \boldsymbol{U}_1\} + \mathcal{O}(\mathrm{De}^2)
+\{\boldsymbol{u}, p, \boldsymbol{U}\} = \{\boldsymbol{u}_0, p_0, \boldsymbol{U}_0\} + \mathrm{De}\{\boldsymbol{u}_1, p_1, \boldsymbol{U}_1\} + \mathcal{O}(\mathrm{De}^2)
 $$
-
-::: {.symbol-note}
-Subscript $0$ denotes the Newtonian base state, while subscript $1$ denotes the leading viscoelastic correction.
 :::
 
-:::
+:::: {.baseline-row}
 
-::: {.mechanism-block}
+::: {.baseline-text-panel}
+The zeroth order is the Newtonian problem, valid for any eccentricity, with a known speed:
 
-::: {.asymptotic-step-key}
-**The Newtonian base state is already known**
-:::
-
-::: {.asymptotic-step-text}
-The concentration field determines the surface slip, and previous solutions provide the corresponding Newtonian flow $\boldsymbol{u}_0$ and propulsion speed $U_0$ for a spheroidal particle.
-:::
-
-::: {.known-state-row}
-
-::: {.known-state-item}
-Concentration field
-:::
-
-::: {.known-state-arrow}
-$\longrightarrow$
-:::
-
-::: {.known-state-item}
-Surface slip
-:::
-
-::: {.known-state-arrow}
-$\longrightarrow$
-:::
-
-::: {.known-state-item}
-Known Newtonian flow $\boldsymbol{u}_0$
-:::
-
-:::
-
-:::
-
-::: {.mechanism-block .asymptotic-focus}
-
-::: {.asymptotic-step-key}
-**Viscoelasticity enters through an additional first-order stress**
-:::
-
-::: {.asymptotic-step-text}
-The first-order nonlinear contribution is determined by the Newtonian flow:
-:::
-
+::: {.model-equation}
 $$
-\boldsymbol{\sigma}_1 = -p_1 \boldsymbol{I} + \dot{\boldsymbol{\gamma}}_1 + \boldsymbol{A}, \qquad \boldsymbol{A} = -(\boldsymbol{G}_0 + b \dot{\boldsymbol{\gamma}}_0\cdot\dot{\boldsymbol{\gamma}}_0)
+U_0 =
+-\frac{\tau_0}{2}
+\int_{-1}^{1}
+u_s
+\frac{\sqrt{1-\zeta^2}}{\sqrt{\tau_0^2-\zeta^2}}
+\,\mathrm{d}\zeta
 $$
+:::
 
-::: {.symbol-note}
-$b=-2\Psi_2/\Psi_1$: viscoelastic parameter; $\boldsymbol{A}$: known forcing term that drives the first-order correction.
+::: {.ref}
+Poehnl et al., J. Phys.: Condens. Matter, 2020; Popescu et al., Eur. Phys. J. E, 2010
 :::
 
 :::
+
+::: {.baseline-figure-panel}
+![](figures/newtonian_symmetry.png){.baseline-figure}
+
+::: {.takeaway}
+Linearity makes the Newtonian speed symmetric about half-coating: $U_0(\zeta_0)=U_0(-\zeta_0)$.
+:::
+:::
+
+::::
 
 :::
 
 ---
 
-## Reciprocal theorem gives the speed correction {.model-slide .slip-slide}
+## First-order viscoelastic correction {.model-slide .slip-slide}
 
-::: {.reciprocal-story}
+::: {.model-clean-layout .reciprocal-correction-layout}
 
-::: {.mechanism-block}
+::: {.model-block}
+Viscoelasticity enters as a forcing term, set by the Newtonian flow:
 
-::: {.reciprocal-step-key}
-**A virtual towing problem provides the resistance needed to determine $U_1$**
+::: {.model-equation}
+$$
+\boldsymbol{\sigma}_1 = -p_1\boldsymbol{I} + \dot{\boldsymbol{\gamma}}_1 + \boldsymbol{A},
+\qquad
+\boldsymbol{A} = -(\boldsymbol{G}_0 + b\,\dot{\boldsymbol{\gamma}}_0\cdot\dot{\boldsymbol{\gamma}}_0)
+$$
+:::
 :::
 
-::: {.reciprocal-step-text}
-We consider a rigid spheroid of the same geometry translating in a Newtonian fluid:
-:::
+::: {.model-block}
+An auxiliary towing problem + the reciprocal theorem give $U_1$ directly, without solving the first-order flow:
 
+::: {.model-equation .wide-equation .equation-highlight}
 $$
-\hat{\boldsymbol{u}}(\tau=\tau_0) = \hat{U}\boldsymbol{e}_z, \qquad \hat{\boldsymbol{F}} = \int_S \boldsymbol{n}\cdot\hat{\boldsymbol{\sigma}}\,\mathrm{d}S
+U_1 =
+-\frac{(\tau_0^2+1)\operatorname{coth}^{-1}\tau_0-\tau_0}{4\tau_0^2}
+\int_{\tau_0}^{\infty}\int_{-1}^{1}
+(\boldsymbol{A}:\nabla\hat{\boldsymbol{u}})(\tau^2-\zeta^2)\,\mathrm{d}\zeta\,\mathrm{d}\tau
 $$
+:::
 
 ::: {.symbol-note}
-$(\hat{\boldsymbol{u}},\hat{\boldsymbol{\sigma}})$ denote the known auxiliary velocity and stress fields.
+$\nabla\hat{\boldsymbol{u}}$: velocity gradient of the auxiliary (towing) flow.
+:::
 :::
 
 :::
 
-::: {.mechanism-block}
 
-::: {.reciprocal-step-key}
-**The reciprocal theorem avoids solving the first-order flow**
-:::
+## The spherical cancellation is a symmetry {.results-slide .spherical-cancellation-slide}
 
-::: {.reciprocal-step-text}
-The reciprocal theorem eliminates $\boldsymbol{u}_1$ by linking the $\mathcal{O}(\mathrm{De})$ problem to the auxiliary flow:
-:::
+![](figures/slip_symmetry.png){height="220px" fig-align="center"}
 
-$$
-\hat{\boldsymbol{F}}\cdot\boldsymbol{U}_1 = \int_V \boldsymbol{A} : \nabla\hat{\boldsymbol{u}}\,\mathrm{d}V
-$$
+::: {.spherical-cancellation-flow}
+In a second-order fluid, a mirror reflection must be paired with **De → −De**:
 
-::: {.symbol-note}
-The kernel characterizes the local power-density contribution associated with the viscoelastic stress.
+$$U(\zeta_0, \mathrm{De}) = U(-\zeta_0, -\mathrm{De})$$
+
+::: {.takeaway}
+Half-coating is its own mirror ⟹ **U even in De**: the O(De) correction **vanishes**, leading correction is **O(De²)**.
 :::
 
 :::
 
-::: {.mechanism-block .reciprocal-focus}
 
-::: {.reciprocal-step-key}
-**The first-order propulsion correction follows directly**
+## Eccentricity revives the correction {.results-slide .eccentricity-revival-slide}
+
+::: {.eccentricity-revival-content}
+
+:::: {.columns}
+
+::: {.column width="55%"}
+![](figures/fig3_eccentricity.png){height="340px" fig-align="center"}
 :::
 
-::: {.reciprocal-step-text}
-Using the known force on the auxiliary spheroid, we obtain:
-:::
+::: {.column width="45%"}
 
-$$
-U_1 = - \frac{(\tau_0^2+1) \coth^{-1} \tau_0 - \tau_0}{4 \tau_0^2} \int_{\tau_0}^{\infty} \int_{-1}^{1} (\boldsymbol{A} : \nabla \hat{\boldsymbol{u}}) (\tau^2 - \zeta^2) \, \mathrm{d} \zeta \, \mathrm{d} \tau
-$$
-
-:::
-
-:::
-
----
-
-## Geometric isotropy leads to antisymmetry {.results-slide}
-
-::: {.sphere-result-layout}
-
-::: {.sphere-result-figure-wrap}
-![](figures/fig2_spherical.png){.sphere-result-figure}
-:::
-
-::: {.sphere-result-content}
-
-::: {.mechanism-block}
-**The spherical-limit slip determines $U_1$**
-
-$$
-u_s(\zeta)=\sum_{n=1}^{\infty} B_n P_n^1(\zeta), \quad U_1 =  (b - 1) \sum_{n=1}^{\infty} K_n B_n B_{n+1}
-$$
-
-::: {.symbol-note}
-$B_n$ denotes the phoretic modes, while $K_n$ is determined analytically.
-:::
-
-:::
-
-::: {.mechanism-block}
-**Spherical isotropy relates complementary coverages**
-
-::: {.sphere-result-text}
-Reflecting the coating distribution about the equator gives
-:::
-
-$$
-u_s(-\zeta;-\zeta_0)=u_s(\zeta;\zeta_0), \quad U(\zeta_0,De)=U(-\zeta_0,-De)
-$$
-
-::: {.sphere-result-text}
-and therefore
-:::
-
-$$
-U_{2n+1}(-\zeta_0)=-U_{2n+1}(\zeta_0), \quad U_{2n}(-\zeta_0)=U_{2n}(\zeta_0)
-$$
-
-:::
-
-::: {.sphere-result-notes}
-For a sphere, the first-order viscoelastic correction is antisymmetric in surface coverage and therefore vanishes at half coverage.
-:::
-
-:::
-
-:::
-
----
-
-## Eccentricity-induced enhancement for half-coated particles {.results-slide}
-
-::: {.halfcase-layout}
-
-::: {.halfcase-figure-wrap}
-![](figures/fig3_eccentricity.png){.halfcase-figure}
-:::
-
-::: {.halfcase-content}
-
-::: {.halfcase-key}
+::: {.subhead}
 Half-coated particle: $\zeta_0=0$
 :::
 
-::: {.halfcase-notes}
-
-- Sphere: $U_1=0$ by symmetry
+- Sphere: $U_1=0$, protected by symmetry
 - Spheroid: eccentricity breaks the cancellation
-- Slender shapes show pronounced enhancement
+- Slender particles: **pronounced speed enhancement**
 
+:::
+
+::::
+
+:::
+
+
+
+## Breaking the coverage symmetry {.results-slide .coverage-symmetry-slide}
+
+::: {.coverage-symmetry-content}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[Antisymmetry lost as $e$ grows]{.fig-caption}
+
+![](figures/fig4.svg){height="300px" fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+[Phase diagram: enhancement vs reduction]{.fig-caption}
+
+![](figures/fig5.svg){height="300px" fig-align="center"}
+
+:::
+
+::::
+
+::: {.takeaway}
+Eccentricity breaks the coverage <strong>antisymmetry</strong>, and the <strong>enhancement regime broadens</strong> with elongation.
 :::
 
 :::
 
+## Why the cancellation breaks {.results-slide .why-cancellation-slide}
+
+::: {.why-cancellation-content}
+
+- The first-order speed is set by a local kernel: $U_1 \propto \int_V$ <span class="script-k">𝒦</span> $\mathrm{d}V$, where <span class="script-k">𝒦</span> $= \boldsymbol{A}:\nabla\hat{\boldsymbol{u}}$ (blue enhances, red reduces)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](figures/fig6a_kernel.svg){height="300px" fig-align="center"}
+
+::: {.kernel-sentence}
+Sphere — <span class="script-k">𝒦</span> <strong>antisymmetric</strong>, cancels exactly ⟹ $U_1=0$
+:::
 :::
 
----
+::: {.column width="50%"}
+![](figures/fig6b_kernel.svg){height="300px" fig-align="center"}
 
-## Eccentricity-induced symmetry breaking {.results-slide}
-
-::: {.symmetry-breaking-layout}
-
-::: {.symmetry-breaking-column-layout}
-
-![](figures/fig4_scaled_speed.png)
-
-::: {.symmetry-breaking-notes}
-Shape anisotropy breaks the antisymmetry of $U_1$
+::: {.kernel-sentence}
+Spheroid — curvature localizes <span class="script-k">𝒦</span>, <strong>antisymmetry broken</strong> ⟹ $U_1\neq0$
+:::
 :::
 
-:::
-
-::: {.symmetry-breaking-column-layout}
-
-![](figures/fig5_phase.png)
-
-::: {.symmetry-breaking-notes}
-Larger eccentricity broadens the enhancement regime
-:::
-
-:::
-
-:::
-
----
-
-## Broken kernel cancellation enhances propulsion {.results-slide}
-
-::: {.mechanism-layout}
-
-::: {.mechanism-column-layout}
-![](figures/fig6a_mechanism.png)
-:::
-
-::: {.mechanism-column-layout}
-![](figures/fig6b_mechanism.png)
-:::
+::::
 
 :::
 
-::: {.mechanism-notes}
-
-- Spherical geometry yields antisymmetric local contributions
-- Prolate geometry localizes gradients and breaks the cancellation
-
-:::
-
----
 
 ## Summary {.summary-slide}
 
-::: {.summary-layout}
+:::: {.summary-main}
 
-::: {.summary-card}
+::: {.summary-points}
 
-::: {.summary-figure-wrap}
-![](figures/fig2_spherical.png){.summary-figure}
-:::
-
-::: {.summary-key}
-Spherical symmetry
-:::
-
-::: {.summary-text}
-For spheres, the first-order correction is antisymmetric and vanishes at half coverage.
-:::
+- <strong>Spheres</strong> — the half-coated correction vanishes, protected by reflection symmetry
+- <strong>Spheroids</strong> — eccentricity breaks it; slender particles are strongly enhanced
+- <strong>General principle</strong> — symmetry breaks only when both shape anisotropy and fluid nonlinearity are present
 
 :::
 
-::: {.summary-card}
-
-::: {.summary-figure-wrap}
-![](figures/fig3_eccentricity.png){.summary-figure}
+::: {.summary-visual}
+![](assets/spheroid_polymer.svg){height="280px" fig-align="center"}
 :::
 
-::: {.summary-key}
-Shape-induced enhancement
+::::
+
+::: {.summary-credit}
+![](figures/qiang_zhao.jpg){height="130px"}
+
+::: {.summary-credit-text}
+**Qiang Zhao**
+
+First author · PhD student, Peking University
+:::
 :::
 
-::: {.summary-text}
-Slender spheroids can exhibit pronounced speed enhancement.
-:::
-
-:::
-
-::: {.summary-card}
-
-::: {.summary-figure-wrap}
-![](figures/fig5_phase.png){.summary-figure}
-:::
-
-::: {.summary-key}
-Tunable propulsion
-:::
-
-::: {.summary-text}
-Shape and surface coverage jointly determine whether viscoelasticity enhances or suppresses propulsion.
-:::
-
-:::
-
-:::
-
-::: {.summary-takehome}
-Particle shape provides a direct control parameter for active propulsion in viscoelastic fluids.
-:::
-
----
-
-## Acknowledgments {.acknowledgment-slide}
-
-::: {.acknowledgment-layout}
-
-::: {.acknowledgment-person}
-
-![](figures/qiang_zhao.jpg){.acknowledgment-photo}
-
-::: {.acknowledgment-name}
-Qiang Zhao
-:::
-
-::: {.acknowledgment-role}
-Ph.D. Student
-:::
-
-::: {.acknowledgment-affiliation}
-College of Engineering, Peking University
-:::
-
-:::
-
-:::
-
-::: {.acknowledgment-footer}
-
-::: {.acknowledgment-item}
-Helpful discussions: On Shun Pak and Brandon Van Gogh
-:::
-
-::: {.acknowledgment-item}
-Funding: National Natural Science Foundation of China
-(12372258, 12588201, and 12502294); Jiangsu Specially-Appointed Professor Program; start-up funding (1001-YQR25024)
-:::
-
+::: {.summary-logo}
+![](figures/nsfc_logo.jpeg){width="190px"}
 :::
