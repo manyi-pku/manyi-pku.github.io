@@ -324,6 +324,10 @@
   margin-top: 0.45em;
 }
 
+.reveal .diffusion-content .caveat-row {
+  transform: translateY(-0.42em);
+}
+
 .reveal .mechanism-block {
   margin-bottom: 0.9em;
   padding-left: 0.52em;
@@ -540,6 +544,10 @@
   align-items: center;
   justify-content: center;
   justify-self: end;
+}
+
+.reveal .diffusion-content .caveat-figure-wrap {
+  transform: translateY(-0.55em);
 }
 
 .reveal .caveat-figure-wrap > p {
