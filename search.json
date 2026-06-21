@@ -30,25 +30,81 @@
     ]
   },
   {
-    "objectID": "conferences/2026-usnctam/index.html",
-    "href": "conferences/2026-usnctam/index.html",
-    "title": "USNCTAM 2026",
+    "objectID": "conferences/2026-usnctam/people.html",
+    "href": "conferences/2026-usnctam/people.html",
+    "title": "USNCTAM 2026 People",
     "section": "",
-    "text": "20th U.S. National Congress on Theoretical and Applied Mechanics\nPasadena, June 21-25, 2026"
+    "text": "Affiliation:\nWhy relevant:\nWhat we discussed:\nFollow-up:"
   },
   {
-    "objectID": "conferences/2026-usnctam/index.html#talk",
-    "href": "conferences/2026-usnctam/index.html#talk",
-    "title": "USNCTAM 2026",
-    "section": "Talk",
-    "text": "Talk\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids"
+    "objectID": "conferences/2026-usnctam/people.html#directly-related-complex-fluids-microswimmers-active-particles",
+    "href": "conferences/2026-usnctam/people.html#directly-related-complex-fluids-microswimmers-active-particles",
+    "title": "USNCTAM 2026 People",
+    "section": "",
+    "text": "Affiliation:\nWhy relevant:\nWhat we discussed:\nFollow-up:"
   },
   {
-    "objectID": "conferences/2026-usnctam/index.html#materials",
-    "href": "conferences/2026-usnctam/index.html#materials",
-    "title": "USNCTAM 2026",
-    "section": "Materials",
-    "text": "Materials\n\nMobile itinerary\nNotes\nPeople\nFollow-ups"
+    "objectID": "conferences/2026-usnctam/people.html#biofluid-active-matter",
+    "href": "conferences/2026-usnctam/people.html#biofluid-active-matter",
+    "title": "USNCTAM 2026 People",
+    "section": "Biofluid / active matter",
+    "text": "Biofluid / active matter\n\nName\nAffiliation:\nWhy relevant:\nWhat we discussed:\nFollow-up:"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/people.html#sciml-reinforcement-learning-control",
+    "href": "conferences/2026-usnctam/people.html#sciml-reinforcement-learning-control",
+    "title": "USNCTAM 2026 People",
+    "section": "SciML / reinforcement learning / control",
+    "text": "SciML / reinforcement learning / control\n\nName\nAffiliation:\nWhy relevant:\nWhat we discussed:\nFollow-up:"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/people.html#other-useful-contacts",
+    "href": "conferences/2026-usnctam/people.html#other-useful-contacts",
+    "title": "USNCTAM 2026 People",
+    "section": "Other useful contacts",
+    "text": "Other useful contacts\n\nName\nAffiliation:\nWhy relevant:\nWhat we discussed:\nFollow-up:"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/notes.html",
+    "href": "conferences/2026-usnctam/notes.html",
+    "title": "USNCTAM 2026 Notes",
+    "section": "",
+    "text": "This page is for actual talks attended, with quick notes captured during or immediately after each session."
+  },
+  {
+    "objectID": "conferences/2026-usnctam/notes.html#june-21-sunday",
+    "href": "conferences/2026-usnctam/notes.html#june-21-sunday",
+    "title": "USNCTAM 2026 Notes",
+    "section": "June 21 Sunday",
+    "text": "June 21 Sunday\n\nTime - Speaker\nTalk:\nOne-line takeaway:\nRelevance to my work:\nFollow-up:"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/notes.html#june-22-monday",
+    "href": "conferences/2026-usnctam/notes.html#june-22-monday",
+    "title": "USNCTAM 2026 Notes",
+    "section": "June 22 Monday",
+    "text": "June 22 Monday\n\nTime - Speaker\nTalk:\nOne-line takeaway:\nRelevance to my work:\nFollow-up:"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/notes.html#june-23-tuesday",
+    "href": "conferences/2026-usnctam/notes.html#june-23-tuesday",
+    "title": "USNCTAM 2026 Notes",
+    "section": "June 23 Tuesday",
+    "text": "June 23 Tuesday\n\nTime - Speaker\nTalk:\nOne-line takeaway:\nRelevance to my work:\nFollow-up:"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/notes.html#june-24-wednesday",
+    "href": "conferences/2026-usnctam/notes.html#june-24-wednesday",
+    "title": "USNCTAM 2026 Notes",
+    "section": "June 24 Wednesday",
+    "text": "June 24 Wednesday\n\nTime - Speaker\nTalk:\nOne-line takeaway:\nRelevance to my work:\nFollow-up:"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/notes.html#june-25-thursday",
+    "href": "conferences/2026-usnctam/notes.html#june-25-thursday",
+    "title": "USNCTAM 2026 Notes",
+    "section": "June 25 Thursday",
+    "text": "June 25 Thursday\n\nTime - Speaker\nTalk:\nOne-line takeaway:\nRelevance to my work:\nFollow-up:"
   },
   {
     "objectID": "index.html",
@@ -328,46 +384,53 @@
     ]
   },
   {
-    "objectID": "conferences/2026-usnctam/notes.html",
-    "href": "conferences/2026-usnctam/notes.html",
-    "title": "USNCTAM 2026 Notes",
+    "objectID": "conferences/2026-usnctam/followups.html#emails-to-send",
+    "href": "conferences/2026-usnctam/followups.html#emails-to-send",
+    "title": "USNCTAM 2026 Follow-ups",
+    "section": "Emails to send",
+    "text": "Emails to send"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/followups.html#ideas-for-my-own-work",
+    "href": "conferences/2026-usnctam/followups.html#ideas-for-my-own-work",
+    "title": "USNCTAM 2026 Follow-ups",
+    "section": "Ideas for my own work",
+    "text": "Ideas for my own work"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/followups.html#possible-collaborations",
+    "href": "conferences/2026-usnctam/followups.html#possible-collaborations",
+    "title": "USNCTAM 2026 Follow-ups",
+    "section": "Possible collaborations",
+    "text": "Possible collaborations"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/followups.html#websiteslides-updates",
+    "href": "conferences/2026-usnctam/followups.html#websiteslides-updates",
+    "title": "USNCTAM 2026 Follow-ups",
+    "section": "Website/slides updates",
+    "text": "Website/slides updates"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/index.html",
+    "href": "conferences/2026-usnctam/index.html",
+    "title": "USNCTAM 2026",
     "section": "",
-    "text": "This page is for actual talks attended, with quick notes captured during or immediately after each session."
+    "text": "20th U.S. National Congress on Theoretical and Applied Mechanics\nPasadena, June 21-25, 2026"
   },
   {
-    "objectID": "conferences/2026-usnctam/notes.html#june-21-sunday",
-    "href": "conferences/2026-usnctam/notes.html#june-21-sunday",
-    "title": "USNCTAM 2026 Notes",
-    "section": "June 21 Sunday",
-    "text": "June 21 Sunday\n\nTime - Speaker\nTalk:\nOne-line takeaway:\nRelevance to my work:\nFollow-up:"
+    "objectID": "conferences/2026-usnctam/index.html#talk",
+    "href": "conferences/2026-usnctam/index.html#talk",
+    "title": "USNCTAM 2026",
+    "section": "Talk",
+    "text": "Talk\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids"
   },
   {
-    "objectID": "conferences/2026-usnctam/notes.html#june-22-monday",
-    "href": "conferences/2026-usnctam/notes.html#june-22-monday",
-    "title": "USNCTAM 2026 Notes",
-    "section": "June 22 Monday",
-    "text": "June 22 Monday\n\nTime - Speaker\nTalk:\nOne-line takeaway:\nRelevance to my work:\nFollow-up:"
-  },
-  {
-    "objectID": "conferences/2026-usnctam/notes.html#june-23-tuesday",
-    "href": "conferences/2026-usnctam/notes.html#june-23-tuesday",
-    "title": "USNCTAM 2026 Notes",
-    "section": "June 23 Tuesday",
-    "text": "June 23 Tuesday\n\nTime - Speaker\nTalk:\nOne-line takeaway:\nRelevance to my work:\nFollow-up:"
-  },
-  {
-    "objectID": "conferences/2026-usnctam/notes.html#june-24-wednesday",
-    "href": "conferences/2026-usnctam/notes.html#june-24-wednesday",
-    "title": "USNCTAM 2026 Notes",
-    "section": "June 24 Wednesday",
-    "text": "June 24 Wednesday\n\nTime - Speaker\nTalk:\nOne-line takeaway:\nRelevance to my work:\nFollow-up:"
-  },
-  {
-    "objectID": "conferences/2026-usnctam/notes.html#june-25-thursday",
-    "href": "conferences/2026-usnctam/notes.html#june-25-thursday",
-    "title": "USNCTAM 2026 Notes",
-    "section": "June 25 Thursday",
-    "text": "June 25 Thursday\n\nTime - Speaker\nTalk:\nOne-line takeaway:\nRelevance to my work:\nFollow-up:"
+    "objectID": "conferences/2026-usnctam/index.html#materials",
+    "href": "conferences/2026-usnctam/index.html#materials",
+    "title": "USNCTAM 2026",
+    "section": "Materials",
+    "text": "Materials\n\nMobile itinerary\nNotes\nPeople\nFollow-ups"
   },
   {
     "objectID": "conferences/index.html",
