@@ -30,6 +30,27 @@
     ]
   },
   {
+    "objectID": "conferences/2026-usnctam/index.html",
+    "href": "conferences/2026-usnctam/index.html",
+    "title": "USNCTAM 2026",
+    "section": "",
+    "text": "20th U.S. National Congress on Theoretical and Applied Mechanics\nPasadena, June 21-25, 2026"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/index.html#talk",
+    "href": "conferences/2026-usnctam/index.html#talk",
+    "title": "USNCTAM 2026",
+    "section": "Talk",
+    "text": "Talk\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids"
+  },
+  {
+    "objectID": "conferences/2026-usnctam/index.html#materials",
+    "href": "conferences/2026-usnctam/index.html#materials",
+    "title": "USNCTAM 2026",
+    "section": "Materials",
+    "text": "Materials\n\nMobile itinerary\nNotes\nPeople\nFollow-ups"
+  },
+  {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications",
@@ -304,6 +325,16 @@
     "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
     "crumbs": [
       "Home"
+    ]
+  },
+  {
+    "objectID": "conferences/index.html",
+    "href": "conferences/index.html",
+    "title": "Conferences",
+    "section": "",
+    "text": "This section collects conference-specific materials separately from presentation slides.\n\nUSNCTAM 2026\nPasadena, June 21-25, 2026",
+    "crumbs": [
+      "Conferences"
     ]
   }
 ]
