@@ -3,10 +3,19 @@ title: "Publications"
 page-layout: article
 ---
 
+## Submitted
+
+**21.** **Viscoelastic propulsion of self-diffusiophoretic particles**, Q. Zhao, G. Zhu and Y. Man.
+*(submitted).*
+
+<br>
+<hr>
+
 ## 2026
 
 **20.** **Surface-tension-driven dynamic buckling and multimodal oscillations of inhomogeneous rod loops**, Y. Fang, C. Zhang, X. Li, Y. Man and X. Yi.
 *Int. J. Mech. Sci.*, 325, 111841, 2026.
+[DOI](https://doi.org/10.1016/j.ijmecsci.2026.111841){target="_blank"}
 
 **19.** **Effect of shear-thinning on sphere's rotation-translation coupling inside a cylinder**, X. Liu, C. Zhu, Y. Man, J. Gao and Y. Chen.
 *Acta Mech. Sin.*, 42(11), 325847, 2026.
