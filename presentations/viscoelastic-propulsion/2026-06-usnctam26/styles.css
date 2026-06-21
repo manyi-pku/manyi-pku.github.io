@@ -620,6 +620,37 @@
   line-height: 1.1;
 }
 
+.reveal .slip-slide .mechanism-block:last-child {
+  margin-top: 0.08em;
+  margin-bottom: 0;
+}
+
+.reveal .slip-slide .propulsion-row {
+  align-items: start;
+  margin-top: 0.45em;
+  transform: translateY(-0.04em);
+}
+
+.reveal .slip-slide .propulsion-equation-grid {
+  row-gap: 0.08em;
+}
+
+.reveal .slip-slide .propulsion-formula .math.display,
+.reveal .slip-slide .propulsion-formula .MathJax_Display,
+.reveal .slip-slide .propulsion-formula mjx-container[display="true"] {
+  margin: 0.02em 0 0.06em !important;
+}
+
+.reveal .slip-slide .bio-analogy {
+  transform: translateY(-0.18em);
+}
+
+.reveal .slip-slide .paramecium-figure {
+  width: 128px;
+  max-height: 98px;
+  margin-bottom: 0.06em;
+}
+
 .reveal .rheology-equation-row {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
