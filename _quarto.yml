@@ -6,6 +6,7 @@ project:
     - images/
     - teaching/
     - presentations/
+    - conferences/2026-usnctam/itinerary.html
 
 website:
   title: "Man,Yi"
@@ -18,6 +19,8 @@ website:
         href: index.qmd
       - text: "Publications"
         href: publications.qmd
+      - text: "Conferences"
+        href: conferences/index.qmd
       - text: "People"
         href: people.qmd
       - text: "Bio"
