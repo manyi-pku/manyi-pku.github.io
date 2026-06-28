@@ -6,7 +6,6 @@ project:
     - images/
     - teaching/
     - presentations/
-    - conferences/2026-usnctam/itinerary.html
 
 website:
   title: "Man,Yi"

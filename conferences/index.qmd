@@ -1,8 +1,0 @@
----
-title: "Conferences"
----
-
-This section collects conference-specific materials separately from presentation slides.
-
-- [USNCTAM 2026](2026-usnctam/)  
-  Pasadena, June 21-25, 2026
