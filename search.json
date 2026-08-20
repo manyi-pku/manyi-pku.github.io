@@ -30,144 +30,21 @@
     ]
   },
   {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#cover",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#cover",
-    "title": "Man,Yi",
-    "section": "Cover",
-    "text": "Cover\n\n\n\n\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids\n\n\n\nQiang Zhao1, Guangpu Zhu2, Lailai Zhu2, On Shun Pak3 and Yi Man1\n\n\n1 Peking University 2 National University of Singapore 3 Santa Clara University\n\n\n20th U.S. National Congress on Theoretical and Applied Mechanics\n\n\nJune 22, 2026, Pasadena"
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#active-janus-particles-in-viscoelastic-fluids",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#active-janus-particles-in-viscoelastic-fluids",
-    "title": "Man,Yi",
-    "section": "Active Janus Particles in Viscoelastic Fluids",
-    "text": "Active Janus Particles in Viscoelastic Fluids\n\n\n\n\n\nViscoelastic biofluids — the natural habitat of many swimmers\nSelf-diffusiophoretic propulsion — an asymmetric coating sets up a self-generated solute gradient that drives motion\n\n\nHow does fluid elasticity change the propulsion speed itself?"
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#viscoelasticity-reshapes-janus-particle-dynamics",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#viscoelasticity-reshapes-janus-particle-dynamics",
-    "title": "Man,Yi",
-    "section": "Viscoelasticity Reshapes Janus-Particle Dynamics",
-    "text": "Viscoelasticity Reshapes Janus-Particle Dynamics\n\n\n\n\nStronger rotational diffusion with faster motion\nGomez-Solano et al., PRL, 2016\n\n\nPropulsion reduced in polymer solutions\nSaad & Natale, Soft Matter, 2019\n\n\nActive motion suppressed in polymer solutions\nRaman et al., ACS Phys. Chem. Au, 2023\n\n\nExperiments reveal rich but noise-dominated dynamics — the intrinsic propulsion speed is hard to isolate. To probe it cleanly, we turn to theory."
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#viscoelastic-propulsion-of-a-spherical-janus-particle",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#viscoelastic-propulsion-of-a-spherical-janus-particle",
-    "title": "Man,Yi",
-    "section": "Viscoelastic Propulsion of a Spherical Janus Particle",
-    "text": "Viscoelastic Propulsion of a Spherical Janus Particle\n\n\n\n\nDatt et al., J. Fluid Mech., 2017\n\nWeakly viscoelastic limit → second-order fluid model\n\nThe first-order viscoelastic correction is antisymmetric in surface coverage.\nFor a half-coated sphere, the leading-order speed correction vanishes.\n\n\n\nBut what if the Janus particle is not spherical?"
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#from-spheres-to-spheroids",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#from-spheres-to-spheroids",
-    "title": "Man,Yi",
-    "section": "From Spheres to Spheroids",
-    "text": "From Spheres to Spheroids\n\n\n\n\n\n\n\nSphere — correction vanishes at half-coating\n\n?\n\n\n\n\n\n\nSpheroid — geometric anisotropy\n\n\nWe vary two control parameters: eccentricity \\(e\\) (shape) and coverage \\(\\zeta_0\\) (activity)."
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#model-a-spheroidal-self-diffusiophoretic-particle",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#model-a-spheroidal-self-diffusiophoretic-particle",
-    "title": "Man,Yi",
-    "section": "Model: a spheroidal self-diffusiophoretic particle",
-    "text": "Model: a spheroidal self-diffusiophoretic particle\n\n\n\n\n\n\nSolve the concentration and flow fields in prolate spheroidal coordinates \\((\\tau,\\zeta)\\)\nShape parameter: eccentricity \\(e=\\sqrt{a^2-b^2}/a\\)\nActivity parameter: catalytic coverage \\(\\zeta_0\\)"
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#concentration-gradients-drive-surface-slip",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#concentration-gradients-drive-surface-slip",
-    "title": "Man,Yi",
-    "section": "Concentration gradients drive surface slip",
-    "text": "Concentration gradients drive surface slip\n\n\n\n\n\n\nSurface flux \\(\\to\\) Concentration field\n\\[\n\\frac{\\partial C}{\\partial t}\n+ \\boldsymbol{u}\\cdot\\nabla C\n= D\\nabla^2 C,\n\\quad\n\\left. D\\boldsymbol{n}\\cdot\\nabla C \\right|_{\\tau=\\tau_0,\\zeta&lt;\\zeta_0} = -A\n\\]\n\n\\(C\\): solute concentration; \\(\\boldsymbol{u}\\): fluid velocity; \\(D\\): solute diffusivity; \\(A\\): surface activity / fixed solute flux on the active cap; \\(\\boldsymbol{n}\\): unit normal.\n\n\n\nTangential gradient \\(\\to\\) Phoretic slip\n\\[\n\\boldsymbol{u}_s\n=\nM(\\boldsymbol{I}-\\boldsymbol{n}\\boldsymbol{n})\\cdot \\nabla C\n\\]\n\n\\(M\\): phoretic mobility; \\((\\boldsymbol{I}-\\boldsymbol{n}\\boldsymbol{n})\\): tangential projection operator.\n\n\n\nSlip velocity \\(\\to\\) Force-free propulsion\n\n\n\n\n\\[\n\\boldsymbol{u}(\\tau=\\tau_0)\n= \\boldsymbol{u}_s(\\zeta)+\\boldsymbol{U},\n\\]\n\n\n\\[\n\\int_S \\boldsymbol{n}\\cdot\\boldsymbol{\\sigma}\\,\\mathrm{d}S\n= \\boldsymbol{0}\n\\]\n\n\n\n\n\nbiological propulsion analogy"
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#fluid-rheology-second-order-fluid-model",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#fluid-rheology-second-order-fluid-model",
-    "title": "Man,Yi",
-    "section": "Fluid rheology: second-order fluid model",
-    "text": "Fluid rheology: second-order fluid model\n\n\nFlow equations\n\\[\n\\nabla\\cdot\\boldsymbol{\\sigma}=\\boldsymbol{0},\n\\qquad\n\\nabla\\cdot\\boldsymbol{u}=0,\n\\qquad\n\\boldsymbol{\\sigma}=-p\\boldsymbol{I}+\\boldsymbol{T}\n\\]\n\n\\(\\boldsymbol{\\sigma}\\): total stress; \\(p\\): pressure; \\(\\boldsymbol{T}\\): deviatoric stress.\n\n\n\nSecond-order fluid model\n\n\n\\[\n\\boldsymbol{T}\n=\n\\mu\\dot{\\boldsymbol{\\gamma}}\n-\\frac{\\Psi_1}{2}\\boldsymbol{G}\n+\\Psi_2\\dot{\\boldsymbol{\\gamma}}\\cdot\\dot{\\boldsymbol{\\gamma}},\n\\]\n\n\n\\[\n\\begin{aligned}\n\\boldsymbol{G}\n=&\n\\boldsymbol{u}\\cdot\\nabla\\dot{\\boldsymbol{\\gamma}}\n-(\\nabla\\boldsymbol{u})^{\\mathrm{T}}\\cdot\\dot{\\boldsymbol{\\gamma}}\n-\\dot{\\boldsymbol{\\gamma}}\\cdot\\nabla\\boldsymbol{u}\n\\end{aligned}\n\\]\n\n\n\n\\(\\mu\\): viscosity; \\(\\dot{\\boldsymbol{\\gamma}}\\): shear-rate tensor; \\(\\Psi_1,\\Psi_2\\): first and second normal-stress coefficients; \\(\\boldsymbol{G}\\): steady upper-convected derivative.\n\n\n\nNon-dimensionalization\n\nlength scale: semi-major axis of the particle \\(a\\),\nvelocity scale: \\(MA/D\\)\n\n\nPeclet number (advection/diffusion): \\(\\mathrm{Pe}=\\dfrac{MAa}{D^2}\\)\nDeborah number (fluid elasticity): \\(\\mathrm{De}=\\dfrac{MA\\Psi_1}{2\\mu D a}\\)"
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#diffusion-dominated-solute-transport",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#diffusion-dominated-solute-transport",
-    "title": "Man,Yi",
-    "section": "Diffusion-dominated solute transport",
-    "text": "Diffusion-dominated solute transport\n\n\nDiffusion-dominated solute field\n\\[\n\\nabla^2 c=0,\n\\qquad\n\\left.\\boldsymbol{n}\\cdot\\nabla c\\right|_{\\tau=\\tau_0}\n=\n\\begin{cases}\n-1, & \\zeta\\le \\zeta_0 \\quad \\text{active},\\\\\n0, & \\zeta&gt;\\zeta_0 \\quad \\text{inert},\n\\end{cases}\n\\qquad\nc|_{\\tau\\to\\infty}=0\n\\]\n\n\\(c\\): dimensionless relative solute concentration; \\(\\tau=\\tau_0\\): particle surface.\n\n\n\nSeries solution and induced slip\n\n\n\\[\nc(\\tau,\\zeta)\n=\n\\sum_{n=0}^{\\infty}\n\\rho_n Q_n(\\tau)P_n(\\zeta)\n\\]\n\n\n\\[\n\\implies u_s(\\zeta)\n=\n\\tau_0\\sum_{n=1}^{\\infty}\nB_n\\frac{P_n^1(\\zeta)}{\\sqrt{\\tau_0^2-\\zeta^2}}\n\\]\n\n\n\n\\(P_n,Q_n\\): Legendre functions; \\(\\rho_n\\): coefficients set by the flux boundary condition; \\(B_n=-\\rho_n Q_n(\\tau_0)\\).\n\n\n\n\n\nNote: finite-\\(\\mathrm{Pe}\\) coupling\nAt finite \\(\\mathrm{Pe}\\), advection couples the solute field back to the flow. Then the rheology can also affect the concentration and the slip generated inside the interaction layer.\n\n\n\n\n\nChoudhary et al., J. Fluid Mech., 2020"
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#newtonian-baseline",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#newtonian-baseline",
-    "title": "Man,Yi",
-    "section": "Newtonian baseline",
-    "text": "Newtonian baseline\n\n\nWeakly viscoelastic: expand in \\(\\mathrm{De}\\ll 1\\)\n\n\n\\[\n\\{\\boldsymbol{u}, p, \\boldsymbol{U}\\} = \\{\\boldsymbol{u}_0, p_0, \\boldsymbol{U}_0\\} + \\mathrm{De}\\{\\boldsymbol{u}_1, p_1, \\boldsymbol{U}_1\\} + \\mathcal{O}(\\mathrm{De}^2)\n\\]\n\n\n\nThe zeroth order is the Newtonian problem, valid for any eccentricity, with a known speed:\n\n\\[\nU_0 =\n-\\frac{\\tau_0}{2}\n\\int_{-1}^{1}\nu_s\n\\frac{\\sqrt{1-\\zeta^2}}{\\sqrt{\\tau_0^2-\\zeta^2}}\n\\,\\mathrm{d}\\zeta\n\\]\n\n\nPoehnl et al., J. Phys.: Condens. Matter, 2020; Popescu et al., Eur. Phys. J. E, 2010\n\n\n\n\n\nLinearity makes the Newtonian speed symmetric about half-coating: \\(U_0(\\zeta_0)=U_0(-\\zeta_0)\\)."
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#first-order-viscoelastic-correction",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#first-order-viscoelastic-correction",
-    "title": "Man,Yi",
-    "section": "First-order viscoelastic correction",
-    "text": "First-order viscoelastic correction\n\n\nViscoelasticity enters as a forcing term, set by the Newtonian flow:\n\n\\[\n\\boldsymbol{\\sigma}_1 = -p_1\\boldsymbol{I} + \\dot{\\boldsymbol{\\gamma}}_1 + \\boldsymbol{A},\n\\qquad\n\\boldsymbol{A} = -(\\boldsymbol{G}_0 + b\\,\\dot{\\boldsymbol{\\gamma}}_0\\cdot\\dot{\\boldsymbol{\\gamma}}_0)\n\\]\n\n\n\nAn auxiliary towing problem + the reciprocal theorem give \\(U_1\\) directly, without solving the first-order flow:\n\n\\[\nU_1 =\n-\\frac{(\\tau_0^2+1)\\operatorname{coth}^{-1}\\tau_0-\\tau_0}{4\\tau_0^2}\n\\int_{\\tau_0}^{\\infty}\\int_{-1}^{1}\n(\\boldsymbol{A}:\\nabla\\hat{\\boldsymbol{u}})(\\tau^2-\\zeta^2)\\,\\mathrm{d}\\zeta\\,\\mathrm{d}\\tau\n\\]\n\n\n\\(\\nabla\\hat{\\boldsymbol{u}}\\): velocity gradient of the auxiliary (towing) flow."
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#the-spherical-cancellation-is-a-symmetry",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#the-spherical-cancellation-is-a-symmetry",
-    "title": "Man,Yi",
-    "section": "The spherical cancellation is a symmetry",
-    "text": "The spherical cancellation is a symmetry\n\n\n\n\n\n\nIn a second-order fluid, a mirror reflection must be paired with De → −De:\n\\[U(\\zeta_0, \\mathrm{De}) = U(-\\zeta_0, -\\mathrm{De})\\]\n\nHalf-coating is its own mirror ⟹ U even in De: the O(De) correction vanishes, leading correction is O(De²)."
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#eccentricity-revives-the-correction",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#eccentricity-revives-the-correction",
-    "title": "Man,Yi",
-    "section": "Eccentricity revives the correction",
-    "text": "Eccentricity revives the correction\n\n\n\n\n\n\n\n\n\n\nHalf-coated particle: \\(\\zeta_0=0\\)\n\n\nSphere: \\(U_1=0\\), protected by symmetry\nSpheroid: eccentricity breaks the cancellation\nSlender particles: pronounced speed enhancement"
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#breaking-the-coverage-symmetry",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#breaking-the-coverage-symmetry",
-    "title": "Man,Yi",
-    "section": "Breaking the coverage symmetry",
-    "text": "Breaking the coverage symmetry\n\n\n\nAntisymmetry lost as \\(e\\) grows\n\n\n\n\n\n\nPhase diagram: enhancement vs reduction\n\n\n\n\n\n\n\nEccentricity breaks the coverage antisymmetry, and the enhancement regime broadens with elongation."
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#why-the-cancellation-breaks",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#why-the-cancellation-breaks",
-    "title": "Man,Yi",
-    "section": "Why the cancellation breaks",
-    "text": "Why the cancellation breaks\n\n\nThe first-order speed is set by a local kernel: \\(U_1 \\propto \\int_V\\) 𝒦 \\(\\mathrm{d}V\\), where 𝒦 \\(= \\boldsymbol{A}:\\nabla\\hat{\\boldsymbol{u}}\\) (blue enhances, red reduces)\n\n\n\n\n\n\n\n\n\nSphere — 𝒦 antisymmetric, cancels exactly ⟹ \\(U_1=0\\)\n\n\n\n\n\n\n\n\nSpheroid — curvature localizes 𝒦, antisymmetry broken ⟹ \\(U_1\\neq0\\)"
-  },
-  {
-    "objectID": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#summary",
-    "href": "presentations/viscoelastic-propulsion/2026-06-usnctam26/index.html#summary",
-    "title": "Man,Yi",
-    "section": "Summary",
-    "text": "Summary\n\n\n\nSpheres — the half-coated correction vanishes, protected by reflection symmetry\nSpheroids — eccentricity breaks it; slender particles are strongly enhanced\nGeneral principle — symmetry breaks only when both shape anisotropy and fluid nonlinearity are present\n\n\n\n\n\n\n\n\n\n\n\n\n\nQiang Zhao\nFirst author · PhD student, Peking University"
-  },
-  {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
     "title": "Teaching Resources",
     "section": "",
     "text": "Free Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Man,Yi",
     "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "presentations.html",
-    "href": "presentations.html",
-    "title": "Presentations",
-    "section": "",
-    "text": "This page collects presentation materials that are intended to be shared by direct link."
-  },
-  {
-    "objectID": "presentations.html#talks",
-    "href": "presentations.html#talks",
-    "title": "Presentations",
-    "section": "Talks",
-    "text": "Talks\n\nViscoelastic propulsion of self-diffusiophoretic particles (USNCTAM26, June 22, 2026)\n\nFuture slides can follow this structure:\npresentations/\n  topic-name/\n    yyyy-mm-event-name/\n      index.html"
+    "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "bio.html",
@@ -220,18 +97,29 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Man,Yi",
+    "objectID": "presentations.html",
+    "href": "presentations.html",
+    "title": "Presentations",
     "section": "",
-    "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
-    "crumbs": [
-      "Home"
-    ]
+    "text": "This page collects presentations that are available for viewing and sharing."
   },
   {
-    "objectID": "teaching/index.html",
-    "href": "teaching/index.html",
+    "objectID": "presentations.html#talks",
+    "href": "presentations.html#talks",
+    "title": "Presentations",
+    "section": "Talks",
+    "text": "Talks\n\nGeometry Can Qualitatively Change Rheological Effects on Propulsion (IUTAM Symposium, August 17, 2026)\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids (USNCTAM26, June 22, 2026)"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
     "title": "Teaching Resources",
     "section": "",
     "text": "Free Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"

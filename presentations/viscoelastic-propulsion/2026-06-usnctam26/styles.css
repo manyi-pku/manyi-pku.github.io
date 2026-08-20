@@ -85,7 +85,7 @@
   right: 0;
   width: 135px;
   height: 55px;
-  background: url("assets/pekingu.png") right top / contain no-repeat;
+  background: url("../assets/logos/pekingu.png") right top / contain no-repeat;
   pointer-events: none;
 }
 
