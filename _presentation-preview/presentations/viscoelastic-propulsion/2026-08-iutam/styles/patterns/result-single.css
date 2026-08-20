@@ -1,0 +1,184 @@
+/* =========================================================
+   SINGLE-FIGURE RESULT SLIDE
+   One figure title/condition above a main result figure,
+   with key insights in the right column.
+   The slide title, logo, and progress bar are global (base.css/progress.js).
+   ========================================================= */
+
+/* ===== TUNING KNOBS ===== */
+.reveal .result-single {
+  --rs-content-top: 0;
+  /* 整个主体的上下位置：负值上移，正值下移。 */
+
+  --rs-left-width: 55%;
+  /* 左侧图片区所占比例：增大 = 图片区更宽，右侧结论区更窄。 */
+
+  --rs-column-gap: 0px;
+  /* 图和右侧结论之间的水平距离：增大 = 两部分更远。 */
+
+  --rs-figure-title-gap: 0.25em;
+  /* 图上方标题与图片之间的距离：增大 = 图片向下。 */
+
+  --rs-figure-title-x: 0px;
+  /* 图标题左右微调：负值向左，正值向右。 */
+
+  --rs-figure-title-y: 0px;
+  /* 图标题上下微调：负值上移，正值下移。 */
+
+  --rs-figure-scale: 1;
+  /* 图片视觉大小：1 = 原始大小，1.1 = 放大 10%。 */
+
+  --rs-figure-x: 0px;
+  /* 图片左右微调：负值向左，正值向右。 */
+
+  --rs-figure-y: 0px;
+  /* 图片上下微调：负值上移，正值下移。 */
+
+  --rs-insights-x: 0px;
+  /* 右侧结论整体左右微调：负值向左，正值向右。 */
+
+  --rs-insights-y: 0px;
+  /* 右侧结论整体上下微调：负值上移，正值下移。 */
+
+  --rs-insight-size: 0.68em;
+  /* 右侧结论字号：增大 = 文字更大。 */
+
+  --rs-insight-gap: 0.5em;
+  /* 右侧各条结论之间的垂直距离：增大 = 条目更疏。 */
+
+  --rs-reference-size: 0.5em;
+  /* 结果页文献字号：增大 = 文献更大。 */
+
+  --rs-reference-right: 3%;
+  /* 结果页文献距右侧距离：增大 = 文献向左。 */
+
+  --rs-reference-bottom: 50px;
+  /* 结果页文献距底部距离：增大 = 文献向上。 */
+}
+
+/* ===== CORE LAYOUT — normally do not edit ===== */
+.reveal .result-single-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100% - 2.2em);
+  transform: translateY(var(--rs-content-top));
+}
+
+.reveal .result-single-grid {
+  display: grid;
+  grid-template-columns: minmax(0, var(--rs-left-width)) minmax(0, 1fr);
+  align-items: start;
+  column-gap: var(--rs-column-gap);
+  width: 94%;
+  margin: 0 auto;
+}
+
+.reveal .result-single-figure,
+.reveal .result-single-insights {
+  min-width: 0;
+}
+
+/* ===== FIGURE ===== */
+.reveal .result-single-figure-title {
+  margin: -2em 0 var(--rs-figure-title-gap);
+  color: #222;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transform: translate(var(--rs-figure-title-x), var(--rs-figure-title-y));
+}
+
+.reveal .result-single-figure-title p,
+.reveal .result-single-figure > p:has(> img) {
+  margin: 0;
+}
+
+.reveal .result-single-figure > p:has(> img) {
+  text-align: center;
+}
+
+.reveal .result-single-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  transform: translate(var(--rs-figure-x), var(--rs-figure-y)) scale(var(--rs-figure-scale));
+  transform-origin: center center;
+}
+
+/* ===== INSIGHTS ===== */
+.reveal .result-single-insights {
+  transform: translate(var(--rs-insights-x), var(--rs-insights-y));
+}
+
+.reveal .result-single-insights > ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rs-insight-gap);
+  margin: 0;
+  padding-left: 1.05em;
+  font-size: var(--rs-insight-size);
+  line-height: 1.45;
+  list-style: disc;
+}
+
+.reveal .result-single-insights > ul > li {
+  margin: 0;
+}
+
+/* Publication reference on the opening slide of each results section. */
+.reveal .result-single .result-publication {
+  position: absolute;
+  right: var(--rs-reference-right);
+  bottom: var(--rs-reference-bottom);
+  left: auto;
+  margin: 0;
+  color: var(--muted-text);
+  font-size: var(--rs-reference-size);
+  line-height: 1.2;
+  text-align: right;
+}
+
+.reveal .result-single .result-publication p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* ===== PAGE-SPECIFIC OVERRIDES ===== */
+.reveal .eccentricity-result {
+  --rs-content-top: -0.35em;
+  --rs-left-width: 55%;
+  --rs-column-gap: 0px;
+  --rs-figure-title-gap: 0.25em;
+  --rs-figure-title-x: 20px;
+  --rs-figure-title-y: 0px;
+  --rs-figure-scale: 1.1;
+  --rs-figure-x: -20px;
+  --rs-figure-y: 20px;
+  --rs-insights-x: 10px;
+  --rs-insights-y: 30px;
+  --rs-insight-size: 0.68em;
+  --rs-insight-gap: 0.5em;
+}
+
+.reveal .st-main-result {
+  --rs-content-top: -1em;
+  --rs-left-width: 55%;
+  --rs-column-gap: 0px;
+  --rs-figure-title-gap: 0.25em;
+  --rs-figure-title-x: 0px;
+  --rs-figure-title-y: 0px;
+  --rs-figure-scale: 1.15;
+  --rs-figure-x: 0px;
+  --rs-figure-y: 40px;
+  --rs-insights-x: 20px;
+  --rs-insights-y: 0px;
+  --rs-insight-size: 0.68em;
+  --rs-insight-gap: 0.5em;
+}

@@ -1,0 +1,36 @@
+/*
+ * IUTAM presentation styles — reading guide
+ *
+ * 1. Start with the slide heading in index.qmd and find its class, e.g.
+ *    {.motivation-slide .janus-intro-slide}.
+ * 2. Use base/layouts/components for all new reusable rules. The section
+ *    files below are legacy and retain existing talk-specific overrides.
+ *
+ *   base.css       Global fonts, colours, headers, logo, and progress
+ *   layouts.css    Reusable spatial layouts
+ *   components.css Reusable content components
+ *   cover.css      P01 Cover layout
+ *   talk-theme.css Current talk's scientific colour semantics/theme
+ *   motivation.css P02–P08 Motivation slides
+ *   model.css      Legacy model/equation rules
+ *   results.css    P15–P19 Results slides
+ *   patterns/result-single.css  Reusable single-figure result-slide pattern
+ *   patterns/result-two.css     Reusable two-figure result-slide pattern
+ *   patterns/summary.css        Reusable summary-slide pattern
+ */
+
+@import url("base.css");
+@import url("layouts.css");
+@import url("components.css");
+@import url("cover.css");
+@import url("talk-theme.css");
+@import url("motivation.css");
+@import url("model.css");
+@import url("results.css");
+@import url("patterns/result-single.css");
+@import url("patterns/result-two.css");
+@import url("patterns/media-video.css");
+@import url("patterns/visual-explain.css");
+@import url("patterns/three-figure-summary.css");
+/* Summary 正在迭代；版本参数用于避免浏览器继续使用旧的嵌套 CSS 缓存。 */
+@import url("patterns/summary.css?v=20260813-1720");

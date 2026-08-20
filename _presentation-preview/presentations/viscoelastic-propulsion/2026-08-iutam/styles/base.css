@@ -1,0 +1,148 @@
+/* =========================================================
+   GLOBAL BASE
+   跨 presentation 可复用的基础设置：palette、字体、标题、logo、progress。
+   当前报告特有的 scientific semantics 定义在 talk-theme.css。
+   ========================================================= */
+
+/* 1. Variables */
+:root {
+  /* 可复用基础 palette；blue / orange 本身不代表任何科学含义。
+     ST / VE 等科学语义请在 talk-theme.css 中定义。 */
+  --pku-red: #8c0000;
+  --color-blue: #1f5f8f;
+  --color-orange: #a95724;
+  --text-color: #111;
+  --muted-text: #555;
+  --slide-font: "Avenir Next", "Charter", -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+    "Helvetica Neue", Arial, sans-serif;
+  --title-font: "Charter", "Avenir Next", "Iowan Old Style", Georgia,
+    "Times New Roman", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", serif;
+  --equation-size: 24px;
+  --font-body: 24pt;
+  --font-secondary: 21pt;
+  --font-caption: 18pt;
+}
+
+/* 2. Global reveal defaults */
+.reveal {
+  color: var(--text-color);
+  font-family: var(--slide-font);
+  font-weight: 400;
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal p,
+.reveal li {
+  font-family: var(--slide-font);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.reveal p {
+  font-size: 0.75em;
+}
+
+.reveal ul {
+  font-size: 0.85em;
+  line-height: 1.45;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: 600;
+}
+
+.reveal img {
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.reveal .progress {
+  display: none !important;
+}
+
+/* 3. Header, logo, progress */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: var(--title-font);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.reveal h2 {
+  display: inline-block;
+  max-width: calc(100% - 185px);
+  margin: 22px 0 1.25em;
+  font-size: 0.82em;
+  white-space: nowrap;
+}
+
+.reveal .slides section:not(.cover-slide):not(:has(> section)) > h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: 0.18em;
+  background: var(--pku-red);
+}
+
+.reveal .slides section:not(:has(> section))::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: 0;
+  width: 135px;
+  height: 55px;
+  background: url("../assets/logos/pekingu.png") right top / contain no-repeat;
+  pointer-events: none;
+}
+
+/* Bottom section progress bar */
+.reveal .section-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  pointer-events: none;
+}
+
+.reveal .section-progress p {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 0;
+  color: #bbb;
+  font-size: 0.18em;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.reveal .section-progress span {
+  border-top: 2px solid rgba(140, 0, 0, 0.18);
+  padding-top: 0.45em;
+  color: #bbb;
+  font-weight: 400;
+}
+
+.reveal .section-progress .active {
+  color: #9b0000;
+  border-top-color: #9b0000;
+  font-size: 1.12em;
+  font-weight: 700;
+}
+
+.reveal .section-progress .active-blue {
+  color: var(--color-blue);
+  border-top-color: var(--color-blue);
+}
+
+.reveal .section-progress .active-orange {
+  color: var(--color-orange);
+  border-top-color: var(--color-orange);
+}

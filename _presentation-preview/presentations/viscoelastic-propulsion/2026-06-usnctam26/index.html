@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <title>Propulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="cover" class="slide level2 cover-slide">
+<h2>Cover</h2>
+<div class="cover-rule">
+
+</div>
+<div class="cover-title">
+<p>Propulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids</p>
+</div>
+<div class="cover-meta">
+<div class="cover-authors">
+<p>Qiang Zhao<sup>1</sup>, Guangpu Zhu<sup>2</sup>, Lailai Zhu<sup>2</sup>, On Shun Pak<sup>3</sup> and Yi Man<sup>1</sup></p>
+</div>
+<div class="cover-affiliations">
+<p><sup>1</sup> Peking University<br> <sup>2</sup> National University of Singapore<br> <sup>3</sup> Santa Clara University</p>
+</div>
+<div class="cover-event">
+<p>20th U.S. National Congress on Theoretical and Applied Mechanics</p>
+</div>
+<div class="cover-date">
+<p>June 22, 2026, Pasadena</p>
+</div>
+</div>
+<aside class="notes">
+<p>Good morning, everyone. I am Man Yi, from Peking University. Today I will share our recent work on the propulsion of a self-diffusiophoretic particle in complex fluids. This work was led by my PhD student Zhao Qiang, together with our collaborators at the National University of Singapore and Santa Clara University.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="active-janus-particles-in-viscoelastic-fluids" class="slide level2 motivation-slide janus-intro-slide">
+<h2>Active Janus Particles in Viscoelastic Fluids</h2>
+<!-- ===== P2 : Janus Intro ===== -->
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="../assets/diagrams/sphere_polymer.svg" class="sphere-polymer-figure"></p>
+</div><div class="column" style="width:55%;">
+<p><strong>Viscoelastic biofluids</strong> — the natural habitat of many swimmers</p>
+<p><strong>Self-diffusiophoretic propulsion</strong> — an asymmetric coating sets up a self-generated solute gradient that drives motion</p>
+</div></div>
+<div class="takeaway">
+<p>How does fluid elasticity change the <strong>propulsion speed</strong> itself?</p>
+</div>
+<aside class="notes">
+<p>Many biological fluids are viscoelastic such as mucus, blood, and biofilms. And these are exactly the fluids where many microswimmers live. Since swimming relies on the interaction with the surrounding fluid, the elasticity of that fluid can directly change how a swimmer moves.</p>
+<p>In today’s discussion, I focus on a model swimmer, the self-diffusiophoretic Janus particle. One half is catalytically active, and the other half is inert. The active half drives a chemical reaction that sets up a solute gradient around the particle, and this gradient drives it forward. So the particle propels itself, with no moving parts.</p>
+<p>This kind of propulsion is already well understood in a Newtonian fluid. So the question is simple. How does fluid elasticity change the propulsion speed itself?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="viscoelasticity-reshapes-janus-particle-dynamics" class="slide level2 motivation-slide janus-dynamics-slide">
+<h2>Viscoelasticity Reshapes Janus-Particle Dynamics</h2>
+<div class="janus-dynamics-content">
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="../assets/literature/gomez-solano-2016.png"></p>
+<p><span class="fig-caption"><strong>Stronger rotational diffusion</strong> with faster motion</span></p>
+<p><span class="ref">Gomez-Solano et al., <em>PRL</em>, 2016</span></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="../assets/literature/saad-natale-2019.png"></p>
+<p><span class="fig-caption">Propulsion <strong>reduced</strong> in polymer solutions</span></p>
+<p><span class="ref">Saad &amp; Natale, <em>Soft Matter</em>, 2019</span></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="../assets/literature/raman-2023.png"></p>
+<p><span class="fig-caption">Active motion <strong>suppressed</strong> in polymer solutions</span></p>
+<p><span class="ref">Raman et al., <em>ACS Phys. Chem. Au</em>, 2023</span></p>
+</div></div>
+<div class="takeaway">
+<p>Experiments reveal rich but noise-dominated dynamics — the <em>intrinsic</em> propulsion speed is hard to isolate. To probe it cleanly, we turn to theory.</p>
+</div>
+</div>
+<aside class="notes">
+<p>Over the past decade, experiments have shown that viscoelastic fluids reshape these swimmers in several ways.</p>
+<p>First, faster motion was found to give stronger rotational diffusion. Second, a later study found that propulsion is reduced in polymer solutions. And third, more recent work found that the active motion is suppressed, even in dilute polymer solutions.</p>
+<p>These experiments tell us something important. Viscoelasticity has a strong effect on these swimmers. But the measured speed mixes many effects together, such as polymer caging, entanglement, and orientation fluctuations. So it is hard to separate out the intrinsic role of viscoelasticity, that is, whether elasticity itself makes the particle faster or slower. This intrinsic effect is exactly what we would like to understand.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="viscoelastic-propulsion-of-a-spherical-janus-particle" class="slide level2 motivation-slide spherical-janus-slide">
+<h2>Viscoelastic Propulsion of a Spherical Janus Particle</h2>
+<div class="spherical-janus-content">
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><img data-src="../assets/literature/datt_combined.png"></p>
+<p><span class="ref">Datt et al., <em>J. Fluid Mech.</em>, 2017</span></p>
+</div><div class="column" style="width:48%;">
+<p><span class="subhead">Weakly viscoelastic limit → second-order fluid model</span></p>
+<div class="datt-findings">
+<p>The first-order viscoelastic correction is <strong>antisymmetric</strong> in surface coverage.</p>
+<p>For a half-coated sphere, the leading-order speed correction <strong>vanishes</strong>.</p>
+</div>
+</div></div>
+<div class="takeaway">
+<p>But what if the Janus particle is <strong>not spherical</strong>?</p>
+</div>
+</div>
+<aside class="notes">
+<p>To have a clean answer, we turn to theory. There are many constitutive models, such as Oldroyd-B or Giesekus. But when elasticity is weak, all of them reduce to the same form: the second-order fluid. In theory, this model is often used to capture viscoelastic effects as the first correction to a Newtonian fluid.</p>
+<p>Earlier work studied exactly this case, a spherical Janus particle, and found two things. First, the first-order viscoelastic correction is antisymmetric in the surface coverage. Second, and as a direct result, for a half-coated sphere this leading-order correction vanishes.</p>
+<p>So this gives us a clean baseline and leads to a question, what if the Janus particle is not spherical?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="from-spheres-to-spheroids" class="slide level2 motivation-slide from-spheres-slide">
+<h2>From Spheres to Spheroids</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/diagrams/sphere_polymer.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+<p><span class="fig-caption">Sphere — correction <strong>vanishes</strong> at half-coating</span></p>
+</div><div class="column" style="width:16%;">
+<p><span class="bigq">?</span></p>
+</div><div class="column" style="width:42%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/diagrams/spheroid_polymer.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+<p><span class="fig-caption">Spheroid — geometric anisotropy</span></p>
+</div></div>
+<div class="takeaway">
+<p>We vary two control parameters: <strong>eccentricity</strong> <span class="math inline">\(e\)</span> (shape) and <strong>coverage</strong> <span class="math inline">\(\zeta_0\)</span> (activity).</p>
+</div>
+<aside class="notes">
+<p>To answer this, we let the particle become a spheroid. This is the natural way to add geometric anisotropy while keeping the problem analytically tractable.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="model-a-spheroidal-self-diffusiophoretic-particle" class="slide level2 model-slide">
+<h2>Model: a spheroidal self-diffusiophoretic particle</h2>
+<div class="model-layout">
+<div class="model-figure-wrap">
+<p><img data-src="../assets/diagrams/spheroid_model.svg" class="model-figure"></p>
+</div>
+<div class="model-notes">
+<ul>
+<li>Solve the concentration and flow fields in <span class="key-term">prolate spheroidal coordinates</span> <span class="math inline">\((\tau,\zeta)\)</span></li>
+<li>Shape parameter: <span class="no-break"><span class="key-term">eccentricity</span> <span class="math inline">\(e=\sqrt{a^2-b^2}/a\)</span></span></li>
+<li>Activity parameter: <span class="no-break"><span class="key-term">catalytic coverage</span> <span class="math inline">\(\zeta_0\)</span></span></li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>We consider a rigid prolate spheroid, and we solve both the concentration field and the flow field in prolate spheroidal coordinates, tau and zeta. Then the particle surface is conveniently a surface of constant tau.</p>
+<p>Two parameters define the problem. The shape is set by the eccentricity e. When e is zero we have a sphere, and as e approaches one the particle becomes a slender rod. The activity is set by the catalytic coverage, which marks the boundary between the active and inert regions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="concentration-gradients-drive-surface-slip" class="slide level2 model-slide slip-slide">
+<h2>Concentration gradients drive surface slip</h2>
+<div class="slip-layout">
+<div class="slip-figure-wrap">
+<p><img data-src="../assets/diagrams/concentration_slip.svg?v=10" class="slip-figure"></p>
+</div>
+<div class="slip-content">
+<div class="mechanism-block">
+<p><strong>Surface flux <span class="math inline">\(\to\)</span> Concentration field</strong></p>
+<p><span class="math display">\[
+\frac{\partial C}{\partial t}
++ \boldsymbol{u}\cdot\nabla C
+= D\nabla^2 C,
+\quad
+\left. D\boldsymbol{n}\cdot\nabla C \right|_{\tau=\tau_0,\zeta&lt;\zeta_0} = -A
+\]</span></p>
+<div class="symbol-note">
+<p><span class="math inline">\(C\)</span>: solute concentration; <span class="math inline">\(\boldsymbol{u}\)</span>: fluid velocity; <span class="math inline">\(D\)</span>: solute diffusivity; <span class="math inline">\(A\)</span>: surface activity / fixed solute flux on the active cap; <span class="math inline">\(\boldsymbol{n}\)</span>: unit normal.</p>
+</div>
+</div>
+<div class="mechanism-block">
+<p><strong>Tangential gradient <span class="math inline">\(\to\)</span> Phoretic slip</strong></p>
+<p><span class="math display">\[
+\boldsymbol{u}_s
+=
+M(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\cdot \nabla C
+\]</span></p>
+<div class="symbol-note">
+<p><span class="math inline">\(M\)</span>: phoretic mobility; <span class="math inline">\((\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\)</span>: tangential projection operator.</p>
+</div>
+</div>
+<div class="mechanism-block">
+<p><strong>Slip velocity <span class="math inline">\(\to\)</span> Force-free propulsion</strong></p>
+<div class="propulsion-row">
+<div class="propulsion-equation">
+<div class="propulsion-equation-grid">
+<div class="propulsion-formula">
+<p><span class="math display">\[
+\boldsymbol{u}(\tau=\tau_0)
+= \boldsymbol{u}_s(\zeta)+\boldsymbol{U},
+\]</span></p>
+</div>
+<div class="propulsion-formula">
+<p><span class="math display">\[
+\int_S \boldsymbol{n}\cdot\boldsymbol{\sigma}\,\mathrm{d}S
+= \boldsymbol{0}
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="bio-analogy">
+<p><img data-src="../assets/literature/paramecium.png" class="paramecium-figure"></p>
+<p>biological propulsion analogy</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Propulsion arises in three steps.</p>
+<p>First, the chemistry sets up a concentration field. The solute concentration follows an advection-diffusion equation. The boundary condition is on the particle surface: the active cap emits solute at a fixed flux, which we call A, while the inert part is impermeable. Solving this gives a non-uniform solute field around the particle.</p>
+<p>Second, this concentration gradient drives a slip velocity in a thin interaction layer at the surface. We assume the slip is tangential, and proportional to the local tangential gradient, with the coefficient being the phoretic mobility, M. This slip comes from a boundary-layer analysis of that thin layer, so it acts as an effective boundary condition for the outer flow.</p>
+<p>Third, the surface slip sets the particle in motion. On the surface, the fluid velocity is the slip plus the rigid-body swimming velocity, U. And because the particle is force-free, the total hydrodynamic force on it is zero. This condition is what determines the swimming speed U. This is the same mechanism by which ciliated microorganisms swim.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="fluid-rheology-second-order-fluid-model" class="slide level2 model-slide rheology-slide">
+<h2>Fluid rheology: second-order fluid model</h2>
+<div class="rheology-content">
+<div class="mechanism-block">
+<p><strong>Flow equations</strong></p>
+<p><span class="math display">\[
+\nabla\cdot\boldsymbol{\sigma}=\boldsymbol{0},
+\qquad
+\nabla\cdot\boldsymbol{u}=0,
+\qquad
+\boldsymbol{\sigma}=-p\boldsymbol{I}+\boldsymbol{T}
+\]</span></p>
+<div class="symbol-note">
+<p><span class="math inline">\(\boldsymbol{\sigma}\)</span>: total stress; <span class="math inline">\(p\)</span>: pressure; <span class="math inline">\(\boldsymbol{T}\)</span>: deviatoric stress.</p>
+</div>
+</div>
+<div class="mechanism-block">
+<p><strong>Second-order fluid model</strong></p>
+<div class="rheology-equation-row">
+<div class="rheology-main-equation">
+<p><span class="math display">\[
+\boldsymbol{T}
+=
+\mu\dot{\boldsymbol{\gamma}}
+-\frac{\Psi_1}{2}\boldsymbol{G}
++\Psi_2\dot{\boldsymbol{\gamma}}\cdot\dot{\boldsymbol{\gamma}},
+\]</span></p>
+</div>
+<div class="rheology-main-equation">
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{G}
+=&amp;
+\boldsymbol{u}\cdot\nabla\dot{\boldsymbol{\gamma}}
+-(\nabla\boldsymbol{u})^{\mathrm{T}}\cdot\dot{\boldsymbol{\gamma}}
+-\dot{\boldsymbol{\gamma}}\cdot\nabla\boldsymbol{u}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div class="symbol-note">
+<p><span class="math inline">\(\mu\)</span>: viscosity; <span class="math inline">\(\dot{\boldsymbol{\gamma}}\)</span>: shear-rate tensor; <span class="math inline">\(\Psi_1,\Psi_2\)</span>: first and second normal-stress coefficients; <span class="math inline">\(\boldsymbol{G}\)</span>: steady upper-convected derivative.</p>
+</div>
+</div>
+<div class="mechanism-block">
+<p><strong>Non-dimensionalization</strong></p>
+<div class="scale-row">
+<p><span class="scale-label">length scale:</span> semi-major axis of the particle <span class="math inline">\(a\)</span>,</p>
+<p><span class="scale-label">velocity scale:</span> <span class="math inline">\(MA/D\)</span></p>
+</div>
+<div class="dimensionless-row">
+<p><span class="scale-label">Peclet number (advection/diffusion):</span> <span style="color:#155a9c;"><span class="math inline">\(\mathrm{Pe}=\dfrac{MAa}{D^2}\)</span></span></p>
+<p><span class="scale-label">Deborah number (fluid elasticity):</span> <span style="color:#8c0000;"><span class="math inline">\(\mathrm{De}=\dfrac{MA\Psi_1}{2\mu D a}\)</span></span></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Now the fluid model. As I mentioned, we use the second-order fluid. The flow is incompressible Stokes flow, and the stress has a Newtonian part plus the elastic correction. The elastic part is set by the two normal-stress coefficients.</p>
+<p>We then non-dimensionalize. We use the particle size as the length scale, and the characteristic slip speed, which is set by the flux A and the mobility M, as the velocity scale. This brings out two dimensionless numbers. The Peclet number, Pe, which compares advection and diffusion of the solute. And the Deborah number, De, which measures the strength of elasticity.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="diffusion-dominated-solute-transport" class="slide level2 model-slide diffusion-slide">
+<h2>Diffusion-dominated solute transport</h2>
+<div class="diffusion-content">
+<div class="mechanism-block">
+<p><strong>Diffusion-dominated solute field</strong></p>
+<p><span class="math display">\[
+\nabla^2 c=0,
+\qquad
+\left.\boldsymbol{n}\cdot\nabla c\right|_{\tau=\tau_0}
+=
+\begin{cases}
+-1, &amp; \zeta\le \zeta_0 \quad \text{active},\\
+0, &amp; \zeta&gt;\zeta_0 \quad \text{inert},
+\end{cases}
+\qquad
+c|_{\tau\to\infty}=0
+\]</span></p>
+<div class="symbol-note">
+<p><span class="math inline">\(c\)</span>: dimensionless relative solute concentration; <span class="math inline">\(\tau=\tau_0\)</span>: particle surface.</p>
+</div>
+</div>
+<div class="mechanism-block">
+<p><strong>Series solution and induced slip</strong></p>
+<div class="solute-equation-row">
+<div class="solute-main-equation">
+<p><span class="math display">\[
+c(\tau,\zeta)
+=
+\sum_{n=0}^{\infty}
+\rho_n Q_n(\tau)P_n(\zeta)
+\]</span></p>
+</div>
+<div class="solute-main-equation">
+<p><span class="math display">\[
+\implies u_s(\zeta)
+=
+\tau_0\sum_{n=1}^{\infty}
+B_n\frac{P_n^1(\zeta)}{\sqrt{\tau_0^2-\zeta^2}}
+\]</span></p>
+</div>
+</div>
+<div class="symbol-note">
+<p><span class="math inline">\(P_n,Q_n\)</span>: Legendre functions; <span class="math inline">\(\rho_n\)</span>: coefficients set by the flux boundary condition; <span class="math inline">\(B_n=-\rho_n Q_n(\tau_0)\)</span>.</p>
+</div>
+</div>
+<div class="caveat-row">
+<div class="caveat-block">
+<div class="caveat-text">
+<p><strong>Note: finite-<span class="math inline">\(\mathrm{Pe}\)</span> coupling</strong></p>
+<p>At finite <span class="math inline">\(\mathrm{Pe}\)</span>, advection couples the solute field back to the flow. Then the rheology can also affect the concentration and the slip generated inside the interaction layer.</p>
+</div>
+</div>
+<div class="caveat-figure-wrap">
+<p><img data-src="../assets/literature/choudhary2020.png" class="caveat-figure"></p>
+<div class="caveat-citation">
+<p><a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/nonnewtonian-effects-on-the-slip-and-mobility-of-a-selfpropelling-active-particle/BBF8AD5E37B5D3679BFC0A705750718C">Choudhary et al., J. Fluid Mech., 2020</a></p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>We further take the diffusion-dominated limit, that is, small Peclet number. This is a big simplification: the solute decouples from the flow. The concentration field then satisfies Laplace’s equation, with a flux boundary condition that is constant on the active cap and zero on the inert part. We solve it as a series of Legendre functions, and from it we get the surface slip directly.</p>
+<p>In this limit, the slip is set entirely by the concentration field, so it is the same as in a Newtonian fluid. We note that at finite Pe this is no longer true: advection couples the solute back to the flow, and the rheology can also change the slip. Obviously, that is a more complicated problem, which we set aside here so that we can isolate the hydrodynamic effect of elasticity.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="newtonian-baseline" class="slide level2 model-slide slip-slide">
+<h2>Newtonian baseline</h2>
+<div class="model-clean-layout newtonian-baseline-layout">
+<div class="model-lead">
+<p>Weakly viscoelastic: expand in <span class="math inline">\(\mathrm{De}\ll 1\)</span></p>
+</div>
+<div class="model-equation">
+<p><span class="math display">\[
+\{\boldsymbol{u}, p, \boldsymbol{U}\} = \{\boldsymbol{u}_0, p_0, \boldsymbol{U}_0\} + \mathrm{De}\{\boldsymbol{u}_1, p_1, \boldsymbol{U}_1\} + \mathcal{O}(\mathrm{De}^2)
+\]</span></p>
+</div>
+<div class="baseline-row">
+<div class="baseline-text-panel">
+<p>The zeroth order is the Newtonian problem, valid for any eccentricity, with a known speed:</p>
+<div class="model-equation">
+<p><span class="math display">\[
+U_0 =
+-\frac{\tau_0}{2}
+\int_{-1}^{1}
+u_s
+\frac{\sqrt{1-\zeta^2}}{\sqrt{\tau_0^2-\zeta^2}}
+\,\mathrm{d}\zeta
+\]</span></p>
+</div>
+<div class="ref">
+<p>Poehnl et al., J. Phys.: Condens. Matter, 2020; Popescu et al., Eur. Phys. J. E, 2010</p>
+</div>
+</div>
+<div class="baseline-figure-panel">
+<p><img data-src="../assets/results/newtonian_symmetry.png" class="baseline-figure"></p>
+<div class="takeaway">
+<p>Linearity makes the Newtonian speed symmetric about half-coating: <span class="math inline">\(U_0(\zeta_0)=U_0(-\zeta_0)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Now we set up the perturbation. We consider small De, and we expand the quantities in orders of De.</p>
+<p>The zeroth order is just the Newtonian problem, which has been solved before, so we take it as known. One feature of the Newtonian solution is that the speed is symmetric about the coating parameter. We can understand this using a simple symmetry. The fully-coated problem does not swim, and it can be separated into a pair of complementary coated problems. Because the Newtonian problem is linear, the speeds of the particle pair must be the same.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="first-order-viscoelastic-correction" class="slide level2 model-slide slip-slide">
+<h2>First-order viscoelastic correction</h2>
+<div class="model-clean-layout reciprocal-correction-layout">
+<div class="model-block">
+<p>Viscoelasticity enters as a forcing term, set by the Newtonian flow:</p>
+<div class="model-equation">
+<p><span class="math display">\[
+\boldsymbol{\sigma}_1 = -p_1\boldsymbol{I} + \dot{\boldsymbol{\gamma}}_1 + \boldsymbol{A},
+\qquad
+\boldsymbol{A} = -(\boldsymbol{G}_0 + b\,\dot{\boldsymbol{\gamma}}_0\cdot\dot{\boldsymbol{\gamma}}_0)
+\]</span></p>
+</div>
+</div>
+<div class="model-block">
+<p>An auxiliary towing problem + the reciprocal theorem give <span class="math inline">\(U_1\)</span> directly, without solving the first-order flow:</p>
+<div class="model-equation wide-equation equation-highlight">
+<p><span class="math display">\[
+U_1 =
+-\frac{(\tau_0^2+1)\operatorname{coth}^{-1}\tau_0-\tau_0}{4\tau_0^2}
+\int_{\tau_0}^{\infty}\int_{-1}^{1}
+(\boldsymbol{A}:\nabla\hat{\boldsymbol{u}})(\tau^2-\zeta^2)\,\mathrm{d}\zeta\,\mathrm{d}\tau
+\]</span></p>
+</div>
+<div class="symbol-note">
+<p><span class="math inline">\(\nabla\hat{\boldsymbol{u}}\)</span>: velocity gradient of the auxiliary (towing) flow.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Now the first-order correction. Viscoelasticity enters as a forcing term, and this forcing is built entirely from the known Newtonian flow. So there is nothing new to solve there.</p>
+<p>To get the speed correction, we use the standard method. We introduce an auxiliary towing problem and apply the reciprocal theorem, and then the correction is written as an integral. Compared with earlier work, nothing is new here. The only difference is that the calculation is carried out in the spheroidal coordinates. With this one integral, we can now study how shape and coverage control the viscoelastic correction.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-spherical-cancellation-is-a-symmetry" class="slide level2 results-slide spherical-cancellation-slide">
+<h2>The spherical cancellation is a symmetry</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/results/slip_symmetry.png" class="quarto-figure quarto-figure-center" height="220"></p>
+</figure>
+</div>
+<div class="spherical-cancellation-flow">
+<p>In a second-order fluid, a mirror reflection must be paired with <strong>De → −De</strong>:</p>
+<p><span class="math display">\[U(\zeta_0, \mathrm{De}) = U(-\zeta_0, -\mathrm{De})\]</span></p>
+<div class="takeaway">
+<p>Half-coating is its own mirror ⟹ <strong>U even in De</strong>: the O(De) correction <strong>vanishes</strong>, leading correction is <strong>O(De²)</strong>.</p>
+</div>
+</div>
+<aside class="notes">
+<p>We first revisit the spherical case. The known conclusion is that the viscoelastic correction is antisymmetric in the surface activity. Here we can explain this from a hidden symmetry. Although the flow field is no longer linear, the slip velocity is solved from the concentration, so the slip fields can still be added up. For a sphere, a fully-coated particle has zero slip everywhere, due to the isotropy. So the boundary velocities of a particle pair have a symmetry.</p>
+<p>We then ask: do they swim at the same speed? In a Newtonian fluid, yes. But the second-order fluid is more subtle. Its elastic stress carries a directional memory, so a mirror reflection leaves the problem unchanged only if we also flip the sign of De. The two speeds therefore match with De reversed. Consequently, the half-coated case is its own mirror image, so the speed must be even in De. This means the leading correction is at least of order De squared. Through this argument, we show that the symmetry really requires the isotropy of the sphere. Once the shape is not spherical, we expect that this symmetry no longer holds.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="eccentricity-revives-the-correction" class="slide level2 results-slide eccentricity-revival-slide">
+<h2>Eccentricity revives the correction</h2>
+<div class="eccentricity-revival-content">
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/results/fig3.svg" class="quarto-figure quarto-figure-center" height="340"></p>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="subhead">
+<p>Half-coated particle: <span class="math inline">\(\zeta_0=0\)</span></p>
+</div>
+<ul>
+<li>Sphere: <span class="math inline">\(U_1=0\)</span>, protected by symmetry</li>
+<li>Spheroid: eccentricity breaks the cancellation</li>
+<li>Slender particles: <strong>pronounced speed enhancement</strong></li>
+</ul>
+</div></div>
+</div>
+<aside class="notes">
+<p>Here are the results. We consider half-coated particles with different shapes, and plot the speed scaled by the Newtonian speed. For the sphere, the correction is zero. But as we increase the eccentricity, it first slows down a little bit, and then for very slender spheroids there is a pronounced enhancement. So our expectation is confirmed.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="breaking-the-coverage-symmetry" class="slide level2 results-slide coverage-symmetry-slide">
+<h2>Breaking the coverage symmetry</h2>
+<div class="coverage-symmetry-content">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="fig-caption">Antisymmetry lost as <span class="math inline">\(e\)</span> grows</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/results/fig4.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="fig-caption">Phase diagram: enhancement vs reduction</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/results/fig5.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+</div></div>
+<div class="takeaway">
+<p>Eccentricity breaks the coverage <strong>antisymmetry</strong>, and the <strong>enhancement regime broadens</strong> with elongation.</p>
+</div>
+</div>
+<aside class="notes">
+<p>Next we also consider the coverage. The spherical case is represented by the black curve, the deviation is antisymmetric about half-coating, as we discussed. But as the eccentricity grows, this antisymmetry is lost. Shape breaks the coverage symmetry.</p>
+<p>The right panel is the full phase diagram, over eccentricity and coverage. The color shows whether the speed is enhanced or reduced. As the particle becomes more elongated, the enhancement region broadens. Especially when the particle is very slender, in most cases the propulsion is enhanced.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-the-cancellation-breaks" class="slide level2 results-slide why-cancellation-slide">
+<h2>Why the cancellation breaks</h2>
+<div class="why-cancellation-content">
+<ul>
+<li>The first-order speed is set by a local kernel: <span class="math inline">\(U_1 \propto \int_V\)</span> <span class="script-k">𝒦</span> <span class="math inline">\(\mathrm{d}V\)</span>, where <span class="script-k">𝒦</span> <span class="math inline">\(= \boldsymbol{A}:\nabla\hat{\boldsymbol{u}}\)</span> (blue enhances, red reduces)</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/results/fig6a_kernel.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+<div class="kernel-sentence">
+<p>Sphere — <span class="script-k">𝒦</span> <strong>antisymmetric</strong>, cancels exactly ⟹ <span class="math inline">\(U_1=0\)</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/results/fig6b_kernel.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+<div class="kernel-sentence">
+<p>Spheroid — curvature localizes <span class="script-k">𝒦</span>, <strong>antisymmetry broken</strong> ⟹ <span class="math inline">\(U_1\neq0\)</span></p>
+</div>
+</div></div>
+</div>
+<aside class="notes">
+<p>Finally, we would like to visualize what happens around the particle. Since the first-order speed correction is a volume integral, we just plot the integral kernel, K. Blue regions push the speed up, and red regions push it down. For the sphere, on the left, the Newtonian flow is symmetric about the equator, so all the blue and red regions cancel out exactly. However, for a spheroidal particle, we no longer have this symmetry. Particularly near the highly curved tip, the slip changes quickly, and the flow gradients become large. This localizes the kernel and breaks its antisymmetry. So the cancellation is no longer exact, and a net enhancement survives. And these are all the main results.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="summary" class="slide level2 summary-slide">
+<h2>Summary</h2>
+<div class="summary-main">
+<div class="summary-points">
+<ul>
+<li><strong>Spheres</strong> — the half-coated correction vanishes, protected by reflection symmetry</li>
+<li><strong>Spheroids</strong> — eccentricity breaks it; slender particles are strongly enhanced</li>
+<li><strong>General principle</strong> — symmetry breaks only when both shape anisotropy and fluid nonlinearity are present</li>
+</ul>
+</div>
+<div class="summary-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/diagrams/spheroid_polymer.svg" class="quarto-figure quarto-figure-center" height="280"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="summary-credit">
+<p><img data-src="../assets/people/qiang_zhao.jpg" height="130"></p>
+<div class="summary-credit-text">
+<p><strong>Qiang Zhao</strong></p>
+<p>First author · PhD student, Peking University</p>
+</div>
+</div>
+<div class="summary-logo">
+<p><img data-src="../assets/logos/nsfc_logo.jpeg" width="190"></p>
+</div>
+<aside class="notes">
+<p>To summarize. For a sphere, we clarify that the vanishing correction is a special case, a result of the geometric isotropy of the sphere. Once the particle becomes a spheroid, eccentricity breaks this symmetry, and especially for slender particles, the propulsion is enhanced in most cases.</p>
+<p>More generally, we believe in a principle: symmetry breaking requires the combination of geometric anisotropy and fluid nonlinearity. In short, particle shape is a control parameter for propulsion in complex fluids. Thank you, and I am happy to take questions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: false,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script src="progress.js"></script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
