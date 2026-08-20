@@ -1,8 +1,0 @@
----
-title: "Teaching Resources"
----
-
-- [Free Precession](free-precession/)
-- [Inertia Ellipsoid](inertia-ellipsoid/)
-- [Lagrange Top](lagrange-top/)
-- [Rigid Body Toss](rigid-body-toss/)
