@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Propulsion of a Spheroidal Self-Diffusiophoretic Particle in
+Complex Fluids</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="../assets/styles/iutam/index.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="cover" class="slide level2 cover-slide">
+<h2 class="cover-slide">Cover</h2>
+<div class="cover-rule">
+
+</div>
+<div class="cover-title">
+<p>Geometry Can Qualitatively Change <br> Rheological Effects on <span
+class="cover-propulsion">Propulsion</span></p>
+</div>
+<div class="cover-meta">
+<div class="cover-authors">
+<p>Yi Man （满怡）</p>
+</div>
+<div class="cover-affiliations">
+<p>Peking University<br></p>
+</div>
+<div class="cover-event">
+<p>2026 IUTAM Symposium on<br> “Diversity-Driven Innovations in Complex
+Fluids for Advanced Manufacturing”</p>
+</div>
+<div class="cover-date">
+<p>August 17, 2026 · Beijing, China</p>
+</div>
+</div>
+<aside class="notes">
+<p>Good morning, everyone. I’m Man Yi from Peking University. I am very
+happy to be here to share some of our recent work.</p>
+<p>I changed the title a little bit to highlight the main message of the
+work: “Geometry Can Qualitatively Change Rheological Effects on
+Propulsion.”</p>
+<p>This work was done together with my PhD student and several
+collaborators, and I’ll acknowledge them at the end.</p>
+</aside>
+</section>
+<section id="active-propulsion-in-complex-fluids"
+class="slide level2 motivation-slide">
+<h2 class="motivation-slide">Active Propulsion in Complex Fluids</h2>
+<div class="two-panel">
+<div class="visual-panel">
+<div class="panel-heading">
+<p>Active particles</p>
+</div>
+<div class="image-pair active-particle-images">
+<div class="image-item">
+<p><img data-src="../assets/literature/microorganism.png"
+class="source-image" /></p>
+<p><span class="image-source"><a
+href="https://en.wikipedia.org/wiki/Paramecium">Wikipedia:
+Paramecium</a>; <a
+href="https://en.wikipedia.org/wiki/Volvox">Volvox</a></span></p>
+</div>
+<div class="image-item">
+<p><img data-src="../assets/literature/Janus.png"
+class="source-image" /></p>
+<p><span class="image-source">Trevenen &amp; Beltramo, <em>J. Colloid
+Interface Sci.</em>, 2021</span></p>
+</div>
+</div>
+<div class="panel-statement">
+<p>Convert energy into autonomous motion</p>
+</div>
+</div>
+<div class="visual-panel">
+<div class="panel-heading">
+<p>Complex-fluid environments</p>
+</div>
+<div class="image-pair fluid-environment-images">
+<div class="image-item">
+<p><img data-src="../assets/literature/hpylori.png"
+class="source-image" /></p>
+<p><span class="image-source"><a
+href="http://www.bio.davidson.edu/">Davidson College
+Biology</a></span></p>
+</div>
+<div class="image-item">
+<p><img data-src="../assets/literature/mucus.png"
+class="source-image" /></p>
+<p><span class="image-source">Chrétien, <em>Acta Obstet. Gynecol.
+Scand.</em>, 2003</span></p>
+</div>
+</div>
+<div class="panel-statement">
+<p>Often exhibit non-Newtonian rheology</p>
+</div>
+</div>
+</div>
+<div class="takeaway">
+<p><strong>How does fluid rheology alter active propulsion?</strong></p>
+</div>
+<aside class="notes">
+<p>Here, by propulsion, I mean the motion of self-propelled active
+particles. These can be biological swimmers, such as microorganisms, or
+synthetic systems, such as microrobots and Janus particles. I will
+introduce what a Janus particle is in a moment.</p>
+<p>Many of them move in complex fluids. For example, H. pylori swims
+through the mucus layer in the stomach, and sperm cells move through
+cervical mucus. So the surrounding fluid is often very different from a
+simple Newtonian liquid. Since the propulsion comes from interacting
+with the surrounding fluid, its rheology can strongly affect how these
+particles move.</p>
+<p>So the question is simple: how does fluid rheology alter active
+propulsion?</p>
+</aside>
+</section>
+<section id="what-is-a-janus-particle"
+class="slide level2 motivation-slide media-video janus-video-slide">
+<h2 class="motivation-slide media-video janus-video-slide">What Is a
+Janus Particle?</h2>
+<div class="media-video-player">
+<video src="../assets/literature/janus.mp4" controls playsinline>
+</video>
+</div>
+<div class="media-video-statement">
+<p>Two distinct surface regions can enable self-propelled motion.</p>
+</div>
+<div class="media-video-source">
+<p><a href="https://www.youtube.com/watch?v=Avr57m-hS8o">Video: “Janus
+particles,” Sikapaa TV, YouTube</a></p>
+</div>
+<aside class="notes">
+<p>In this talk, we focus on Janus particles, a widely studied class of
+synthetic self-propelled particles. They are used as simple model
+systems for active matter. They are also explored for microscale
+transport and microrobotics.</p>
+<p>Here we can roughly see that the particle has two distinct surface
+regions. Let me briefly explain how a Janus particle propels itself.</p>
+</aside>
+</section>
+<section id="how-does-a-janus-particle-propel-itself"
+class="slide level2 motivation-slide visual-explain janus-mechanism">
+<h2 class="motivation-slide visual-explain janus-mechanism">How Does a
+Janus Particle Propel Itself?</h2>
+<div class="visual-explain-grid">
+<div class="visual-explain-figure">
+<p><img data-src="../assets/diagrams/sphere_solute.svg"
+class="visual-explain-image" /></p>
+</div>
+<div class="visual-explain-text">
+<div class="visual-explain-step">
+<p><span class="visual-explain-key">Chemical reaction</span></p>
+<p>creates an uneven <strong>solute concentration</strong></p>
+</div>
+<div class="visual-explain-step">
+<p><span class="visual-explain-key">Surface concentration
+gradient</span></p>
+<p>generates a thin <strong>surface flow (slip)</strong></p>
+</div>
+<div class="visual-explain-step">
+<p><span class="visual-explain-key">Asymmetric slip</span></p>
+<p>produces net <strong>propulsion</strong></p>
+</div>
+</div>
+</div>
+<div class="takeaway visual-explain-takeaway">
+<p><strong>Self-diffusiophoresis</strong>: asymmetric activity → solute
+gradient → surface slip → propulsion</p>
+</div>
+<aside class="notes">
+<p>A classic Janus particle is a sphere with two different surface
+regions. Typically, one side is coated with a catalyst, while the other
+side is inert.</p>
+<p>When the particle is placed in a solution, the active side drives a
+chemical reaction. This creates an uneven solute concentration around
+the particle.</p>
+<p>As the solute interacts with the particle surface, a concentration
+gradient along the surface generates a tangential flow near the surface,
+which we normally describe as surface slip. This asymmetric surface slip
+finally gives rise to a net propulsion of the particle. This type of
+propulsion is usually called self-diffusiophoresis.</p>
+<p>Now we know the basic propulsion mechanism. In a simple Newtonian
+fluid, this picture is relatively well understood. But in a complex
+fluid, the surrounding medium can respond very differently to the same
+surface motion.</p>
+</aside>
+</section>
+<section id="how-does-a-janus-particle-propel-itself-1"
+class="slide level2 motivation-slide visual-explain janus-mechanism janus-complex-transition">
+<h2
+class="motivation-slide visual-explain janus-mechanism janus-complex-transition">How
+Does a Janus Particle Propel Itself?</h2>
+<div class="visual-explain-grid">
+<div class="visual-explain-figure">
+<p><img data-src="../assets/diagrams/sphere_polymer.svg"
+class="visual-explain-image" /></p>
+</div>
+<div class="visual-explain-text">
+<div class="janus-transition-question">
+<p>What happens when these particles move in complex fluids?</p>
+</div>
+</div>
+</div>
+<div class="takeaway visual-explain-takeaway">
+<p><strong>Self-diffusiophoresis</strong>: asymmetric activity → solute
+gradient → surface slip → propulsion</p>
+</div>
+<aside class="notes">
+<p>So our next question is: What happens when these particles move in
+complex fluids?</p>
+</aside>
+</section>
+<section id="complex-fluids-change-particle-dynamics"
+class="slide level2 motivation-slide three-figure-summary janus-dynamics-slide">
+<h2
+class="motivation-slide three-figure-summary janus-dynamics-slide">Complex
+Fluids Change Particle Dynamics</h2>
+<div class="three-figure-grid">
+<div class="three-figure-item">
+<p><img data-src="../assets/literature/gomez-solano-2016.png"
+class="three-figure-image" /></p>
+<div class="three-figure-caption">
+<p><strong>Enhanced rotational fluctuations</strong></p>
+</div>
+<div class="three-figure-ref">
+<p>Gomez-Solano et al., <em>PRL</em>, 2016</p>
+</div>
+</div>
+<div class="three-figure-item">
+<p><img data-src="../assets/literature/saad-natale-2019.png"
+class="three-figure-image" /></p>
+<div class="three-figure-caption">
+<p><strong>Reduced propulsion</strong></p>
+</div>
+<div class="three-figure-ref">
+<p>Saad &amp; Natale, <em>Soft Matter</em>, 2019</p>
+</div>
+</div>
+<div class="three-figure-item">
+<p><img data-src="../assets/literature/raman-2023.png"
+class="three-figure-image" /></p>
+<div class="three-figure-caption">
+<p><strong>Suppressed active motion</strong></p>
+</div>
+<div class="three-figure-ref">
+<p>Raman et al., <em>ACS Phys. Chem. Au</em>, 2023</p>
+</div>
+</div>
+</div>
+<div class="takeaway three-figure-takeaway">
+<p>Experiments reveal <strong>diverse responses</strong>, but the
+<strong>direct rheological effect</strong> on propulsion remains
+unclear.</p>
+</div>
+<aside class="notes">
+<p>Over the past decade, experiments have shown that complex fluids can
+change Janus-particle dynamics in several ways.</p>
+<p>Some studies found enhanced rotational fluctuations. Others reported
+reduced propulsion. More recent work showed that active motion can be
+strongly suppressed, even in dilute polymer solutions.</p>
+<p>These experiments clearly show that the surrounding fluid matters.
+But they measure the overall particle dynamics, where propulsion and
+rotational motion are coupled together. So it is difficult to isolate
+the direct effect of rheology on propulsion itself. This is what we
+would like to understand theoretically.</p>
+</aside>
+</section>
+<section id="two-common-rheological-effects"
+class="slide level2 motivation-slide result-two result-two--summary rheology-intro-slide">
+<h2
+class="motivation-slide result-two result-two--summary rheology-intro-slide">Two
+Common Rheological Effects</h2>
+<div class="result-two-body">
+<div class="result-two-grid">
+<div class="result-two-col">
+<p><span class="result-two-figure-title st-key"><strong>Shear
+thinning</strong></span></p>
+<div class="result-two-figure">
+<p><img data-src="../assets/literature/blood.png" /></p>
+</div>
+<p><span class="ref">Méndez-Mora et al., <em>Micromachines</em> 12, 726
+(2021)</span></p>
+<div class="result-two-figure-caption">
+<p>Higher shear rate → lower viscosity</p>
+</div>
+</div>
+<div class="result-two-col">
+<p><span
+class="result-two-figure-title ve-key"><strong>Viscoelasticity</strong></span></p>
+<div class="result-two-figure">
+<p><img data-src="../assets/literature/mucus.png" /></p>
+</div>
+<p><span class="ref">Chrétien, <em>Acta Obstet. Gynecol. Scand.</em>,
+2003</span></p>
+<div class="result-two-figure-caption">
+<p>Deformation → relaxation</p>
+</div>
+</div>
+</div>
+<div class="takeaway compact-takeaway result-two-insight">
+<p>These two rheological effects can coexist in the same complex
+fluid.</p>
+</div>
+<aside class="notes">
+<p>Before going to the theory, let me briefly introduce two common
+rheological effects in complex fluids.</p>
+<p>The first is shear thinning. As the shear rate increases, the
+apparent viscosity decreases. Blood is a familiar example, as shown
+here.</p>
+<p>The second is viscoelasticity. I actually couldn’t find a really
+intuitive quantitative figure for this — if anyone knows a good one,
+please let me know. So here I’m using mucus just to give a physical
+picture. Its polymer network can be deformed by the flow, but it also
+tends to relax back over time. So the fluid has a kind of memory.</p>
+<p>And importantly, these two effects are not exclusive. The same
+complex fluid can be both shear-thinning and viscoelastic.</p>
+</aside>
+</div>
+</section>
+<section id="spherical-particles-what-does-theory-predict"
+class="slide level2 motivation-slide result-two result-two--summary spherical-theory-slide">
+<h2
+class="motivation-slide result-two result-two--summary spherical-theory-slide">Spherical
+Particles: What Does Theory Predict?</h2>
+<div class="result-two-body">
+<div class="result-two-grid">
+<div class="result-two-col">
+<div class="result-two-figure-title">
+<p><span class="st-key"><strong>Shear thinning</strong></span></p>
+<p><span class="result-two-model-label">Carreau model</span></p>
+</div>
+<div class="result-two-figure">
+<p><img data-src="../assets/literature/datt_st.png" /></p>
+</div>
+<div class="result-two-figure-caption">
+<p><strong>Sphere:</strong> <strong>propulsion is reduced</strong></p>
+</div>
+</div>
+<div class="result-two-col">
+<div class="result-two-figure-title">
+<p><span class="ve-key"><strong>Viscoelasticity</strong></span></p>
+<p><span class="result-two-model-label">Second-order fluid</span></p>
+</div>
+<div class="result-two-figure">
+<p><img data-src="../assets/literature/datt_combined.png" /></p>
+</div>
+<div class="result-two-figure-caption">
+<p>Half-coated sphere: <strong>leading-order correction
+vanishes</strong></p>
+</div>
+</div>
+</div>
+<p><span class="result-two-shared-ref">Datt et al., <em>J. Fluid
+Mech.</em>, 2017</span></p>
+</div>
+<aside class="notes">
+<p>So what does theory already tell us about these two rheological
+effects? Previous work considered spherical Janus particles.</p>
+<p>In a shear-thinning fluid, the correction is negative, so shear
+thinning slows the particle. In a weakly viscoelastic fluid, the
+first-order correction is antisymmetric in the surface coverage. As a
+direct result, this correction vanishes for a half-coated sphere.</p>
+<p>So these results give us a clean baseline and lead to one question.
+Are they general consequences of rheology, or are they special to
+spherical geometry?</p>
+</aside>
+</section>
+<section id="from-spheres-to-spheroids"
+class="slide level2 motivation-slide from-spheres-slide">
+<h2 class="motivation-slide from-spheres-slide">From Spheres to
+Spheroids</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<p><img data-src="../assets/diagrams/sphere_polymer.svg"
+data-fig-align="center" height="300" /></p>
+<p><span class="fig-caption">Sphere — correction
+<strong>vanishes</strong> at half-coating</span></p>
+</div><div class="column" style="width:16%;">
+<p><span class="bigq">?</span></p>
+</div><div class="column" style="width:42%;">
+<p><img data-src="../assets/diagrams/spheroid_polymer.svg"
+data-fig-align="center" height="300" /></p>
+<p><span class="fig-caption">Spheroid — geometric anisotropy</span></p>
+</div>
+</div>
+<div class="takeaway">
+<p>We vary two control parameters: <strong>eccentricity</strong> <span
+class="math inline">\(e\)</span> (shape) and <strong>coverage</strong>
+<span class="math inline">\(\zeta_0\)</span> (activity).</p>
+</div>
+<aside class="notes">
+<p>To answer this, we let the particle become a spheroid. This is the
+natural way to add geometric anisotropy while keeping the problem
+analytically tractable.</p>
+<p>We then vary two control parameters. The eccentricity sets the shape,
+and the catalytic coverage sets the activity.</p>
+</aside>
+</section>
+<section id="model-a-spheroidal-self-diffusiophoretic-particle"
+class="slide level2 model-slide">
+<h2 class="model-slide">Model: A Spheroidal Self-Diffusiophoretic
+Particle</h2>
+<div class="model-layout">
+<div class="model-figure-wrap">
+<p><img data-src="../assets/diagrams/spheroid_model.svg"
+class="model-figure" /></p>
+</div>
+<div class="model-notes">
+<ul>
+<li>Solve the concentration and flow fields in <span
+class="key-term">prolate spheroidal coordinates</span> <span
+class="math inline">\((\tau,\zeta)\)</span></li>
+<li>Shape parameter: <span class="no-break"><span
+class="key-term">eccentricity</span> <span
+class="math inline">\(e=\sqrt{a^2-b^2}/a\)</span></span></li>
+<li>Activity parameter: <span class="no-break"><span
+class="key-term">catalytic coverage</span> <span
+class="math inline">\(\zeta_0\)</span></span></li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>We consider a rigid prolate spheroid, and we solve both the
+concentration field and the flow field in prolate spheroidal
+coordinates, tau and zeta. Then the particle surface is conveniently a
+surface of constant tau.</p>
+<p>Two parameters define the problem. The shape is set by the
+eccentricity e. When e is zero we have a sphere, and as e approaches one
+the particle becomes a slender rod. The activity is set by the catalytic
+coverage, which marks the boundary between the active and inert
+regions.</p>
+</aside>
+</section>
+<section id="concentration-gradients-drive-surface-slip"
+class="slide level2 model-slide slip-slide">
+<h2 class="model-slide slip-slide">Concentration Gradients Drive Surface
+Slip</h2>
+<div class="slip-layout">
+<div class="slip-figure-wrap">
+<p><img data-src="../assets/diagrams/concentration_slip.svg?v=10"
+class="slip-figure" /></p>
+</div>
+<div class="slip-content">
+<div class="mechanism-block">
+<p><strong>Surface flux <span class="math inline">\(\to\)</span>
+Concentration field</strong></p>
+<p><span class="math display">\[
+\frac{\partial C}{\partial t}
++ \boldsymbol{u}\cdot\nabla C
+= D\nabla^2 C,
+\quad
+\left. D\boldsymbol{n}\cdot\nabla C
+\right|_{\tau=\tau_0,\zeta&lt;\zeta_0} = -A
+\]</span></p>
+<div class="symbol-note">
+<p><span class="math inline">\(C\)</span>: solute concentration; <span
+class="math inline">\(\boldsymbol{u}\)</span>: fluid velocity; <span
+class="math inline">\(D\)</span>: solute diffusivity; <span
+class="math inline">\(A\)</span>: surface activity / fixed solute flux
+on the active cap; <span class="math inline">\(\boldsymbol{n}\)</span>:
+unit normal.</p>
+</div>
+</div>
+<div class="mechanism-block">
+<p><strong>Tangential gradient <span class="math inline">\(\to\)</span>
+Phoretic slip</strong></p>
+<p><span class="math display">\[
+\boldsymbol{u}_s
+=
+M(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\cdot \nabla C
+\]</span></p>
+<div class="symbol-note">
+<p><span class="math inline">\(M\)</span>: phoretic mobility; <span
+class="math inline">\((\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n})\)</span>:
+tangential projection operator.</p>
+</div>
+</div>
+<div class="mechanism-block">
+<p><strong>Slip velocity <span class="math inline">\(\to\)</span>
+Force-free propulsion</strong></p>
+<div class="propulsion-row">
+<div class="propulsion-equation">
+<div class="propulsion-equation-grid">
+<div class="propulsion-formula">
+<p><span class="math display">\[
+\boldsymbol{u}(\tau=\tau_0)
+= \boldsymbol{u}_s(\zeta)+\boldsymbol{U},
+\]</span></p>
+</div>
+<div class="propulsion-formula">
+<p><span class="math display">\[
+\int_S \boldsymbol{n}\cdot\boldsymbol{\sigma}\,\mathrm{d}S
+= \boldsymbol{0}
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="bio-analogy">
+<p><img data-src="../assets/literature/paramecium.png"
+class="paramecium-figure" /></p>
+<p>biological propulsion analogy</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Propulsion arises in three steps.</p>
+<p>First, the chemistry sets up a concentration field. The solute
+concentration follows an advection-diffusion equation. The boundary
+condition is on the particle surface. The active cap emits solute at a
+fixed flux, which we call A, while the inert part is impermeable.
+Solving this gives a non-uniform solute field around the particle.</p>
+<p>Second, this concentration gradient drives a slip velocity in a thin
+interaction layer at the surface. We assume the slip is tangential and
+proportional to the local tangential gradient. The coefficient is the
+phoretic mobility, M. This slip comes from a boundary-layer analysis of
+that thin layer, so it acts as an effective boundary condition for the
+outer flow.</p>
+<p>Third, the surface slip sets the particle in motion. On the surface,
+the fluid velocity is the slip plus the rigid-body swimming velocity, U.
+Because the particle is force-free, the total hydrodynamic force on it
+is zero. This condition determines the swimming speed U. This is the
+same mechanism by which ciliated microorganisms swim.</p>
+</aside>
+</section>
+<section id="fluid-rheology-two-non-newtonian-models"
+class="slide level2 model-slide">
+<h2 class="model-slide">Fluid Rheology: Two Non-Newtonian Models</h2>
+<div class="comparison-canvas">
+<div class="framework-block">
+<div class="panel-heading">
+<p><strong>Stokes flow</strong>:</p>
+</div>
+<div class="equation-primary">
+<p><span class="math display">\[
+\nabla\cdot\boldsymbol{\sigma}=0,
+\qquad
+\nabla\cdot\mathbf{u}=0,
+\qquad
+\boldsymbol{\sigma}=-p\mathbf{I}+\mathbf{T}
+\]</span></p>
+</div>
+<div class="equation-secondary">
+<p><span class="math display">\[
+\dot{\boldsymbol{\gamma}}
+=
+\nabla\mathbf{u}+(\nabla\mathbf{u})^T
+\]</span></p>
+</div>
+</div>
+<div class="two-panel comparison-grid">
+<div class="visual-panel comparison-panel theme-shear">
+<div class="panel-heading panel-heading-compact">
+<p>Shear thinning: Carreau model</p>
+</div>
+<div class="equation-primary">
+<p><span class="math display">\[
+\mathbf{T}
+=
+\left[
+\beta+(1-\beta)
+\left(
+1+\frac{Cu^2}{2}
+\dot{\boldsymbol{\gamma}}:\dot{\boldsymbol{\gamma}}
+\right)^{(n-1)/2}
+\right]
+\dot{\boldsymbol{\gamma}}.
+\]</span></p>
+</div>
+<div class="parameter-definitions">
+<p><span class="parameter-primary st-key"><span
+class="math inline">\(Cu\)</span></span> — flow shear-rate /
+characteristic shear-rate ratio</p>
+<p><span class="parameter-primary st-key"><span
+class="math inline">\(\beta\)</span></span> — high-/low-shear viscosity
+ratio</p>
+<p><span class="parameter-secondary"><span
+class="math inline">\(n\)</span></span> — shear-thinning index</p>
+</div>
+</div>
+<div
+class="visual-panel comparison-panel theme-elastic comparison-divider">
+<div class="panel-heading panel-heading-compact">
+<p>Viscoelasticity: Second-order fluid</p>
+</div>
+<div class="equation-primary">
+<p><span class="math display">\[
+\mathbf{T}
+=
+\dot{\boldsymbol{\gamma}}
+-De\left(
+\mathbf{G}
++b\,\dot{\boldsymbol{\gamma}}\cdot\dot{\boldsymbol{\gamma}}
+\right).
+\]</span></p>
+</div>
+<div class="parameter-definitions">
+<p><span class="parameter-primary ve-key"><span
+class="math inline">\(De\)</span></span> — elastic / viscous stress
+ratio</p>
+<p><span class="parameter-secondary"><span
+class="math inline">\(b\)</span></span> — normal-stress ratio</p>
+<p><span class="parameter-secondary"><span
+class="math inline">\(\mathbf{G}\)</span></span> — upper-convected
+derivative</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>We work in the Stokes-flow regime, so the rheology enters through the
+stress.</p>
+<p>For shear thinning, we use the Carreau model. The viscosity depends
+on the local shear rate. Cu compares the characteristic shear rate of
+the flow with the shear rate where shear thinning becomes important.
+Beta is the high- to low-shear viscosity ratio, and n controls how
+strongly the viscosity changes.</p>
+<p>For viscoelasticity, we use a second-order fluid for weak
+viscoelasticity. The stress is the Newtonian stress plus a small elastic
+correction. The main parameter is the Deborah number, De, which compares
+the relaxation time with the flow time.</p>
+<p>The correction contains an upper-convected derivative and a
+normal-stress contribution. As Professor Stone explained on Sunday, the
+convected derivative accounts for material change relative to the
+deformation imposed by the flow.</p>
+</aside>
+</section>
+<section id="diffusion-dominated-solute-transport"
+class="slide level2 model-slide diffusion-slide">
+<h2 class="model-slide diffusion-slide">Diffusion-Dominated Solute
+Transport</h2>
+<div class="diffusion-content">
+<div class="mechanism-block">
+<p><strong>Diffusion-dominated limit:</strong>   <span
+class="accent-pine"><span
+class="math inline">\(Pe=\dfrac{MAa}{D^2}\)</span> — advection /
+diffusion</span></p>
+<p><span class="math display">\[
+Pe\ll1
+\;\Rightarrow\;
+\nabla^2 c=0,
+\qquad
+\left.\boldsymbol{n}\cdot\nabla c\right|_{\tau=\tau_0}
+=
+\begin{cases}
+-1, &amp; \zeta\le \zeta_0 \quad \text{active},\\
+0, &amp; \zeta&gt;\zeta_0 \quad \text{inert},
+\end{cases}
+\qquad
+c|_{\tau\to\infty}=0
+\]</span></p>
+<div class="symbol-note">
+<p><span class="math inline">\(c\)</span>: dimensionless relative solute
+concentration; <span class="math inline">\(\tau=\tau_0\)</span>:
+particle surface.</p>
+</div>
+</div>
+<div class="mechanism-block">
+<p><strong>Series solution and induced slip</strong></p>
+<div class="solute-equation-row">
+<div class="solute-main-equation">
+<p><span class="math display">\[
+c(\tau,\zeta)
+=
+\sum_{n=0}^{\infty}
+\rho_n Q_n(\tau)P_n(\zeta)
+\]</span></p>
+</div>
+<div class="solute-main-equation">
+<p><span class="math display">\[
+\implies u_s(\zeta)
+=
+\tau_0\sum_{n=1}^{\infty}
+B_n\frac{P_n^1(\zeta)}{\sqrt{\tau_0^2-\zeta^2}}
+\]</span></p>
+</div>
+</div>
+<div class="symbol-note">
+<p><span class="math inline">\(P_n,Q_n\)</span>: Legendre functions;
+<span class="math inline">\(\rho_n\)</span>: coefficients set by the
+flux boundary condition; <span class="math inline">\(B_n=-\rho_n
+Q_n(\tau_0)\)</span>.</p>
+</div>
+</div>
+<div class="caveat-row">
+<div class="caveat-block">
+<div class="caveat-text">
+<p><strong>Note: finite-<span class="math inline">\(\mathrm{Pe}\)</span>
+coupling</strong></p>
+<p>Finite <span class="math inline">\(Pe\)</span>: advection couples the
+solute and flow fields, allowing rheology to modify the concentration
+field and hence the phoretic slip.</p>
+</div>
+</div>
+<div class="caveat-figure-wrap">
+<p><img data-src="../assets/literature/choudhary2020.png"
+class="caveat-figure" /></p>
+<div class="caveat-citation">
+<p><a
+href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/nonnewtonian-effects-on-the-slip-and-mobility-of-a-selfpropelling-active-particle/BBF8AD5E37B5D3679BFC0A705750718C">Choudhary
+et al., J. Fluid Mech., 2020</a></p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>We further take the diffusion-dominated limit, that is, small Peclet
+number. This is a big simplification because the solute decouples from
+the flow. The concentration field then satisfies Laplace’s equation,
+with a flux boundary condition that is constant on the active cap and
+zero on the inert part. We solve it as a series of Legendre functions,
+and from it we get the surface slip directly.</p>
+<p>To be precise,</p>
+</aside>
+</section>
+<section id="newtonian-baseline"
+class="slide level2 model-slide slip-slide">
+<h2 class="model-slide slip-slide">Newtonian Baseline</h2>
+<div class="model-clean-layout newtonian-baseline-layout">
+<div class="model-lead">
+<p>Weakly non-Newtonian: expand in <span
+class="math inline">\(\epsilon\ll 1\)</span></p>
+</div>
+<div class="columns parameter-pair">
+<div class="column" style="width:50%;">
+<p><span class="accent-blue">Shear thinning (Carreau): <span
+class="math inline">\(\epsilon = 1-\beta\)</span></span></p>
+</div><div class="column" style="width:50%;">
+<p><span class="accent-orange">Viscoelasticity (second-order fluid):
+<span class="math inline">\(\epsilon = \mathrm{De}\)</span></span></p>
+</div>
+</div>
+<div class="model-equation">
+<p><span class="math display">\[
+\{\mathbf u,p,U\}
+=
+\{\mathbf u_0,p_0,U_0\}
++
+\epsilon\{\mathbf u_1,p_1,U_1\}
++
+O(\epsilon^2)
+\]</span></p>
+</div>
+<div class="baseline-row">
+<div class="baseline-text-panel">
+<p>The zeroth order is the Newtonian problem, valid for any
+eccentricity, with a known speed:</p>
+<div class="model-equation">
+<p><span class="math display">\[
+U_0 =
+-\frac{\tau_0}{2}
+\int_{-1}^{1}
+u_s
+\frac{\sqrt{1-\zeta^2}}{\sqrt{\tau_0^2-\zeta^2}}
+\,\mathrm{d}\zeta
+\]</span></p>
+</div>
+<div class="ref">
+<p>Poehnl et al., J. Phys.: Condens. Matter, 2020; Popescu et al., Eur.
+Phys. J. E, 2010</p>
+</div>
+</div>
+<div class="baseline-figure-panel">
+<p><img data-src="../assets/results/newtonian_symmetry.png"
+class="baseline-figure" /></p>
+<div class="takeaway">
+<p>Linearity makes the Newtonian speed symmetric about half-coating:
+<span class="math inline">\(U_0(\zeta_0)=U_0(-\zeta_0)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Now we set up the perturbation. We consider weakly non-Newtonian
+fluids, and we expand the quantities in orders of a small parameter,
+epsilon. For shear thinning, epsilon is one minus beta. For
+viscoelasticity, epsilon is De.</p>
+<p>The zeroth order is just the Newtonian problem, which has been solved
+before, so we take it as known. One feature of the Newtonian solution is
+that the speed is symmetric about the coating parameter. We can
+understand this using a simple symmetry. The fully-coated problem does
+not swim, and it can be separated into a pair of complementary coated
+problems. Because the Newtonian problem is linear, the speeds of the
+particle pair must be the same.</p>
+</aside>
+</section>
+<section id="first-order-non-newtonian-correction"
+class="slide level2 model-slide slip-slide">
+<h2 class="model-slide slip-slide">First-Order Non-Newtonian
+Correction</h2>
+<div
+class="model-clean-layout reciprocal-correction-layout module-stack module-stack-tight">
+<div class="model-block">
+<div class="module-lead">
+<p>Non-Newtonian rheology enters as a forcing set by the Newtonian
+flow:</p>
+</div>
+<div class="model-equation">
+<p><span class="math display">\[
+\boldsymbol{\sigma}_1
+=
+-p_1\mathbf I
++
+\dot{\boldsymbol{\gamma}}_1
++
+\mathbf A
+\]</span></p>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="accent-blue">Shear thinning (Carreau)</span></p>
+<div class="model-equation">
+<p><span class="math display">\[
+\color{#1f5f8f}{\mathbf A_{\mathrm{ST}}}
+=
+\left[
+-1+
+\left(
+1+\frac{Cu^2}{2}
+\dot{\boldsymbol{\gamma}}_0:\dot{\boldsymbol{\gamma}}_0
+\right)^{(n-1)/2}
+\right]
+\dot{\boldsymbol{\gamma}}_0
+\]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="accent-orange">Viscoelasticity (second-order)</span></p>
+<div class="model-equation">
+<p><span class="math display">\[
+\color{#a95724}{\mathbf A_{\mathrm{VE}}}
+=
+-\left(
+\mathbf G_0
++
+b\,\dot{\boldsymbol{\gamma}}_0\cdot
+\dot{\boldsymbol{\gamma}}_0
+\right)
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="model-block">
+<div class="module-lead">
+<p>An auxiliary towing problem + the reciprocal theorem give <span
+class="math inline">\(U_1\)</span> directly, without solving the
+first-order flow:</p>
+</div>
+<div class="model-equation wide-equation equation-highlight">
+<p><span class="math display">\[
+U_1 =
+-\frac{(\tau_0^2+1)\operatorname{coth}^{-1}\tau_0-\tau_0}{4\tau_0^2}
+\int_{\tau_0}^{\infty}\int_{-1}^{1}
+(\boldsymbol{A}:\nabla\hat{\boldsymbol{u}})(\tau^2-\zeta^2)\,\mathrm{d}\zeta\,\mathrm{d}\tau
+\]</span></p>
+</div>
+<div class="symbol-note">
+<p><span class="math inline">\(\nabla\hat{\boldsymbol{u}}\)</span>:
+velocity gradient of the auxiliary (towing) flow.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>We now want to calculate the first-order correction to the
+propulsion.</p>
+<p>In principle, we could solve the full first-order flow field, but
+that becomes a nonlinear problem and is quite cumbersome.</p>
+<p>Instead, we use the reciprocal-theorem framework. It allows us to
+obtain the propulsion correction directly from the Newtonian solution,
+without solving the first-order flow.</p>
+</aside>
+</section>
+<section id="geometry-can-reverse-the-effect-of-shear-thinning"
+class="slide level2 result-single st-main-result"
+data-section="shear-thinning">
+<h2 class="result-single st-main-result"
+data-section="shear-thinning">Geometry Can Reverse the Effect of Shear
+Thinning</h2>
+<div class="result-single-body">
+<div class="result-single-grid">
+<div class="result-single-figure">
+<div class="result-single-figure-title">
+<p><strong>Half-coated particles: <span
+class="math inline">\(\zeta_0=0\)</span></strong></p>
+</div>
+<p><img data-src="../assets/results/ST-main.png"
+data-fig-align="center" /></p>
+</div>
+<div class="result-single-insights">
+<ul>
+<li><strong>Sphere</strong>: propulsion is always
+<strong>reduced</strong></li>
+<li><strong>Slender spheroids</strong>: propulsion can be
+<strong>enhanced</strong></li>
+<li><span class="st-key"><strong>Shape can reverse the rheological
+effect</strong></span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="result-publication">
+<p>G. Zhu, B. vanGogh, L. Zhu, O.S. Pak and Y. Man. <em>JFM.</em>,
+2024.</p>
+</div>
+<aside class="notes">
+<p>Here are the first results. We consider half-coated particles with
+different shapes, and plot the speed scaled by the Newtonian speed.</p>
+<p>For the sphere, the speed is always reduced, as found in earlier
+work. But as the eccentricity increases, the trend changes. For a very
+slender spheroid, the speed rises above the Newtonian value over a range
+of Cu.</p>
+<p>So geometric anisotropy can reverse the effect of shear thinning.
+Instead of slowing the particle, shear thinning can enhance its
+propulsion.</p>
+</aside>
+</section>
+<section id="geometry-breaks-the-coverage-symmetry"
+class="slide level2 result-two result-two--summary st-symmetry-result"
+data-section="shear-thinning">
+<h2 class="result-two result-two--summary st-symmetry-result"
+data-section="shear-thinning">Geometry Breaks the Coverage Symmetry</h2>
+<div class="result-two-body">
+<div class="result-two-grid">
+<div class="result-two-col">
+<p><span
+class="result-two-figure-title"><strong>Sphere</strong></span></p>
+<div class="result-two-figure">
+<p><img data-src="../assets/results/symmetry-sphere.png" /></p>
+</div>
+<div class="result-two-figure-caption">
+<p><strong>Complementary coatings → same speed</strong></p>
+</div>
+</div>
+<div class="result-two-col">
+<p><span
+class="result-two-figure-title"><strong>Spheroid</strong></span></p>
+<div class="result-two-figure">
+<p><img data-src="../assets/results/symmetry-spheroid.png" /></p>
+</div>
+<div class="result-two-figure-caption">
+<p><strong>Complementary coatings → different speeds</strong></p>
+</div>
+</div>
+</div>
+<div class="takeaway result-two-insight">
+<p><span class="st-key"><strong>Geometry breaks the
+complementary-coating symmetry.</strong></span></p>
+</div>
+</div>
+<aside class="notes">
+<p>Next, we compare different catalytic coverages.</p>
+<p>For a sphere, two complementary coatings give the same propulsion
+speed. The curve is symmetric about half-coating. For a spheroid in a
+shear-thinning fluid, this symmetry is lost. Two complementary coatings
+can now give different speeds.</p>
+<p>So shape changes not only the sign of the correction. It also changes
+the relation between activity patterns.</p>
+</aside>
+</section>
+<section id="why-the-coverage-symmetry-breaks"
+class="slide level2 st-symmetry-mechanism"
+data-section="shear-thinning">
+<h2 class="st-symmetry-mechanism" data-section="shear-thinning">Why the
+Coverage Symmetry Breaks</h2>
+<div class="st-symmetry-mechanism-body">
+<p><img data-src="../assets/results/symmetry-argument.png" /></p>
+<div class="takeaway st-symmetry-mechanism-insight">
+<p><span class="st-key"><strong>Symmetry breaking requires both
+geometric anisotropy and nonlinear rheology.</strong></span></p>
+</div>
+</div>
+<aside class="notes">
+<p>We can understand this using the argument shown here.</p>
+<p>For a fully-coated sphere, the surface slip is zero everywhere
+because of isotropy. Therefore, the two complementary coating problems
+have a reflection symmetry, even in a nonlinear fluid.</p>
+<p>For a fully-coated spheroid, the local surface slip is not zero,
+although the net speed is still zero. The reflection symmetry is lost.
+In a Newtonian fluid, linearity still makes the speeds of the
+complementary pair equal. But in a shear-thinning fluid, we can no
+longer use this superposition.</p>
+<p>So breaking the coverage symmetry requires both geometric anisotropy
+and nonlinear rheology. We will now see a related idea in a viscoelastic
+fluid.</p>
+</aside>
+</section>
+<section id="the-spherical-cancellation-is-a-symmetry"
+class="slide level2 results-slide ve-results-slide spherical-cancellation-slide"
+data-visibility="hidden">
+<h2 class="results-slide ve-results-slide spherical-cancellation-slide"
+data-visibility="hidden">The Spherical Cancellation Is a Symmetry</h2>
+<p><img data-src="../assets/results/slip_symmetry.png"
+data-fig-align="center" height="220" /></p>
+<div class="spherical-cancellation-flow">
+<p>In a second-order fluid, a mirror reflection must be paired with
+<strong>De → −De</strong>:</p>
+<p><span class="math display">\[U(\zeta_0, \mathrm{De}) = U(-\zeta_0,
+-\mathrm{De})\]</span></p>
+<div class="takeaway">
+<p>Half-coating is its own mirror ⟹ <strong>U even in De</strong>: the
+O(De) correction <strong>vanishes</strong>, leading correction is
+<strong>O(De²)</strong>.</p>
+</div>
+</div>
+<aside class="notes">
+<p>We first revisit the spherical case. The known conclusion is that the
+viscoelastic correction is antisymmetric in the surface activity. Here
+we can explain this from a hidden symmetry. Although the flow field is
+no longer linear, the slip velocity is solved from the concentration, so
+the slip fields can still be added up. For a sphere, a fully-coated
+particle has zero slip everywhere, due to the isotropy. So the boundary
+velocities of a particle pair have a symmetry.</p>
+<p>We then ask: do they swim at the same speed? In a Newtonian fluid,
+yes. But the second-order fluid is more subtle. Its elastic stress
+carries a directional memory, so a mirror reflection leaves the problem
+unchanged only if we also flip the sign of De. The two speeds therefore
+match with De reversed. Consequently, the half-coated case is its own
+mirror image, so the speed must be even in De. This means the leading
+correction is at least of order De squared. Through this argument, we
+show that the symmetry really requires the isotropy of the sphere. Once
+the shape is not spherical, we expect that this symmetry no longer
+holds.</p>
+</aside>
+</section>
+<section id="eccentricity-revives-the-correction"
+class="slide level2 result-single eccentricity-result"
+data-section="viscoelasticity">
+<h2 class="result-single eccentricity-result"
+data-section="viscoelasticity">Eccentricity Revives the Correction</h2>
+<div class="result-single-body">
+<div class="result-single-grid">
+<div class="result-single-figure">
+<div class="result-single-figure-title">
+<p><strong>Half-coated particles: <span
+class="math inline">\(\zeta_0=0\)</span></strong></p>
+</div>
+<p><img data-src="../assets/results/fig3.svg"
+data-fig-align="center" /></p>
+</div>
+<div class="result-single-insights">
+<ul>
+<li><strong>Sphere</strong> → zero correction by symmetry</li>
+<li><strong>Increasing eccentricity</strong> → symmetry broken</li>
+<li><strong>Slender limit</strong> → strong propulsion enhancement</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="result-publication">
+<p>Q. Zhao, G. Zhu and Y. Man. <em>(submitted).</em></p>
+</div>
+<aside class="notes">
+<p>Here are the results. We consider half-coated particles with
+different shapes, and plot the speed scaled by the Newtonian speed. For
+the sphere, the correction is zero. But as we increase the eccentricity,
+it first slows down a little bit, and then for very slender spheroids
+there is a pronounced enhancement. So our expectation is confirmed.</p>
+</aside>
+</section>
+<section id="breaking-the-coverage-symmetry"
+class="slide level2 result-two result-two--summary breaking-result"
+data-section="viscoelasticity">
+<h2 class="result-two result-two--summary breaking-result"
+data-section="viscoelasticity">Breaking the Coverage Symmetry</h2>
+<div class="result-two-body">
+<div class="result-two-grid">
+<div class="result-two-col">
+<p><span class="result-two-figure-title"><strong>Propulsion vs
+Coverage</strong></span></p>
+<div class="result-two-figure">
+<p><img data-src="../assets/results/fig4.svg" /></p>
+</div>
+</div>
+<div class="result-two-col">
+<p><span class="result-two-figure-title"><strong><span
+class="enhancement-key">Enhancement</span> vs <span
+class="reduction-key">Reduction</span></strong></span></p>
+<div class="result-two-figure">
+<p><img data-src="../assets/results/fig5.svg" /></p>
+</div>
+</div>
+</div>
+<div class="takeaway result-two-insight">
+<p>Eccentricity breaks the coverage <strong>antisymmetry</strong>, and
+the <strong>enhancement regime broadens</strong> with elongation.</p>
+</div>
+</div>
+<aside class="notes">
+<p>Next we also consider the coverage. The spherical case is represented
+by the black curve. The deviation is antisymmetric about half-coating,
+as we discussed. But as the eccentricity grows, this antisymmetry is
+lost. Shape breaks the coverage symmetry. The right panel is the full
+phase diagram, over eccentricity and coverage. The color shows whether
+the speed is enhanced or reduced. As the particle becomes more
+elongated, the enhancement region broadens. Especially when the particle
+is very slender, in most cases the propulsion is enhanced.</p>
+</aside>
+</section>
+<section id="why-the-cancellation-breaks"
+class="slide level2 result-two result-two--mechanism why-result"
+data-section="viscoelasticity">
+<h2 class="result-two result-two--mechanism why-result"
+data-section="viscoelasticity">Why the Cancellation Breaks</h2>
+<div class="result-two-body">
+<div class="result-two-lead">
+<ul>
+<li>The first-order speed is set by a local kernel: <span
+class="math inline">\(U_1 \propto \int_V\)</span> <span
+class="script-k">𝒦</span> <span
+class="math inline">\(\mathrm{d}V\)</span>, where <span
+class="script-k">𝒦</span> <span class="math inline">\(=
+\boldsymbol{A}:\nabla\hat{\boldsymbol{u}}\)</span> (blue enhances, red
+reduces)</li>
+</ul>
+</div>
+<div class="result-two-grid">
+<div class="result-two-col">
+<div class="result-two-figure">
+<p><img data-src="../assets/results/fig6a_kernel.svg" /></p>
+</div>
+<div class="result-two-caption">
+<p>Sphere — <span class="script-k">𝒦</span>
+<strong>antisymmetric</strong>, cancels exactly ⟹ <span
+class="math inline">\(U_1=0\)</span></p>
+</div>
+</div>
+<div class="result-two-col">
+<div class="result-two-figure">
+<p><img data-src="../assets/results/fig6b_kernel.svg" /></p>
+</div>
+<div class="result-two-caption">
+<p>Spheroid — curvature localizes <span class="script-k">𝒦</span>,
+<strong>antisymmetry broken</strong> ⟹ <span
+class="math inline">\(U_1\neq0\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Finally, we would like to visualize what happens around the particle.
+Since the first-order speed correction is a volume integral, we just
+plot the integral kernel, K. Blue regions push the speed up, and red
+regions push it down. For the sphere, on the left, the Newtonian flow is
+symmetric about the equator, so all the blue and red regions cancel out
+exactly. However, for a spheroidal particle, we no longer have this
+symmetry. Particularly near the highly curved tip, the slip changes
+quickly, and the flow gradients become large. This localizes the kernel
+and breaks its antisymmetry. So the cancellation is no longer exact, and
+a net enhancement survives. And these are all the main results.</p>
+</aside>
+</section>
+<section id="summary" class="slide level2 summary-slide iutam-summary"
+data-section="summary">
+<h2 class="summary-slide iutam-summary"
+data-section="summary">Summary</h2>
+<div class="summary-body">
+<div class="summary-main">
+<div class="summary-points">
+<p><span class="summary-key"><strong>Geometry can qualitatively change
+non-Newtonian propulsion.</strong></span></p>
+<ul>
+<li><span class="st-key"><strong>Shear thinning:</strong></span>
+Elongation can turn propulsion reduction into
+<strong>enhancement</strong> and break the complementary-coating
+<strong>symmetry</strong>.</li>
+<li><span class="ve-key"><strong>Viscoelasticity:</strong></span>
+Elongation can produce <strong>strong propulsion enhancement</strong>
+and break the coverage <strong>antisymmetry</strong>.</li>
+</ul>
+</div>
+<div class="summary-visual">
+<p><img data-src="../assets/diagrams/spheroid_polymer.svg" /></p>
+</div>
+</div>
+<div class="summary-acknowledgements">
+<p><span
+class="summary-ack-title"><strong>Acknowledgements</strong></span></p>
+<div class="summary-ack-row">
+<div class="summary-collaborator">
+<p><strong>Qiang Zhao (赵强)</strong></p>
+<p>Peking University</p>
+</div>
+<div class="summary-collaborator">
+<p><strong>Guangpu Zhu (朱光普)</strong></p>
+<p>Nanjing University of Aeronautics and Astronautics</p>
+</div>
+<div class="summary-collaborator">
+<p><strong>Prof. On Shun Pak</strong></p>
+<p>Santa Clara University</p>
+</div>
+<div class="summary-funding">
+<p><img data-src="../assets/logos/nsfc_logo.jpeg" /></p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>To summarize. For shear thinning, elongation can reverse the
+rheological effect, changing propulsion reduction into enhancement.
+Geometric anisotropy also breaks the equality between complementary
+coatings.</p>
+<p>For a viscoelastic fluid, we clarify that the vanishing correction
+for a sphere is a special case. It is a result of the geometric isotropy
+of the sphere. Once the particle becomes a spheroid, eccentricity breaks
+this symmetry. Especially for slender particles, the propulsion is
+enhanced in most cases.</p>
+<p>More generally, we believe in a principle: symmetry breaking requires
+the combination of geometric anisotropy and fluid nonlinearity. In
+short, particle shape is a control parameter for propulsion in complex
+fluids. Thank you, and I am happy to take questions.</p>
+</aside>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script src="progress.js"></script>
+
+    <script src="../assets/styles/iutam/patterns/media-video.js"></script>
+    </body>
+</html>
