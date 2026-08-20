@@ -1,0 +1,90 @@
+/* =========================================================
+   P01 · Cover
+   index.qmd class: .cover-slide
+   Layout: left title zone + lower-right information zone.
+   ========================================================= */
+.reveal .cover-slide > h2 {
+  display: none;
+}
+
+.reveal .cover-rule {
+  position: absolute;
+  top: 112px;
+  left: 58px;
+  width: 620px;
+  height: 4px;
+  background: var(--pku-red);
+}
+
+.reveal .cover-slide::after {
+  top: 32px;
+  width: 170px;
+  height: 70px;
+}
+
+.reveal .cover-title {
+  position: absolute;
+  top: 168px;
+  left: 58px;
+  width: 630px;
+  font-family: var(--title-font);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.reveal .cover-propulsion {
+  color: var(--pku-red);
+}
+
+.reveal .cover-meta {
+  position: absolute;
+  right: 58px;
+  bottom: 130px;
+  width: 450px;
+  color: #222;
+  font-family: var(--slide-font);
+  line-height: 1.35;
+  text-align: left;
+}
+
+.reveal .cover-title p,
+.reveal .cover-meta p {
+  margin: 0;
+  font: inherit;
+  line-height: inherit;
+}
+
+.reveal .cover-authors {
+  margin-bottom: 0.38em;
+  font-size: 21px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.reveal .cover-event,
+.reveal .cover-date {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.reveal .cover-date {
+  margin-top: 0.55em;
+}
+
+/* Cover-only typography. */
+.reveal .cover-affiliations {
+  margin: 0.28em 0 1em;
+  color: #333;
+  font-size: 17px;
+  line-height: 1.32;
+}
+
+.reveal .cover-affiliations sup,
+.reveal .cover-authors sup {
+  font-size: 0.68em;
+  vertical-align: super;
+  line-height: 0;
+}
+

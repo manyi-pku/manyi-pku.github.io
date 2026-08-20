@@ -1,0 +1,116 @@
+/* =========================================================
+   VISUAL EXPLAIN · Left visual + right mechanism + takeaway
+   ========================================================= */
+
+/* ===== TUNING KNOBS ===== */
+.reveal .visual-explain {
+  --ve-content-top: 0.5em;
+  /* 主体与标题的距离：增大 = 主体下移。 */
+
+  --ve-left-width: 45%;
+  /* 左侧示意图区域比例：增大 = 图更宽，右侧文字更窄。 */
+
+  --ve-column-gap: 0.65em;
+  /* 图文之间的水平距离：增大 = 两列更疏。 */
+
+  --ve-figure-max-width: 410px;
+  /* 示意图最大宽度：增大 = 图更大。 */
+
+  --ve-heading-size: 22pt;
+  /* 右侧 heading 字号：增大 = heading 更大。 */
+
+  --ve-text-size: 22pt;
+  /* 右侧 explanation 字号：增大 = explanation 更大。 */
+
+  --ve-step-gap: 0.75em;
+  /* 三条说明的垂直间距：增大 = 条目更疏。 */
+
+  --ve-takeaway-gap: 1.05em;
+  /* 主体与底部 takeaway 的间距：增大 = takeaway 下移。 */
+
+  --ve-takeaway-size: 18pt;
+  /* takeaway 字号：增大 = 文字更大，但可能换行。 */
+}
+
+/* ===== CORE LAYOUT ===== */
+.reveal .visual-explain .visual-explain-grid {
+  display: grid;
+  grid-template-columns: minmax(0, var(--ve-left-width)) minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--ve-column-gap);
+  width: 94%;
+  min-height: 390px;
+  margin: var(--ve-content-top) auto 0;
+}
+
+.reveal .visual-explain .visual-explain-figure,
+.reveal .visual-explain .visual-explain-text {
+  min-width: 0;
+}
+
+.reveal .visual-explain .visual-explain-figure > p {
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.reveal .visual-explain .visual-explain-image {
+  display: block;
+  width: min(100%, var(--ve-figure-max-width));
+  max-height: 410px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* ===== MECHANISM STEPS ===== */
+.reveal .visual-explain .visual-explain-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ve-step-gap);
+  color: #222;
+  line-height: 1.45;
+}
+
+.reveal .visual-explain .visual-explain-step p {
+  margin: 0;
+  font-size: var(--ve-text-size);
+}
+
+.reveal .visual-explain .visual-explain-step p:first-child {
+  font-size: var(--ve-heading-size);
+  line-height: 1.25;
+}
+
+.reveal .visual-explain .visual-explain-step p + p {
+  margin-top: 0.06em;
+}
+
+.reveal .visual-explain .visual-explain-key {
+  color: var(--pku-red);
+  font-weight: 700;
+}
+
+/* ===== TAKEAWAY ===== */
+.reveal .visual-explain .visual-explain-takeaway {
+  width: 92%;
+  margin: var(--ve-takeaway-gap) auto 0;
+  padding: 0.35em 0.8em;
+  font-size: var(--ve-takeaway-size);
+  white-space: nowrap;
+}
+
+/* ===== PAGE-SPECIFIC OVERRIDES ===== */
+.reveal .janus-complex-transition .visual-explain-text {
+  align-items: flex-start;
+}
+
+.reveal .janus-complex-transition .janus-transition-question {
+  max-width: 92%;
+  margin: 0;
+  color: var(--pku-red);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+

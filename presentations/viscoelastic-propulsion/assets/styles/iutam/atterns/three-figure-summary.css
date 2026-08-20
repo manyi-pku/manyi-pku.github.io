@@ -1,0 +1,97 @@
+/* =========================================================
+   THREE-FIGURE SUMMARY · Three figures + shared takeaway
+   ========================================================= */
+
+/* ===== TUNING KNOBS ===== */
+.reveal .three-figure-summary {
+  --tfs-content-top: 0.45em;
+  /* 三图区域距离标题的距离：增大 = 整体下移。 */
+
+  --tfs-column-gap: 0.55em;
+  /* 三栏之间的水平距离：增大 = 三图更疏。 */
+
+  --tfs-image-height: 280px;
+  /* 三张图的目标高度：增大 = 图片更大。 */
+
+  --tfs-caption-gap: 0.3em;
+  /* 图片与 caption 的距离：增大 = caption 下移。 */
+
+  --tfs-ref-gap: 0.24em;
+  /* caption 与 reference 的距离：增大 = reference 下移。 */
+
+  --tfs-takeaway-gap: 0.62em;
+  /* 三图区域与 takeaway 的距离：增大 = takeaway 下移。 */
+
+  --tfs-takeaway-padding-y: 0.3em;
+  /* takeaway 上下内边距：增大 = box 更高，减小 = box 更薄。 */
+}
+
+/* ===== CORE LAYOUT ===== */
+.reveal .three-figure-summary .three-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  column-gap: var(--tfs-column-gap);
+  width: 94%;
+  margin: var(--tfs-content-top) auto 0;
+}
+
+.reveal .three-figure-summary .three-figure-item {
+  min-width: 0;
+  text-align: center;
+}
+
+.reveal .three-figure-summary .three-figure-item > p:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--tfs-image-height);
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .three-figure-summary .three-figure-image {
+  width: auto;
+  max-width: 100%;
+  height: var(--tfs-image-height);
+  max-height: var(--tfs-image-height);
+  object-fit: contain;
+}
+
+.reveal .three-figure-summary .three-figure-caption {
+  min-height: 0;
+  margin-top: var(--tfs-caption-gap);
+  font-size: 0.68em;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.reveal .three-figure-summary .three-figure-caption p,
+.reveal .three-figure-summary .three-figure-ref p {
+  margin: 0;
+}
+
+.reveal .three-figure-summary .three-figure-ref {
+  min-height: 0;
+  margin-top: var(--tfs-ref-gap);
+  color: var(--muted-text);
+  font-size: 0.44em;
+  line-height: 1.2;
+}
+
+.reveal .three-figure-summary .three-figure-takeaway {
+  width: 92%;
+  margin: var(--tfs-takeaway-gap) auto 0;
+  padding-top: var(--tfs-takeaway-padding-y);
+  padding-bottom: var(--tfs-takeaway-padding-y);
+  font-size: 0.6em;
+  line-height: 1.28;
+}
+
+/* ===== PAGE-SPECIFIC OVERRIDES ===== */
+.reveal .janus-dynamics-slide {
+  --tfs-content-top: 0.7em;
+  --tfs-image-height: 300px;
+  --tfs-takeaway-gap: 1.62em;
+}
+
