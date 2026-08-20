@@ -2,9 +2,17 @@
 title: "Presentations"
 ---
 
-This page collects presentations that are available for viewing and sharing.
+This page collects presentation materials that are intended to be shared by direct link.
 
 ## Talks
 
-- [Geometry Can Qualitatively Change Rheological Effects on Propulsion (IUTAM Symposium, August 17, 2026)](presentations/viscoelastic-propulsion/2026-08-iutam/)
-- [Propulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids (USNCTAM26, June 22, 2026)](presentations/viscoelastic-propulsion/2026-06-usnctam26/)
+- [Viscoelastic propulsion of self-diffusiophoretic particles (USNCTAM26, June 22, 2026)](presentations/viscoelastic-propulsion/2026-06-usnctam26/)
+
+Future slides can follow this structure:
+
+```text
+presentations/
+  topic-name/
+    yyyy-mm-event-name/
+      index.html
+```
