@@ -5,7 +5,6 @@ project:
     - files/
     - images/
     - teaching/
-    - presentations/
 
 website:
   title: "Man,Yi"
