@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
     "objectID": "people.html",
     "href": "people.html",
     "title": "People",
@@ -35,16 +42,6 @@
     "title": "Teaching Resources",
     "section": "",
     "text": "Free Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Man,Yi",
-    "section": "",
-    "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
-    "crumbs": [
-      "Home"
-    ]
   },
   {
     "objectID": "bio.html",
@@ -97,32 +94,21 @@
     ]
   },
   {
-    "objectID": "presentations.html",
-    "href": "presentations.html",
-    "title": "Presentations",
-    "section": "",
-    "text": "This page collects presentations that are available for viewing and sharing."
-  },
-  {
-    "objectID": "presentations.html#talks",
-    "href": "presentations.html#talks",
-    "title": "Presentations",
-    "section": "Talks",
-    "text": "Talks\n\nGeometry Can Qualitatively Change Rheological Effects on Propulsion (IUTAM Symposium, August 17, 2026)\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids (USNCTAM26, June 22, 2026)"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "teaching.html",
     "href": "teaching.html",
     "title": "Teaching Resources",
     "section": "",
     "text": "Free Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Man,Yi",
+    "section": "",
+    "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "publications.html",
@@ -193,5 +179,19 @@
     "crumbs": [
       "Publications"
     ]
+  },
+  {
+    "objectID": "presentations.html",
+    "href": "presentations.html",
+    "title": "Presentations",
+    "section": "",
+    "text": "This page collects presentations that are available for viewing and sharing."
+  },
+  {
+    "objectID": "presentations.html#talks",
+    "href": "presentations.html#talks",
+    "title": "Presentations",
+    "section": "Talks",
+    "text": "Talks\n\nGeometry Can Qualitatively Change Rheological Effects on Propulsion (IUTAM Symposium, August 17, 2026)\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids (USNCTAM26, June 22, 2026)"
   }
 ]

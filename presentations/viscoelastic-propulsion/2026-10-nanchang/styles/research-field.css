@@ -1,0 +1,118 @@
+/* =====================================================
+   Research Field — 研究领域介绍页
+
+   布局：
+   1. 研究对象：左右两栏，每栏三张图片
+   2. Scientific Questions：三栏文字
+   3. Scientific Significance：底部总结
+
+   标题、Logo、字体继承 base.css
+   ===================================================== */
+
+
+/* 1. 研究对象：左右两栏 */
+.reveal .research-groups {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;                   /* 两栏间距 */
+  width: 100%;                  /* 整体宽度 */
+  margin: 0 auto;
+}
+
+.reveal .research-group {
+  min-width: 0;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f2f5f7;        /* 卡片背景 */
+}
+
+.reveal .research-group-title {
+  margin-bottom: 12px;
+  font-size: 22px;             /* Biological / Artificial 标题 */
+  font-weight: 600;
+  color: #234b68;
+}
+
+.reveal .research-group-title p {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;  /* 继承标题的字重 */
+}
+
+
+/* 2. 每组图片：三列 */
+.reveal .research-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;                   /* 图片间距 */
+}
+
+.reveal .research-photo {
+  aspect-ratio: 1 / 1;    /* 正方形，尺寸随三栏宽度自动调整 */
+  background: #e3e7ea;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.reveal .research-photo > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 15px;
+  color: #777;
+}
+
+.reveal .research-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;         /* 保持图片比例，不裁剪 */
+}
+
+.reveal .research-item > p {
+  margin: 6px 0 0;
+  font-size: 15px;             /* 图片下方标签 */
+  text-align: center;
+}
+/* 3. 科学问题 */
+/* 父元素：Key Scientific Questions 的容器 */
+.reveal .research-section-title {
+  width: 94%;
+  margin: 30px auto 5px;      /* 上方间距30px，下方间距16px */
+  font-size: 28px;             /* 标题字号 */
+  font-weight: 600;
+  color: #494949;
+}
+
+/* 子元素：具体文字 */
+.reveal .research-section-title p {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;  /* 继承标题的字重 */
+}
+
+/* 科学问题：纵向列表 */
+.reveal .research-questions {
+  width: 92%;                  /* 整体宽度 */
+  margin: 0 auto;
+}
+
+.reveal .research-questions ul {
+  margin: 0;
+  padding-left: 30px;          /* bullet 缩进 */
+  font-size: 1em;
+}
+
+.reveal .research-questions li {
+  margin-bottom: 10px;         /* 问题之间的距离 */
+  font-size: 24px;             /* 问题字号 */
+  line-height: 1.4;
+}
+
+/* 科学问题关键词 */
+.reveal .research-keyword {
+  color: var(--pku-red);
+  font-weight: 600;
+}

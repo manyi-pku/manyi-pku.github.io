@@ -1,0 +1,77 @@
+/* =====================================================
+   Research Highlights — 代表性研究成果
+
+   三栏布局：研究方向 → 图片 → 物理结论 → 文献
+   标题、Logo 继承 base.css
+   ===================================================== */
+
+/* 三栏整体布局 */
+.reveal .highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;                    /* 三栏之间的间距 */
+  width: 98%;                   /* 内容总宽度 */
+  margin: 30px auto 0;          /* 与页面标题的距离 */
+}
+
+/* 每一栏 */
+.reveal .highlight-item {
+  min-width: 0;
+  text-align: center;
+}
+
+/* Propulsion / Interactions / Control */
+.reveal .highlight-heading {
+  margin-bottom: 18px;
+  color: var(--pku-red);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* 研究成果图片 */
+.reveal .highlight-image {
+  height: 260px;                /* 图片区域高度 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;         /* 临时占位背景 */
+}
+
+/* 图片与视频：保持比例，自动适应区域 */
+.reveal .highlight-image img,
+.reveal .highlight-image video {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* 一句话物理结论 */
+.reveal .highlight-insight {
+  margin-top: 30px;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+/* 论文出处 */
+.reveal .highlight-ref {
+  margin-top: 12px;
+  color: #777;
+  font-size: 15px;
+}
+
+/* 消除 Markdown 段落的默认样式 */
+.reveal .highlight-item p {
+  margin-bottom: 0;
+}
+
+.reveal .highlight-heading p,
+.reveal .highlight-insight p,
+.reveal .highlight-ref p {
+  margin-top: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}

@@ -1,0 +1,35 @@
+/* =========================================================
+   TALK-SPECIFIC THEME
+
+   只定义当前报告特有的视觉语义；不控制页面布局。
+   当前报告：shear thinning → blue；viscoelasticity → orange。
+   基础颜色本身定义在 base.css。
+   ========================================================= */
+
+:root {
+  --st-color: var(--color-blue);
+  --ve-color: var(--color-orange);
+  --enhancement-color: var(--pku-red);
+  --reduction-color: var(--color-blue);
+}
+
+/* Shear-thinning emphasis */
+.reveal .st-key,
+.reveal .accent-blue {
+  color: var(--st-color);
+}
+
+/* Viscoelasticity emphasis */
+.reveal .ve-key,
+.reveal .accent-orange {
+  color: var(--ve-color);
+}
+
+/* Result-direction emphasis */
+.reveal .enhancement-key {
+  color: var(--enhancement-color);
+}
+
+.reveal .reduction-key {
+  color: var(--reduction-color);
+}

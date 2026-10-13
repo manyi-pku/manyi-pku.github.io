@@ -1,0 +1,302 @@
+/* =========================================================
+   MOTIVATION SLIDES · P02–P08
+   Find a slide by its unique class from index.qmd, for example
+   .from-spheres-slide.
+   ========================================================= */
+
+/* P02 · Non-Newtonian Biofluids */
+.reveal .nnfluids-layout {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: start;
+  column-gap: 0;
+  min-height: 400px;
+  margin-top: 0.25em;
+}
+
+.reveal .nnfluids-column-layout {
+  text-align: center;
+}
+
+.reveal .nnfluids-column-layout img {
+  width: 88%;
+  max-height: 240px;
+  object-fit: contain;
+}
+
+.reveal .nnfluids-notes {
+  width: 88%;
+  margin: 0.25em auto 0;
+}
+
+.reveal .nnfluids-notes p {
+  font-size: 0.58em;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.reveal .nnfluids-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+.reveal .mucus-summary-row {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.65em;
+  width: 88%;
+  margin: 0.35em auto 0;
+  padding: 0.28em 0.45em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.045);
+}
+
+.reveal .mucus-summary-figure-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.reveal .mucus-summary-figure-wrap > p {
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .mucus-microstructure-figure {
+  display: block;
+  width: 165px;
+  max-height: 105px;
+  margin: 0;
+  object-fit: contain;
+}
+
+.reveal .mucus-summary-text {
+  text-align: left;
+}
+
+.reveal .mucus-summary-text > p:first-child {
+  margin: 0 0 0.22em;
+  font-size: 0.58em;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Motivation slide: Rheology Alters Biological Swimming */
+.reveal .rheology-effect-layout {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: start;
+  column-gap: 0;
+  min-height: 390px;
+  margin-top: 0.25em;
+}
+
+.reveal .rheology-effect-column-layout {
+  text-align: center;
+}
+
+.reveal .rheology-effect-column-layout img {
+  width: 88%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.reveal .rheology-effect-notes {
+  width: 88%;
+  margin: 0.25em auto 0;
+}
+
+.reveal .rheology-effect-notes p {
+  font-size: 0.58em;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.reveal .rheology-effect-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+/* 10. Motivation slide: Self-Diffusiophoretic Janus Particles */
+.reveal .Janus-layout {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  align-items: start;
+  column-gap: 0;
+  min-height: 390px;
+  margin-top: 0.25em;
+}
+
+.reveal .Janus-column-layout {
+  text-align: center;
+}
+
+.reveal .Janus-column-layout img {
+  width: 88%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.reveal .Janus-notes {
+  width: 88%;
+  margin: 0.25em auto 0;
+}
+
+.reveal .Janus-notes p {
+  font-size: 0.58em;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.reveal .Janus-citation p {
+  margin: 0.12em 0 0;
+  font-size: 0.26em;
+  line-height: 1.08;
+  text-align: center;
+}
+
+/* Motivation slide: From Spheres to Spheroids */
+.reveal .from-spheres-slide .columns {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 94%;
+  min-height: 390px;
+  margin: 0.55em auto 0;
+}
+
+.reveal .from-spheres-slide .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.reveal .from-spheres-slide .column > p:first-child {
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .from-spheres-slide .quarto-figure,
+.reveal .from-spheres-slide figure,
+.reveal .from-spheres-slide figure > p {
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .from-spheres-slide img {
+  display: block;
+  height: 300px;
+  max-height: 300px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.reveal .bigq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 300px;
+  color: #9b0000;
+  font-size: 3em;
+  line-height: 1;
+}
+
+.reveal .bigq p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.reveal .from-spheres-slide .takeaway {
+  width: 92%;
+  margin: 0.8em auto 0.55em;
+}
+
+/* Motivation slide: Research question */
+.reveal .geometry-question-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 90px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.35em;
+  width: 92%;
+  margin: 0.35em auto 0;
+}
+
+.reveal .geometry-question-column {
+  text-align: center;
+}
+
+.reveal .geometry-question-figure {
+  display: block;
+  width: 100%;
+  height: 235px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.reveal .geometry-question-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal .geometry-question-center p {
+  margin: 0;
+  color: var(--pku-red);
+  font-size: 1.35em;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.reveal .geometry-question-key p {
+  margin: 0.2em 0 0;
+  font-size: 0.66em;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.reveal .geometry-question-note {
+  width: 90%;
+  margin: 0.2em auto 0;
+}
+
+.reveal .geometry-question-note p {
+  margin: 0;
+  font-size: 0.48em;
+  line-height: 1.3;
+}
+
+.reveal .geometry-question-box {
+  width: 90%;
+  margin: 0.45em auto 0;
+  padding: 0.32em 0.55em;
+  border-radius: 6px;
+  background: rgba(140, 0, 0, 0.055);
+  text-align: left;
+}
+
+.reveal .geometry-question-box ul {
+  margin: 0;
+  padding-left: 1.15em;
+  font-size: 0.58em;
+  line-height: 1.35;
+}
+
+.reveal .geometry-question-box li {
+  margin: 0;
+}
+
+.reveal .geometry-question-box li + li {
+  margin-top: 0.35em;
+}
