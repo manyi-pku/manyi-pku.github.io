@@ -101,7 +101,7 @@
   width: 100px;    /* Logo 宽度 */
   height: 42px;    /* Logo 高度 */
 
-  background: url("../assets/logos/pekingu_ch.png")
+  background: url("../../assets/logos/pekingu_ch.png")
               right top / contain no-repeat;
   pointer-events: none;
 }
