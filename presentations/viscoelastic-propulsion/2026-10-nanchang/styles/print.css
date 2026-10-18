@@ -1,0 +1,12 @@
+/* Reveal adds page margins around the slide canvas when exporting to PDF.
+   A 100% section height would include those margins and push the footer out. */
+html.reveal-print .reveal .slides section.slide {
+  height: var(--slide-height) !important;
+}
+
+/* Reveal's print stylesheet forces sections to display:block !important.
+   These layouts need flex to allocate the remaining height below the title. */
+html.reveal-print .reveal .slides section.result-two,
+html.reveal-print .reveal .slides section.summary-slide {
+  display: flex !important;
+}

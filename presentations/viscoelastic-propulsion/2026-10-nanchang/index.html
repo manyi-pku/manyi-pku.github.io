@@ -152,7 +152,8 @@
 </div>
 </div>
 <aside class="notes">
-<p>随后的内容会聚焦一个具体的基础问题，就是题目中写的：</p>
+<p>各位老师、同学，大家好。我是来自北京大学的满怡。非常荣幸有机会介绍自己以及近期的研究工作。</p>
+<p>我会先简要介绍一下我们研究的领域和相关工作。随后报告的主要内容会聚焦一个比较基础的问题，也就是流体的流变性质如何影响微游动体的推进，特别是粒子的几何形状在其中起到什么作用。</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -226,11 +227,18 @@
 <ul>
 <li class="fragment"><span class="research-keyword">Propulsion</span> — What determines swimming speed and efficiency in complex environments?</li>
 <li class="fragment"><span class="research-keyword">Interactions</span> — Why do swimmers accumulate near surfaces, change course, or synchronize?</li>
-<li class="fragment"><span class="research-keyword">Control</span> — Can we steer artificial microswimmers through complex environments for targeted transport?</li>
+<li class="fragment"><span class="research-keyword">Control</span> — Can we steer artificial microswimmers through complex environments for targeted transport? <span style="font-size: 1em; color: #0e0eaf;">(e.g., Li, Qiu &amp; Zhao, Soft Matter, 2025)</span></li>
 </ul>
 </div>
 <aside class="notes">
-<p>研究领域是，研究对象包含。 虽然不可见，但无处不在，和很多生命过程和健康息息相关，了解其中的力学机制有重要的基础和应用价值。 这些系统的驱动机制都不一样，有些。。 但是他们共同的特点是， 因此无法照搬宏观的推进直觉，而需要理解微小驱动如何产生整体运动。 围绕这个问题，我把感兴趣的科学问题主要分为三个方面： 我门希望通过研究回答基础的流体力学问题，以及希望为为人工微游动体的设计和控制提供物理依据。</p>
+<p>我主要从事<strong>微游动体的流体动力学</strong>研究，这也是活性物质研究的一个方向。</p>
+<p>这里的研究对象既包括自然界中的微生物，也包括人工设计的微型机器人，以及人工纤毛等微尺度驱动系统。说起微生物，虽然肉眼不可见，却无处不在。比如人体内细菌的总重量就有几百克，大致相当于一部手机。</p>
+<p>这些系统的驱动机制很不一样。有的是靠鞭毛旋转，有的是靠形变或者纤毛摆动，有的则是通过表面化学反应产生运动。但从流体力学角度看，它们有一个共同特点：<strong>尺度很小，惯性通常可以忽略，运动主要由黏性作用和流体应力决定。</strong> 因此，我们不能简单照搬宏观物体的推进直觉，而需要理解微小驱动如何转化为整体运动。</p>
+<p>围绕这些问题，我把我们感兴趣的科学问题大致分成三个方面。</p>
+<p><strong>第一个是推进。</strong> 给定一个游动体的形状和驱动方式，它到底能够游多快、效率有多高？特别是当周围不再是理想的牛顿流体时，我们熟悉的推进规律会发生什么变化？实际上，很多微生物的相对游动速度是非常快的，比如大肠杆菌一秒钟就可以游过大约十个身长。什么因素决定了这些微尺度的推进性能，是我们感兴趣的问题。</p>
+<p><strong>第二个是相互作用。</strong> 包括微游动体与周围环境的相互作用，以及不同游动体之间的相互作用。比如，细菌在壁面附近常常会沿着圆周轨迹运动；多个纤毛之间也可能通过相互耦合形成协调摆动，产生类似波传播的现象，也就是 metachronal waves。我们希望理解这些现象背后的流体力学机制。</p>
+<p><strong>第三个是运动调控。</strong> 当我们理解了推进和相互作用的物理机制之后，能不能反过来利用这些规律，通过设计形状、驱动方式或者运动策略，让微游动体按照我们希望的方式运动？</p>
+<p>所以我们的研究既希望回答一些基础的流体力学问题，也希望为人工微游动体的设计与控制提供物理依据。</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -290,6 +298,24 @@
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>我们最近也是在这些方面做了一些工作。</p>
+<p><strong>在基础的推进机制方面，</strong>我们把 Stokes 流动中经典的细长体理论推广到了有限滑移的情形。比较有意思的是，我们发现表面的滑移性质会改变阻力的各向异性，从而影响微游动体的推进性能。这也说明，即使游动体的形状没有变化，改变表面的边界条件，也可能对推进产生很大的影响。</p>
+<p><strong>在相互作用方面，</strong>我们做了一些关于壁面效应的研究。比如细菌与壁面的相互作用，对于细菌的定植和生物膜形成都有重要影响。如果用显微镜观察，会发现细菌在壁面附近经常是沿着圆周轨迹运动的。</p>
+<p>有意思的是，实验发现，如果是在一些聚合物溶液中，这些轨迹会变得更加平直。我们通过理论分析，发现剪切变稀可以直接减弱壁面诱导的旋转，降低运动轨迹的曲率，也能够解释部分实验观察。</p>
+<p><strong>在运动控制方面，</strong>我们对微游动体的导航问题进行了一些探索。我们把三连杆游动体的动力学模型和强化学习结合起来，让游动体根据不同的目标自主学习运动策略。比如，如果希望最大化推进速度，或者提高推进效率，它能够学习出相应的游动步态。进一步还可以考虑导航任务，根据目标位置不断调整运动，实现对目标的追踪。</p>
+<p>这些是我们近期几个比较有代表性的工作，分别对应了刚才介绍的三个科学问题</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="active-propulsion-in-complex-fluids" class="slide level2 motivation-slide">
 <h2>Active Propulsion in Complex Fluids</h2>
@@ -335,9 +361,10 @@
 <p><strong>How does fluid rheology alter active propulsion?</strong></p>
 </div>
 <aside class="notes">
-<p>Here, by propulsion, I mean the motion of self-propelled active particles. These can be biological swimmers, such as microorganisms, or synthetic systems, such as microrobots and Janus particles. I will introduce what a Janus particle is in a moment.</p>
-<p>Many of them move in complex fluids. For example, H. pylori swims through the mucus layer in the stomach, and sperm cells move through cervical mucus. So the surrounding fluid is often very different from a simple Newtonian liquid. Since the propulsion comes from interacting with the surrounding fluid, its rheology can strongly affect how these particles move.</p>
-<p>So the question is simple: how does fluid rheology alter active propulsion?</p>
+<p>接下来，我们回到今天的报告，主要讨论一个具体的基础问题，也就是<strong>复杂流体中的主动推进</strong>。</p>
+<p>之所以研究复杂流体，是因为很多微游动体实际生活的环境并不是简单的牛顿流体。比如，幽门螺杆菌需要在胃黏液中运动，精子也需要穿过具有复杂流变性质的生物流体。这些流体往往含有大量高分子物质，表现出非牛顿性质。</p>
+<p>那么，流体的流变性质会怎样影响主动粒子的推进？特别是这种影响是否还取决于粒子的几何形状？</p>
+<p>为了研究这个问题，我们选择了一类相对简单的模型系统，也就是通过自扩散泳实现推进的 Janus particles。下面我先简单介绍一下它们的推进机制。</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -362,8 +389,7 @@
 <p><a href="https://www.youtube.com/watch?v=Avr57m-hS8o">Video: “Janus particles,” Sikapaa TV, YouTube</a></p>
 </div>
 <aside class="notes">
-<p>In this talk, we focus on Janus particles, a widely studied class of synthetic self-propelled particles. They are used as simple model systems for active matter. They are also explored for microscale transport and microrobotics.</p>
-<p>Here we can roughly see that the particle has two distinct surface regions. Let me briefly explain how a Janus particle propels itself.</p>
+
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1235,6 +1261,7 @@ U_1 =
         ]
       });
     </script>
+    <script src="preview-navigation.js"></script>
     <script src="progress.js"></script>
     <script src="styles/patterns/media-video.js"></script>
     <script id="quarto-html-after-body" type="application/javascript">
@@ -1405,6 +1432,7 @@ U_1 =
         }
       });
       </script>
+    <script id="preview-source-slides" type="application/json">["cover","cover","hydrodynamics-of-microswimmers","selected-research-highlights","active-propulsion-in-complex-fluids","what-is-a-janus-particle","how-does-a-janus-particle-propel-itself","how-does-a-janus-particle-propel-itself-1","complex-fluids-change-particle-dynamics","two-common-rheological-effects","spherical-particles-what-does-theory-predict","from-spheres-to-spheroids","model-a-spheroidal-self-diffusiophoretic-particle","concentration-gradients-drive-surface-slip","fluid-rheology-two-non-newtonian-models","diffusion-dominated-solute-transport","newtonian-baseline","first-order-non-newtonian-correction","geometry-can-reverse-the-effect-of-shear-thinning","geometry-breaks-the-coverage-symmetry","why-the-coverage-symmetry-breaks","the-spherical-cancellation-is-a-symmetry","eccentricity-revives-the-correction","breaking-the-coverage-symmetry","why-the-cancellation-breaks","summary"]</script>
     <script>videojs(video_shortcode_videojs_video1);</script>
     
 
