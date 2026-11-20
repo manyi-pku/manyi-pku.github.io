@@ -2,9 +2,22 @@
 title: "Presentations"
 ---
 
-This page collects presentations that are available for viewing and sharing.
 
-## Talks
+## 2026
 
-- [Geometry Can Qualitatively Change Rheological Effects on Propulsion (IUTAM Symposium, August 17, 2026)](presentations/viscoelastic-propulsion/2026-08-iutam/)
-- [Propulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids (USNCTAM26, June 22, 2026)](presentations/viscoelastic-propulsion/2026-06-usnctam26/)
+**Geometry-Dependent Active Particle Propulsion in Complex Fluids**  
+November 6 · IUTAM Symposium on Multiscale Mechanics of Soft Tissues and Active Matter · Tsinghua University, Beijing
+
+**Geometry-Dependent Active Particle Propulsion in Complex Fluids**  
+November 4 · Workshop on Soft Matter and Active Fluids · Institute of Mechanics, Chinese Academy of Sciences, Beijing
+
+**复杂流体中主动粒子推进的几何–流变耦合**  
+10 月 18 日 · 第三届极端流动与多过程问题研讨会 · 南昌
+
+**Geometry Can Qualitatively Change Rheological Effects on Propulsion**  
+August 17 · IUTAM Symposium on Diversity-Driven Innovations in Complex Fluids for Advanced Manufacturing · Beijing  
+[Slides](presentations/26-janus-complex-propulsion/2026-08-iutam/)
+
+**Propulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids**  
+June 22 · 20th U.S. National Congress on Theoretical and Applied Mechanics · Pasadena  
+[Slides](presentations/26-janus-complex-propulsion/2026-06-usnctam26/)

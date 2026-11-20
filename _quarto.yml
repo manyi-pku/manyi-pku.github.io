@@ -17,6 +17,8 @@ website:
         href: index.qmd
       - text: "Publications"
         href: publications.qmd
+      - text: "Presentations"
+        href: presentations.qmd
       - text: "People"
         href: people.qmd
       - text: "Bio"
