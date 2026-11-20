@@ -1,10 +1,20 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
+    "title": "Teaching Resources",
     "section": "",
-    "text": "About this site"
+    "text": "Free Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Man,Yi",
+    "section": "",
+    "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "people.html",
@@ -35,13 +45,6 @@
     "crumbs": [
       "People"
     ]
-  },
-  {
-    "objectID": "teaching/index.html",
-    "href": "teaching/index.html",
-    "title": "Teaching Resources",
-    "section": "",
-    "text": "Free Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
   },
   {
     "objectID": "bio.html",
@@ -91,23 +94,6 @@
     "text": "Miscellaneous\n\n200-hour Yoga Alliance Certification, CorePower Yoga (Aug. 2018)",
     "crumbs": [
       "Bio"
-    ]
-  },
-  {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching Resources",
-    "section": "",
-    "text": "Free Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Man,Yi",
-    "section": "",
-    "text": "Man, Yi (满怡), Ph.D.\n\n\nAssistant Professor School of Mechanics and Engineering Science, Peking University\n\n\n\nEmail: yiman@pku.edu.cn Address: Room 4043, Enn Engineering Building, Haidian District, Beijing Research areas: Low-Reynolds-number flows, Biological Locomotion, Active Matter\n\n\n\n\n\n\n\n\n\nPKU Campus\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Previous    Next \n\n\n\n\nLocation\n\n\n\n\n📍 Enn Engineering Building, PKU Google Maps | Baidu Maps",
-    "crumbs": [
-      "Home"
     ]
   },
   {
@@ -181,17 +167,37 @@
     ]
   },
   {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching Resources",
+    "section": "",
+    "text": "Free Precession\nInertia Ellipsoid\nLagrange Top\nRigid Body Toss"
+  },
+  {
     "objectID": "presentations.html",
     "href": "presentations.html",
     "title": "Presentations",
     "section": "",
-    "text": "This page collects presentations that are available for viewing and sharing."
+    "text": "Geometry-Dependent Active Particle Propulsion in Complex Fluids\nNovember 6 · IUTAM Symposium on Multiscale Mechanics of Soft Tissues and Active Matter · Tsinghua University, Beijing\nGeometry-Dependent Active Particle Propulsion in Complex Fluids\nNovember 4 · Workshop on Soft Matter and Active Fluids · Institute of Mechanics, Chinese Academy of Sciences, Beijing\n复杂流体中主动粒子推进的几何–流变耦合\n10 月 18 日 · 第三届极端流动与多过程问题研讨会 · 南昌\nGeometry Can Qualitatively Change Rheological Effects on Propulsion\nAugust 17 · IUTAM Symposium on Diversity-Driven Innovations in Complex Fluids for Advanced Manufacturing · Beijing\nSlides\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids\nJune 22 · 20th U.S. National Congress on Theoretical and Applied Mechanics · Pasadena\nSlides",
+    "crumbs": [
+      "Presentations"
+    ]
   },
   {
-    "objectID": "presentations.html#talks",
-    "href": "presentations.html#talks",
+    "objectID": "presentations.html#section",
+    "href": "presentations.html#section",
     "title": "Presentations",
-    "section": "Talks",
-    "text": "Talks\n\nGeometry Can Qualitatively Change Rheological Effects on Propulsion (IUTAM Symposium, August 17, 2026)\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids (USNCTAM26, June 22, 2026)"
+    "section": "",
+    "text": "Geometry-Dependent Active Particle Propulsion in Complex Fluids\nNovember 6 · IUTAM Symposium on Multiscale Mechanics of Soft Tissues and Active Matter · Tsinghua University, Beijing\nGeometry-Dependent Active Particle Propulsion in Complex Fluids\nNovember 4 · Workshop on Soft Matter and Active Fluids · Institute of Mechanics, Chinese Academy of Sciences, Beijing\n复杂流体中主动粒子推进的几何–流变耦合\n10 月 18 日 · 第三届极端流动与多过程问题研讨会 · 南昌\nGeometry Can Qualitatively Change Rheological Effects on Propulsion\nAugust 17 · IUTAM Symposium on Diversity-Driven Innovations in Complex Fluids for Advanced Manufacturing · Beijing\nSlides\nPropulsion of a Spheroidal Self-Diffusiophoretic Particle in Complex Fluids\nJune 22 · 20th U.S. National Congress on Theoretical and Applied Mechanics · Pasadena\nSlides",
+    "crumbs": [
+      "Presentations"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   }
 ]
